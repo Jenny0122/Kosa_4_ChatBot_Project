@@ -15,11 +15,6 @@ public class SchedulerService {
 
 	@Scheduled(fixedDelay = 1000000)
 	public void test() {
-		User user = User.builder()
-				.id(1)
-				.build();
-
-		userRepository.save(user);
 		for (User users : userRepository.findAll()) {
 			System.out.println(users);
 		}
