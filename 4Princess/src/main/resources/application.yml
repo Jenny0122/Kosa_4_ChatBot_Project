@@ -1,0 +1,22 @@
+server:
+  port: 8000
+
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://ma2garden-db00005990.mdb0002418.db1.skysql.net:5001/sky?useSsl=true&charSet=MS949&serverSslCert=pem\\aws_skysql_chain.pem
+    username: DB00005990
+    password: Pa$$w0rd1234
+
+#JPA 설정
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: validate
+        dialect: org.hibernate.dialect.MariaDBDialect #Dialect 설정
+        show_sql: true  #하이버네이트가 실행하는 모든 SQL문을 콘솔로 출력해 준다.    
+        format_sql: true  #콘솔에 출력되는 JPA 실행 쿼리를 가독성있게 표현한다.
+        use_sql_comments: true #디버깅이 용이하도록 SQL문 이외에 추가적인 정보를 출력해 준다.
+
+
+  
