@@ -33,5 +33,5 @@ My Little Garden
   * 개발 언어 : Python, Html, CSS, Javascript, Java, JQuery
   * 프레임워크 : Spring
   * 서버 환경 : AWS(Linux - CentOS)
-  * 크롤링 : BeautifulSoup, Spring Batch
+  * 크롤링 : BeautifulSoup, Requests
   * 알고리즘 : CNN, LSTM 등
