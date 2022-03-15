@@ -29,9 +29,9 @@ My Little Garden
 <br>
 
 # 기술스택 및 환경 설정
-  * 개발 환경 : Slack, Gather Town, Github, VSCode, MariaDB
-  * 개발 언어 : Python, Html, CSS, Javascript, Java, JQuery
-  * 프레임워크 : Spring
+  * 개발 환경 : Slack, Gather Town, Github, VSCode, SkySQL
+  * 개발 언어 : Python, Html, CSS, Javascript, Java
+  * 프레임워크 : Spring Boot, Vue
   * 서버 환경 : AWS(Linux - CentOS)
   * 크롤링 : BeautifulSoup, Requests
   * 알고리즘 : CNN, LSTM 등
