@@ -28,4 +28,6 @@ public class User {
 		super();
 		this.id = id;
 	}
+	
+	//master
 }
