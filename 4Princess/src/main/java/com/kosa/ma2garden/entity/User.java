@@ -10,7 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//DB table명은 모두 소문자로 생성 (대문자 인식 못함)
+//DB table紐낆� 紐⑤몢 �냼臾몄옄濡� �깮�꽦 (��臾몄옄 �씤�떇 紐삵븿)
 
 @Table(name = "user")
 @Entity
@@ -27,6 +27,7 @@ public class User {
 	public User(long id) {
 		super();
 		this.id = id;
+//	안녕하세요
 	}
 	
 	//master
