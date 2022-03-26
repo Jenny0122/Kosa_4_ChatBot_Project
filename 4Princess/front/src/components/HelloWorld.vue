@@ -80,17 +80,21 @@
         </a>
       </li>
     </ul>
+    <router-link to='/book'>Book!!</router-link>
   </div>
 </template>
 
 <script>
+import Book from '@/components/Book'
+
 export default {
   name: 'HelloWorld',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
-  }
+  },
+  component: Book
 }
 </script>
 
