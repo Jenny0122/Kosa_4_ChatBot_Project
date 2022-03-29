@@ -9,6 +9,5 @@ import lombok.extern.slf4j.Slf4j;
 public class DataController {
 	// test
 	public void test() {
-		log.info(null);
 	}
 }

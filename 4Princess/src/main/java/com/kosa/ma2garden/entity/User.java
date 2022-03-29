@@ -10,7 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//DB table紐낆� 紐⑤몢 �냼臾몄옄濡� �깮�꽦 (��臾몄옄 �씤�떇 紐삵븿)
+//DB table
 
 @Table(name = "user")
 @Entity
