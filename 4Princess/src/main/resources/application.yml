@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8888
 
 spring:
   datasource:
@@ -11,7 +11,7 @@ spring:
 #JPA 설정
   jpa:
     properties:
-      hibernate:
+      hibernate:      
         ddl-auto: validate
         dialect: org.hibernate.dialect.MariaDBDialect #Dialect 설정
         show_sql: true  #하이버네이트가 실행하는 모든 SQL문을 콘솔로 출력해 준다.    
@@ -25,4 +25,3 @@ spring:
 springdoc:
   api-docs.path: /swagger
 
-  

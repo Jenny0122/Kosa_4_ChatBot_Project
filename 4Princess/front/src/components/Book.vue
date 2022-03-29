@@ -1,35 +1,48 @@
 <template>
-  <div id = 'app'>
-      <h3> 관련 서적 </h3>
-      <table>
-          <thead>
-              <th v-for='header in headers' :key='header'>{{header}}</th>
-          </thead>
-          <tbody>
-              <tr v-for='line in ranking' :key='line'>
-                  <td v-for='item in line' :key='item'>{{ item }}</td>
-              </tr>
-          </tbody>
-      </table>
+  <div>
+      <div>
+        <h1>관련 서적</h1>
+      </div>
+      <div v-for="b in books" :key="b">
+      <div>
+      {{b.title}}
+      </div>
+      <div>
+      {{b.author}}
+      </div>
+      <div>
+      {{b.publisher}}
+      </div>
+      <div>
+      {{b.thumnail}}
+      </div>
+  </div>
   </div>
 </template>
 
 <script>
 export default {
-  el: '#app',
   name: 'Book',
   data() {
     return {
-      headers: ['프로그래밍 언어', '2018', '2013', '2008', '2003', '1998'],
-      ranking: [
-          ['java', 1, 2, 1, 1, 16],
-          ['c', 2, 1, 2, 2, 1],
-          ['c++', 3, 4, 3, 3, 2],
-          ['python', 4, 7, 6, 11, 23],
-          ['JS', 17, 18, 8, 7, 20],
-          ['Vue', 10, 15, 28, 45, 100]
-      ]
+      books: []
     }
+  },
+  methods: {
+    test: function() {
+    }
+  },
+  beforeCreate: function() {
+    console.log('beforeCreate')
+
+    this.$axios.get('/book')
+    .then((res) => {
+      let list = res.data
+
+      for (var i in list) {
+        this.books.push(list[i])
+      }
+    })
   }
 }
 </script>

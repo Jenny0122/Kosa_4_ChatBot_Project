@@ -1,33 +1,32 @@
 <template>
 <div id="app">
   <div>
-    <h1>{{msg}}</h1>
-    <h2>{{subject}}</h2>
+    <h1>RECIPE</h1>
+    <h3>키우는 작물을 선택해 주세요! 작물별 추천음식 레시피를 알려드려요 :)</h3>
   </div>
-  <div v-for="m in MBTIname" :key="m">
-      {{m}}
-  </div>
-  <div v-for="mt in mbti" :key="mt">
+  <div v-for="cook in cooks" :key="cook">
       <div>
-      {{mt.flower_name}}
+      {{cook.crop}}
       </div>
       <div>
-      {{mt.description}}
+      {{cook.menu}}
+      </div>
+      <div>
+      {{cook.ingredient}}
+      </div>
+      <div>
+      {{cook.cooking_order}}
       </div>
   </div>
 </div>
 </template>
 
-
 <script>
 export default {
-  name: 'MBTI',
+  name: 'Cook',
   data() {
     return {
-      msg: 'MBTI',
-      subject: 'MBTI별 꽃 추천을 해드려요:) 본인의 MBTI를 선택해주세요.',
-      MBTIname: ['ESFJ', 'ESTP', 'ESFP', 'ENTJ', 'ENTP', 'ISFJ', 'ENFP', 'ISFP', 'INFP', 'INTJ', 'ISTJ', 'INFJ', 'ENFJ', 'ISTP', 'INTP', 'ESTJ'],
-      mbti: []
+      cooks: []
     }
   },
   methods: {
@@ -37,12 +36,12 @@ export default {
   beforeCreate: function() {
     console.log('beforeCreate')
 
-    this.$axios.get('/mbti')
+    this.$axios.get('/cook')
     .then((res) => {
       let list = res.data
 
       for (var i in list) {
-        this.mbti.push(list[i])
+        this.cooks.push(list[i])
       }
     })
   }

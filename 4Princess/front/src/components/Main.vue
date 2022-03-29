@@ -1,6 +1,5 @@
 <template>
   <div>
-    {{msg}}
     <button @click="getAllBooks">Get Books Info</button>
     <div>
       <table>
@@ -17,21 +16,15 @@
         </tr>
       </table>
     </div>
-    <!--<div v-for="t in 16" :key="t">
-      <MBTI />
-    </div>-->
   </div>
 </template>
 
 
 <script>
-import MBTI from './MBTI'
-
 export default {
   name: 'Main',
   data() {
     return {
-      msg: '뿌우짱~~~',
       arr: [1, 3, 5, 7, 9],
       books: []
     }
@@ -60,14 +53,17 @@ export default {
     },
     getAllBooks: function() {
       console.log('getAllbooks')
+
       this.$axios
       .get('/books')
       .then((res) => {
         let list = res.data
         this.books = []
-        for (var i in list) {
+
+        for (var i in res.data) {
           this.books.push(list[i])
         }
+        history.go('/mbti')
       })
       .catch((err) => {
         alert(err)
@@ -80,9 +76,6 @@ export default {
   mounted: function() {
     this.msg = '안녕 둥짱이!'
     console.log('mounted')
-  },
-  components: {
-    'MBTI': MBTI
   }
 }
 </script>

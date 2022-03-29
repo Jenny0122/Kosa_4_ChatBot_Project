@@ -33,13 +33,10 @@ dependencies {
 	 // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
 	 implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 
-	
 
-	
-	
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.3'	
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.3'	
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.springframework.session:spring-session-core'

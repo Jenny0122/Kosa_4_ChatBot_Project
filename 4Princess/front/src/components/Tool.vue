@@ -1,33 +1,26 @@
 <template>
 <div id="app">
   <div>
-    <h1>{{msg}}</h1>
-    <h2>{{subject}}</h2>
+    <h1>홈 가드닝 시 자주쓰는 도구들</h1>
+    <h3>자주 사용하는 도구에 대해 알아볼까요?</h3>
   </div>
-  <div v-for="m in MBTIname" :key="m">
-      {{m}}
-  </div>
-  <div v-for="mt in mbti" :key="mt">
+  <div v-for="t in tool" :key="t">
       <div>
-      {{mt.flower_name}}
+      {{t.name}}
       </div>
       <div>
-      {{mt.description}}
+      {{t.description}}
       </div>
   </div>
 </div>
 </template>
 
-
 <script>
 export default {
-  name: 'MBTI',
+  name: 'Tool',
   data() {
     return {
-      msg: 'MBTI',
-      subject: 'MBTI별 꽃 추천을 해드려요:) 본인의 MBTI를 선택해주세요.',
-      MBTIname: ['ESFJ', 'ESTP', 'ESFP', 'ENTJ', 'ENTP', 'ISFJ', 'ENFP', 'ISFP', 'INFP', 'INTJ', 'ISTJ', 'INFJ', 'ENFJ', 'ISTP', 'INTP', 'ESTJ'],
-      mbti: []
+      tool: []
     }
   },
   methods: {
@@ -37,12 +30,12 @@ export default {
   beforeCreate: function() {
     console.log('beforeCreate')
 
-    this.$axios.get('/mbti')
+    this.$axios.get('/tool')
     .then((res) => {
       let list = res.data
 
       for (var i in list) {
-        this.mbti.push(list[i])
+        this.tool.push(list[i])
       }
     })
   }

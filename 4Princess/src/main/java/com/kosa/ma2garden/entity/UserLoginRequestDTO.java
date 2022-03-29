@@ -6,5 +6,7 @@ package com.kosa.ma2garden.entity;
 
 //로그인정보를 전달받는 객체
 public class UserLoginRequestDTO {
-
+	
+	String session;
+	
 }

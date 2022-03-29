@@ -8,7 +8,7 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @ToString
-public class BookResponseDTO {
+public class BookDTO {
 
 	private long no;
 	private String title;
@@ -18,7 +18,7 @@ public class BookResponseDTO {
 	private String url;
 
 	@Builder
-	public BookResponseDTO(long no, String title, String author, String publisher, String thumbnail, String url) {
+	public BookDTO(long no, String title, String author, String publisher, String thumbnail, String url) {
 		super();
 		this.no = no;
 		this.title = title;

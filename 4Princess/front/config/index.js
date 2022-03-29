@@ -16,7 +16,12 @@ module.exports = {
                 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS'
             },
             "/api": {
-                target: "http://localhost:8080",
+                target: "http://localhost:8888",
+                ws: true,
+                changeOrigin: true
+            },
+            "/mbti": {
+                target: "http://localhost:8888/mbti",
                 ws: true,
                 changeOrigin: true
             }

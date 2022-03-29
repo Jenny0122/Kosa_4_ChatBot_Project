@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>{{ msg }}</h3>
-    <div v-for="color in colors" :key="color" @click="addTodo(color)">
+    <div v-for="(color, index) in colors" :key="color" @click="addTodo(color, index)">
       {{color}}
     </div>
     <modal v-if="showModal" @close="showModal = false">

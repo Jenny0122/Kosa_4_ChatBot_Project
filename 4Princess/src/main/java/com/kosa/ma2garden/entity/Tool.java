@@ -6,28 +6,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-//DB table
-// Entity는 setter사용 금지
-
-@Entity
+@Entity(name = "Tool")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Table(name = "user")
-public class User {
+@Table(name = "tool")
+public class Tool {
 
-	@Id
-	@Column(name = "id")
-	private long id;
 	
-	String password;
+	@Id
+	@Column(name = "no")
+	long no;
 
-	@Builder
-	public User(long id) {
-		super();
-		this.id = id;
-	}
+	@Column(name = "name")
+	String name;
+
+	@Column(name = "description")
+	String description;
+
 }
