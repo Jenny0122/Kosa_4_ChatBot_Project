@@ -27,6 +27,7 @@ public class MBTIService {
 					.mbti(mbti.getMbti())
 					.flower_name(mbti.getFlower_name())
 					.description(mbti.getDescription())
+					.image_url(mbti.getImage_url())
 					.build();
 			list.add(mbtiDTO);
 		}

@@ -27,6 +27,7 @@ public class BookService {
 					.author(book.getAuthor())
 					.publisher(book.getPublisher())
 					.thumbnail(book.getThumbnail())
+					.url(book.getUrl())
 					.build();
 			
 			list.add(bookDTO);

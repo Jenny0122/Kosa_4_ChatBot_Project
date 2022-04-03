@@ -25,5 +25,8 @@ public class Tool {
 
 	@Column(name = "description")
 	String description;
+	
+	@Column(name = "img_url")
+	String img_url;
 
 }

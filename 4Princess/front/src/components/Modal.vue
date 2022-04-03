@@ -45,7 +45,7 @@
   vertical-align: middle;
 }
 .modal-container {
-  width: 300px;
+  width: 500px;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
@@ -54,9 +54,10 @@
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
 }
-.modal-header h3 {
+.modal-header {
   margin-top: 0;
   color: #62acde;
+  font-size: 20pt;
 }
 .modal-body {
   margin: 20px 0;

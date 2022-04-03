@@ -1,5 +1,6 @@
 <template>
   <div>
+    <img src="../assets/logo.png">
     <button @click="getAllBooks">Get Books Info</button>
     <div>
       <table>
@@ -18,7 +19,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -82,18 +82,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+img {
+  text-align: center;
+  margin: 0 auto;
 }
 </style>

@@ -26,6 +26,7 @@ public class ToolService {
 					.no(tool.getNo())
 					.name(tool.getName())
 					.description(tool.getDescription())
+					.img_url(tool.getImg_url())
 					.build();
 			list.add(toolDTO);
 			System.out.println(toolDTO);

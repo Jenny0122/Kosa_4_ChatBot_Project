@@ -1,13 +1,14 @@
 <template>
   <div>
-    <h3>{{ msg }}</h3>
-    <div v-for="(color, index) in colors" :key="color" @click="addTodo(color, index)">
-      {{color}}
+    <div class="title">꽃 색상에 따른 효과</div>
+    <div class="subtitle">색상을 선택해주세요! :)</div>
+    <div class = "color-area" v-bind:class="{}" v-for="(color, index) in color_flower" :key="color" @click="addTodo(color, index)">
+      {{color.color_info}}
     </div>
     <modal v-if="showModal" @close="showModal = false">
-      <h3 slot="header">{{selectedColor}}의 꽃이 주는 효과</h3>
+      <div class="header" slot="header">{{selectedColor.color_info}}의 꽃이 주는 효과</div>
       <div slot="body" @click="showModal=false">
-        효과입니다.
+        {{selectedColor.effect_info}}
         <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
       </div>
     </modal>
@@ -21,10 +22,11 @@ export default {
   data() {
     return {
       msg: '색상을 선택해주세요!',
-      colors: ['빨간색 계열', '파란색 계열', '분홍색 계열', '노란색 계열', '주황색 계열', '흰색 계열', '녹색 계열'],
+      color_flower: [],
       newTodoItem: '',
       showModal: false,
-      selectedColor: ''
+      selectedColor: '',
+      color_position: []
     }
   },
 
@@ -48,9 +50,40 @@ export default {
       this.newTodoItem = ''
     }
   },
+
+  beforeCreate() {
+    this.$axios.get('/color_flower')
+    .then((res) => {
+      for(var i in res.data) {
+        this.color_flower.push(res.data[i])
+      }
+    })
+
+    //위치 계산
+    var x = 200
+    var y = 200
+    var radius = 50
+
+
+  },
   // 5) 모달 컴포넌트 등록
   components: {
     Modal: Modal
   }
 }
 </script>
+
+<style scoped>
+.header {
+  text-align: center;
+}
+.color-area {
+  border: 1pt solid black;
+  width: 100pt;
+  height: 100pt;
+  border-radius: 100%;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+</style>

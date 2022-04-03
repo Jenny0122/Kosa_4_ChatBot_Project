@@ -13,13 +13,15 @@ public class ToolDTO {
 	private long no;
 	private String name;
 	private String description;
-
+	private String img_url;
+	
 	@Builder
-	public ToolDTO(long no, String name, String description) {
+	public ToolDTO(long no, String name, String description, String img_url) {
 		super();
 		this.no = no;
 		this.name = name;
 		this.description = description;
+		this.img_url = img_url;
 	}
 
 }

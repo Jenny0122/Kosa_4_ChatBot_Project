@@ -1,23 +1,22 @@
 <template>
-  <div>
-      <div>
-        <h1>관련 서적</h1>
+<div id="book">
+  <div class="title">관련 서적</div>>
+  <div class="subtitle">홈가드닝과 관련된 책에 대하여 알고 싶으신가요:)</div>
+  <div class="book-area" v-for="(book, index) in books" :key="index">
+    <div class="book-img">
+      <img v-bind:src="book.thumbnail">
+    </div>
+    <div class="book-text">
+      <div class="book-title subtitle">
+        <a v-bind:href="book.url" target="_blank">{{book.title}}</a>
       </div>
-      <div v-for="b in books" :key="b">
-      <div>
-      {{b.title}}
+      <div class ="book-desc">
+        {{book.author}}
+        {{book.publisher}}
       </div>
-      <div>
-      {{b.author}}
-      </div>
-      <div>
-      {{b.publisher}}
-      </div>
-      <div>
-      {{b.thumnail}}
-      </div>
+    </div>
   </div>
-  </div>
+</div>
 </template>
 
 <script>
@@ -35,7 +34,7 @@ export default {
   beforeCreate: function() {
     console.log('beforeCreate')
 
-    this.$axios.get('/book')
+    this.$axios.get('/books')
     .then((res) => {
       let list = res.data
 
@@ -46,19 +45,40 @@ export default {
   }
 }
 </script>
-<style>
-    table{
-    width: 75%;
-    text-align : left;
-    }
-    tanle th{
-        padding : 12px;
-        border-bottom: 2px solid  darkgray;
-    }
-    table td{
-        padding : 12px;
-    }
-    table tr:nth-of-type(even){
-        background-color: rgba(0,0,255,0.1);
-    }
+
+<style scoped>
+img {
+    width: 10%;
+    /* height: 100pt; */
+    object-fit: cover;
+}
+.book-area {
+  border-radius: 10pt;
+  /* border: 1pt solid black; */
+  margin: 20pt auto;
+  width: 80%;
+  text-align: center;
+}
+.book-img {
+  display: inline;
+  margin: 20pt;
+}
+.book-text {
+  display: inline-block;
+  width: 60%;
+  vertical-align: middle;
+}
+.book-title {
+  font-size: 20pt;
+  font-weight: 500;
+  text-align: left;
+}
+.book-desc {
+  font-size: 15pt;
+  text-align: left;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
 </style>

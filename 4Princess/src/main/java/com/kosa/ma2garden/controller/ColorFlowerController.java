@@ -25,7 +25,7 @@ public class ColorFlowerController {
 
 	@ApiOperation(value = "꽃 색깔 전체 정보 가져오기", notes = "노트 기록 예정")
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
-	@GetMapping("/colorflower")
+	@GetMapping("/color_flower")
 	public ResponseEntity<List<ColorFlowerDTO>> getCook() {
 		List<ColorFlowerDTO> list = colorflowerService.getAllColorFlower();
 		

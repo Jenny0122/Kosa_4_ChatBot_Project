@@ -14,14 +14,16 @@ public class MBTIDTO {
 	private String mbti;
 	private String flower_name;
 	private String description;
+	private String image_url;
 	
 	@Builder
-	public MBTIDTO(long no, String mbti, String flower_name, String description) {
+	public MBTIDTO(long no, String mbti, String flower_name, String description, String image_url) {
 		super();
 		this.no = no;
 		this.mbti = mbti;
 		this.flower_name = flower_name;
 		this.description = description;
+		this.image_url = image_url;
 	}
 	
 }
