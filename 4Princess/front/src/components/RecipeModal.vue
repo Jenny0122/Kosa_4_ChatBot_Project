@@ -45,7 +45,10 @@
   vertical-align: middle;
 }
 .modal-container {
-  width: 500px;
+  width: 800pt;
+  height: auto;
+  max-height: 400pt;
+  overflow: auto;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
@@ -55,9 +58,10 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 .modal-header {
-  margin-top: 0;
+  margin-top: 10pt;
   color: #62acde;
   font-size: 20pt;
+  text-align: center;
 }
 .modal-body {
   margin: 20px 0;

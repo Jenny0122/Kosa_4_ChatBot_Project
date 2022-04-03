@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     showMBTIContents: function(mt) {
-      this.selected = mt
+      this.selected_mbti = mt
     }
   },
   beforeCreate: function() {
@@ -58,17 +58,22 @@ export default {
 <style scoped>
 .button-area {
   text-align: center;
+  margin: 20pt 150pt;
 }
 .mbti-button-area {
-  width: 20%;
-  height: 80pt;
-  margin: 10pt 10pt;
+  width: 17%;
+  height: 60pt;
+  margin: 20pt 4%;
   display: inline-block;
-  vertical-align: center;
+  vertical-align: middle;
+  color: white;
 }
 .mbti-button {
-  height: 60pt;
-  width: 80%;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  border: 1px solid white;
 }
 .mbti-area {
   border-radius: 10pt;
@@ -85,9 +90,10 @@ export default {
   display: inline-block;
   width: 70%;
   vertical-align: middle;
+  color: white;
 }
 .mbti-name {
-  font-size: 40pt;
+  font-size: 30pt;
   font-weight: bold;
   line-height: 100pt;
   text-align: left;
@@ -95,7 +101,7 @@ export default {
   font-weight: 500;
 }
 .mbti-desc {
-  font-size: 20pt;
+  font-size: 15pt;
   text-align: left;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 100;

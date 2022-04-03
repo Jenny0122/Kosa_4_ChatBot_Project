@@ -113,7 +113,7 @@ export default {
     }
   },
   beforeCreate: function() {
-    console.log('beforeCreate')
+    console.log('Sidebar.vue is created')
   }
 }
 </script>

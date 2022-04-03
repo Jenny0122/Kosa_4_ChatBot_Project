@@ -22,6 +22,9 @@ public class ColorFlower {
 	@Column(name = "color_info")
 	private String color_info;
 
+	@Column(name = "color_eng_name")
+	private String color_eng_name;
+
 	@Column(name = "effect_info")
 	private String effect_info;
 

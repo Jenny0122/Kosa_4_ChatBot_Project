@@ -45,6 +45,9 @@ export default {
   font-weight: 500;
   font-size: 20pt;
   text-align: center;
+  margin: 10pt;
+  color: white;
+
 
 }
 .MenuPosition {
@@ -59,5 +62,8 @@ background-color: #075a3a;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   margin-top: 30px;
+}
+body {
+  background-color: #2e3842;
 }
 </style>

@@ -24,6 +24,7 @@ public class ColorFlowerService {
 			ColorFlowerDTO colorflowerDTO = ColorFlowerDTO.builder()
 					.no(colorflower.getNo())
 					.color_info(colorflower.getColor_info())
+					.color_eng_name(colorflower.getColor_eng_name())
 					.effect_info(colorflower.getEffect_info())
 					.space_info(colorflower.getSpace_info())
 					.img_url(colorflower.getImg_url())
