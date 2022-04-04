@@ -1,11 +1,11 @@
 <template>
     <footer id="footer">
-        <!-- <ul class="icons">
-            <li><router-link to="https://github.com/Jenny0122/Kosa_4_ChatBot_Project"><font-awesome-icon icon="fa-brands fa-github" /></router-link></li>
-        </ul> -->
-        <ul class="copyright">
-            <li>&copy; 4PRINCESS.</li>
-        </ul>
+        <div>
+            <ul class="copyright">
+                <li>&copy; 4PRINCESS.</li>
+                <li><a href="https://github.com/Jenny0122/Kosa_4_ChatBot_Project"><font-awesome-icon icon="fa-brands fa-github" /></a></li>
+            </ul>
+        </div>
     </footer>
 </template>
 <style scoped>

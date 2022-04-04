@@ -8,7 +8,7 @@
       <section class="wrapper alt style2">
         <br/><br/><br/>
         <div class="inner">
-          <div v-for="t in tip" :key="t">
+          <div v-for="(t, idx) in tip" :key="idx">
             <div>
               <h3>{{t.no}}. {{t.title}}</h3>
               <p>{{t.content}}</p>

@@ -5,19 +5,122 @@
         <h2>{{msg}} Page</h2>
         <p>{{subject}}</p>
       </header>
-      <section class="wrapper alt style2">
-        <br/><br/><br/>
+        <section class="wrapper alt style2">
         <div class="inner">
-          <div v-for="pd in plantDisease" :key="pd">
-            <div>
-              <h3>[{{pd.crop_name}} : {{pd.sick_name_kor}}]</h3>
-              <p>증상<br/>&nbsp;&nbsp;&nbsp;&nbsp;{{pd.symptoms}}</p>
-              <p>치료방법<br/>&nbsp;&nbsp;&nbsp;&nbsp;{{pd.prevention_method}}</p>
-              <img :src="`${pd.ori_img}`"/>
-              <hr/>
+            <br/><br/>
+            <div v-show="show_three">
+                <ul class="features">
+                    <li>
+                        <h2>{{choiceDis.crop_name}}({{choiceDis.sick_name_kor}})</h2>
+                        <img :src="`${choiceDis.ori_img}`" />
+                    </li>
+                    <li>
+                        <h3>증상</h3>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;{{choiceDis.symptoms}}</p>
+                        <h3>예방법</h3>
+                        <p v-html="choiceDis.prevention_method"></p>
+                    </li>
+                </ul>
+                <button  @click="handle_disease('back')">뒤로가기</button>
             </div>
-            <br/>
-          </div>
+            <div v-show="show_two">
+                <h2>
+                    질병명을(를) 선택해주세요
+                </h2>
+                <div class="ulbox">
+                    <br/>
+                    <h3>{{choiceName}}</h3>
+                    <ul v-for="(val, idx) in pnames[choiceId]" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val.sick_name_kor}`" class="more" @click="handle_disease(val)">{{val.sick_name_kor}}</a></li>
+                    </ul>
+                </div>
+                <p class="hiddenword">.</p>
+                <button  @click="handle_toggle()">뒤로가기</button>
+            </div>
+            <div v-show="show_one">
+                <h2>
+                    작물을(를) 선택해주세요
+                </h2>
+                <div class="ulbox">
+                    <h3>ㄱ</h3>
+                    <ul v-for="(val, idx) in pnames['pname01']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㄴ</h3>
+                    <ul v-for="(val, idx) in pnames['pname02']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㄷ</h3>
+                    <ul v-for="(val, idx) in pnames['pname03']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅁ</h3>
+                    <ul v-for="(val, idx) in pnames['pname04']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅂ</h3>
+                    <ul v-for="(val, idx) in pnames['pname05']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅅ</h3>
+                    <ul v-for="(val, idx) in pnames['pname06']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅇ</h3>
+                    <ul v-for="(val, idx) in pnames['pname07']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅈ</h3>
+                    <ul v-for="(val, idx) in pnames['pname08']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅊ</h3>
+                    <ul v-for="(val, idx) in pnames['pname09']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅋ</h3>
+                    <ul v-for="(val, idx) in pnames['pname10']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅌ</h3>
+                    <ul v-for="(val, idx) in pnames['pname11']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅍ</h3>
+                    <ul v-for="(val, idx) in pnames['pname12']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+                <div class="ulbox">
+                    <h3>ㅎ</h3>
+                    <ul v-for="(val, idx) in pnames['pname13']" :key="idx">
+                        <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="hiddenword">.</p>
         </div>
       </section>
     </article>
@@ -25,23 +128,592 @@
 </template>
 <script>
 export default {
-  name: 'PlantDisease',
-  data() {
+name: 'PlantDisease',
+data() {
     return {
-      msg: '식물 질병',
-      subject: '식물의 질병에 관한 정보를 제공합니다',
-      plantDisease: []
+        show_one: true,
+        show_two: false,
+        show_three: false,
+        msg: '식물 질병',
+        subject: '식물의 질병에 관한 정보를 제공합니다',
+        choiceName: '',
+        choiceId: '',
+        choiceDis: [],
+        pnames: {
+            pname01: [{'name': '가지', 'id': 'plant001'},
+                    {'name': '감', 'id': 'plant002'},
+                    {'name': '감귤', 'id': 'plant003'},
+                    {'name': '감자', 'id': 'plant004'},
+                    {'name': '감초', 'id': 'plant005'},
+                    {'name': '갓', 'id': 'plant006'},
+                    {'name': '갯기름나물', 'id': 'plant007'},
+                    {'name': '거베라', 'id': 'plant008'},
+                    {'name': '고구마', 'id': 'plant009'},
+                    {'name': '고려엉겅퀴', 'id': 'plant010'},
+                    {'name': '고무나무', 'id': 'plant011'},
+                    {'name': '고본', 'id': 'plant012'},
+                    {'name': '고추', 'id': 'plant013'},
+                    {'name': '고추냉이', 'id': 'plant014'},
+                    {'name': '과꽃', 'id': 'plant015'},
+                    {'name': '관음죽', 'id': 'plant016'},
+                    {'name': '구기자', 'id': 'plant017'},
+                    {'name': '국화', 'id': 'plant018'},
+                    {'name': '군자란', 'id': 'plant019'},
+                    {'name': '글라디올러스', 'id': 'plant020'},
+                    {'name': '금어초', 'id': 'plant021'},
+                    {'name': '기장', 'id': 'plant022'},
+                    {'name': '꽃양배추', 'id': 'plant023'}],
+            pname02: [{'name': '냉이', 'id': 'plant024'},
+                    {'name': '녹두', 'id': 'plant025'},
+                    {'name': '논벼', 'id': 'plant026'}],
+            pname03: [{'name': '당근', 'id': 'plant027'},
+                    {'name': '대추', 'id': 'plant028'},
+                    {'name': '더덕', 'id': 'plant029'},
+                    {'name': '도라지', 'id': 'plant030'},
+                    {'name': '도라지(길경)', 'id': 'plant031'},
+                    {'name': '동백나무', 'id': 'plant032'},
+                    {'name': '들깨', 'id': 'plant033'},
+                    {'name': '딸기', 'id': 'plant034'},
+                    {'name': '땅콩', 'id': 'plant035'}],
+            pname04: [{'name': '마(산약)', 'id': 'plant036'},
+                    {'name': '마늘', 'id': 'plant037'},
+                    {'name': '망고', 'id': 'plant038'},
+                    {'name': '매실', 'id': 'plant039'},
+                    {'name': '맥문동', 'id': 'plant040'},
+                    {'name': '머위', 'id': 'plant041'},
+                    {'name': '메론', 'id': 'plant042'},
+                    {'name': '모과', 'id': 'plant043'},
+                    {'name': '무', 'id': 'plant044'},
+                    {'name': '무궁화', 'id': 'plant045'},
+                    {'name': '무화과', 'id': 'plant046'},
+                    {'name': '미나리', 'id': 'plant047'},
+                    {'name': '밀', 'id': 'plant048'}],
+            pname05: [{'name': '밤', 'id': 'plant049'},
+                    {'name': '배', 'id': 'plant050'},
+                    {'name': '배추', 'id': 'plant051'},
+                    {'name': '백작약', 'id': 'plant052'},
+                    {'name': '백합(나리)', 'id': 'plant053'},
+                    {'name': '보리', 'id': 'plant054'},
+                    {'name': '복분자', 'id': 'plant055'},
+                    {'name': '복숭아', 'id': 'plant056'},
+                    {'name': '봉숭아(봉선화)', 'id': 'plant057'},
+                    {'name': '부추', 'id': 'plant058'},
+                    {'name': '붓꽃', 'id': 'plant059'},
+                    {'name': '브로콜리(녹색꽃양배추)', 'id': 'plant060'},
+                    {'name': '블루베리', 'id': 'plant061'},
+                    {'name': '비름', 'id': 'plant062'},
+                    {'name': '비파', 'id': 'plant063'}],
+            pname06: [{'name': '사과', 'id': 'plant064'},
+                    {'name': '산마늘', 'id': 'plant065'},
+                    {'name': '산수유', 'id': 'plant066'},
+                    {'name': '살구', 'id': 'plant067'},
+                    {'name': '삽주', 'id': 'plant068'},
+                    {'name': '상추', 'id': 'plant069'},
+                    {'name': '샐러리', 'id': 'plant070'},
+                    {'name': '생강', 'id': 'plant071'},
+                    {'name': '석류나무', 'id': 'plant072'},
+                    {'name': '선인장', 'id': 'plant073'},
+                    {'name': '수국', 'id': 'plant074'},
+                    {'name': '수박', 'id': 'plant075'},
+                    {'name': '수수', 'id': 'plant076'},
+                    {'name': '순무', 'id': 'plant077'},
+                    {'name': '스타티스', 'id': 'plant078'},
+                    {'name': '스파티필럼', 'id': 'plant079'},
+                    {'name': '시금치', 'id': 'plant080'},
+                    {'name': '식나무', 'id': 'plant081'},
+                    {'name': '심비디움', 'id': 'plant082'},
+                    {'name': '쑥갓', 'id': 'plant083'}],
+            pname07: [{'name': '아로니아', 'id': 'plant084'},
+                    {'name': '아마릴리스', 'id': 'plant085'},
+                    {'name': '아스파라거스', 'id': 'plant086'},
+                    {'name': '아욱', 'id': 'plant087'},
+                    {'name': '안개꽃', 'id': 'plant088'},
+                    {'name': '앵두', 'id': 'plant089'},
+                    {'name': '양배추', 'id': 'plant090'},
+                    {'name': '양파', 'id': 'plant091'},
+                    {'name': '여주', 'id': 'plant092'},
+                    {'name': '열무', 'id': 'plant093'},
+                    {'name': '오미자', 'id': 'plant094'},
+                    {'name': '오이', 'id': 'plant095'},
+                    {'name': '옥수수', 'id': 'plant096'},
+                    {'name': '용과', 'id': 'plant097'},
+                    {'name': '우엉', 'id': 'plant098'},
+                    {'name': '유자', 'id': 'plant099'}],
+            pname08: [{'name': '자두', 'id': 'plant100'},
+                    {'name': '작두콩', 'id': 'plant101'},
+                    {'name': '작약', 'id': 'plant102'},
+                    {'name': '장미', 'id': 'plant103'},
+                    {'name': '제라늄', 'id': 'plant104'},
+                    {'name': '조', 'id': 'plant105'},
+                    {'name': '종려죽', 'id': 'plant106'},
+                    {'name': '지치', 'id': 'plant107'},
+                    {'name': '지황', 'id': 'plant108'}],
+            pname09: [{'name': '참깨', 'id': 'plant109'},
+                    {'name': '참나물', 'id': 'plant110'},
+                    {'name': '참다래(키위,다래)', 'id': 'plant111'},
+                    {'name': '참당귀(당귀)', 'id': 'plant112'},
+                    {'name': '참외', 'id': 'plant113'},
+                    {'name': '천궁', 'id': 'plant114'},
+                    {'name': '청경채', 'id': 'plant115'},
+                    {'name': '체리', 'id': 'plant116'},
+                    {'name': '초석잠', 'id': 'plant117'},
+                    {'name': '치자나무', 'id': 'plant118'}],
+            pname10: [{'name': '카네이션', 'id': 'plant119'},
+                    {'name': '케일', 'id': 'plant120'},
+                    {'name': '콜라비(순무양배추)', 'id': 'plant121'},
+                    {'name': '콩', 'id': 'plant122'},
+                    {'name': '퀴노아', 'id': 'plant123'}],
+            pname11: [{'name': '토마토', 'id': 'plant124'}],
+            pname12: [{'name': '파', 'id': 'plant125'},
+                    {'name': '파슬리', 'id': 'plant126'},
+                    {'name': '팔손이', 'id': 'plant127'},
+                    {'name': '팥', 'id': 'plant128'},
+                    {'name': '패랭이꽃', 'id': 'plant129'},
+                    {'name': '페튜니아', 'id': 'plant130'},
+                    {'name': '포도', 'id': 'plant131'}],
+            pname13: [{'name': '해바라기', 'id': 'plant132'},
+                    {'name': '호두나무', 'id': 'plant133'},
+                    {'name': '호박', 'id': 'plant134'},
+                    {'name': '황금', 'id': 'plant135'},
+                    {'name': '황기', 'id': 'plant136'},
+                    {'name': '회향', 'id': 'plant137'}],
+            plant001: [],
+            plant002: [],
+            plant003: [],
+            plant004: [],
+            plant005: [],
+            plant006: [],
+            plant007: [],
+            plant008: [],
+            plant009: [],
+            plant010: [],
+            plant011: [],
+            plant012: [],
+            plant013: [],
+            plant014: [],
+            plant015: [],
+            plant016: [],
+            plant017: [],
+            plant018: [],
+            plant019: [],
+            plant020: [],
+            plant021: [],
+            plant022: [],
+            plant023: [],
+            plant024: [],
+            plant025: [],
+            plant026: [],
+            plant027: [],
+            plant028: [],
+            plant029: [],
+            plant030: [],
+            plant031: [],
+            plant032: [],
+            plant033: [],
+            plant034: [],
+            plant035: [],
+            plant036: [],
+            plant037: [],
+            plant038: [],
+            plant039: [],
+            plant040: [],
+            plant041: [],
+            plant042: [],
+            plant043: [],
+            plant044: [],
+            plant045: [],
+            plant046: [],
+            plant047: [],
+            plant048: [],
+            plant049: [],
+            plant050: [],
+            plant051: [],
+            plant052: [],
+            plant053: [],
+            plant054: [],
+            plant055: [],
+            plant056: [],
+            plant057: [],
+            plant058: [],
+            plant059: [],
+            plant060: [],
+            plant061: [],
+            plant062: [],
+            plant063: [],
+            plant064: [],
+            plant065: [],
+            plant066: [],
+            plant067: [],
+            plant068: [],
+            plant069: [],
+            plant070: [],
+            plant071: [],
+            plant072: [],
+            plant073: [],
+            plant074: [],
+            plant075: [],
+            plant076: [],
+            plant077: [],
+            plant078: [],
+            plant079: [],
+            plant080: [],
+            plant081: [],
+            plant082: [],
+            plant083: [],
+            plant084: [],
+            plant085: [],
+            plant086: [],
+            plant087: [],
+            plant088: [],
+            plant089: [],
+            plant090: [],
+            plant091: [],
+            plant092: [],
+            plant093: [],
+            plant094: [],
+            plant095: [],
+            plant096: [],
+            plant097: [],
+            plant098: [],
+            plant099: [],
+            plant100: [],
+            plant101: [],
+            plant102: [],
+            plant103: [],
+            plant104: [],
+            plant105: [],
+            plant106: [],
+            plant107: [],
+            plant108: [],
+            plant109: [],
+            plant110: [],
+            plant111: [],
+            plant112: [],
+            plant113: [],
+            plant114: [],
+            plant115: [],
+            plant116: [],
+            plant117: [],
+            plant118: [],
+            plant119: [],
+            plant120: [],
+            plant121: [],
+            plant122: [],
+            plant123: [],
+            plant124: [],
+            plant125: [],
+            plant126: [],
+            plant127: [],
+            plant128: [],
+            plant129: [],
+            plant130: [],
+            plant131: [],
+            plant132: [],
+            plant133: [],
+            plant134: [],
+            plant135: [],
+            plant136: [],
+            plant137: []
+        }
     }
   },
   methods: {
-
+    handle_toggle: function(name, id) {
+        this.show_one = !this.show_one
+        this.show_two = !this.show_two
+        // console.log(name + ' ' + id)
+        this.choiceName = name
+        this.choiceId = id
+    },
+    handle_disease: function(val) {
+        this.show_two = !this.show_two
+        this.show_three = !this.show_three
+        this.choiceDis = val
+        // console.log(this.choiceDis)
+    }
   },
   beforeCreate: function() {
     this.$axios.get('/plantdisease')
     .then((res) => {
       let list = res.data
       for (var i in list) {
-        this.plantDisease.push(list[i])
+        list[i]['prevention_method'] = list[i]['prevention_method'].replace(/(?:\r\n|\r|\n)/g, '<br /><br />')
+        list[i]['prevention_method'] = list[i]['prevention_method'].split('\n').join('<br />')
+        if (list[i]['crop_name'] === '가지') {
+            this.pnames['plant001'].push(list[i])
+        } else if (list[i]['crop_name'] === '감') {
+            this.pnames['plant002'].push(list[i])
+        } else if (list[i]['crop_name'] === '감귤') {
+            this.pnames['plant003'].push(list[i])
+        } else if (list[i]['crop_name'] === '감자') {
+            this.pnames['plant004'].push(list[i])
+        } else if (list[i]['crop_name'] === '감초') {
+            this.pnames['plant005'].push(list[i])
+        } else if (list[i]['crop_name'] === '갓') {
+            this.pnames['plant006'].push(list[i])
+        } else if (list[i]['crop_name'] === '갯기름나물') {
+            this.pnames['plant007'].push(list[i])
+        } else if (list[i]['crop_name'] === '거베라') {
+            this.pnames['plant008'].push(list[i])
+        } else if (list[i]['crop_name'] === '고구마') {
+            this.pnames['plant009'].push(list[i])
+        } else if (list[i]['crop_name'] === '고려엉겅퀴') {
+            this.pnames['plant010'].push(list[i])
+        } else if (list[i]['crop_name'] === '고무나무') {
+            this.pnames['plant011'].push(list[i])
+        } else if (list[i]['crop_name'] === '고본') {
+            this.pnames['plant012'].push(list[i])
+        } else if (list[i]['crop_name'] === '고추') {
+            this.pnames['plant013'].push(list[i])
+        } else if (list[i]['crop_name'] === '고추냉이') {
+            this.pnames['plant014'].push(list[i])
+        } else if (list[i]['crop_name'] === '과꽃') {
+            this.pnames['plant015'].push(list[i])
+        } else if (list[i]['crop_name'] === '관음죽') {
+            this.pnames['plant016'].push(list[i])
+        } else if (list[i]['crop_name'] === '구기자') {
+            this.pnames['plant017'].push(list[i])
+        } else if (list[i]['crop_name'] === '국화') {
+            this.pnames['plant018'].push(list[i])
+        } else if (list[i]['crop_name'] === '군자란') {
+            this.pnames['plant019'].push(list[i])
+        } else if (list[i]['crop_name'] === '글라디올러스') {
+            this.pnames['plant020'].push(list[i])
+        } else if (list[i]['crop_name'] === '금어초') {
+            this.pnames['plant021'].push(list[i])
+        } else if (list[i]['crop_name'] === '기장') {
+            this.pnames['plant022'].push(list[i])
+        } else if (list[i]['crop_name'] === '꽃양배추') {
+            this.pnames['plant023'].push(list[i])
+        } else if (list[i]['crop_name'] === '냉이') {
+            this.pnames['plant024'].push(list[i])
+        } else if (list[i]['crop_name'] === '녹두') {
+            this.pnames['plant025'].push(list[i])
+        } else if (list[i]['crop_name'] === '논벼') {
+            this.pnames['plant026'].push(list[i])
+        } else if (list[i]['crop_name'] === '당근') {
+            this.pnames['plant027'].push(list[i])
+        } else if (list[i]['crop_name'] === '대추') {
+            this.pnames['plant028'].push(list[i])
+        } else if (list[i]['crop_name'] === '더덕') {
+            this.pnames['plant029'].push(list[i])
+        } else if (list[i]['crop_name'] === '도라지') {
+            this.pnames['plant030'].push(list[i])
+        } else if (list[i]['crop_name'] === '도라지(길경)') {
+            this.pnames['plant031'].push(list[i])
+        } else if (list[i]['crop_name'] === '동백나무') {
+            this.pnames['plant032'].push(list[i])
+        } else if (list[i]['crop_name'] === '들깨') {
+            this.pnames['plant033'].push(list[i])
+        } else if (list[i]['crop_name'] === '딸기') {
+            this.pnames['plant034'].push(list[i])
+        } else if (list[i]['crop_name'] === '땅콩') {
+            this.pnames['plant035'].push(list[i])
+        } else if (list[i]['crop_name'] === '마') {
+            this.pnames['plant036'].push(list[i])
+        } else if (list[i]['crop_name'] === '마늘') {
+            this.pnames['plant037'].push(list[i])
+        } else if (list[i]['crop_name'] === '망고') {
+            this.pnames['plant038'].push(list[i])
+        } else if (list[i]['crop_name'] === '매실') {
+            this.pnames['plant039'].push(list[i])
+        } else if (list[i]['crop_name'] === '맥문동') {
+            this.pnames['plant040'].push(list[i])
+        } else if (list[i]['crop_name'] === '머위') {
+            this.pnames['plant041'].push(list[i])
+        } else if (list[i]['crop_name'] === '메론') {
+            this.pnames['plant042'].push(list[i])
+        } else if (list[i]['crop_name'] === '모과') {
+            this.pnames['plant043'].push(list[i])
+        } else if (list[i]['crop_name'] === '무') {
+            this.pnames['plant044'].push(list[i])
+        } else if (list[i]['crop_name'] === '무궁화') {
+            this.pnames['plant045'].push(list[i])
+        } else if (list[i]['crop_name'] === '무화과') {
+            this.pnames['plant046'].push(list[i])
+        } else if (list[i]['crop_name'] === '미나리') {
+            this.pnames['plant047'].push(list[i])
+        } else if (list[i]['crop_name'] === '밀') {
+            this.pnames['plant048'].push(list[i])
+        } else if (list[i]['crop_name'] === '밤') {
+            this.pnames['plant049'].push(list[i])
+        } else if (list[i]['crop_name'] === '배') {
+            this.pnames['plant050'].push(list[i])
+        } else if (list[i]['crop_name'] === '배추') {
+            this.pnames['plant051'].push(list[i])
+        } else if (list[i]['crop_name'] === '백작약') {
+            this.pnames['plant052'].push(list[i])
+        } else if (list[i]['crop_name'] === '백합') {
+            this.pnames['plant053'].push(list[i])
+        } else if (list[i]['crop_name'] === '보리') {
+            this.pnames['plant054'].push(list[i])
+        } else if (list[i]['crop_name'] === '복분자') {
+            this.pnames['plant055'].push(list[i])
+        } else if (list[i]['crop_name'] === '복숭아') {
+            this.pnames['plant056'].push(list[i])
+        } else if (list[i]['crop_name'] === '봉숭아') {
+            this.pnames['plant057'].push(list[i])
+        } else if (list[i]['crop_name'] === '부추') {
+            this.pnames['plant058'].push(list[i])
+        } else if (list[i]['crop_name'] === '붓꽃') {
+            this.pnames['plant059'].push(list[i])
+        } else if (list[i]['crop_name'] === '브로콜리') {
+            this.pnames['plant060'].push(list[i])
+        } else if (list[i]['crop_name'] === '블루베리') {
+            this.pnames['plant061'].push(list[i])
+        } else if (list[i]['crop_name'] === '비름') {
+            this.pnames['plant062'].push(list[i])
+        } else if (list[i]['crop_name'] === '비파') {
+            this.pnames['plant063'].push(list[i])
+        } else if (list[i]['crop_name'] === '사과') {
+            this.pnames['plant064'].push(list[i])
+        } else if (list[i]['crop_name'] === '산마늘') {
+            this.pnames['plant065'].push(list[i])
+        } else if (list[i]['crop_name'] === '산수유') {
+            this.pnames['plant066'].push(list[i])
+        } else if (list[i]['crop_name'] === '살구') {
+            this.pnames['plant067'].push(list[i])
+        } else if (list[i]['crop_name'] === '삽주') {
+            this.pnames['plant068'].push(list[i])
+        } else if (list[i]['crop_name'] === '상추') {
+            this.pnames['plant069'].push(list[i])
+        } else if (list[i]['crop_name'] === '샐러리') {
+            this.pnames['plant070'].push(list[i])
+        } else if (list[i]['crop_name'] === '생강') {
+            this.pnames['plant071'].push(list[i])
+        } else if (list[i]['crop_name'] === '석류나무') {
+            this.pnames['plant072'].push(list[i])
+        } else if (list[i]['crop_name'] === '선인장') {
+            this.pnames['plant073'].push(list[i])
+        } else if (list[i]['crop_name'] === '수국') {
+            this.pnames['plant074'].push(list[i])
+        } else if (list[i]['crop_name'] === '수박') {
+            this.pnames['plant075'].push(list[i])
+        } else if (list[i]['crop_name'] === '수수') {
+            this.pnames['plant076'].push(list[i])
+        } else if (list[i]['crop_name'] === '순무') {
+            this.pnames['plant077'].push(list[i])
+        } else if (list[i]['crop_name'] === '스타티스') {
+            this.pnames['plant078'].push(list[i])
+        } else if (list[i]['crop_name'] === '스파티필럼') {
+            this.pnames['plant079'].push(list[i])
+        } else if (list[i]['crop_name'] === '시금치') {
+            this.pnames['plant080'].push(list[i])
+        } else if (list[i]['crop_name'] === '식나무') {
+            this.pnames['plant081'].push(list[i])
+        } else if (list[i]['crop_name'] === '심비디움') {
+            this.pnames['plant082'].push(list[i])
+        } else if (list[i]['crop_name'] === '쑥갓') {
+            this.pnames['plant083'].push(list[i])
+        } else if (list[i]['crop_name'] === '아로니아') {
+            this.pnames['plant084'].push(list[i])
+        } else if (list[i]['crop_name'] === '아마릴리스') {
+            this.pnames['plant085'].push(list[i])
+        } else if (list[i]['crop_name'] === '아스파라거스') {
+            this.pnames['plant086'].push(list[i])
+        } else if (list[i]['crop_name'] === '아욱') {
+            this.pnames['plant087'].push(list[i])
+        } else if (list[i]['crop_name'] === '안개꽃') {
+            this.pnames['plant088'].push(list[i])
+        } else if (list[i]['crop_name'] === '앵두') {
+            this.pnames['plant089'].push(list[i])
+        } else if (list[i]['crop_name'] === '양배추') {
+            this.pnames['plant090'].push(list[i])
+        } else if (list[i]['crop_name'] === '양파') {
+            this.pnames['plant091'].push(list[i])
+        } else if (list[i]['crop_name'] === '여주') {
+            this.pnames['plant092'].push(list[i])
+        } else if (list[i]['crop_name'] === '열무') {
+            this.pnames['plant093'].push(list[i])
+        } else if (list[i]['crop_name'] === '오미자') {
+            this.pnames['plant094'].push(list[i])
+        } else if (list[i]['crop_name'] === '오이') {
+            this.pnames['plant095'].push(list[i])
+        } else if (list[i]['crop_name'] === '옥수수') {
+            this.pnames['plant096'].push(list[i])
+        } else if (list[i]['crop_name'] === '용과') {
+            this.pnames['plant097'].push(list[i])
+        } else if (list[i]['crop_name'] === '우엉') {
+            this.pnames['plant098'].push(list[i])
+        } else if (list[i]['crop_name'] === '유자') {
+            this.pnames['plant099'].push(list[i])
+        } else if (list[i]['crop_name'] === '자두') {
+            this.pnames['plant100'].push(list[i])
+        } else if (list[i]['crop_name'] === '작두콩') {
+            this.pnames['plant101'].push(list[i])
+        } else if (list[i]['crop_name'] === '작약') {
+            this.pnames['plant102'].push(list[i])
+        } else if (list[i]['crop_name'] === '장미') {
+            this.pnames['plant103'].push(list[i])
+        } else if (list[i]['crop_name'] === '제라늄') {
+            this.pnames['plant104'].push(list[i])
+        } else if (list[i]['crop_name'] === '조') {
+            this.pnames['plant105'].push(list[i])
+        } else if (list[i]['crop_name'] === '종려죽') {
+            this.pnames['plant106'].push(list[i])
+        } else if (list[i]['crop_name'] === '지치') {
+            this.pnames['plant107'].push(list[i])
+        } else if (list[i]['crop_name'] === '지황') {
+            this.pnames['plant108'].push(list[i])
+        } else if (list[i]['crop_name'] === '참깨') {
+            this.pnames['plant109'].push(list[i])
+        } else if (list[i]['crop_name'] === '참나물') {
+            this.pnames['plant110'].push(list[i])
+        } else if (list[i]['crop_name'] === '참다래') {
+            this.pnames['plant111'].push(list[i])
+        } else if (list[i]['crop_name'] === '참당귀') {
+            this.pnames['plant112'].push(list[i])
+        } else if (list[i]['crop_name'] === '참외') {
+            this.pnames['plant113'].push(list[i])
+        } else if (list[i]['crop_name'] === '천궁') {
+            this.pnames['plant114'].push(list[i])
+        } else if (list[i]['crop_name'] === '청경채') {
+            this.pnames['plant115'].push(list[i])
+        } else if (list[i]['crop_name'] === '체리') {
+            this.pnames['plant116'].push(list[i])
+        } else if (list[i]['crop_name'] === '초석잠') {
+            this.pnames['plant117'].push(list[i])
+        } else if (list[i]['crop_name'] === '치자나무') {
+            this.pnames['plant118'].push(list[i])
+        } else if (list[i]['crop_name'] === '카네이션') {
+            this.pnames['plant119'].push(list[i])
+        } else if (list[i]['crop_name'] === '케일') {
+            this.pnames['plant120'].push(list[i])
+        } else if (list[i]['crop_name'] === '콜라비') {
+            this.pnames['plant121'].push(list[i])
+        } else if (list[i]['crop_name'] === '콩') {
+            this.pnames['plant122'].push(list[i])
+        } else if (list[i]['crop_name'] === '퀴노아') {
+            this.pnames['plant123'].push(list[i])
+        } else if (list[i]['crop_name'] === '토마토') {
+            this.pnames['plant124'].push(list[i])
+        } else if (list[i]['crop_name'] === '파') {
+            this.pnames['plant125'].push(list[i])
+        } else if (list[i]['crop_name'] === '파슬리') {
+            this.pnames['plant126'].push(list[i])
+        } else if (list[i]['crop_name'] === '팔손이') {
+            this.pnames['plant127'].push(list[i])
+        } else if (list[i]['crop_name'] === '팥') {
+            this.pnames['plant128'].push(list[i])
+        } else if (list[i]['crop_name'] === '패랭이꽃') {
+            this.pnames['plant129'].push(list[i])
+        } else if (list[i]['crop_name'] === '페튜니아') {
+            this.pnames['plant130'].push(list[i])
+        } else if (list[i]['crop_name'] === '포도') {
+            this.pnames['plant131'].push(list[i])
+        } else if (list[i]['crop_name'] === '해바라기') {
+            this.pnames['plant132'].push(list[i])
+        } else if (list[i]['crop_name'] === '호두나무') {
+            this.pnames['plant133'].push(list[i])
+        } else if (list[i]['crop_name'] === '호박') {
+            this.pnames['plant134'].push(list[i])
+        } else if (list[i]['crop_name'] === '황금') {
+            this.pnames['plant135'].push(list[i])
+        } else if (list[i]['crop_name'] === '황기') {
+            this.pnames['plant136'].push(list[i])
+        } else if (list[i]['crop_name'] === '회향') {
+            this.pnames['plant137'].push(list[i])
+        }
       }
     })
   }
@@ -3806,5 +4478,36 @@ body.is-mobile.landing .wrapper.style4 {
 
 body.is-mobile.landing #footer {
     background-color: #1d242a;
+}
+
+.ulbox {
+    border: 2px solid #ffffff;
+    background-color: #21b2a6;
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+}
+.ulbox ul {
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.ulbox li {
+    color: #ffffff;
+    float: left;
+    text-align: center;
+}
+.hiddenword {
+    color: #2e3842 !important;
+}
+
+img {
+    max-width: 20vw !important;
+    max-height: 30vh !important;
+    width: 30vw !important;
+    height: 30vw !important;
 }
 </style>

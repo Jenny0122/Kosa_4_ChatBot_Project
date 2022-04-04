@@ -3,8 +3,10 @@
     <article id="main">
       <section class="wrapper style">
         <div id="inner">
-          <img src="../assets/homelogo.png" alt="" />
+          <!-- <img src="../assets/homelogo.png" alt="" /> -->
+          <br/><br/><br/><br/><br/><br/><br/><br/>
           <h3>YOUR OWN LITTLE<br/>SPECIAL GARDEN<br/><br/>HOME<br/>GARDENING & FARMING</h3>
+          <br/><br/><br/><br/><br/><br/>
         </div>
         <br/>
         <a href="/#one" class="more"><font-awesome-icon icon="fa-solid fa-angles-down" size="3x" /></a>

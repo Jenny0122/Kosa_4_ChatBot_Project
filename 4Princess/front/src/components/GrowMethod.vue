@@ -1,39 +1,86 @@
 <template>
-  <div id="page-wrapper">
-    <article id="main">
-      <header>
-        <h2>{{msg}} Page</h2>
-        <p>{{subject}}</p>
-      </header>
-      <section class="wrapper alt style2">
-        <br/><br/><br/>
-        <div class="inner">
-          <div v-for="gm in growMethod" :key="gm">
-            <div>
-              <h3>{{gm.no}}. {{gm.name}}</h3>
-              <p>{{gm.kind}}<br/>
-                {{gm.nutrient}}<br/>
-                {{gm.growing_season}}<br/>
-                {{gm.eat}}<br/>
-                {{gm.level}}<br/>
-                {{gm.sunlight}}<br/>
-                {{gm.grow_temperature}}<br/>
-                {{gm.flowerpot_size}}<br/>
-                {{gm.pest}}<br/>
-                {{gm.term}}<br/>
-                {{gm.infomation}}<br/>
-                {{gm.feature}}<br/>
-                {{gm.materials}}<br/>
-                {{gm.cultivation_process}}</p>
-              <img :src="`${gm.img_url}`"/>
-              <hr/>
-            </div>
-            <br/>
-          </div>
-        </div>
-      </section>
-    </article>
-  </div>
+    <div id="page-wrapper">
+        <article id="main">
+            <header>
+                <h2>{{msg}}</h2>
+                <p>{{subject}}</p>
+            </header>
+
+            <section class="wrapper alt style2">
+                <div class="inner">
+                    <br/><br/>
+                    <h2>
+                        작물을(를) 선택해주세요
+                    </h2>
+                    <div class="ulbox">
+                        <h3>허브</h3>
+                        <ul v-for="(h, idx) in herb" :key="idx">
+                            <li><a :href="`/info/growmethod/#${h.name}`" class="more">{{h.name}}</a></li>
+                        </ul>
+                    </div>
+                    <div class="ulbox">
+                        <h3>뿌리채소와 열매채소</h3>
+                        <ul v-for="(rv, idx) in rootVege" :key="idx">
+                            <li><a :href="`/info/growmethod/#${rv.name}`" class="more">{{rv.name}}</a></li>
+                        </ul>
+                    </div>
+                    <div class="ulbox">
+                        <h3>국나물채소</h3>
+                        <ul v-for="(sv, idx) in soupVege" :key="idx">
+                            <li><a :href="`/info/growmethod/#${sv.name}`" class="more">{{sv.name}}</a></li>
+                        </ul>
+                    </div>
+                    <div class="ulbox">
+                        <h3>잎줄기채소</h3>
+                        <ul v-for="(lv, idx) in leafyVege" :key="idx">
+                            <li><a :href="`/info/growmethod/#${lv.name}`" class="more">{{lv.name}}</a></li>
+                        </ul>
+                    </div>
+                    <div class="ulbox">
+                        <h3>쌈채소</h3>
+                        <ul v-for="(gv, idx) in greenVege" :key="idx">
+                            <li><a :href="`/info/growmethod/#${gv.name}`" class="more">{{gv.name}}</a></li>
+                        </ul>
+                    </div>
+                    <div v-for="(gm, idx) in growMethod" :key="idx">
+                        <hr/>
+                        <div>
+                            <ul v-bind:id="`${gm.name}`" class="features">
+                                <li>
+                                    <div :style="[is_btn_show[idx] ? {} : {'position': 'sticky', 'top': '80px'}]">
+                                        <h3>{{gm.name}}</h3>
+                                        <img :src="`${gm.img_url}`" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <h3>Info</h3>
+                                    <p>분류(과명) : ({{gm.kind}})</p>
+                                    <p>영양 성분 : {{gm.nutrient}}</p>
+                                    <p>재배 시기 : {{gm.growing_season}}</p>
+                                    <p>주로 먹는 방법 : {{gm.eat}}</p>
+                                    <p>잘 자라는 온도 : {{gm.grow_temperature}}</p>
+                                    <p>쉽게 생기는 병해충 : {{gm.pest}}</p>
+                                    <p>수확까지 기간 : {{gm.term}}</p>
+                                    <button v-bind:id="`${gm.no}`-1" v-show="is_btn_show[idx]" @click="handle_toggle(`${gm.no}`-1)" type="button">
+                                        자세히 보기
+                                    </button>
+                                    <div id="#GrowMethod" v-show="is_show[idx]">
+                                        <h2>필요한 도구</h2>
+                                        <p>{{gm.materials}}</p>
+                                        <h2>재배과정</h2>
+                                        <p v-html="gm.cultivation_process" ></p>
+                                        <button v-bind:id="`${gm.no}`-1" @click="handle_toggle(`${gm.no}`-1)" type="button">
+                                        확인
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
 </template>
 
 <script>
@@ -43,10 +90,21 @@ export default{
     return {
       msg: '작물 키우는 방법',
       subject: '여러가지 작물의 키우는 방법을 소개합니다',
-      growMethod: []
+      growMethod: [],
+      herb: [],
+      rootVege: [],
+      soupVege: [],
+      leafyVege: [],
+      greenVege: [],
+      is_show: [],
+      is_btn_show: []
     }
   },
   methods: {
+    handle_toggle: function(no) {
+      this.$set(this.is_show, no, !this.is_show[no])
+      this.$set(this.is_btn_show, no, !this.is_btn_show[no])
+    }
   },
   beforeCreate: function() {
     console.log('beforeCreate')
@@ -55,7 +113,25 @@ export default{
     .then((res) => {
       let list = res.data
       for (var i in list) {
+        if (list[i]['no'] < 13) {
+            this.herb.push(list[i])
+        } else if (list[i]['no'] > 12 && list[i]['no'] < 20) {
+            this.rootVege.push(list[i])
+        } else if (list[i]['no'] > 19 && list[i]['no'] < 32) {
+            this.soupVege.push(list[i])
+        } else if (list[i]['no'] > 31 && list[i]['no'] < 39) {
+            this.leafyVege.push(list[i])
+        } else {
+            this.greenVege.push(list[i])
+        }
+
+        list[i]['cultivation_process'] = list[i]['cultivation_process'].replace(/(?:\r\n|\r|\n)/g, '<br /><br />')
+        list[i]['cultivation_process'] = list[i]['cultivation_process'].split('\n').join('<br />')
         this.growMethod.push(list[i])
+      }
+      for (var k = 0; k < 50; k++) {
+        this.is_show.push(false)
+        this.is_btn_show.push(true)
       }
     })
   }
@@ -2650,8 +2726,9 @@ button:disabled,
 /* Wrapper */
 
 img {
-  height: 40vh;
-  width: 30vw;
+    height: 40vh;
+    max-width: 18vw;
+    min-width: 300px;
 }
 
 .wrapper {
@@ -3816,5 +3893,25 @@ body.is-mobile.landing .wrapper.style4 {
 
 body.is-mobile.landing #footer {
     background-color: #1d242a;
+}
+
+.ulbox {
+    border: 2px solid #ffffff;
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+}
+.ulbox ul {
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.ulbox li {
+    color: #ffffff;
+    float: left;
+    text-align: center;
 }
 </style>
