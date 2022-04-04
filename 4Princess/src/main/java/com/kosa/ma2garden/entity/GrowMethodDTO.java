@@ -26,9 +26,10 @@ public class GrowMethodDTO {
 	private String feature;
 	private String materials;
 	private String cultivation_process;
+	private String img_url;
 	
 	@Builder
-	public GrowMethodDTO(long no, String name, String kind, String nutrient, String growing_season, String eat, int level, int sunlight, String grow_temperature, String flowerpot_size, String pest, String term, String infomation, String feature, String materials, String cultivation_process) {
+	public GrowMethodDTO(long no, String name, String kind, String nutrient, String growing_season, String eat, int level, int sunlight, String grow_temperature, String flowerpot_size, String pest, String term, String infomation, String feature, String materials, String cultivation_process, String img_url) {
 		super();
 		this.no = no;
 		this.name = name;
@@ -45,6 +46,7 @@ public class GrowMethodDTO {
 		this.infomation = infomation;
 		this.feature = feature;
 		this.materials = materials;
-		this.cultivation_process = cultivation_process;		
+		this.cultivation_process = cultivation_process;
+		this.img_url = img_url;
 	}
 }

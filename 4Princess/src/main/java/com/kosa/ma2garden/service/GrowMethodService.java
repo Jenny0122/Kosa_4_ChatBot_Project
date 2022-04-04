@@ -20,7 +20,7 @@ public class GrowMethodService {
 		
 		List<GrowMethodDTO> list = new ArrayList<GrowMethodDTO>();
 		
-		for (GrowMethod growmethod : growmethodrepository.findAll()) {
+		for (GrowMethod growmethod : growmethodrepository.findByNoLessThan(51)) {
 			GrowMethodDTO growMethodDTO = GrowMethodDTO.builder()
 					.no(growmethod.getNo())
 					.name(growmethod.getName())
@@ -38,6 +38,7 @@ public class GrowMethodService {
 					.feature(growmethod.getFeature())
 					.materials(growmethod.getMaterials())
 					.cultivation_process(growmethod.getCultivation_process())
+					.img_url(growmethod.getImg_url())
 					.build();
 			list.add(growMethodDTO);
 		}

@@ -64,4 +64,6 @@ public class GrowMethod {
 	@Column(name = "cultivation_process") //재배과정
 	private String cultivation_process;
 	
+	@Column(name = "img_url")
+	private String img_url;
 }
