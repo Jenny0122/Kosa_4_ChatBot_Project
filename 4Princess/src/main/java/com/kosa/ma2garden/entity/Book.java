@@ -33,5 +33,4 @@ public class Book {
 	
 	@Column(name = "url")
 	private String url;
-	
 }

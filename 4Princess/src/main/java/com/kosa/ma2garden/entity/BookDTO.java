@@ -27,5 +27,4 @@ public class BookDTO {
 		this.thumbnail = thumbnail;
 		this.url = url;
 	}
-
 }

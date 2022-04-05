@@ -21,15 +21,9 @@ public class BookService {
 		List<BookDTO> list = new ArrayList<BookDTO>();
 
 		for (Book book : bookRepository.findAll()) {
-			BookDTO bookDTO = BookDTO.builder()
-					.no(book.getNo())
-					.title(book.getTitle())
-					.author(book.getAuthor())
-					.publisher(book.getPublisher())
-					.thumbnail(book.getThumbnail())
-					.url(book.getUrl())
-					.build();
-			
+			BookDTO bookDTO = BookDTO.builder().no(book.getNo()).title(book.getTitle()).author(book.getAuthor())
+					.publisher(book.getPublisher()).thumbnail(book.getThumbnail()).url(book.getUrl()).build();
+
 			list.add(bookDTO);
 		}
 
