@@ -12,26 +12,17 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@Table(name = "book")
-public class Book {
+@Table(name = "tip")
+public class Tip {
 	
 	@Id
 	@Column(name = "no")
 	private long no;
-
+	
 	@Column(name = "title")
 	private String title;
 	
-	@Column(name = "author")
-	private String author;
-	
-	@Column(name = "publisher")
-	private String publisher;
-	
-	@Column(name = "thumbnail")
-	private String thumbnail;
-	
-	@Column(name = "url")
-	private String url;
+	@Column(name = "content")
+	private String content;
 	
 }

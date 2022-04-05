@@ -9,7 +9,6 @@ public class WebConfiguration implements WebMvcConfigurer {
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		// TODO Auto-generated method stub
 		registry.addMapping("/**")
 				.allowedOrigins("*")
 				.allowedOrigins("http://localhost:8080")

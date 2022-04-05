@@ -1,23 +1,71 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div id="page-wrapper">
+      <b-button v-b-toggle.sidebar-right class="MenuPosition"><span>Menu</span>&nbsp;&nbsp;&nbsp;<img src="./assets/homelogo.png" /></b-button>
+      <sidebar />
+      <router-view/>
+      <bottom />
+    </div>
   </div>
 </template>
 
 <script>
+import Bottom from '@/components/Bottom'
 export default {
-  name: 'App'
+  components: { Bottom },
+  name: 'App',
+  data() {
+    return {
+      showSidebar: false
+    }
+  },
+  methods: {
+    changeShowSidebar: function() {
+      this.showSidebar = !this.showSidebar
+    }
+  },
+  component: {
+    'bottom': Bottom
+  }
 }
 </script>
 
-<style>
+<style scope>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+.MenuPosition {
+position: fixed; /* 고정 기능 */
+top: 10px;
+right: 10px;
+cursor: pointer;
+background-color:transparent; /* 배경 투명 */
+border: 0;
+z-index: 1; /* 겹치지 않게 해주는 기능 */
+}
+.MenuPosition:hover{
+  background-color:transparent; /* 배경 투명 */
+  border: 0;
+}
+.MenuPosition > img {
+  width: 50px;
+  height: 30px;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
+body.landing #page-wrapper {
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/bgimg.jpg");
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/bgimg.jpg");
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/bgimg.jpg");
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/bgimg.jpg");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 0;
+}
+
 </style>
