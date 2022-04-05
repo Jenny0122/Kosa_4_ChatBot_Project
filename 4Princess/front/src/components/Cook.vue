@@ -68,7 +68,7 @@ export default {
     }
   },
   beforeCreate: function() {
-    console.log('beforeCreate')
+    console.log('Cook.vue is created')
 
     this.$axios.get('/cook')
     .then((res) => {

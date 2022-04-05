@@ -4,42 +4,42 @@
   <div class="subtitle">{{subject}}</div>
   <div class="button-area">
     <div class="mbti-button-area" v-for="(mt, index) in mbti" :key="index">
-      <b-button class="mbti-button" @click="showMBTIContents(mt)" variant="outline-success" size="lg">
+      <b-button class="mbti-button" @click="showMBTIContents(index)" variant="outline-success" size="lg">
         {{mt.mbti}}
       </b-button>
     </div>
   </div>
-  <div class="mbti-area">
+  <div class="mbti-area" :ref="'img' + index" v-for="(mt, index) in mbti" :key="index">
     <div class="mbti-img">
-      <img v-bind:src="selected_mbti.image_url">
+      <img v-bind:src="mt.image_url">
     </div>
     <div class="mbti-text">
-      <div class="mbti-name">{{selected_mbti.flower_name}}</div>
-      <div class="mbti-desc">{{selected_mbti.description}}</div>
+      <div class="mbti-name">{{mt.flower_name}}</div>
+      <div class="mbti-desc">{{mt.description}}</div>
     </div>
   </div>
 </div>
 </template>
 
-
 <script>
 export default {
+  el: '#mbti',
   name: 'MBTI',
   data() {
     return {
       msg: 'MBTI',
       subject: 'MBTI별 꽃 추천을 해드려요:) 본인의 MBTI를 선택해주세요.',
-      mbti: [],
-      selected_mbti: []
+      mbti: []
     }
   },
   methods: {
-    showMBTIContents: function(mt) {
-      this.selected_mbti = mt
+    showMBTIContents: function(index) {
+      var targetY = this.$refs['img' + index][0].getBoundingClientRect().top
+      window.scroll(0, targetY - 150)
     }
   },
   beforeCreate: function() {
-    console.log('beforeCreate')
+    console.log('MBTI.vue is created')
 
     this.$axios.get('/mbti')
     .then((res) => {
@@ -48,13 +48,11 @@ export default {
       for (var i in list) {
         this.mbti.push(list[i])
       }
-
-      this.selected_mbti = list[0]
     })
   }
 }
 </script>
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 .button-area {
   text-align: center;
@@ -99,6 +97,7 @@ export default {
   text-align: left;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
+  color: white;
 }
 .mbti-desc {
   font-size: 15pt;
@@ -106,6 +105,8 @@ export default {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 100;
   padding-bottom: 5%;
+  color: white;
+  line-height: 30pt;
 }
 img {
   width: 50%;

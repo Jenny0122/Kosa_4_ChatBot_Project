@@ -53,6 +53,7 @@ export default {
   },
 
   beforeCreate() {
+    console.log('ColorFlower.vue is created')
     const T = Math.PI / 4
     this.$axios.get('/color_flower')
     .then((res) => {
@@ -103,5 +104,9 @@ img {
 .effect {
   margin: 20pt 0;
   margin-bottom: 0 auto;
+}
+.body {
+  text-align: center;
+  margin: 40pt 0;
 }
 </style>

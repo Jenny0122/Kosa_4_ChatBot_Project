@@ -5,7 +5,7 @@
   <div class="book-area">
     <div class="book-content-area" v-for="(book, index) in books" :key="index">
       <div class="book-img">
-        <img v-bind:src="book.thumbnail">
+        <a v-bind:href="book.url" target="_blank"><img v-bind:src="book.thumbnail"></a>
       </div>
       <div class="book-text">
         <div class="book-title subtitle">
@@ -34,7 +34,7 @@ export default {
     }
   },
   beforeCreate: function() {
-    console.log('beforeCreate')
+    console.log('Book.vue is created')
 
     this.$axios.get('/books')
     .then((res) => {

@@ -45,7 +45,7 @@
   vertical-align: middle;
 }
 .modal-container {
-  width: 420pt;
+  width: 450pt;
   height: auto;
   margin: 0px auto;
   padding: 20px 30px;
@@ -63,7 +63,7 @@
 }
 .modal-body {
   margin: 20px 0;
-  text-align: center;
+  /* text-align: center; */
 }
 .modal-default-button {
   float: right;

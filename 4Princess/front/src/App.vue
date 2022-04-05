@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view />
-      <b-button size="lg" v-b-toggle.sidebar-right class="MenuPosition">Menu</b-button>
+      <b-button v-b-toggle.sidebar-right class="MenuPosition"><span>Menu</span>&nbsp;&nbsp;&nbsp;<img src="./assets/logo.png" /></b-button>
     <sidebar />
   </div>
 </template>
@@ -47,15 +47,23 @@ export default {
   text-align: center;
   margin: 10pt;
   color: white;
-
-
 }
 .MenuPosition {
-position: absolute;
-top: 50pt;
-right: 50pt;
+position: fixed; /* 고정 기능 */
+top: 10px;
+right: 10px;
 cursor: pointer;
-background-color: #075a3a;
+background-color:transparent; /* 배경 투명 */
+border: 0;
+z-index: 1; /* 겹치지 않게 해주는 기능 */
+}
+.MenuPosition:hover{
+  background-color:transparent; /* 배경 투명 */
+  border: 0;
+}
+.MenuPosition > img {
+  width: 50px;
+  height: 30px;
 }
 #app {
   -webkit-font-smoothing: antialiased;
@@ -64,6 +72,6 @@ background-color: #075a3a;
   margin-top: 30px;
 }
 body {
-  background-color: #2e3842;
+  background-color: #212926;
 }
 </style>

@@ -6,6 +6,7 @@ import ColorFlower from '@/components/ColorFlower'
 import MBTI from '@/components/MBTI'
 import Tool from '@/components/Tool'
 import Cook from '@/components/Cook'
+import FAQ from '@/components/FAQ'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
             path: '/life-style/tool',
             name: 'Tool',
             component: Tool
+        },
+        {
+            path: '/memberlounge/faq',
+            name: 'FAQ',
+            component: FAQ
         }
     ]
 })

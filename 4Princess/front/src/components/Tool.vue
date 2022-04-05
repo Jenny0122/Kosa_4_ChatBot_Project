@@ -31,7 +31,7 @@ export default {
     }
   },
   beforeCreate: function() {
-    console.log('beforeCreate')
+    console.log('Tool.vue is created')
 
     this.$axios.get('/tool')
     .then((res) => {
