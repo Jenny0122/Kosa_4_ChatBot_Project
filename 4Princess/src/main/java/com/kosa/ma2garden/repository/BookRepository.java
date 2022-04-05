@@ -7,4 +7,5 @@ import com.kosa.ma2garden.entity.Book;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
+	
 }
