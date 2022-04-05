@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.kosa.ma2garden.entity.Book;
 
 @Repository
-public interface BookRepository extends JpaRepository<Book, Long> {
-	
+public interface BookRepository extends JpaRepository<Book, Long> {	
 }
