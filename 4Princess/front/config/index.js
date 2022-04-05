@@ -6,7 +6,6 @@ const path = require('path')
 
 module.exports = {
     dev: {
-
         // Paths
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
@@ -16,12 +15,7 @@ module.exports = {
                 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS'
             },
             "/api": {
-                target: "http://localhost:8888",
-                ws: true,
-                changeOrigin: true
-            },
-            "/mbti": {
-                target: "http://localhost:8888/mbti",
+                target: "http://localhost:8080",
                 ws: true,
                 changeOrigin: true
             }

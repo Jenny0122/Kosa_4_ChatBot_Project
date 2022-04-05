@@ -10,8 +10,11 @@ public class WebConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		// TODO Auto-generated method stub
-		registry.addMapping("/**").allowedOrigins("*").allowedOrigins("http://localhost:8080")
-				.allowedMethods("GET", "POST", "PUT", "DELETE").maxAge(3000);
+		registry.addMapping("/**")
+				.allowedOrigins("*")
+				.allowedOrigins("http://localhost:8080")
+				.allowedMethods("GET", "POST", "PUT", "DELETE")
+				.maxAge(3000);
 
 		WebMvcConfigurer.super.addCorsMappings(registry);
 	}

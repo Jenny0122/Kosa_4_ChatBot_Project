@@ -22,8 +22,6 @@ public class User {
 	@Id
 	@Column(name = "id")
 	private long id;
-	
-	String password;
 
 	@Builder
 	public User(long id) {

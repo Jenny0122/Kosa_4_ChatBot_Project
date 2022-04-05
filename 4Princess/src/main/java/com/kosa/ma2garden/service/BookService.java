@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kosa.ma2garden.entity.Book;
-import com.kosa.ma2garden.entity.BookDTO;
+import com.kosa.ma2garden.entity.BookResponseDTO;
 import com.kosa.ma2garden.repository.BookRepository;
 
 @Service
@@ -16,20 +16,20 @@ public class BookService {
 	@Autowired
 	BookRepository bookRepository;
 
-	public List<BookDTO> getAllBooks() {
+	public List<BookResponseDTO> getAllBooks() {
 
-		List<BookDTO> list = new ArrayList<BookDTO>();
-
+		List<BookResponseDTO> list = new ArrayList<BookResponseDTO>();
+		
 		for (Book book : bookRepository.findAll()) {
-			BookDTO bookDTO = BookDTO.builder()
+			
+			
+			BookResponseDTO bookDTO = BookResponseDTO.builder()
 					.no(book.getNo())
 					.title(book.getTitle())
 					.author(book.getAuthor())
 					.publisher(book.getPublisher())
 					.thumbnail(book.getThumbnail())
-					.url(book.getUrl())
 					.build();
-			
 			list.add(bookDTO);
 		}
 
