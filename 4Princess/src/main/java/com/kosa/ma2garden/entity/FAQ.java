@@ -23,6 +23,5 @@ public class FAQ {
 	
 	@Column(name = "answer")
 	private String answer;
-	
 
 }

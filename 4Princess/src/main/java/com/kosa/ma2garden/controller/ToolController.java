@@ -30,5 +30,4 @@ public class ToolController {
 		List<ToolDTO> list = toolService.getAllTool();
 		return new ResponseEntity<List<ToolDTO>>(list, HttpStatus.OK);
 	}
-
 }

@@ -30,8 +30,6 @@ export default {
     }
   },
   methods: {
-    test: function() {
-    }
   },
   beforeCreate: function() {
     console.log('Book.vue is created')

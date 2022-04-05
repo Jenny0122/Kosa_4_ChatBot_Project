@@ -31,5 +31,4 @@ public class MBTI {
 	@Column(name = "image_url")
 	private String image_url;
 	
-
 }

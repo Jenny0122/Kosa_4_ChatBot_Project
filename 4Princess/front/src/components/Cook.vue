@@ -52,9 +52,6 @@ export default {
       this.showModal = !this.showModal
     },
     showRecipe: function(menu) {
-      // this.selected_crop = menu
-      // if (this.newTodoItem !== '') {
-        // var value = this.newTodoItem && this.newTodoItem.trim()
         this.selected_menu = menu
         this.$emit('showRecipe', menu)
         this.clearInput()

@@ -7,5 +7,4 @@ import com.kosa.ma2garden.entity.FAQ;
 
 @Repository
 public interface FAQRepository extends JpaRepository<FAQ, Long>{
-
 }

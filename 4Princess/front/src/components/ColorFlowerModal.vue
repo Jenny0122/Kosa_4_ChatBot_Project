@@ -16,7 +16,6 @@
               <button class="closeModalBtn" @click="$emit('close')">
                 close
               </button>
-              <!--  -->
             </slot>
           </div>
         </div>

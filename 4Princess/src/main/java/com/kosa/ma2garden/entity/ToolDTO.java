@@ -23,5 +23,4 @@ public class ToolDTO {
 		this.description = description;
 		this.img_url = img_url;
 	}
-
 }

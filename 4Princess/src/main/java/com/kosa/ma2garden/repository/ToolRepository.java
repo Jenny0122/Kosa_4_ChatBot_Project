@@ -7,5 +7,4 @@ import com.kosa.ma2garden.entity.Tool;
 
 @Repository
 public interface ToolRepository extends JpaRepository<Tool, Long>{
-
 }

@@ -27,5 +27,4 @@ public class CookDTO {
 		this.ingredient = ingredient;
 		this.cooking_order = cooking_order;
 	}
-
 }

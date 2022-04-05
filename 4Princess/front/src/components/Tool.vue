@@ -1,7 +1,7 @@
 <template>
 <div id="tool">
   <div class="title">홈 가드닝 시 자주 쓰는 도구들</div>
-  <div class="subtitle">자주 사용하는 도구에 대해 알아볼까요?</div>
+  <div class="subtitle">자주 사용하는 도구에 대해 알아볼까요? :)</div>
   <div class="tool-area" v-for="(tool, index) in tools" :key="index">
       <div class="tool-img">
         <img v-bind:src="tool.img_url">

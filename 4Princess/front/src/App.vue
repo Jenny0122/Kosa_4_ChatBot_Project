@@ -38,7 +38,6 @@ export default {
   font-size: 50pt;
   color: #00994C;
   text-align: center;
-
 }
 .subtitle {
   font-family: 'Noto Sans KR', sans-serif;

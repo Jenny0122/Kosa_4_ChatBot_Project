@@ -32,6 +32,6 @@ public class Cook {
 	String ingredient;
 
 	@Column(name = "cooking_order")
-	String cooking_order;
+	String cooking_order;	
 
 }

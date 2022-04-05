@@ -19,7 +19,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-    // Vue.prototype.$axios = axios
 
 /* eslint-disable no-new */
 new Vue({

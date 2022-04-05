@@ -14,7 +14,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @Table(name = "tool")
 public class Tool {
-
 	
 	@Id
 	@Column(name = "no")

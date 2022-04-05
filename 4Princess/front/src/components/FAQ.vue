@@ -25,11 +25,11 @@ export default {
   methods: {
     showAnswer: function(item, index) {
       this.answer = this.faq[index]
-      // this.allOpenRows.map((ele) => {
-      //   if (ele.id !== item.id && ele._showDetails) {
-      //     this.$set(ele, '_showDetails', !ele._showDetails)
-      //   }
-      // })
+      this.allOpenRows.map((ele) => {
+        if (ele.id !== item.id && ele._showDetails) {
+          this.$set(ele, '_showDetails', !ele._showDetails)
+        }
+      })
       this.allOpenRows = []
       this.$set(item, '_showDetails', !item._showDetails)
       this.allOpenRows.push(item)

@@ -27,5 +27,4 @@ public class ColorFlowerDTO {
 		this.space_info = space_info;
 		this.img_url = img_url;
 	}
-
 }

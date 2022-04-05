@@ -33,5 +33,4 @@ public class CookControlloer {
 		
 		return new ResponseEntity<List<CookDTO>>(list, HttpStatus.OK);
 	}
-
 }

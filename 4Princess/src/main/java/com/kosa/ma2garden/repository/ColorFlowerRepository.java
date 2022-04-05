@@ -7,5 +7,4 @@ import com.kosa.ma2garden.entity.ColorFlower;
 
 @Repository
 public interface ColorFlowerRepository extends JpaRepository<ColorFlower, Long> {
-
 }

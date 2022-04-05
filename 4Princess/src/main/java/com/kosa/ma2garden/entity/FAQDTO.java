@@ -21,5 +21,4 @@ public class FAQDTO {
 		this.answer = answer;
 	}
 	
-
 }

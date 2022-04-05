@@ -16,7 +16,6 @@
               <button class="closeModalBtn" @click="$emit('close')">
                 close
               </button>
-              <!--  -->
             </slot>
           </div>
         </div>
@@ -88,7 +87,6 @@
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
 .modal-body,
 .modal {
   color: #666 !important;

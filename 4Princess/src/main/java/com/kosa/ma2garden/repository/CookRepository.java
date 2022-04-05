@@ -7,5 +7,4 @@ import com.kosa.ma2garden.entity.Cook;
 
 @Repository
 public interface CookRepository extends JpaRepository<Cook, Long> {
-
 }

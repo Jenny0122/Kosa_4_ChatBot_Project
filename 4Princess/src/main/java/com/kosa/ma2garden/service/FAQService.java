@@ -31,5 +31,4 @@ public class FAQService {
 		return list;
 	}
 
-
 }

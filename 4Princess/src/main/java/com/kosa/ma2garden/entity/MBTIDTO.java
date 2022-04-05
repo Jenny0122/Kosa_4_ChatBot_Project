@@ -25,5 +25,4 @@ public class MBTIDTO {
 		this.description = description;
 		this.image_url = image_url;
 	}
-	
 }

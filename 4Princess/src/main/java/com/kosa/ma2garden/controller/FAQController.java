@@ -25,6 +25,4 @@ public class FAQController {
 		list.forEach(System.out::println);
 		return new ResponseEntity<List<FAQDTO>>(list, HttpStatus.OK);
 	}
-	
-
 }

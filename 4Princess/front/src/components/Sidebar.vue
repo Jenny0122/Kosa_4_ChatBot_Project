@@ -120,9 +120,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap');
-
 .py-2 {
   margin: 20pt;
 }

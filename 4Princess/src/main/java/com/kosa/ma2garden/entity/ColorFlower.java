@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Table(name = "color_flower")
 public class ColorFlower {
+	
 
 	@Id
 	@Column(name = "no")

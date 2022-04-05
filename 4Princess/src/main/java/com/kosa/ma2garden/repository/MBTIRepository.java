@@ -7,6 +7,5 @@ import com.kosa.ma2garden.entity.MBTI;
 
 @Repository
 public interface MBTIRepository extends JpaRepository<MBTI, Long>{
-
 }
 

@@ -32,5 +32,4 @@ public class MBTIController {
 		list.forEach(System.out::println);
 		return new ResponseEntity<List<MBTIDTO>>(list, HttpStatus.OK);
 	}
-
 }

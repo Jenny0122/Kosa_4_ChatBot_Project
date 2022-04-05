@@ -51,7 +51,6 @@ export default {
       this.newTodoItem = ''
     }
   },
-
   beforeCreate() {
     console.log('ColorFlower.vue is created')
     const T = Math.PI / 4

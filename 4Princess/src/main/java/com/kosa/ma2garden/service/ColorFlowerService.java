@@ -31,7 +31,6 @@ public class ColorFlowerService {
 					.build();
 
 			list.add(colorflowerDTO);
-
 		}
 
 		return list;
