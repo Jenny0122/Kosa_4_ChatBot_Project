@@ -1,11 +1,19 @@
 package com.kosa.ma2garden.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.kosa.ma2garden.entity.Book;
+import com.kosa.ma2garden.entity.BookDTO;
+import com.kosa.ma2garden.repository.BookRepository;
 
 @Service
 public class BookService {
 
-	/*@Autowired
+	@Autowired
 	BookRepository bookRepository;
 
 	public List<BookDTO> getAllBooks() {
@@ -26,5 +34,5 @@ public class BookService {
 		}
 
 		return list;
-	}*/
+	}
 }
