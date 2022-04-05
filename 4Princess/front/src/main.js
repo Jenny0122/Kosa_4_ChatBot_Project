@@ -29,7 +29,10 @@ Vue.config.productionTip = false
 =======
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/jihyeon
+=======
+>>>>>>> refs/remotes/origin/sunjung
 
 /* eslint-disable no-new */
 new Vue({

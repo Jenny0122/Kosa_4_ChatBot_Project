@@ -32,6 +32,26 @@ export default {
 
 <style scope>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
+.title {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 900;
+  font-size: 50pt;
+  color: #00994C;
+  text-align: center;
+}
+.subtitle {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  font-size: 20pt;
+  text-align: center;
+  margin: 10pt;
+  color: white;
+}
+>>>>>>> refs/remotes/origin/sunjung
 .MenuPosition {
 position: fixed; /* 고정 기능 */
 top: 10px;

@@ -11,7 +11,13 @@ export default {
   name: 'MBTI',
   data() {
     return {
+<<<<<<< HEAD
       msg: ''
+=======
+      msg: 'MBTI',
+      subject: 'MBTI별 꽃 추천을 해드려요 :) 본인의 MBTI를 선택해주세요.',
+      mbti: []
+>>>>>>> refs/remotes/origin/sunjung
     }
   },
   methods: {
