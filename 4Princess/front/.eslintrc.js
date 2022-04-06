@@ -29,6 +29,8 @@ module.exports = {
         "quotes": [2, "single", { "avoidEscape": true, 'allowTemplateLiterals': true }],
         'eol-last': ["error", "never"],
         "no-multiple-empty-lines": [2, { "max": 99999, "maxEOF": 0 }],
-        "space-before-function-paren": ["error", "never"]
+        "space-before-function-paren": ["error", "never"],
+        "indent": [2, "tab"],
+        "no-tabs": 0
     }
 }

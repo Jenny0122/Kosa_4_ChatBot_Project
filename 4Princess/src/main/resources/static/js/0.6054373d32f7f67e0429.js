@@ -1,0 +1,2 @@
+webpackJsonp([0],{EKd5:function(e,t,s){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n={render:function(){this.$createElement;this._self._c;return this._m(0)},staticRenderFns:[function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"Life-style"},[t("h1",[this._v("This is an about page LS")])])}]},i=s("VU/8")({name:"Life-style"},n,!1,null,null,null);t.default=i.exports}});
+//# sourceMappingURL=0.6054373d32f7f67e0429.js.map
