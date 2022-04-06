@@ -57,7 +57,7 @@ export default {
 			}
 			this.$axios.post('/comment', data)
 				.then((res) => {
-
+					alert('정상 메세지로 변경')
 				})
 				.catch(() => {
 
