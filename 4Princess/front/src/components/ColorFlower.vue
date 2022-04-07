@@ -114,7 +114,7 @@ img {
   margin: 40pt 0;
 }
 .test {
-  top: calc(46.5% + 50pt);
+  top: calc(46.5% + 90pt);
   width: 100%;
   position: fixed;
 

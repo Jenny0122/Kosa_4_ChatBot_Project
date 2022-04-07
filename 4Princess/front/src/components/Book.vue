@@ -1,7 +1,7 @@
 <template>
 <div id="book">
   <div class="title">관련 서적</div>>
-  <div class="subtitle">홈가드닝과 관련된 책에 대하여 알고 싶으신가요:)</div>
+  <div class="subtitle">홈가드닝과 관련된 책에 대하여 알고 싶으신가요? :)</div>
   <div class="book-area">
     <div class="book-content-area" v-for="(book, index) in books" :key="index">
       <div class="book-img">
@@ -9,11 +9,11 @@
       </div>
       <div class="book-text">
         <div class="book-title subtitle">
-          <a v-bind:href="book.url" target="_blank">{{book.title}}</a>
+          <a v-bind:href="book.url" target="_blank">{{book.no}}. {{book.title}}</a>
         </div>
         <div class ="book-desc">
-          {{book.author}}
-          {{book.publisher}}
+          저자 : {{book.author.replaceAll('\'', '').replace(/\[/g, '').replace(/\]/g, '')}} <br>
+          출판사 : {{book.publisher}}
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@ img {
   width: 60%;
   vertical-align: middle;
   color: white;
-
+  margin-bottom: 15pt;
 }
 .book-title {
   font-size: 20pt;
@@ -86,5 +86,8 @@ img {
 a {
   text-decoration: none;
   color: white;
+}
+.subtitle {
+  margin: 10pt 0;
 }
 </style>

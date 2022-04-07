@@ -4,9 +4,9 @@
   <div class="subtitle">{{subject}}</div>
   <div class="button-area">
     <div class="mbti-button-area" v-for="(mt, index) in mbti" :key="index">
-      <b-button class="mbti-button" @click="showMBTIContents(index)" variant="outline-success" size="lg">
+      <button class="mbti-button" @click="showMBTIContents(index)" variant="outline-success" size="lg">
         {{mt.mbti}}
-      </b-button>
+      </button>
     </div>
   </div>
   <div class="mbti-area" :ref="'img' + index" v-for="(mt, index) in mbti" :key="index">
@@ -23,7 +23,6 @@
 
 <script>
 export default {
-  el: '#mbti',
   name: 'MBTI',
   data() {
     return {
@@ -65,12 +64,16 @@ export default {
   display: inline-block;
   vertical-align: middle;
   color: white;
+  background-color: #21b2a6;
+  border-radius: 25%;
 }
 .mbti-button {
   margin: 0;
   width: 100%;
   height: 100%;
+  font-size: 120%;
   color: white;
+  background-color: #21b2a6;
   border: 1px solid white;
 }
 .mbti-area {

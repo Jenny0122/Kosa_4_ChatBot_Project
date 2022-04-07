@@ -3,13 +3,14 @@
     <router-view />
       <b-button v-b-toggle.sidebar-right class="MenuPosition"><span>Menu</span>&nbsp;&nbsp;&nbsp;<img src="./assets/logo.png" /></b-button>
     <sidebar />
+    <topbutton />
   </div>
 </template>
 
 <script>
 import Sidebar from '@/components/Sidebar'
+import TopButton from './components/TopButton.vue'
 export default {
-  components: { Sidebar },
   name: 'App',
   data() {
     return {
@@ -21,8 +22,9 @@ export default {
       this.showSidebar = !this.showSidebar
     }
   },
-  component: {
-    'sidebar': Sidebar
+  components: {
+    'sidebar': Sidebar,
+    'topbutton': TopButton
   }
 }
 </script>
