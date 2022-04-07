@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       msg: 'MBTI',
-      subject: 'MBTI별 꽃 추천을 해드려요 :) 본인의 MBTI를 선택해주세요.',
+      subject: 'MBTI별 꽃 추천을 해드려요! 본인의 MBTI를 선택해주세요. :)',
       mbti: []
     }
   },
