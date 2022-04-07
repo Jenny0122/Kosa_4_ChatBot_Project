@@ -11,8 +11,8 @@
 
 <script>
 import Bottom from '@/components/Bottom'
+import Sidebar from '@/components/Sidebar'
 export default {
-  components: { Bottom },
   name: 'App',
   data() {
     return {
@@ -24,16 +24,15 @@ export default {
       this.showSidebar = !this.showSidebar
     }
   },
-  component: {
-    'bottom': Bottom
+  components: {
+    'bottom': Bottom,
+    'sidebar': Sidebar
   }
 }
 </script>
 
 <style scope>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
 
 .title {
@@ -51,7 +50,6 @@ export default {
   margin: 10pt;
   color: white;
 }
->>>>>>> refs/remotes/origin/sunjung
 .MenuPosition {
 position: fixed; /* 고정 기능 */
 top: 10px;
@@ -74,7 +72,6 @@ z-index: 1; /* 겹치지 않게 해주는 기능 */
   font-family: 'Noto Sans KR', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 body.landing #page-wrapper {
     background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/bgimg.jpg");

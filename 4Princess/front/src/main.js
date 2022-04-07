@@ -24,15 +24,9 @@ library.add(faGithub, faAnglesDown)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
-<<<<<<< HEAD
-    // Vue.prototype.$axios = axios
-=======
+
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/jihyeon
-=======
->>>>>>> refs/remotes/origin/sunjung
 
 /* eslint-disable no-new */
 new Vue({

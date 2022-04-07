@@ -12,22 +12,22 @@
             <router-link class="router-link" to="/page1">소개영상</router-link>
           </div>
           <div class="side-link">
-            <router-link class="router-link" to="/page1">키우는 방법</router-link>
+            <router-link class="router-link" to="/info/growmethod">키우는 방법</router-link>
           </div>
           <div class="side-link">
-            <router-link class="router-link" to="/page1">식물질병</router-link>
+            <router-link class="router-link" to="/info/plantdisease">식물질병</router-link>
           </div>
           <div class="side-link">
-            <router-link class="router-link" to="/page1">팁</router-link>
+            <router-link class="router-link" to="/info/tip">팁</router-link>
           </div>
         </div>
         <div class="menu" @click="changeShowPlant">식물 정보</div>
         <div v-if="showPlant==true">
           <div class="side-link">
-            <router-link class="router-link" to="/page1">실내 정원 식물</router-link>
+            <router-link class="router-link" to="/plant/insideplant">실내 정원 식물</router-link>
           </div>
           <div class="side-link">
-            <router-link class="router-link" to="/page1">건조에 강한 식물</router-link>
+            <router-link class="router-link" to="/plant/dryplant">건조에 강한 식물</router-link>
           </div>
           <div class="side-link">
             <router-link class="router-link" to="/page1">공기 정화 식물</router-link>
@@ -54,16 +54,16 @@
             <router-link class="router-link" to="/community/mbti">MBTI</router-link>
           </div>
           <div class="side-link">
-            <router-link class="router-link" to="/community/tool">발명품</router-link>
+            <router-link class="router-link" to="/community/invention">발명품</router-link>
           </div>
           <div class="side-link">
-            <router-link class="router-link" to="/community/tool">신조어</router-link>
+            <router-link class="router-link" to="/community/neologism">신조어</router-link>
           </div>
         </div>
         <div  class="menu" @click="changeShowBoard">회원 라운지</div>
         <div v-if="showBoard==true">
           <div class="side-link">
-            <router-link class="router-link" to="/page1">게시판</router-link>
+            <router-link class="router-link" to="/memberlounge/boardlist">게시판</router-link>
           </div>
           <div class="side-link">
             <router-link class="router-link" to="/memberlounge/faq">FAQ</router-link>
