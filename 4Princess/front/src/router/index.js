@@ -33,7 +33,7 @@ export default new Router({
             name: 'PlantDisease',
             component: PlantDisease
         }, {
-            path: '/info/growmethod',
+            path: '/info/growmethod/',
             name: 'GrowMethod',
             component: GrowMethod
         }, {
