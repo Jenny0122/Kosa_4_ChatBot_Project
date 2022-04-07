@@ -1,11 +1,20 @@
 <template>
 <div id="FAQ">
-  <div class="title">FAQ</div>
-  <div class="subtitle">자주 하는 질문을 모아봤어요. :)</div>
-  <div class="faq-table">
-    <b-table :items="items" :fields="fields" thead-class="text-white" tbody-class="text-white" @row-clicked="showAnswer">
-      <template slot="row-details">{{answer}}</template>
-    </b-table>
+  <div class="title">{{title}}</div>
+  <div class="subtitle">{{subtitle}}</div>
+  <div class="faq-text" v-for="(faq, index) in faqs" :key="index">
+    <div class="accordion" role="tablist">
+      <b-card no-body class="mb-1" text-variant="white">
+        <b-card-header header-tag="header"  class="p-1" role="tab">
+          <b-button block v-b-toggle="'accordion-' + faq.no" text-variant="white">{{faq.no}}&nbsp;&nbsp;&nbsp;&nbsp;{{faq.question}}</b-button>
+        </b-card-header>
+        <b-collapse :id="'accordion-' + faq.no" accordion="my-accordion" role="tabpanel">
+          <b-card-body>
+            <b-card-text>{{faq.answer}}</b-card-text>
+          </b-card-body>
+        </b-collapse>
+      </b-card>
+    </div>
   </div>
 </div>
 </template>
@@ -14,25 +23,14 @@
 export default {
   data() {
     return {
-      fields: ['No', '질문'],
-      items: [],
-      faq: [],
-      selectAll: false,
-      allOpenRows: [],
-      answer: ''
+      title: 'FAQ',
+      subtitle: '자주 하는 질문들을 모아봤어요. :)',
+      faqs: []
     }
   },
   methods: {
     showAnswer: function(item, index) {
       this.answer = this.faq[index]
-      this.allOpenRows.map((ele) => {
-        if (ele.id !== item.id && ele._showDetails) {
-          this.$set(ele, '_showDetails', !ele._showDetails)
-        }
-      })
-      this.allOpenRows = []
-      this.$set(item, '_showDetails', !item._showDetails)
-      this.allOpenRows.push(item)
     }
   },
   beforeCreate: function() {
@@ -43,31 +41,33 @@ export default {
       let list = res.data
 
       for (var i in list) {
-        this.items.push({
-          'No': list[i].no,
-          '질문': list[i].question
-        })
-        this.faq.push(list[i].answer)
+        this.faqs.push(list[i])
       }
     })
   }
 }
 </script>
-
 <style scoped>
-.faq-table {
-  display:inline-block;
-  width: 100%;
-  padding: 20pt 20%;
-  margin-left: auto;
-  margin-right: auto;
+.faq-text {
+  padding: 0.5% 20%;
   font-size: 15pt;
 }
-.mb-1 {
-  width: 100%;
+.btn-info {
+  border: 0;
+}
+.card-header {
+  border-bottom: 0;
+}
+.btn-secondary {
+  background-color: #21b2a6;
+  border: 0;
+  font-size: 15pt;
+  font-weight: 500;
+}
+.card {
+  border: 0;
+  background: unset;
 }
 
-table {
-  color: white;
-}
+
 </style>
