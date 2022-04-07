@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-sidebar id="sidebar-right" width="300pt" bg-variant="white" title="" right shadow>
+    <b-sidebar id="sidebar-right" width="250pt" bg-variant="white" title="" right shadow>
       <div class="px-3 py-2">
         <!-- <b-img src="ass" fluid thumbnail></b-img> -->
         <div class="menu">
@@ -124,7 +124,7 @@ export default {
   margin: 20pt;
 }
 .menu {
-  font-size: 20pt;
+  font-size: 18pt;
   font-family: 'Noto Sans KR', sans-serif;
   color:black;
   margin: 10pt 0;
@@ -135,7 +135,7 @@ export default {
   margin: 10pt;
 }
 .sign {
-  font-size: 20pt;
+  font-size: 18pt;
   font-family: 'Noto Sans KR', sans-serif;
   margin: 10pt 0;
   line-height: 45pt;

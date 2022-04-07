@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="title">꽃 색상에 따른 효과</div>
-    <div class="subtitle">색상을 선택해주세요! :)</div>
+    <div class="title">{{subject}}</div>
+    <div class="subtitle test">{{msg}}</div>
     <div class="color-area" v-for="(color, index) in color_flower" :key="color.no" @click="showColorInfo(color, index)" :style="button_layout[index]"></div>
     <modal v-if="showModal" @close="showModal = false">
       <div class="header" slot="header">{{selectedColor.color_info}}의 꽃이 주는 효과</div>
@@ -22,7 +22,8 @@ export default {
   name: 'ColorFlower',
   data() {
     return {
-      msg: '색상을 선택해주세요!',
+      subject: '꽃 색상에 따른 효과',
+      msg: '색상을 선택해주세요.',
       color_flower: [],
       newTodoItem: '',
       showModal: false,
@@ -59,8 +60,12 @@ export default {
       for(var i in res.data) {
         this.color_flower.push(res.data[i])
 
-        var x = 400 - 200 * Math.sin(T * (i - 6)) + 'pt'
-        var y = 400 - 200 * Math.cos(T * (i - 6)) + 'pt'
+        var x = 400 - 200 * Math.cos(T * i) + 'pt'
+        if (Math.sin(T * i) >= 0)
+          var y = 'calc(46.5% + ' + (200 * Math.sin(T * i) + 'pt') + ')'
+        else
+          var y = 'calc(46.5% - ' + (Math.abs(200 * Math.sin(T * i)) + 'pt') +')'
+        console.log(y)
         this.button_layout[i] = {
           'background-color': res.data[i].color_eng_name,
           'top': x,
@@ -87,8 +92,8 @@ export default {
 }
 .color-area {
   border: 1pt solid black;
-  width: 100pt;
-  height: 100pt;
+  width: 7%;
+  height: 12%;
   border-radius: 100%;
   text-align: center;
   vertical-align: middle;
@@ -107,5 +112,11 @@ img {
 .body {
   text-align: center;
   margin: 40pt 0;
+}
+.test {
+  top: calc(46.5% + 90pt);
+  width: 100%;
+  position: fixed;
+
 }
 </style>

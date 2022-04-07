@@ -3,7 +3,8 @@
     <div id="page-wrapper">
       <b-button v-b-toggle.sidebar-right class="MenuPosition"><span>Menu</span>&nbsp;&nbsp;&nbsp;<img src="./assets/homelogo.png" /></b-button>
       <sidebar />
-      <router-view/>
+      <router-view/>    
+      <topbutton />
       <bottom />
     </div>
   </div>
@@ -12,6 +13,7 @@
 <script>
 import Bottom from '@/components/Bottom'
 import Sidebar from '@/components/Sidebar'
+import TopButton from './components/TopButton.vue'
 export default {
   name: 'App',
   data() {
@@ -26,7 +28,8 @@ export default {
   },
   components: {
     'bottom': Bottom,
-    'sidebar': Sidebar
+    'sidebar': Sidebar,
+    'topbutton': TopButton
   }
 }
 </script>

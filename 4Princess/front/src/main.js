@@ -13,6 +13,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // fort-awesome
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
+import { faAnglesUp } from '@fortawesome/free-solid-svg-icons'
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -21,6 +22,7 @@ import { faAnglesDown } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faGithub, faAnglesDown)
 
+library.add(faAnglesUp)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

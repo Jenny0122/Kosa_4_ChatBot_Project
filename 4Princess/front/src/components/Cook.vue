@@ -4,7 +4,7 @@
   <div class="subtitle">키우는 작물을 선택해 주세요! 작물별 추천음식 레시피를 알려드려요 :)</div>
   <div class="button-area">
     <div class="crop-button-area" v-for="(crop, index) in crop_names" :key="index">
-      <b-button class="crop-button" @click="showMenu(crop)" variant="outline-success" size="lg">{{crop}}</b-button>
+      <button class="crop-button" @click="showMenu(crop)" variant="outline-success" size="lg">{{crop}}</button>
     </div>
   </div>
   <div class="menu-area">
@@ -102,13 +102,14 @@ export default {
   vertical-align: middle;
   text-align: center;
   margin: 20pt 2.5%;
-  border: 1px solid white;
 }
 .crop-button {
   width: 100%;
   height: 100%;
-  font-size: 150%;
+  font-size: 120%;
   color: white;
+  background-color: #21b2a6;
+  border: 1px solid white;
 }
 img {
   width: 100%;
