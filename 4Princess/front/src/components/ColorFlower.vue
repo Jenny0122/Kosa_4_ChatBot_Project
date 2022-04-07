@@ -2,6 +2,7 @@
   <div>
     <div class="title">{{subject}}</div>
     <div class="subtitle test">{{msg}}</div>
+    <div class="empty-background"></div>
     <div class="color-area" v-for="(color, index) in color_flower" :key="color.no" @click="showColorInfo(color, index)" :style="button_layout[index]"></div>
     <modal v-if="showModal" @close="showModal = false">
       <div class="header" slot="header">{{selectedColor.color_info}}의 꽃이 주는 효과</div>
@@ -118,5 +119,9 @@ img {
   width: 100%;
   position: fixed;
 
+}
+.empty-background {
+  width: 100%;
+  height: 1500pt;
 }
 </style>

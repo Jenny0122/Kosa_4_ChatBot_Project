@@ -1,7 +1,9 @@
 <template>
 <div id="mbti">
-  <div class="title">{{msg}}</div>
-  <div class="subtitle">{{subject}}</div>
+  <header>
+    <div class="title">{{msg}}</div>
+    <div class="subtitle">{{subject}}</div>
+  </header>
   <div class="button-area">
     <div class="mbti-button-area" v-for="(mt, index) in mbti" :key="index">
       <button class="mbti-button" @click="showMBTIContents(index)" variant="outline-success" size="lg">

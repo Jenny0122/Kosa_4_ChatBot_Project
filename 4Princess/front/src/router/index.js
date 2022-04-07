@@ -8,7 +8,7 @@ import InsidePlant from '@/components/InsidePlant'
 import DryPlant from '@/components/DryPlant'
 import Book from '@/components/Book'
 import ColorFlower from '@/components/ColorFlower'
-// import MBTI from '@/components/MBTI'
+import MBTI from '@/components/MBTI'
 import Tool from '@/components/Tool'
 import Cook from '@/components/Cook'
 import FAQ from '@/components/FAQ'
@@ -93,7 +93,7 @@ export default new Router({
             component: BoardCreate,
         },
         {
-            path: '/memberlounge/boarddetail/',
+            path: '/memberlounge/boarddetail/:no',
             name: 'BoardDetail',
             component: BoardDetail,
         },

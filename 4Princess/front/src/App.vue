@@ -42,7 +42,7 @@ export default {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 900;
   font-size: 50pt;
-  color: #00994C;
+  color: white;
   text-align: center;
 }
 .subtitle {
@@ -87,5 +87,9 @@ body.landing #page-wrapper {
     background-size: cover;
     padding-top: 0;
 }
+
+</style>
+
+<style>
 
 </style>

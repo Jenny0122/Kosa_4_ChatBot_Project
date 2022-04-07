@@ -63,10 +63,10 @@
         <div  class="menu" @click="changeShowBoard">회원 라운지</div>
         <div v-if="showBoard==true">
           <div class="side-link">
-            <router-link class="router-link" to="/memberlounge/boardlist">게시판</router-link>
+            <router-link class="router-link" to="/member/board">게시판</router-link>
           </div>
           <div class="side-link">
-            <router-link class="router-link" to="/memberlounge/faq">FAQ</router-link>
+            <router-link class="router-link" to="/member/faq">FAQ</router-link>
           </div>
         </div >
         <div class="sign">
