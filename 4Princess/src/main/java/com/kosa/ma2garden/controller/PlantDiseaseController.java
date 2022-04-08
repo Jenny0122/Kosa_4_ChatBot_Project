@@ -16,14 +16,13 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 public class PlantDiseaseController {
-	
+
 	@Autowired
 	PlantDiseaseService plantDiseaseService;
-	
+
 	@GetMapping("/plantdisease")
 	public ResponseEntity<List<PlantDiseaseDTO>> getPlantDisease() {
 		List<PlantDiseaseDTO> list = plantDiseaseService.getAllPlantDisease();
-		return new ResponseEntity<List<PlantDiseaseDTO>>(list, HttpStatus
-				.OK);
+		return new ResponseEntity<List<PlantDiseaseDTO>>(list, HttpStatus.OK);
 	}
 }

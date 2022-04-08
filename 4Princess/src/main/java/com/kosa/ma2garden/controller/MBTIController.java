@@ -27,7 +27,7 @@ public class MBTIController {
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@GetMapping("/mbti")
 	public ResponseEntity<List<MBTIDTO>> getMBTI() {
-		System.out.println("AAAAA");
+		
 		List<MBTIDTO> list = mbtiService.getAllMBTI();
 		list.forEach(System.out::println);
 		return new ResponseEntity<List<MBTIDTO>>(list, HttpStatus.OK);

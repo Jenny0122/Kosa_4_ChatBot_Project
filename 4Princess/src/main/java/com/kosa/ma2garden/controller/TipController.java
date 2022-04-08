@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kosa.ma2garden.entity.TipDTO;
 import com.kosa.ma2garden.service.TipService;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -20,9 +23,12 @@ public class TipController {
 	@Autowired
 	TipService tipService;
 	
+	@ApiOperation(value = "Tip", notes = "Tip 관련 정보")
+	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@GetMapping("/tip")
 	public ResponseEntity<List<TipDTO>> getTip() {
 		List<TipDTO> list = tipService.getAllTip();
+		
 		return new ResponseEntity<List<TipDTO>>(list, HttpStatus.OK);
 	}
 }

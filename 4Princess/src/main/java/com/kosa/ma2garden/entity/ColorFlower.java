@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "color_flower")
 public class ColorFlower {
 	
-
 	@Id
 	@Column(name = "no")
 	private long no;
