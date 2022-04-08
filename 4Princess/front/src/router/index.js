@@ -33,7 +33,7 @@ export default new Router({
             name: 'PlantDisease',
             component: PlantDisease
         }, {
-            path: '/info/growmethod',
+            path: '/info/growmethod/',
             name: 'GrowMethod',
             component: GrowMethod
         }, {
@@ -71,11 +71,6 @@ export default new Router({
             component: Tool
         },
         {
-            path: '/member/faq',
-            name: 'FAQ',
-            component: FAQ
-        },
-        {
             path: '/community/neologism',
             name: 'Neologism',
             component: () =>
@@ -86,6 +81,11 @@ export default new Router({
             name: 'Invention',
             component: () =>
                 import ( /* webpackChunkName: 'Community' */ '../components/Invention.vue'),
+        },
+        {
+            path: '/member/faq',
+            name: 'FAQ',
+            component: FAQ
         },
         {
             path: '/member/board/create',
@@ -111,6 +111,7 @@ export default new Router({
         },
         {
             path: '/member/board/:no/comment/:comment_no',
+            path: '/member/comment',
             name: 'CommentList',
             component: () =>
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/Board/CommentList.vue'),

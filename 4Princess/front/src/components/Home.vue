@@ -1,110 +1,110 @@
 <template>
-  <!-- <div id="page-wrapper"> -->
-    <article id="main">
-      <section class="wrapper style">
-        <div id="inner">
-          <!-- <img src="../assets/homelogo.png" alt="" /> -->
-          <br/><br/><br/><br/><br/><br/><br/><br/>
-          <h3>YOUR OWN LITTLE<br/>SPECIAL GARDEN<br/><br/>HOME<br/>GARDENING & FARMING</h3>
-          <br/><br/><br/><br/><br/><br/>
-        </div>
-        <br/>
-        <a href="/#one" class="more"><font-awesome-icon icon="fa-solid fa-angles-down" size="3x" /></a>
-      </section>
-      <!-- One -->
-      <section id="one" class="wrapper style1 special">
-        <div class="inner">
-          <header class="major">
-            <h2>
-              당신의 특별한 정원을<br />
-              아름답게 만들어 드리겠습니다.
-            </h2>
-            <p>
-              본문내용
-            </p>
-          </header>
-        </div>
-      </section>
-
-    <!-- Two -->
-      <section id="two" class="wrapper alt style2">
-        <section class="spotlight">
-          <div class="image"><img src="../assets/home01.jpeg" alt="" /></div><div class="content">
-            <h2>Home Gardening</h2>
-            <p>본문내용</p>
-          </div>
-        </section>
-        <section class="spotlight">
-          <div class="image"><img src="../assets/home02.png" alt="" /></div><div class="content">
-            <h2>Home Farming</h2>
-            <p>본문내용</p>
-          </div>
-        </section>
-        <section class="spotlight">
-          <div class="image"><img src="../assets/home03.png" alt="" /></div><div class="content">
-            <h2>Augue eleifend aliquet<br />
-            sed condimentum</h2>
-            <p>본문내용</p>
-          </div>
-        </section>
-      </section>
-
-    <!-- Three -->
-      <section id="three" class="wrapper style3 special">
-        <div class="inner">
-          <header class="major">
-            <h2>Guide</h2>
-            <p>
-              본문내용
-            </p>
-          </header>
-          <ul class="features">
-            <li>
-              <h3>Info</h3>
-              <p>본문내용</p>
-            </li>
-            <li>
-              <h3>Plant</h3>
-              <p>본문내용</p>
-            </li>
-            <li>
-              <h3>Life Style</h3>
-              <p>본문내용</p>
-            </li>
-            <li>
-              <h3>Community</h3>
-              <p>본문내용</p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-    <!-- CTA -->
-      <section id="cta" class="wrapper style4">
-        <div class="inner">
-          <!-- <header>
-            <h2>Arcue ut vel commodo</h2>
-            <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
-          </header>
-          <ul class="actions stacked">
-            <li><a href="#" class="button fit primary">Activate</a></li>
-            <li><a href="#" class="button fit">Learn More</a></li>
-          </ul> -->
-        </div>
+<!-- <div id="page-wrapper"> -->
+<article id="main">
+    <section class="wrapper style">
+    <div id="inner">
+        <!-- <img src="../assets/homelogo.png" alt="" /> -->
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+        <h3>YOUR OWN LITTLE<br/>SPECIAL GARDEN<br/><br/>HOME<br/>GARDENING & FARMING</h3>
         <br/><br/><br/><br/><br/><br/>
-      </section>
-    </article>
-  <!-- </div> -->
+    </div>
+    <br/>
+    <a href="/#one" class="more"><font-awesome-icon icon="fa-solid fa-angles-down" size="3x" /></a>
+    </section>
+    <!-- One -->
+    <section id="one" class="wrapper style1 special">
+    <div class="inner">
+        <header class="major">
+        <h2>
+            당신의 특별한 정원을<br />
+            아름답게 만들어 드리겠습니다.
+        </h2>
+        <p>
+            본문내용
+        </p>
+        </header>
+    </div>
+    </section>
+
+<!-- Two -->
+    <section id="two" class="wrapper alt style2">
+    <section class="spotlight">
+        <div class="image"><img src="../assets/home01.jpeg" alt="" /></div><div class="content">
+        <h2>Home Gardening</h2>
+        <p>본문내용</p>
+        </div>
+    </section>
+    <section class="spotlight">
+        <div class="image"><img src="../assets/home02.png" alt="" /></div><div class="content">
+        <h2>Home Farming</h2>
+        <p>본문내용</p>
+        </div>
+    </section>
+    <section class="spotlight">
+        <div class="image"><img src="../assets/home03.png" alt="" /></div><div class="content">
+        <h2>Augue eleifend aliquet<br />
+        sed condimentum</h2>
+        <p>본문내용</p>
+        </div>
+    </section>
+    </section>
+
+<!-- Three -->
+    <section id="three" class="wrapper style3 special">
+    <div class="inner">
+        <header class="major">
+        <h2>Guide</h2>
+        <p>
+            본문내용
+        </p>
+        </header>
+        <ul class="features">
+        <li>
+            <h3>Info</h3>
+            <p>본문내용</p>
+        </li>
+        <li>
+            <h3>Plant</h3>
+            <p>본문내용</p>
+        </li>
+        <li>
+            <h3>Life Style</h3>
+            <p>본문내용</p>
+        </li>
+        <li>
+            <h3>Community</h3>
+            <p>본문내용</p>
+        </li>
+        </ul>
+    </div>
+    </section>
+
+<!-- CTA -->
+    <section id="cta" class="wrapper style4">
+    <div class="inner">
+        <!-- <header>
+        <h2>Arcue ut vel commodo</h2>
+        <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+        </header>
+        <ul class="actions stacked">
+        <li><a href="#" class="button fit primary">Activate</a></li>
+        <li><a href="#" class="button fit">Learn More</a></li>
+        </ul> -->
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    </section>
+</article>
+<!-- </div> -->
 </template>
 
 <script>
 export default {
-  name: 'Home',
-  data() {
-    return {
-      msg: 'Home'
-    }
-  }
+name: 'Home',
+data() {
+return {
+    msg: 'Home'
+}
+}
 }
 </script>
 
@@ -3863,5 +3863,8 @@ body.is-mobile.landing .wrapper.style4 {
 
 body.is-mobile.landing #footer {
     background-color: #1d242a;
+}
+#inner {
+    text-align: center;
 }
 </style>
