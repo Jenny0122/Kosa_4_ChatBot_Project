@@ -1,10 +1,10 @@
 <template>
-  <div id="page-wrapper">
+<div id="page-wrapper">
     <article id="main">
-      <header>
+    <header>
         <h2>{{msg}} Page</h2>
         <p>{{subject}}</p>
-      </header>
+    </header>
         <section class="wrapper alt style2">
         <div class="inner">
             <br/><br/>
@@ -451,13 +451,13 @@ data() {
             this.pnames['plant005'].push(list[i])
         } else if (list[i]['crop_name'] === '갓') {
             this.pnames['plant006'].push(list[i])
-        } else if (list[i]['crop_name'] === '갯기름나물') {
+        } else if (list[i]['crop_name'] === '갯기름 나물(식방풍)') {
             this.pnames['plant007'].push(list[i])
         } else if (list[i]['crop_name'] === '거베라') {
             this.pnames['plant008'].push(list[i])
         } else if (list[i]['crop_name'] === '고구마') {
             this.pnames['plant009'].push(list[i])
-        } else if (list[i]['crop_name'] === '고려엉겅퀴') {
+        } else if (list[i]['crop_name'] === '고려엉겅퀴(곤드레나물)') {
             this.pnames['plant010'].push(list[i])
         } else if (list[i]['crop_name'] === '고무나무') {
             this.pnames['plant011'].push(list[i])
@@ -720,10 +720,10 @@ data() {
 }
 </script>
 <style scoped>
-    .wrapper.style5 img {
-      max-width: 30vw;
-      max-height: 30vh;
-    }
+.wrapper.style5 img {
+    max-width: 30vw;
+    max-height: 30vh;
+}
 html,
 body,
 div,
@@ -4384,7 +4384,7 @@ body.is-preload #banner:after {
 /* Main */
 
 #main>header {
-    padding: 12em 0 10em 0;
+    padding: 5em 0 5em 0;
     background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
     background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
@@ -4397,7 +4397,7 @@ body.is-preload #banner:after {
 }
 
 #main>header h2 {
-    font-size: 1.75em;
+    font-size: 3em;
     margin: 0 0 0.5em 0;
 }
 
@@ -4406,6 +4406,7 @@ body.is-preload #banner:after {
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
+    font-size: 1.3em;
 }
 
 #main>header p a {
@@ -4414,7 +4415,7 @@ body.is-preload #banner:after {
 
 @media screen and (max-width: 1680px) {
     #main>header {
-        padding: 10em 0 8em 0;
+        padding: 5em 1em 5em 0;
     }
 }
 
