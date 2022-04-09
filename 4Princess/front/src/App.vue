@@ -36,7 +36,15 @@ export default {
 
 <style scope>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+=======
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+>>>>>>> refs/remotes/origin/yunhee
 
 .title {
   font-family: 'Noto Sans KR', sans-serif;

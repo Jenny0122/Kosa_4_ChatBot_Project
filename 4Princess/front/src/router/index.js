@@ -88,11 +88,6 @@ export default new Router({
                 import ( /* webpackChunkName: 'Community' */ '../components/Invention.vue'),
         },
         {
-            path: '/member/faq',
-            name: 'FAQ',
-            component: FAQ
-        },
-        {
             path: '/member/board/create',
             name: 'BoardCreate',
             component: BoardCreate,
@@ -115,7 +110,6 @@ export default new Router({
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/Board/CommentCreate.vue'),
         },
         {
-            path: '/member/board/:no/comment/:comment_no',
             path: '/member/comment',
             name: 'CommentList',
             component: () =>
