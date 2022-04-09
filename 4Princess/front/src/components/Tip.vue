@@ -3709,7 +3709,7 @@ body.is-preload #banner:after {
 /* Main */
 
 #main>header {
-    padding: 12em 0 10em 0;
+    padding: 5em 0 5em 0;
     background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
     background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
@@ -3722,7 +3722,7 @@ body.is-preload #banner:after {
 }
 
 #main>header h2 {
-    font-size: 1.75em;
+    font-size: 3em;
     margin: 0 0 0.5em 0;
 }
 
@@ -3731,6 +3731,7 @@ body.is-preload #banner:after {
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
+    font-size: 1.3em;
 }
 
 #main>header p a {
@@ -3739,7 +3740,7 @@ body.is-preload #banner:after {
 
 @media screen and (max-width: 1680px) {
     #main>header {
-        padding: 10em 0 8em 0;
+        padding: 5em 1em 5em 0;
     }
 }
 

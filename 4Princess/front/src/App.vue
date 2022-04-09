@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div id="page-wrapper">
-      <b-button v-b-toggle.sidebar-right class="MenuPosition"><span>Menu</span>&nbsp;&nbsp;&nbsp;<img src="./assets/homelogo.png" /></b-button>
-      <sidebar />
-      <router-view/>    
+      <menubar />
+      <!-- <b-button v-b-toggle.sidebar-right class="MenuPosition"><span>Menu</span>&nbsp;&nbsp;&nbsp;<img src="./assets/homelogo.png" /></b-button> -->
+      <!-- <sidebar /> -->
+      <router-view/>
       <topbutton />
       <bottom />
     </div>
@@ -13,7 +14,8 @@
 <script>
 import Bottom from '@/components/Bottom'
 import Sidebar from '@/components/Sidebar'
-import TopButton from './components/TopButton.vue'
+import TopButton from '@/components/TopButton.vue'
+import Menubar from '@/components/Menubar.vue'
 export default {
   name: 'App',
   data() {
@@ -29,7 +31,8 @@ export default {
   components: {
     'bottom': Bottom,
     'sidebar': Sidebar,
-    'topbutton': TopButton
+    'topbutton': TopButton,
+    'menubar': Menubar
   }
 }
 </script>
@@ -69,14 +72,15 @@ cursor: pointer;
 background-color:transparent; /* 배경 투명 */
 border: 0;
 z-index: 1; /* 겹치지 않게 해주는 기능 */
+font-size: 1.3em;
 }
 .MenuPosition:hover{
   background-color:transparent; /* 배경 투명 */
   border: 0;
 }
 .MenuPosition > img {
-  width: 50px;
-  height: 30px;
+  width: 60px;
+  height: 40px;
 }
 
 #app {

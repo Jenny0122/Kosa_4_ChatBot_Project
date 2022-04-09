@@ -364,6 +364,7 @@ i {
 p {
     margin: 0 0 2em 0;
     color: #ffffff !important;
+    font-size: 1.2em;
 }
 
 h1,
@@ -391,7 +392,7 @@ h6 a {
 }
 
 h2 {
-    font-size: 1.35em;
+    font-size: 1.5em;
     line-height: 1.75em;
 }
 
@@ -403,8 +404,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1.15em;
-    line-height: 1.75em;
+    font-size: 2em;
+    line-height: 1.5em;
 }
 
 @media screen and (max-width: 736px) {
