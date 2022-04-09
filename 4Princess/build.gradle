@@ -40,6 +40,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	// Session
 	implementation 'org.springframework.session:spring-session-core'
+	// Security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	
 	// Lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'

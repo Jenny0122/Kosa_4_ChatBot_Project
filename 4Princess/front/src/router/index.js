@@ -71,6 +71,11 @@ export default new Router({
             component: Tool
         },
         {
+            path: '/member/faq',
+            name: 'FAQ',
+            component: FAQ
+        },
+        {
             path: '/community/neologism',
             name: 'Neologism',
             component: () =>
