@@ -21,35 +21,35 @@ export default new Router({
                 import ( /* webpackChunkName: 'Community' */ '../components/Invention.vue'),
         },
         {
-            path: '/memberlounge/boardcreate',
+            path: '/member/board/create',
             name: 'BoardCreate',
             component: BoardCreate,
         },
         {
-            path: '/memberlounge/boarddetail/',
+            path: '/member/board/:no',
             name: 'BoardDetail',
             component: BoardDetail,
         },
         {
-            path: '/memberlounge/boardlist',
+            path: '/member/board',
             name: 'BoardList',
             component: () =>
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/Board/BoardList.vue'),
         },
         {
-            path: '/memberlounge/commentcreate',
+            path: '/member/comment/create',
             name: 'CommentCreate',
             component: () =>
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/Board/CommentCreate.vue'),
         },
         {
-            path: '/memberlounge/commentlist',
+            path: '/member/comment',
             name: 'CommentList',
             component: () =>
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/Board/CommentList.vue'),
         },
         {
-            path: '/memberlounge/commentlistitem',
+            path: '/member/commentlistitem',
             name: 'CommentListItem',
             component: () =>
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/Board/CommentListItem.vue'),

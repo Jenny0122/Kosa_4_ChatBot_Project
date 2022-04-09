@@ -1,4 +1,6 @@
 package com.kosa.ma2garden.entity;
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -28,13 +30,13 @@ public class Board {
 	private String contents;
 	
 	@Column(name = "day")
-	private String day;
+	private LocalDateTime day;
 	
 	@Column(name = "user_no")
 	private String user_no;
 
 	@Builder
-	public Board(String counts, String title, String contents, String day, String user_no) {
+	public Board(String counts, String title, String contents, LocalDateTime day, String user_no) {
 		super();
 		this.counts = counts;
 		this.title = title;

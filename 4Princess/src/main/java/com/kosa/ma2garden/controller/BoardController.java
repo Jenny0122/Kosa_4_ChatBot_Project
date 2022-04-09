@@ -24,7 +24,7 @@ public class BoardController {
 	@GetMapping("/board")
 	public ResponseEntity<List<BoardDTO>> getBoard() {
 		List<BoardDTO> list = boardService.getAllBoard();
-		list.forEach(System.out::println);
+		
 		return new ResponseEntity<List<BoardDTO>>(list, HttpStatus.OK);
 	}
 	

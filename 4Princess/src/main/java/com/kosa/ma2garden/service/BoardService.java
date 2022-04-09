@@ -1,8 +1,10 @@
 package com.kosa.ma2garden.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
+import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,8 @@ public class BoardService {
 					.contents(board.getContents()).day(board.getDay()).user_no(board.getUser_no()).build();
 			list.add(boardDTO);
 		}
+		
+		Collections.reverse(list);
 
 		return list;
 	}

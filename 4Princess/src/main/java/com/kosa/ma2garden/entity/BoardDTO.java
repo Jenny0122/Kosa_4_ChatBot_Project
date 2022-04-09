@@ -1,5 +1,7 @@
 package com.kosa.ma2garden.entity;
 
+import java.time.LocalDateTime;
+
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,11 +15,11 @@ public class BoardDTO {
 	private String counts;
 	private String title;
 	private String contents;
-	private String day;
+	private LocalDateTime day;
 	private String user_no;
 	
 	@Builder
-	public BoardDTO(long no, String counts, String title, String contents, String day, String user_no) {
+	public BoardDTO(long no, String counts, String title, String contents, LocalDateTime day, String user_no) {
 		super();
 		this.no = no;
 		this.counts = counts;

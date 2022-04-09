@@ -1,6 +1,6 @@
 <template>
   <div class="Neologism">
-    <div class="title">Neologism</div>
+    <div class="title">신조어</div>
     <div class="subtitle">신조어를 통해 식물 가꾸기 트렌드를 알아볼까요?:)</div>
     <div class="neologism-text" v-for="n in neologism" :key="n">
       <div class="neologism-name">
