@@ -29,7 +29,7 @@ Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-Vue.use(PaginationPlugin)
+    // Vue.use(PaginationPlugin)
 
 /* eslint-disable no-new */
 new Vue({

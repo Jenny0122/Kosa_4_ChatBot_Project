@@ -29,6 +29,8 @@ public class TipController {
 	public ResponseEntity<List<TipDTO>> getTip() {
 		List<TipDTO> list = tipService.getAllTip();
 		
+		///123
+		
 		return new ResponseEntity<List<TipDTO>>(list, HttpStatus.OK);
 	}
 }
