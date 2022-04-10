@@ -15,7 +15,7 @@
 import Bottom from '@/components/Bottom'
 import Sidebar from '@/components/Sidebar'
 import TopButton from '@/components/TopButton.vue'
-import Menubar from '@/components/Menubar.vue'
+// import Menubar from '@/components/Menubar.vue'
 export default {
   name: 'App',
   data() {
@@ -32,22 +32,18 @@ export default {
     'bottom': Bottom,
     'sidebar': Sidebar,
     'topbutton': TopButton,
-    'menubar': Menubar
+    // 'menubar': Menubar
   }
 }
 </script>
 
 <style scope>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
-=======
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
->>>>>>> refs/remotes/origin/yunhee
 
 .title {
   font-family: 'Noto Sans KR', sans-serif;
@@ -99,9 +95,5 @@ body.landing #page-wrapper {
     background-size: cover;
     padding-top: 0;
 }
-
-</style>
-
-<style>
 
 </style>
