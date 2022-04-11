@@ -19,15 +19,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 public class UserController {
-	
+
 	@Autowired
 	UserService userService;
-	
+
 	@ApiOperation(value = "유저 정보 가져오기", notes = "노트 기록 예정")
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@PostMapping("/idvaild")
 	public ResponseEntity<Boolean> getCheck(@RequestBody UserDTO userDTO) {
-		
+
 		return ResponseEntity.ok(userService.idVaild(userDTO));
 	}
 
@@ -38,18 +38,18 @@ public class UserController {
 
 		userService.createUser(userDTO);
 		return ResponseEntity.ok("성공");
-		
+
 	}
 
 	@ApiOperation(value = "유저 정보 가져오기", notes = "노트 기록 예정")
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@PostMapping("/login")
 	public ResponseEntity<String> getLogin(@RequestBody UserDTO userDTO) {
-		
+
 		User user = userService.loginUser(userDTO);
-		
+
 		return new ResponseEntity<String>("Success", HttpStatus.OK);
-		
+
 	}
 
 }

@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: 'Sidebar',
+  name: 'Menubar',
   data() {
     return {
       tool: [],
