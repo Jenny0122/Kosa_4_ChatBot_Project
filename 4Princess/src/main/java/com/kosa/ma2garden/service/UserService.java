@@ -31,10 +31,9 @@ public class UserService {
 	 * return list; }
 	 */
 
-	public boolean idVaild(UserDTO userDTO) {
+	public boolean idVaild(String id) {
+		User check = userRepository.findAllById(id);
 
-		User check = userRepository.findAllById(userDTO.getId());
-		System.out.println(check);
 		if (check != null) {
 			return true;
 		} else {
