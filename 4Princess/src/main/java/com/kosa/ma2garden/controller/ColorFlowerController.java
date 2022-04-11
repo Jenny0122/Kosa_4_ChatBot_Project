@@ -27,7 +27,8 @@ public class ColorFlowerController {
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@GetMapping("/color_flower")
 	public ResponseEntity<List<ColorFlowerDTO>> getCook() {
-		List<ColorFlowerDTO> list = colorflowerService.getAllColorFlower();
+		List<ColorFlowerDTO> list = colorflowerService.getAllColorFlower();		
+		
 		
 		return new ResponseEntity<List<ColorFlowerDTO>>(list, HttpStatus.OK);
 	}

@@ -3,6 +3,7 @@
     <div :key="item.comment_id" v-for="item in comments">
       <CommentListItem :commentObj="item"></CommentListItem>
     </div>
+
     <CommentCreate :contentId="contentId" :reloadComment="reloadComment"/>
   </div>
 </template>
@@ -11,7 +12,6 @@
 import data from '@/data'
 import CommentListItem from './CommentListItem'
 import CommentCreate from './CommentCreate'
-
 export default {
 	name: 'CommentList',
 	props: {

@@ -1,6 +1,6 @@
 <template>
   <div class="BoardDetail">
-    <div class="title">게시판</div>
+    <div class="title">BoardDetail</div>
     <div class="subtitle">회원전용 공간입니다.:)</div>
     <b-card>
       <div class="content-detail-content-info">
@@ -15,8 +15,8 @@
       </div>
       <div class="content-detail-content">{{context}}</div>
       <div class="content-detail-button">
-        <b-button class='updatdData' @click="updateData">수정</b-button>&nbsp;
-        <b-button class='deleteData' @click="deleteData">삭제</b-button>
+        <b-button variant="primary" @click="updateData">수정</b-button>&nbsp;
+        <b-button variant="success" @click="deleteData">삭제</b-button>
       </div>
       <div class="content-detail-comment">
         <CommentList :contentId="contentId"></CommentList>
@@ -28,7 +28,6 @@
 <script>
 import data from '@/data/index.js'
 import CommentList from './CommentList'
-
 export default {
 	name: 'BoardDetail',
 	data() {
@@ -68,14 +67,11 @@ export default {
 }
 </script>
 <style scoped>
-.subtitle{
-	padding-bottom: 3%;
-}
 .BoardDetail {
 	text-align: left;
 	width:80%;
 	margin: 50pt auto;
-  padding: 0 8%;
+  padding: 0 5%;
 }
 .content-detail-content-info {
   border: 1px solid black;
@@ -109,10 +105,9 @@ export default {
 }
 
 .content-detail-button {
+  border: 1px solid black;
   margin-top: 1rem;
   padding: 1rem;
-  border: none;
-  text-align: right;
 }
 
 .content-detail-comment {
@@ -120,16 +115,4 @@ export default {
   margin-top: 1rem;
   padding: 1rem;
 }
-.btn-secondary{
-  border-color:white;
-}
-
-.btn.updatdData.btn-secondary{
-  background-color: #21b2a6;
-}
-
-.btn.deleteData.btn-secondary{
-  background-color: #6c757d;
-}
-
 </style>

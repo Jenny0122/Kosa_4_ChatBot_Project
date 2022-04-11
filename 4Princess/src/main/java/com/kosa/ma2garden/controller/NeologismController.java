@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kosa.ma2garden.entity.NeologismDTO;
-import com.kosa.ma2garden.service.NeologismService_backup;
+
+// Git push
+
+import com.kosa.ma2garden.service.NeologismService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 public class NeologismController {
 
 	@Autowired
-	NeologismService_backup neologismService;
+	NeologismService neologismService;
 
 	@GetMapping("/neologism") // Git push
 	public ResponseEntity<List<NeologismDTO>> getNeologism() {

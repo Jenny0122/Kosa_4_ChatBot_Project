@@ -1,9 +1,9 @@
 <template>
   <div id="Invention">
-    <div class="title">발명품</div>
-    <div class="subtitle">식물 가꾸기 관련 아이디어들을 소개합니다.:) 보고싶은 발명품을 선택해 주세요!</div>
+    <div class="title">Invention</div>
+    <div class="subtitle">식물 가꾸기 관련 발명품들을 소개합니다.:)</div>
     <div class="invention-area">
-			<div class="invention-content-area" v-for="n in invention" :key="n">
+			<div class="invention-content-area" v-for="(n, index) in invention" :key="index">
 				<div class="invention-img">
 					<a v-bind:href="n.url" target="_blank"><img v-bind:src="n.photo"></a>
 				</div>
