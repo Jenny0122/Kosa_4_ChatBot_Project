@@ -16,16 +16,6 @@
 	<div id="customPagination">
 			<b-pagination v-model="currentPage" :total-rows="rows" :per-page="perPage" align="center" class="customPagination"></b-pagination>
 	</div>
-	<!--
-	<div class="pagination">
-			<a href="#" title="previous page"><svg fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></a>
-			<a href="#" class="page-active">1</a>
-			<a href="#">2</a>
-			<a href="#">3</a><a href="#">4</a>
-			<a href="#">5</a>
-			<a href="#" title="next page"><svg fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
-	</div>
-	-->
 		<div class="click-button">
 			<b-button @click="writeContent">글쓰기</b-button>
 		</div>
@@ -112,7 +102,6 @@ export default {
 				}
 			})
 			.catch()
-		console.log(this.items)
 	}
 }
 
