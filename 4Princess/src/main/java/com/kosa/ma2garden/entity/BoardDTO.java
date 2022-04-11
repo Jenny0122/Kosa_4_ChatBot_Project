@@ -1,6 +1,7 @@
 package com.kosa.ma2garden.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import lombok.Builder;
 import lombok.Data;
@@ -17,9 +18,11 @@ public class BoardDTO {
 	private String contents;
 	private LocalDateTime day;
 	private String user_no;
-	
+	private List<Comment> comment;
+
 	@Builder
-	public BoardDTO(long no, String counts, String title, String contents, LocalDateTime day, String user_no) {
+	public BoardDTO(long no, String counts, String title, String contents, LocalDateTime day, String user_no,
+			List<Comment> comment) {
 		super();
 		this.no = no;
 		this.counts = counts;
@@ -27,6 +30,7 @@ public class BoardDTO {
 		this.contents = contents;
 		this.day = day;
 		this.user_no = user_no;
-		
-	}	
+		this.comment = comment;
+	}
+
 }
