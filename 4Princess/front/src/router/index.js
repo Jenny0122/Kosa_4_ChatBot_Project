@@ -120,6 +120,12 @@ export default new Router({
             name: 'CommentListItem',
             component: () =>
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/Board/CommentListItem.vue'),
+        },
+        {
+            path: '/chatbot',
+            name: 'ChatBot',
+            component: () =>
+                import ( /* webpackChunkName: 'Memberlounge' */ '../components/ChatBot/ChatForm.vue'),
         }
     ]
 })

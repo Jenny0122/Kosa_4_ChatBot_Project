@@ -1,35 +1,36 @@
 <template>
-<div id="page-wrapper">
-    <article id="main">
-        <header>
-            <h2 class="title">RECIPE</h2>
-            <p class="subtitle">키우는 작물을 선택해 주세요! 작물별 추천음식 레시피를 알려드려요 :)</p>
-        </header>
-        <section class="wrapper alt style2">
-            <div class="inner">
-                <div class="button-area">
-                <div class="crop-button-area" v-for="(crop, index) in crop_names" :key="index">
-                    <button class="crop-button" @click="showMenu(crop)" variant="outline-success" size="lg">{{crop}}</button>
+    <div id="page-wrapper">
+        <article id="main">
+            <header>
+                <h2 class="title">RECIPE</h2>
+                <p class="subtitle">키우는 작물을 선택해 주세요! 작물별 추천음식 레시피를 알려드려요 :)</p>
+            </header>
+
+            <section class="wrapper alt style2">
+                <div class="inner">
+                    <div class="button-area">
+                    <div class="crop-button-area" v-for="(crop, index) in crop_names" :key="index">
+                        <button class="crop-button" @click="showMenu(crop)" variant="outline-success" size="lg">{{crop}}</button>
+                    </div>
+                    </div>
+                    <div class="menu-area">
+                        <div class="menu-select-area" @click="showRecipe(menu)" v-for="(menu, no) in selected_crop" :key="no">
+                        <div class="photo-wrapper"><img v-bind:src="menu.photo"></div>
+                        <div class="menu-text">{{menu.menu}}</div>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
-            <div class="menu-area">
-                <div class="menu-select-area" @click="showRecipe(menu)" v-for="(menu, no) in selected_crop" :key="no">
-                <div class="photo-wrapper"><img v-bind:src="menu.photo"></div>
-                <div class="menu-text">{{menu.menu}}</div>
-                </div>
-            </div>
-            <modal v-if="showModal" @close="showModal = false">
-                <div class="header" slot="header">{{selected_menu.menu}}</div>
-                <div slot="body" @click="showModal=false">
-                    [재료] <br> {{selected_menu.ingredient}} <br><br>
-                    [레시피] <br> <div v-html="selected_menu.cooking_order.split('\n').join('<br>')"></div>
-                <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
-                </div>
-            </modal>
-        </section>
-    </article>
-</div>
+                <modal v-if="showModal" @close="showModal = false">
+                    <div class="header" slot="header">{{selected_menu.menu}}</div>
+                    <div slot="body" @click="showModal=false">
+                        [재료] <br> {{selected_menu.ingredient}} <br><br>
+                        [레시피] <br> <div v-html="selected_menu.cooking_order.split('\n').join('<br>')"></div>
+                    <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
+                    </div>
+                </modal>
+            </section>
+        </article>
+    </div>
 </template>
 
 <script>
@@ -100,28 +101,32 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .button-area {
-  margin: 20pt 150pt;
+  margin: 20pt 0;
+  margin-top: 0 !important;
   /* text-align: center; */
 }
 .crop-button-area {
   display: inline-block !important;
-  width: 15% !important;
   height: 75pt !important;
   vertical-align: middle !important;
   text-align: center !important;
-  margin: 20pt 2.5% !important;
+  width: 16% !important;
+  margin: 20pt 2% !important;
 }
 .crop-button {
+    padding: 0 auto;
   width: 100% !important;
   height: 100% !important;
-  font-size: 120% !important;
+  font-size: 100% !important;
   color: white !important;
-  background-color: #21b2a6 !important;
+  background-color: #557571 !important;
   border: 1px solid white !important;
 }
 img {
   width: 100% !important;
   height: 100% !important;
+  object-fit: cover;
+  position: relative;
 }
 .photo-wrapper {
   width: 100% !important;
@@ -133,14 +138,14 @@ img {
 }
 .menu-select-area {
   display: inline-block !important;
-  margin: 30pt 3% !important;
-  width: 19% !important;
+  margin: 30pt 5% !important;
+  width: 23% !important;
 }
 .menu-text {
-    font-size: 15t !important;
+    font-size: 20pt !important;
     margin: 20pt 0 !important;
-    color: white !important;
-}
+    color: black !important;
+    }
 html,
 body,
 div,
@@ -229,6 +234,7 @@ video {
     font: inherit;
     vertical-align: baseline;
 }
+
 article,
 aside,
 details,
@@ -242,9 +248,11 @@ nav,
 section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
+
 ol,
 ul {
     list-style: none;
@@ -254,6 +262,7 @@ blockquote,
 q {
     quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -261,21 +270,26 @@ q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 body {
     -webkit-text-size-adjust: none;
 }
+
 mark {
     background-color: transparent;
     color: inherit;
 }
+
 input::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
+
 input,
 select,
 textarea {
@@ -285,21 +299,27 @@ textarea {
     appearance: none;
 }
 
+
 /* Basic */
+
 @-ms-viewport {
     width: device-width;
 }
+
 html {
     box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
     box-sizing: inherit;
 }
+
 body {
     background: #2e3842;
 }
+
 body.is-preload *,
 body.is-preload *:before,
 body.is-preload *:after {
@@ -312,11 +332,12 @@ body.is-preload *:after {
     -ms-transition: none !important;
     transition: none !important;
 }
+
 body,
 input,
 select,
 textarea {
-    color: #fff;
+    color: black;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15pt;
     font-weight: 400;
@@ -351,6 +372,7 @@ textarea {
         letter-spacing: 0.0375em;
     }
 }
+
 a {
     -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
@@ -378,7 +400,7 @@ i {
 
 p {
     margin: 0 0 2em 0;
-    color: #ffffff !important;
+    color: black;
 }
 
 h1,
@@ -387,7 +409,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #fff;
+    color: black;
     font-weight: 800;
     letter-spacing: 0.225em;
     line-height: 1em;
@@ -406,8 +428,8 @@ h6 a {
 }
 
 h2 {
-    font-size: 1.35em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
 }
 
 @media screen and (max-width: 736px) {
@@ -418,8 +440,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1.15em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
 }
 
 @media screen and (max-width: 736px) {
@@ -1692,7 +1714,7 @@ article.special {
 }
 
 header p {
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
     position: relative;
     top: -0.25em;
 }
@@ -1773,7 +1795,7 @@ textarea {
     -webkit-appearance: none;
     -ms-appearance: none;
     appearance: none;
-    background-color: rgba(144, 144, 144, 0.25);
+    background-color: rgba(214, 144, 144, 0.25);
     border-radius: 3px;
     border: none;
     color: inherit;
@@ -2220,6 +2242,9 @@ ul.actions.fit.stacked {
     ul.actions:not(.fixed) li input[type="reset"],
     ul.actions:not(.fixed) li input[type="button"],
     ul.actions:not(.fixed) li button,
+    ul.actions:not(.fixed) li .button {
+        width: 100%;
+    }
     ul.actions:not(.fixed) li input[type="submit"].icon:before,
     ul.actions:not(.fixed) li input[type="reset"].icon:before,
     ul.actions:not(.fixed) li input[type="button"].icon:before,
@@ -2336,6 +2361,37 @@ table.alt tfoot {
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
+button,
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 0;
+    box-shadow: inset 0 0 0 2px black;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    max-width: 30em;
+    padding: 0 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 input[type="submit"]:hover,
 input[type="reset"]:hover,
@@ -2423,6 +2479,17 @@ button:disabled,
 .button:disabled {
     pointer-events: none;
     opacity: 0.25;
+}
+
+@media screen and (max-width: 736px) {
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        height: 3.75em;
+        line-height: 3.75em;
+    }
 }
 
 
@@ -2684,7 +2751,7 @@ img {
 }
 
 .wrapper>.inner {
-    /* width: 60em; */
+    width: 60em;
     margin: 0 auto;
 }
 
@@ -2701,10 +2768,10 @@ img {
 }
 
 .wrapper a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 .wrapper a:hover {
-  color: #fff;
+  color: #557571;
 }
 
 .wrapper.alt {
@@ -2850,6 +2917,10 @@ img {
 .wrapper.style1 input[type="reset"],
 .wrapper.style1 input[type="button"],
 .wrapper.style1 button,
+.wrapper.style1 .button {
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.125);
+    color: #ffffff;
+}
 
 .wrapper.style1 input[type="submit"]:hover,
 .wrapper.style1 input[type="reset"]:hover,
@@ -2874,7 +2945,7 @@ img {
 }
 
 .wrapper.style2 {
-    background-color: #2e3842;
+    background-color: rgba(251, 249, 241);
 }
 
 .wrapper.style3 {
@@ -3010,6 +3081,15 @@ img {
 
 .wrapper.style3 table.alt tbody tr td {
     border-color: rgba(0, 0, 0, 0.125);
+}
+
+.wrapper.style3 input[type="submit"],
+.wrapper.style3 input[type="reset"],
+.wrapper.style3 input[type="button"],
+.wrapper.style3 button,
+.wrapper.style3 .button {
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.125);
+    color: #ffffff;
 }
 
 .wrapper.style3 input[type="submit"]:hover,
@@ -3178,6 +3258,14 @@ img {
     border-color: #dfdfdf;
 }
 
+.wrapper.style5 input[type="submit"],
+.wrapper.style5 input[type="reset"],
+.wrapper.style5 input[type="button"],
+.wrapper.style5 button,
+.wrapper.style5 .button {
+    box-shadow: inset 0 0 0 2px #dfdfdf;
+    color: #2E3842;
+}
 
 .wrapper.style5 input[type="submit"]:hover,
 .wrapper.style5 input[type="reset"]:hover,
@@ -3736,13 +3824,14 @@ body.is-preload #banner:after {
 }
 
 #main>header p {
-    color: inherit;
+    /* color: inherit; */
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
     font-size: 1.3em;
+    padding: 10pt 0 0 0;
+    margin: 0 auto;
 }
-
 #main>header p a {
     color: inherit;
 }
@@ -3816,7 +3905,7 @@ body.is-mobile.landing #footer {
 }
 
 .ulbox {
-    border: 2px solid #ffffff;
+    border: 2px solid black;
     float: left;
     text-align: center;
     width: 100%;
@@ -3828,6 +3917,7 @@ body.is-mobile.landing #footer {
     text-align: center;
     margin-right: 15px;
     margin-left: 15px;
+    font-size: 1.25em;
 }
 .ulbox li {
     color: #ffffff;

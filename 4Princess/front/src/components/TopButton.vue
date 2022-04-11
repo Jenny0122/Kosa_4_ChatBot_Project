@@ -23,11 +23,11 @@ export default {
 
 <style scoped>
 .top-button {
-  bottom: 5%;
-  right: 20%;
+  bottom: 3%;
+  right: 5%;
   padding: 5pt 8pt;
   position: fixed;
-  background-color: #21b2a6;
+  background-color: #557571;
   border-radius: 100%;
 }
 .fa-angles-up {

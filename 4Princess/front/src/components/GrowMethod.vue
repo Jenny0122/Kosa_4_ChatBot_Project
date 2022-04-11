@@ -2,42 +2,42 @@
     <div id="page-wrapper">
         <article id="main">
             <header>
-                <h2>{{msg}}</h2>
-                <p>{{subject}}</p>
+                <h2 class="title">{{msg}}</h2>
+                <p class="subtitle">{{subject}}</p>
             </header>
 
             <section class="wrapper alt style2">
                 <div class="inner">
                     <br/><br/>
-                    <h2>
-                        작물을(를) 선택해주세요
-                    </h2>
+                    <div class="sub">
+                        작물을 선택해주세요.
+                    </div>
                     <div class="ulbox">
-                        <h3>허브</h3>
+                        <div class="category">* 허브 *</div>
                         <ul v-for="(h, idx) in herb" :key="idx">
                             <li><a :href="`/info/growmethod/#${h.name}`" class="more">{{h.name}}</a></li>
                         </ul>
                     </div>
                     <div class="ulbox">
-                        <h3>뿌리채소와 열매채소</h3>
+                        <div class="category">* 뿌리채소와 열매채소 *</div>
                         <ul v-for="(rv, idx) in rootVege" :key="idx">
                             <li><a :href="`/info/growmethod/#${rv.name}`" class="more">{{rv.name}}</a></li>
                         </ul>
                     </div>
                     <div class="ulbox">
-                        <h3>국나물채소</h3>
+                        <div class="category">* 국나물채소 *</div>
                         <ul v-for="(sv, idx) in soupVege" :key="idx">
                             <li><a :href="`/info/growmethod/#${sv.name}`" class="more">{{sv.name}}</a></li>
                         </ul>
                     </div>
                     <div class="ulbox">
-                        <h3>잎줄기채소</h3>
+                        <div class="category">* 잎줄기채소 *</div>
                         <ul v-for="(lv, idx) in leafyVege" :key="idx">
                             <li><a :href="`/info/growmethod/#${lv.name}`" class="more">{{lv.name}}</a></li>
                         </ul>
                     </div>
                     <div class="ulbox">
-                        <h3>쌈채소</h3>
+                        <div class="category">* 쌈채소 *</div>
                         <ul v-for="(gv, idx) in greenVege" :key="idx">
                             <li><a :href="`/info/growmethod/#${gv.name}`" class="more">{{gv.name}}</a></li>
                         </ul>
@@ -65,9 +65,9 @@
                                         자세히 보기
                                     </button>
                                     <div id="#GrowMethod" v-show="is_show[idx]">
-                                        <h2>필요한 도구</h2>
+                                        <h3>필요한 도구</h3>
                                         <p>{{gm.materials}}</p>
-                                        <h2>재배과정</h2>
+                                        <h3>재배과정</h3>
                                         <p v-html="gm.cultivation_process" ></p>
                                         <button v-bind:id="`${gm.no}`-1" @click="handle_toggle(`${gm.no}`-1)" type="button">
                                         확인
@@ -89,7 +89,7 @@ export default{
   data() {
     return {
       msg: '작물 키우는 방법',
-      subject: '여러가지 작물의 키우는 방법을 소개합니다',
+      subject: '여러가지 작물의 키우는 방법을 소개합니다. :)',
       growMethod: [],
       herb: [],
       rootVege: [],
@@ -330,7 +330,7 @@ body,
 input,
 select,
 textarea {
-    color: #fff;
+    color: black;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15pt;
     font-weight: 400;
@@ -393,7 +393,7 @@ i {
 
 p {
     margin: 0 0 2em 0;
-    color: #ffffff !important;
+    color: black;
 }
 
 h1,
@@ -402,12 +402,21 @@ h3,
 h4,
 h5,
 h6 {
-    color: #fff;
+    color: white;
     font-weight: 800;
     letter-spacing: 0.225em;
     line-height: 1em;
     margin: 0 0 1em 0;
     text-transform: uppercase;
+}
+.sub {
+    font-weight: 800;
+    letter-spacing: 0.225em;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.5em;
 }
 
 h1 a,
@@ -421,8 +430,8 @@ h6 a {
 }
 
 h2 {
-    font-size: 1.35em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
 }
 
 @media screen and (max-width: 736px) {
@@ -433,8 +442,18 @@ h2 {
 }
 
 h3 {
-    font-size: 1.15em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
+    color: black;
+}
+.category {
+    font-size: 1.5em;
+    line-height: 3em;
+    color: white;
+    margin: 0 0 1em 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
 }
 
 @media screen and (max-width: 736px) {
@@ -1707,7 +1726,7 @@ article.special {
 }
 
 header p {
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
     position: relative;
     top: -0.25em;
 }
@@ -1788,7 +1807,7 @@ textarea {
     -webkit-appearance: none;
     -ms-appearance: none;
     appearance: none;
-    background-color: rgba(144, 144, 144, 0.25);
+    background-color: rgba(214, 144, 144, 0.25);
     border-radius: 3px;
     border: none;
     color: inherit;
@@ -2367,8 +2386,8 @@ button,
     background-color: transparent;
     border-radius: 3px;
     border: 0;
-    box-shadow: inset 0 0 0 2px #fff;
-    color: #fff;
+    box-shadow: inset 0 0 0 2px black;
+    color: black;
     cursor: pointer;
     display: inline-block;
     font-size: 0.8em;
@@ -2761,10 +2780,10 @@ img {
 }
 
 .wrapper a {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 .wrapper a:hover {
-  color: #fff;
+  color: #557571;
 }
 
 .wrapper.alt {
@@ -2938,7 +2957,7 @@ img {
 }
 
 .wrapper.style2 {
-    background-color: #2e3842;
+    background-color: rgba(251, 249, 241);
 }
 
 .wrapper.style3 {
@@ -3817,13 +3836,14 @@ body.is-preload #banner:after {
 }
 
 #main>header p {
-    color: inherit;
+    /* color: inherit; */
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
     font-size: 1.3em;
+    padding: 10pt 0 0 0;
+    margin: 0 auto;
 }
-
 #main>header p a {
     color: inherit;
 }
@@ -3897,11 +3917,13 @@ body.is-mobile.landing #footer {
 }
 
 .ulbox {
-    border: 2px solid #ffffff;
+    border: 2px solid white;
     float: left;
     text-align: center;
     width: 100%;
     margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #557571
 }
 .ulbox ul {
     list-style-type: none;
@@ -3909,6 +3931,7 @@ body.is-mobile.landing #footer {
     text-align: center;
     margin-right: 15px;
     margin-left: 15px;
+    font-size: 1.25em;
 }
 .ulbox li {
     color: #ffffff;

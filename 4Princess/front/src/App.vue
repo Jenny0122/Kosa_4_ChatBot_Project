@@ -49,8 +49,8 @@ export default {
 .title {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 900;
-  font-size: 50pt;
-  color: white;
+  font-size: 2.5em !important;
+  color: white !important;
   text-align: center;
 }
 .subtitle {
@@ -59,7 +59,7 @@ export default {
   font-size: 20pt;
   text-align: center;
   margin: 10pt;
-  color: white;
+  color: white important;
 }
 .MenuPosition {
 position: fixed; /* 고정 기능 */
