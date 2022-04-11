@@ -13,9 +13,9 @@
 
 <script>
 import Bottom from '@/components/Bottom'
-import Sidebar from '@/components/Sidebar'
+// import Sidebar from '@/components/Sidebar'
 import TopButton from '@/components/TopButton.vue'
-// import Menubar from '@/components/Menubar.vue'
+import Menubar from '@/components/Menubar.vue'
 export default {
   name: 'App',
   data() {
@@ -30,9 +30,9 @@ export default {
   },
   components: {
     'bottom': Bottom,
-    'sidebar': Sidebar,
+    //'sidebar': Sidebar,
     'topbutton': TopButton,
-    // 'menubar': Menubar
+    'menubar': Menubar
   }
 }
 </script>
