@@ -3,7 +3,7 @@
 	<div id="page-wrapper">
     <article id="main">
       <header>
-				<h2 class="title">BoardList</h2>
+				<h2 class="title">게시판</h2>
 				<p class="subtitle">회원전용 게시판 공간입니다.:)</p>
 			</header>
 
@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import data from '@/data'
 export default {
 	name: 'BoardList',
 	data() {
@@ -121,7 +120,7 @@ export default {
 
 <style scoped>
 .BoardList {
-	color: black;
+	color: black !important;
 	text-align: left !important;
 	width:80% !important;
 	margin: 50pt auto !important;

@@ -1,6 +1,6 @@
 <template>
   <div class="BoardDetail">
-    <div class="title">BoardDetail</div>
+    <div class="title">게시판</div>
     <div class="subtitle">회원전용 공간입니다.:)</div>
     <b-card>
       <div class="content-detail-content-info">

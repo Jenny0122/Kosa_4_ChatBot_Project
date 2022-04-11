@@ -14,6 +14,7 @@
     </b-input-group>
   </div>
 </template>
+
 <script>
 export default {
 	name: 'CommentCreate',
@@ -27,7 +28,7 @@ export default {
 	},
 	data() {
 		return {
-			name: '인성',
+			name: '',
 			context: '',
 			comment: ''
 		}
