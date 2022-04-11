@@ -26,7 +26,6 @@
 </template>
 
 <script>
-// import data from '@/data/index.js'
 import CommentList from './CommentList'
 export default {
 	name: 'BoardDetail',
@@ -41,33 +40,36 @@ export default {
 		}
 	},
 	methods: {
-		deleteData() {
-		// 	// eslint-disable-next-line camelcase
-		// 	const content_index = data.Content.findIndex(
-		// 		contentItem => contentItem.content_id === this.contentId
-		// 	)
-		// 	data.Content.splice(content_index, 1) // 데이터 삭제
-		// 	this.$router.push({
-		// 		path: '/'
-		// 	})
+		async deleteData() {
+      this.$axios.delete('/board/' + this.contentId).then((res) => {
+          alert('게시물이 삭제되었습니다.')
+        })
+        .catch((err) => {
+          console.log(err)
+          return
+        })
+
+			this.$router.push({
+				path: '/member/board'
+		  })
 		},
 		updateData() {
-		// 	this.$router.push({
-		// 		path: `/board/create/${this.contentId}`
-		// 	})
+      // 수정기능 어떻게 할지 디자인/액션 부분 피드백 주세요
 		}
 	},
 	beforeCreate: function() {
 		var no = this.$route.params.no
 		this.$axios.get('/board/' + no).then((res) => {
 			var board = res.data
+
 			this.contentId = board.no
 			this.title = board.title
 			this.context = board.contents
-			this.user = board.user_no
-			this.created = board.day
+			this.user = board.user_no.id
+			this.created = board.created_at.replace('T', ' ')
 			this.comments = board.comment
 		}).catch()
+
 	},
 	components: {
 		CommentList
@@ -123,5 +125,8 @@ export default {
   border: 1px solid black;
   margin-top: 1rem;
   padding: 1rem;
+}
+.content-detail-content-info-right-user {
+  float: left;
 }
 </style>

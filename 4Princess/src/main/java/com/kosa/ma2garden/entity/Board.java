@@ -1,6 +1,5 @@
 package com.kosa.ma2garden.entity;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -21,7 +21,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Table(name = "board")
-public class Board {
+public class Board extends BaseTimeEntity {
+
 	@Id
 	@Column(name = "no")
 	private long no;
@@ -35,25 +36,21 @@ public class Board {
 	@Column(name = "contents")
 	private String contents;
 
-	@Column(name = "day")
-	private LocalDateTime day;
-
-	@Column(name = "user_no")
-	private String user_no;
+	@ManyToOne
+	@JoinColumn(name = "user_no")
+	private User user_no;
 
 	@OneToMany(fetch = FetchType.EAGER)
 	@JoinColumn(name = "board_no")
 	private List<Comment> comments = new ArrayList<Comment>();
 
 	@Builder
-	public Board(long no, String counts, String title, String contents, LocalDateTime day, String user_no,
-			List<Comment> comments) {
+	public Board(long no, String counts, String title, String contents, User user_no, List<Comment> comments) {
 		super();
 		this.no = no;
 		this.counts = counts;
 		this.title = title;
 		this.contents = contents;
-		this.day = day;
 		this.user_no = user_no;
 		this.comments = comments;
 	}

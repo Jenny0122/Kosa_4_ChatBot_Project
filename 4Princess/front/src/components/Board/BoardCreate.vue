@@ -14,13 +14,13 @@
     </div>
   <div class="button">
     <br>
-    <b-button @click="updateMode ? updateContent() : uploadContent()">저장</b-button>&nbsp;
+    <b-button @click="uploadContent">저장</b-button>&nbsp;
     <b-button @click="cancle">취소</b-button>
   </div>
   </div>
 </template>
 <script>
-import data from '@/data'
+// import data from '@/data'
 export default {
 	name: 'BoardCreate',
 	data() {
@@ -35,50 +35,23 @@ export default {
 		}
 	},
 	created() {
-		if (this.$route.params.contentId > 0) {
-			const contentId = Number(this.$route.params.contentId)
-			this.updateObject = data.Content.filter(contentItem => contentItem.content_id === contentId)[0]
-			this.subject = this.updateObject.title
-			this.context = this.updateObject.context
-		}
 	},
 	methods: {
 		uploadContent() { // 저장
-			// let contentItems = data.Content.sort((a, b) => { return b.content_id - a.content_id })
-			// // eslint-disable-next-line camelcase
-			// const content_id = contentItems[0].content_id + 1 // 마지막 데이터의 id + 1
-
-			// data.Content.push({
-			// 	content_id: content_id,
-			// 	user_id: this.user_id,
-			// 	title: this.subject,
-			// 	context: this.context,
-			// 	created_at: this.created_at,
-			// 	updated_at: this.updated_at
-			// })
-
 			var data = {
-				'counts': 0,
 				'title': this.subject,
 				'contents': this.context,
-				'day': '2022-04-06',
 				'user_no': '1'
 			}
 
 			this.$axios.post('/board', data)
 				.then((res) => {
+					console.log('Board Created...')
 				})
 				.catch()
 
 			this.$router.push({
-				path: '/'
-			})
-		},
-		updateContent() { // 수정
-			this.updateObject.title = this.subject
-			this.updateObject.context = this.context
-			this.$router.push({
-				path: '/'
+				path: '/member/board'
 			})
 		},
 		cancle() {

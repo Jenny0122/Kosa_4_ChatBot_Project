@@ -1,29 +1,31 @@
 <template>
 <div id="ColorFlower">
-<div id="page-wrapper">
-  <article id="main">
-    <header>
-      <h2 class="title">{{subject}}</h2>
-      <p class="subtitle test">{{msg}}</p>
-    </header>
-    <!-- <div class="empty-background"></div> -->
-    <section class="wrapper alt style2">
-      <div class="inner">
-        <div class="color-area" v-for="(color, index) in color_flower" :key="color.no" @click="showColorInfo(color, index)" :style="button_layout[index]"></div>
-      </div>
-      <modal v-if="showModal" @close="showModal = false">
-        <div class="header" slot="header">{{selectedColor.color_info}}의 꽃이 주는 효과</div>
-        <div class="body" slot="body" @click="showModal=false">
-          <img v-bind:src="selectedColor.img_url">
-          <div class="effect">
-            {{selectedColor.effect_info}}
-          </div>
-          <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
-        </div>
-      </modal>
-    </section>
-  </article>
-</div>
+    <div id="page-wrapper">
+        <article id="main">
+            <header>
+                <h2 class="title">{{subject}}</h2>
+                <p class="subtitle new">{{msg}}</p>
+            </header>
+
+            <section class="wrapper alt style2">
+                <div class="inner">
+                    <div class="empty"></div>
+                    <div class="color-area" v-for="(color, index) in color_flower" :key="color.no" @click="showColorInfo(color, index)" :style="button_layout[index]"></div>
+                </div>
+            </section>
+
+            <modal v-if="showModal" @close="showModal = false">
+                <div class="header" slot="header">{{selectedColor.color_info}}의 꽃이 주는 효과</div>
+                <div class="body" slot="body" @click="showModal=false">
+                    <img v-bind:src="selectedColor.img_url">
+                    <div class="effect">
+                    {{selectedColor.effect_info}}
+                    </div>
+                    <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
+                </div>
+            </modal>
+        </article>
+    </div>
 </div>
 </template>
 
@@ -34,7 +36,7 @@ export default {
   data() {
     return {
       subject: '꽃 색상에 따른 효과',
-      msg: '색상을 선택해주세요.',
+      msg: '색상을 선택해주세요',
       color_flower: [],
       newTodoItem: '',
       showModal: false,
@@ -64,31 +66,25 @@ export default {
     }
   },
   beforeCreate() {
-    console.log('ColorFlower.vue is created')
     const T = Math.PI / 4
     this.$axios.get('/color_flower')
     .then((res) => {
       for(var i in res.data) {
         this.color_flower.push(res.data[i])
 
-        var x = 400 - 200 * Math.cos(T * i) + 'pt'
+        var y = 450 - 125 * Math.cos(T * i) + 'pt'
         if (Math.sin(T * i) >= 0)
-          var y = 'calc(46.5% + ' + (200 * Math.sin(T * i) + 'pt') + ')'
+          var x = 'calc(48% + ' + (125 * Math.sin(T * i) + 'pt') + ')'
         else
-          var y = 'calc(46.5% - ' + (Math.abs(200 * Math.sin(T * i)) + 'pt') +')'
-        console.log(y)
+          var x = 'calc(48% - ' + (Math.abs(125 * Math.sin(T * i)) + 'pt') +')'
+        console.log(x)
         this.button_layout[i] = {
           'background-color': res.data[i].color_eng_name,
-          'top': x,
-          'left': y
+          'top': y,
+          'left': x
         }
       }
     })
-
-    //위치 계산
-    var x = 200
-    var y = 200
-    var radius = 50
   },
   // 5) 모달 컴포넌트 등록
   components: {
@@ -98,13 +94,17 @@ export default {
 </script>
 
 <style scoped>
+.empty{
+    width: 100%;
+    height: 500pt;
+}
 .header {
   text-align: center !important;
 }
 .color-area {
   border: 1pt solid black !important;
-  width: 7% !important;
-  height: 12% !important;
+  width: 4% !important;
+  height: 9% !important;
   border-radius: 100% !important;
   text-align: center !important;
   vertical-align: middle !important;
@@ -124,14 +124,12 @@ img {
   text-align: center !important;
   margin: 40pt 0 !important;
 }
-.test {
-  top: calc(46.5% + 90pt) !important;
+.new {
+  top: 450pt !important;
   width: 100% !important;
   position: fixed !important;
-}
-.empty-background {
-  width: 100% !important;
-  height: 1500pt !important;
+  color: black;
+  z-index: 1;
 }
 html,
 body,

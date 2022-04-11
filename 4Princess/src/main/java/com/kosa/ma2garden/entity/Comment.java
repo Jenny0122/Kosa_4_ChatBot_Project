@@ -1,4 +1,5 @@
 package com.kosa.ma2garden.entity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,37 +14,28 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Table(name = "comment")
+public class Comment extends BaseTimeEntity {
 
-public class Comment {
-	
 	@Id
 	@Column(name = "co_no")
 	private long co_no;
-	
+
 	@Column(name = "comment")
 	private String comment;
-	
-	@Column(name = "day")
-	private String day;
-	
+
 	@Column(name = "board_no")
-	private String board_no;
-	
+	private long board_no;
+
 	@Column(name = "user_no")
-	private String user_no;
+	private long user_no;
 
 	@Builder
-	public Comment(long co_no, String comment, String day, String board_no, String user_no) {
+	public Comment(long co_no, String comment, long board_no, long user_no) {
 		super();
 		this.co_no = co_no;
 		this.comment = comment;
-		this.day = day;
 		this.board_no = board_no;
 		this.user_no = user_no;
 	}
-
-	
-	
-
 
 }

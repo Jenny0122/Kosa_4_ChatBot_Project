@@ -2710,12 +2710,12 @@ button:disabled,
 
 
 /* Wrapper */
-
+/* 
 img {
     height: 40vh;
     max-width: 18vw;
     min-width: 300px;
-}
+} */
 
 .wrapper {
     padding: 6em 0 4em 0;

@@ -16,21 +16,22 @@ public class BoardDTO {
 	private String counts;
 	private String title;
 	private String contents;
-	private LocalDateTime day;
-	private String user_no;
+	private LocalDateTime created_at;
+	private LocalDateTime updated_at;
+	private User user_no;
 	private List<Comment> comment;
 
 	@Builder
-	public BoardDTO(long no, String counts, String title, String contents, LocalDateTime day, String user_no,
-			List<Comment> comment) {
+	public BoardDTO(long no, String counts, String title, String contents, LocalDateTime created_at,
+			LocalDateTime updated_at, User user_no, List<Comment> comment) {
 		super();
 		this.no = no;
 		this.counts = counts;
 		this.title = title;
 		this.contents = contents;
-		this.day = day;
+		this.created_at = created_at;
+		this.updated_at = updated_at;
 		this.user_no = user_no;
 		this.comment = comment;
 	}
-
 }

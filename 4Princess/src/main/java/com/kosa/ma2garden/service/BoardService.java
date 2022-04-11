@@ -11,6 +11,9 @@ import com.kosa.ma2garden.entity.Board;
 import com.kosa.ma2garden.entity.BoardDTO;
 import com.kosa.ma2garden.repository.BoardRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class BoardService {
 	@Autowired
@@ -25,8 +28,9 @@ public class BoardService {
 					.no(board.getNo())
 					.counts(board.getCounts())
 					.title(board.getTitle())
+					.created_at(board.getCreatedAt())
+					.updated_at(board.getUpdatedAt())
 					.contents(board.getContents())
-					.day(board.getDay())
 					.user_no(board.getUser_no())
 					.build();
 			list.add(boardDTO);
@@ -43,7 +47,6 @@ public class BoardService {
 				.counts(boardDTO.getCounts())
 				.title(boardDTO.getTitle())
 				.contents(boardDTO.getContents())
-				.day(boardDTO.getDay())
 				.user_no(boardDTO.getUser_no())
 				.build();
 
@@ -60,18 +63,24 @@ public class BoardService {
 		if (board != null) {
 			BoardDTO boardDTO = BoardDTO.builder()
 					.no(board.getNo())
-					.counts(board.getContents())
+					.counts(board.getCounts())
 					.title(board.getTitle())
+					.created_at(board.getCreatedAt())
+					.updated_at(board.getUpdatedAt())
 					.contents(board.getContents())
-					.day(board.getDay())
 					.user_no(board.getUser_no())
 					.comment(board.getComments())
 					.build();
-
+			
 			return boardDTO;
 		} else {
 			return null;
 
 		}
+	}
+
+	public void deleteBoardByNo(long no) {
+		log.info("delete");
+		boardRepository.deleteById(no);
 	}
 }

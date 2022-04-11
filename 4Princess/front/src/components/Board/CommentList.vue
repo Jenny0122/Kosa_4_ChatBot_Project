@@ -1,10 +1,11 @@
 <template>
-  <div>
-    <div :key="comment.co_no" v-for="comment in comments">
-      <CommentListItem :commentObj="comment"></CommentListItem>
-    </div>
-    <CommentCreate :contentId="comments.board_no" :reloadComment="reloadComment"/>
-  </div>
+	<div>
+		<div :key="comment.co_no" v-for="comment in comments">
+			<CommentListItem :commentObj="comment"></CommentListItem>
+		</div>
+
+    	<CommentCreate :contentId="$route.params.no"/>
+	</div>
 </template>
 
 <script>
@@ -18,22 +19,11 @@ export default {
 	data() {
 		return {
 			commentList: this.comments
-			// commentId: this.comments[0].board_no
-			// comments: data.Comment.filter(commentItem => {
-			// 	return commentItem.content_id === this.contentId
-			// })
 		}
 	},
 	components: {
 		CommentListItem,
 		CommentCreate
-	},
-	methods: {
-		// reloadComment() {
-		// 	this.comments = data.Comment.filter(commentItem => {
-		// 		return commentItem.content_id === this.contentId
-		// 	})
-		// }
 	}
 }
 </script>

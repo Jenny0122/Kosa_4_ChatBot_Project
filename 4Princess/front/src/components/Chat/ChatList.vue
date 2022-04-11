@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ChatMessage from '@/components/ChatMessage'
+import ChatMessage from '@/components/Chat/ChatMessage'
 export default {
 	components: {
 		ChatMessage

@@ -1,14 +1,14 @@
 <template>
 <div id="BoardList">
 	<div id="page-wrapper">
-    <article id="main">
-      <header>
+		<article id="main">
+			<header>
 				<h2 class="title">BoardList</h2>
 				<p class="subtitle">회원전용 게시판 공간입니다.:)</p>
 			</header>
 
 			<section class="wrapper alt style2">
-        <div class="inner">
+				<div class="inner">
 					<b-table
 					hover
 					:items="items"
@@ -17,7 +17,7 @@
 					:fields="fields"
 					tbody-class="text-black"
 					@row-clicked="rowClick"
-				></b-table>
+					></b-table>
 
 					<b-pagination
 						v-model="currentPage"
@@ -26,7 +26,7 @@
 						align="center"
 					></b-pagination>
 					<div class="click-button">
-					<b-button @click="writeContent">글쓰기</b-button>
+						<b-button @click="writeContent">글쓰기</b-button>
 					</div>
 				</div>
 			</section>
@@ -36,24 +36,24 @@
 </template>
 
 <script>
-import data from '@/data'
+// import data from '@/data'
 export default {
 	name: 'BoardList',
 	data() {
-		// 정렬 : https://blog.naver.com/haskim0716n/221681695401
-		let contentItems = data.Content.sort((a, b) => {
-			return b.content_id - a.content_id
-		}) // 내림차순
+		// // 정렬 : https://blog.naver.com/haskim0716n/221681695401
+		// let contentItems = data.Content.sort((a, b) => {
+		// 	return b.content_id - a.content_id
+		// }) // 내림차순
 
-		// User 와 Content 의 user_id 의 같은 번호를 찾아 Content 에 기존자료 + 'user_name' 으로 추가한다.
-		let items = contentItems.map((contentItem) => {
-			return {
-				...contentItem,
-				user_name: data.User.filter((userItem) => {
-					return contentItem.user_id === userItem.user_id
-				})[0].name
-			}
-		})
+		// // User 와 Content 의 user_id 의 같은 번호를 찾아 Content 에 기존자료 + 'user_name' 으로 추가한다.
+		// let items = contentItems.map((contentItem) => {
+		// 	return {
+		// 		...contentItem,
+		// 		user_name: data.User.filter((userItem) => {
+		// 			return contentItem.user_id === userItem.user_id
+		// 		})[0].name
+		// 	}
+		// })
 
 		return {
 			currentPage: 1, // 현재 페이지
@@ -62,7 +62,9 @@ export default {
 			fields: [
 				{
 					key: 'content_id',
-					label: '번호'
+					label: '번호',
+					thClass: 'text-center',
+					tdClass: 'text-center'
 				},
 				{
 					key: 'title',
@@ -70,14 +72,18 @@ export default {
 				},
 				{
 					key: 'user_name',
-					label: '글쓴이'
+					label: '글쓴이',
+					thClass: 'text-center',
+					tdClass: 'text-center'
 				},
 				{
 					key: 'created_at',
-					label: '작성일'
+					label: '작성일',
+					thClass: 'text-center',
+					tdClass: 'text-center'
 				}
 			],
-			items: items
+			items: []
 		}
 	},
 	methods: {
@@ -107,10 +113,10 @@ export default {
 						'content_id': res.data[i].no,
 						'title': res.data[i].title,
 						'context': res.data[i].contents,
-						'created_at': res.data[i].day.toString().substring(0, 10),
+						'created_at': res.data[i].created_at.substring(0, 10),
 						'counts': res.data[i].counts,
 						'updated_at': null,
-						'user_id': res.data[i].user_no
+						'user_name': res.data[i].user_no.id
 					})
 				}
 			})

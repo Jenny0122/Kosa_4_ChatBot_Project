@@ -12,6 +12,7 @@ public class WebConfiguration implements WebMvcConfigurer {
 		registry.addMapping("/**")
 				.allowedOrigins("*")
 				.allowedOrigins("http://localhost:8080")
+				.allowedOrigins("http://ma2garden.xyz:8080")
 				.allowedMethods("GET", "POST", "PUT", "DELETE")
 				.maxAge(3000);
 

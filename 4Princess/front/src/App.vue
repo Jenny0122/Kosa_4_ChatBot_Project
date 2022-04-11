@@ -6,6 +6,7 @@
       <!-- <sidebar /> -->
       <router-view/>
       <topbutton />
+      <chat-form />
       <bottom />
     </div>
   </div>
@@ -13,9 +14,9 @@
 
 <script>
 import Bottom from '@/components/Bottom'
-// import Sidebar from '@/components/Sidebar'
 import TopButton from '@/components/TopButton.vue'
 import Menubar from '@/components/Menubar.vue'
+import ChatForm from '@/components/ChatBot/ChatForm'
 export default {
   name: 'App',
   data() {
@@ -30,9 +31,9 @@ export default {
   },
   components: {
     'bottom': Bottom,
-    //'sidebar': Sidebar,
     'topbutton': TopButton,
-    'menubar': Menubar
+    'menubar': Menubar,
+    'chat-form': ChatForm
   }
 }
 </script>

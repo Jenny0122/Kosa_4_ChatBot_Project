@@ -1,8 +1,17 @@
 server:
   port: 8888
+  shutdown: graceful
   servlet:
     session:
-      timeout: 8h  
+      timeout: 8h
+#  ssl:
+#    enabled: true
+#    key-alias: keystore_ma2garden
+#    key-store: keystore_ma2garden.pkcs12
+#    key-store-password: 12345678
+#    key-password: 12345678
+#    trust-store: truststore_ma2garden.pkcs12
+#    trust-store-password: 12345678
 
 spring:
   datasource:
@@ -24,3 +33,4 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher
+      

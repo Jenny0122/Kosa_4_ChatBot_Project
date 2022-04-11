@@ -4,7 +4,7 @@ import Home from '@/components/Home'
 import Tip from '@/components/Tip'
 import PlantDisease from '@/components/PlantDisease'
 import GrowMethod from '@/components/GrowMethod'
-import InsidePlant from '@/components/InsidePlant'
+import Indoorplant from '@/components/IndoorPlant'
 import DryPlant from '@/components/DryPlant'
 import Book from '@/components/Book'
 import ColorFlower from '@/components/ColorFlower'
@@ -26,7 +26,13 @@ export default new Router({
             path: '/',
             name: 'Home',
             component: Home
-        }, {
+        },
+        {
+            path: '/plant/airplant',
+            name: 'AirPlant',
+            component: AirPlant
+        },
+        {
             path: '/info/tip',
             name: 'Tip',
             component: Tip
@@ -39,9 +45,9 @@ export default new Router({
             name: 'GrowMethod',
             component: GrowMethod
         }, {
-            path: '/plant/insideplant',
-            name: 'InsidePlant',
-            component: InsidePlant
+            path: '/plant/indoorplant',
+            name: 'Indoorplant',
+            component: Indoorplant
         }, {
             path: '/plant/dryplant',
             name: 'DryPlant',

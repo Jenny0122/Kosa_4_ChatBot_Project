@@ -13,9 +13,9 @@ public class UserService {
 
 	@Autowired
 	UserRepository userRepository;
-	
+
 	@Autowired
-    private PasswordEncoder passwordEncoder;
+	private PasswordEncoder passwordEncoder;
 
 	/*
 	 * public List<UserDTO> getAllUsers() {
@@ -30,9 +30,9 @@ public class UserService {
 	 * 
 	 * return list; }
 	 */
-	
+
 	public boolean idVaild(UserDTO userDTO) {
-		System.out.println("!!!" + userDTO.getId() + "!!!");
+
 		User check = userRepository.findAllById(userDTO.getId());
 		System.out.println(check);
 		if (check != null) {
@@ -44,11 +44,14 @@ public class UserService {
 
 	public boolean createUser(UserDTO userDTO) {
 		String encodedPassword = passwordEncoder.encode(userDTO.getPassword());
-		
+
 		userDTO.setPassword(encodedPassword);
-        
-		User user = User.builder().id(userDTO.getId()).password(userDTO.getPassword())
-				.email(userDTO.getEmail()).build();
+
+		User user = User.builder()
+				.id(userDTO.getId())
+				.password(userDTO.getPassword())
+				.email(userDTO.getEmail())
+				.build();
 
 		userRepository.save(user);
 
@@ -57,16 +60,18 @@ public class UserService {
 
 	public User loginUser(UserDTO userDTO) {
 
-		User user = User.builder().id(userDTO.getId()).password(userDTO.getPassword()).build();
+		User user = User.builder()
+				.id(userDTO.getId())
+				.password(userDTO.getPassword())
+				.build();
 
 		user = userRepository.findAllByIdAndPassword(user.getId(), user.getPassword());
-		
+
 		if (user != null) {
 			return user;
 		}
 
 		return null;
 	}
-
 
 }
