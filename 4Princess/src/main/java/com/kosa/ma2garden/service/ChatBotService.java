@@ -20,14 +20,12 @@ public class ChatBotService {
 
 		String line;
 		String result = null;
-		
+
 		while ((line = br.readLine()) != null) {
-//			System.out.println(">>> " + line);
 			result += line;
 		}
 
 		if (exitVal != 0) {
-//			System.out.println("비정상 종료");
 			return null;
 		} else {
 			return result;

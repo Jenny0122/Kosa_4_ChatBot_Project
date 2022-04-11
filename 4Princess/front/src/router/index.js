@@ -130,14 +130,14 @@ export default new Router({
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/ChatBot/ChatForm.vue'),
         },
         {
-            path: '/signup',
-            name: 'Signup',
-            component: Signup
-        },
-        {
             path: '/signin',
             name: 'Signin',
-            component: Signin
+            component: Signin,
+        },
+        {
+            path: '/signup',
+            name: 'Signup',
+            component: Signup,
         }
     ]
 })
