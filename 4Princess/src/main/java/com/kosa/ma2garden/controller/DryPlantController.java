@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.kosa.ma2garden.entity.DryPlantDTO;
 import com.kosa.ma2garden.service.DryPlantService;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 @RestController
 public class DryPlantController {
-	
+
 	@Autowired
-	DryPlantService dryPlantService;
-	
-	@GetMapping("/dryplant")
-	public ResponseEntity<List<DryPlantDTO>> getDryPlant() {
-		List<DryPlantDTO> list = dryPlantService.getAllDryPlant();
+	DryPlantService dryplantService;
+
+	@GetMapping("/dry_plants")
+	public ResponseEntity<List<DryPlantDTO>> getAllDryPlants() { // this
+		List<DryPlantDTO> list = dryplantService.getAllDryplants();
+
+		System.out.println("/dry_plants");
+
 		return new ResponseEntity<List<DryPlantDTO>>(list, HttpStatus.OK);
 	}
 }

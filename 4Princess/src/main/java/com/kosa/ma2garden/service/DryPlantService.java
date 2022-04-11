@@ -12,30 +12,22 @@ import com.kosa.ma2garden.repository.DryPlantRepository;
 
 @Service
 public class DryPlantService {
-	
+
 	@Autowired
 	DryPlantRepository dryplantrepository;
 
-	public List<DryPlantDTO> getAllDryPlant() {
-		
+	public List<DryPlantDTO> getAllDryplants() {
+
 		List<DryPlantDTO> list = new ArrayList<DryPlantDTO>();
-		
-		for (DryPlant dryPlant : dryplantrepository.findAll()) {
-			DryPlantDTO dryPlantDTO = DryPlantDTO.builder()
-					.no(dryPlant.getNo())
-					.plant_name(dryPlant.getPlant_name())
-					.chartr_info(dryPlant.getChartr_info())
-					.flwr_info(dryPlant.getFlwr_info())
-					.light_info(dryPlant.getLight_info())
-					.grwt_info(dryPlant.getGrwt_info())
-					.water_cycle_info(dryPlant.getWater_cycle_info())
-					.batchPlaceInfo(dryPlant.getBatchPlaceInfo())
-					.build();
-			list.add(dryPlantDTO);
+
+		for (DryPlant dryplant : dryplantrepository.findAll()) {
+			DryPlantDTO dryplantDTO = new DryPlantDTO(dryplant.getNo(), dryplant.getPlanttName(),
+					dryplant.getChartrInfo(), dryplant.getFlwrInfo(), dryplant.getLightInfo(), dryplant.getGrwtInfo(),
+					dryplant.getWaterCycleInfo(), dryplant.getBatchPlaceInfo());
+
+			list.add(dryplantDTO);
 		}
-		
+
 		return list;
 	}
-	
-	
 }
