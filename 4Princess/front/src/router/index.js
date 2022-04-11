@@ -14,6 +14,8 @@ import Cook from '@/components/Cook'
 import FAQ from '@/components/FAQ'
 import BoardCreate from '@/components/Board/BoardCreate'
 import BoardDetail from '@/components/Board/BoardDetail'
+import Signin from '@/components/Signin'
+import Signup from '@/components/Signup'
 
 
 Vue.use(Router)
@@ -126,6 +128,16 @@ export default new Router({
             name: 'ChatBot',
             component: () =>
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/ChatBot/ChatForm.vue'),
+        },
+        {
+            path: '/signin',
+            name: 'Signin',
+            component: Signin,
+        },
+        {
+            path: '/signup',
+            name: 'Signup',
+            component: Signup,
         }
     ]
 })

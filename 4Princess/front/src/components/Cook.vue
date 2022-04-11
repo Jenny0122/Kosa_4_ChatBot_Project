@@ -2374,7 +2374,7 @@ button,
     background-color: transparent;
     border-radius: 3px;
     border: 0;
-    box-shadow: inset 0 0 0 2px black;
+    box-shadow: inset 0 0 0 2px transparent;
     color: black;
     cursor: pointer;
     display: inline-block;
@@ -3394,7 +3394,7 @@ img {
     position: absolute;
     right: 0;
     top: 0;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     width: 7em;
 }
 
@@ -3905,7 +3905,7 @@ body.is-mobile.landing #footer {
 }
 
 .ulbox {
-    border: 2px solid black;
+    border: 2px solid transparent;
     float: left;
     text-align: center;
     width: 100%;
