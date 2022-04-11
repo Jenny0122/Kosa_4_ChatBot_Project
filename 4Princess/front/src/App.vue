@@ -6,7 +6,7 @@
       <!-- <sidebar /> -->
       <router-view/>
       <topbutton />
-      <chat-form />
+      <!-- <chat-form /> -->
       <bottom />
     </div>
   </div>

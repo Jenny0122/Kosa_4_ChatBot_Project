@@ -102,11 +102,8 @@ export default {
         }
     },
     idVaild() {
-        var check = {
-          'id': this.user.id
-        }
-        this.$axios.post('/idvaild', check).then((res) => {
-            console.log(res.data)
+      console.log(this.user.id)
+        this.$axios.get('/idvaild/' + this.user.id).then((res) => {
             if (res.data !== false) {
               this.checkSignupFlag = true
             } else {
