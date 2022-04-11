@@ -6,18 +6,17 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Data
-@NoArgsConstructor 
+@NoArgsConstructor
 @ToString
 public class AirPlantDTO {
-	
+
 	private long no;
 	private String name;
 	private String description;
 	private String batchrecomm;
 	private String management;
-	
-	
-	@Builder   // 생성자를 만든 후 그 위에 @Builder 애노테이션 적용
+
+	@Builder // 생성자를 만든 후 그 위에 @Builder 애노테이션 적용
 	public AirPlantDTO(long no, String name, String description, String batchrecomm, String management) {
 		super();
 		this.no = no;
@@ -35,44 +34,35 @@ public class AirPlantDTO {
 		this.no = no;
 	}
 
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public String getDescription() {
 		return description;
 	}
-
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-
 	public String getBatchrecomm() {
 		return batchrecomm;
 	}
-
 
 	public void setBatchrecomm(String batchrecomm) {
 		this.batchrecomm = batchrecomm;
 	}
 
-
 	public String getManagement() {
 		return management;
 	}
 
-
 	public void setManagement(String management) {
 		this.management = management;
 	}
-	
 }

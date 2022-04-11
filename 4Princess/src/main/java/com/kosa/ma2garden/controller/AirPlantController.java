@@ -8,21 +8,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.AirPlant;
 import com.kosa.ma2garden.entity.AirPlantDTO;
 import com.kosa.ma2garden.service.AirPlantService;
 
 @RestController
 public class AirPlantController {
-	
+
 	@Autowired
 	AirPlantService airplantService;
 
 	@GetMapping("/air_plants")
-	public ResponseEntity<List<AirPlantDTO>> getAllAirPlants(){
+	public ResponseEntity<List<AirPlantDTO>> getAllAirPlants() {
 		List<AirPlantDTO> list = airplantService.getAllAirplants();
-		
-		
+
 		return new ResponseEntity<List<AirPlantDTO>>(list, HttpStatus.OK);
 	}
 }
