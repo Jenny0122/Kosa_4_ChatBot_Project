@@ -3,19 +3,20 @@
 	<div id="page-wrapper">
   	<article id="main">
     	<header>
-				<h2 class="title">신조어</h2>
-				<p class="subtitle">신조어를 통해 식물 가꾸기 트렌드를 알아볼까요?:)</p>
-			</header>
+            <h2 class="title">신조어</h2>
+            <p class="subtitle">신조어를 통해 식물 가꾸기 트렌드를 알아볼까요?:)</p>
+        </header>
 		<section class="wrapper alt style2">
-    	<div class="inner">
-				<div class="neologism-text" v-for="(n, index) in neologism" :key="index">
-					<div class="neologism-name">
-						# {{n.neologism}}
-					</div>
-					<div class="neologism-meaning">
-						{{n.meaning}}
-					</div>
-				</div>
+            <div class="inner">
+                <div v-for="(n, index) in neologism" :key="index">
+                    <div class="neologism-name">
+                        # {{n.neologism}}
+                    </div>
+                    <div class="neologism-meaning">
+                        {{n.meaning}}
+                    <hr/>
+                    </div>
+                </div>
 			</div>
 		</section>
 		</article>
@@ -54,10 +55,12 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 .neologism-text {
-	color: white !important;
-	text-align: left !important;
-	width:80% !important;
-	margin: 50pt auto !important;
+	color: black !important;
+	text-align: center !important;
+	width:100% !important;
+    /* margin-bottom: 50pt !important;
+    margin-left: 50pt !important;
+    margin-right: 50pt !important; */
 }
 .neologism-name {
 	font-size: 30pt !important;
@@ -65,11 +68,13 @@ export default {
 	color:gray !important;
 	font-style: italic !important;
 	font-family: 'Noto Sans KR', sans-serif !important;
+    padding: 10pt 0 0 0 !important;
 }
 .neologism-meaning {
 	margin: 20pt 0 !important;
 	font-size: 15pt !important;
     font-family: 'Noto Sans KR', sans-serif !important;
+    color: black !important;
 }
 html,
 body,
@@ -262,7 +267,7 @@ body,
 input,
 select,
 textarea {
-    color: #fff;
+    color: black;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15pt;
     font-weight: 400;
@@ -325,7 +330,8 @@ i {
 
 p {
     margin: 0 0 2em 0;
-    color: #ffffff !important;
+    color: black;
+    font-size: 1.2em;
 }
 
 h1,
@@ -334,12 +340,21 @@ h3,
 h4,
 h5,
 h6 {
-    color: #fff;
+    color: black;
     font-weight: 800;
     letter-spacing: 0.225em;
     line-height: 1em;
     margin: 0 0 1em 0;
     text-transform: uppercase;
+}
+.sub {
+    font-weight: 800;
+    letter-spacing: 0.225em;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.5em;
 }
 
 h1 a,
@@ -353,8 +368,8 @@ h6 a {
 }
 
 h2 {
-    font-size: 1.35em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
 }
 
 @media screen and (max-width: 736px) {
@@ -365,8 +380,18 @@ h2 {
 }
 
 h3 {
-    font-size: 1.15em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
+    color: black;
+}
+.category {
+    font-size: 1.5em;
+    line-height: 3em;
+    color: white;
+    margin: 0 0 1em 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
 }
 
 @media screen and (max-width: 736px) {
@@ -405,7 +430,7 @@ sup {
 
 hr {
     border: 0;
-    border-bottom: solid 2px #fff;
+    border-bottom: solid 2px black;
     margin: 3em 0;
 }
 
@@ -1639,7 +1664,7 @@ article.special {
 }
 
 header p {
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
     position: relative;
     top: -0.25em;
 }
@@ -1720,7 +1745,7 @@ textarea {
     -webkit-appearance: none;
     -ms-appearance: none;
     appearance: none;
-    background-color: rgba(144, 144, 144, 0.25);
+    background-color: rgba(214, 144, 144, 0.25);
     border-radius: 3px;
     border: none;
     color: inherit;
@@ -2299,8 +2324,8 @@ button,
     background-color: transparent;
     border-radius: 3px;
     border: 0;
-    box-shadow: inset 0 0 0 2px #fff;
-    color: #fff;
+    box-shadow: inset 0 0 0 2px black;
+    color: black;
     cursor: pointer;
     display: inline-block;
     font-size: 0.8em;
@@ -2657,10 +2682,10 @@ button:disabled,
 
 /* Wrapper */
 
-#inner img {
-  max-height: 50vh;
-  max-width: 50vw;
-  opacity: 0.8;
+img {
+    height: 40vh;
+    max-width: 18vw;
+    min-width: 300px;
 }
 
 .wrapper {
@@ -2693,10 +2718,10 @@ button:disabled,
 }
 
 .wrapper a {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 .wrapper a:hover {
-  color: #fff;
+  color: #557571;
 }
 
 .wrapper.alt {
@@ -2870,7 +2895,7 @@ button:disabled,
 }
 
 .wrapper.style2 {
-    background-color: #2e3842;
+    background-color: rgba(251, 249, 241);
 }
 
 .wrapper.style3 {
@@ -3749,20 +3774,21 @@ body.is-preload #banner:after {
 }
 
 #main>header p {
-    color: inherit;
+    /* color: inherit; */
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
     font-size: 1.3em;
+    padding: 10pt 0 0 0;
+    margin: 0 auto;
 }
-
 #main>header p a {
     color: inherit;
 }
 
 @media screen and (max-width: 1680px) {
     #main>header {
-        padding: 5em 1em 5em 0;
+        padding: 10em 0 8em 0;
     }
 }
 
@@ -3829,12 +3855,13 @@ body.is-mobile.landing #footer {
 }
 
 .ulbox {
-    border: 2px solid #ffffff;
-    background-color: #21b2a6;
+    border: 2px solid black;
     float: left;
     text-align: center;
     width: 100%;
     margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #557571
 }
 .ulbox ul {
     list-style-type: none;
@@ -3842,20 +3869,11 @@ body.is-mobile.landing #footer {
     text-align: center;
     margin-right: 15px;
     margin-left: 15px;
+    font-size: 1.25em;
 }
 .ulbox li {
     color: #ffffff;
     float: left;
     text-align: center;
-}
-.hiddenword {
-    color: #2e3842 !important;
-}
-
-img {
-    max-width: 20vw !important;
-    max-height: 30vh !important;
-    width: 30vw !important;
-    height: 30vw !important;
 }
 </style>

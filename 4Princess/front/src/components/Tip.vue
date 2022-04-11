@@ -2,8 +2,8 @@
   <div id="page-wrapper">
     <article id="main">
       <header>
-        <h2>{{msg}} Page</h2>
-        <p>{{subject}}</p>
+        <h2 class="title">{{msg}} Page</h2>
+        <p class="subtitle">{{subject}}</p>
       </header>
       <section class="wrapper alt style2">
         <br/><br/><br/>
@@ -240,7 +240,7 @@ body,
 input,
 select,
 textarea {
-    color: #fff;
+    color: black;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15pt;
     font-weight: 400;
@@ -303,7 +303,8 @@ i {
 
 p {
     margin: 0 0 2em 0;
-    color: #ffffff !important;
+    color: black;
+    font-size: 1.2em;
 }
 
 h1,
@@ -312,12 +313,21 @@ h3,
 h4,
 h5,
 h6 {
-    color: #fff;
+    color: black;
     font-weight: 800;
     letter-spacing: 0.225em;
     line-height: 1em;
     margin: 0 0 1em 0;
     text-transform: uppercase;
+}
+.sub {
+    font-weight: 800;
+    letter-spacing: 0.225em;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.5em;
 }
 
 h1 a,
@@ -331,8 +341,8 @@ h6 a {
 }
 
 h2 {
-    font-size: 1.35em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
 }
 
 @media screen and (max-width: 736px) {
@@ -343,8 +353,18 @@ h2 {
 }
 
 h3 {
-    font-size: 1.15em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
+    color: black;
+}
+.category {
+    font-size: 1.5em;
+    line-height: 3em;
+    color: white;
+    margin: 0 0 1em 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
 }
 
 @media screen and (max-width: 736px) {
@@ -383,7 +403,7 @@ sup {
 
 hr {
     border: 0;
-    border-bottom: solid 2px #fff;
+    border-bottom: solid 2px black;
     margin: 3em 0;
 }
 
@@ -1617,7 +1637,7 @@ article.special {
 }
 
 header p {
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
     position: relative;
     top: -0.25em;
 }
@@ -1698,7 +1718,7 @@ textarea {
     -webkit-appearance: none;
     -ms-appearance: none;
     appearance: none;
-    background-color: rgba(144, 144, 144, 0.25);
+    background-color: rgba(214, 144, 144, 0.25);
     border-radius: 3px;
     border: none;
     color: inherit;
@@ -2277,8 +2297,8 @@ button,
     background-color: transparent;
     border-radius: 3px;
     border: 0;
-    box-shadow: inset 0 0 0 2px #fff;
-    color: #fff;
+    box-shadow: inset 0 0 0 2px black;
+    color: black;
     cursor: pointer;
     display: inline-block;
     font-size: 0.8em;
@@ -2635,10 +2655,10 @@ button:disabled,
 
 /* Wrapper */
 
-#inner img {
-  max-height: 50vh;
-  max-width: 50vw;
-  opacity: 0.8;
+img {
+    height: 40vh;
+    max-width: 18vw;
+    min-width: 300px;
 }
 
 .wrapper {
@@ -2671,10 +2691,10 @@ button:disabled,
 }
 
 .wrapper a {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 .wrapper a:hover {
-  color: #fff;
+  color: #557571;
 }
 
 .wrapper.alt {
@@ -2739,9 +2759,9 @@ button:disabled,
     background-color: rgba(255, 255, 255, 0.075);
 }
 
-.wrapper.style1 select {
+/* .wrapper.style1 select {
     /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /%3E%3C/svg%3E"); */
-}
+/* } */
 
 .wrapper.style1 select option {
     color: #ffffff;
@@ -2848,7 +2868,7 @@ button:disabled,
 }
 
 .wrapper.style2 {
-    background-color: #2e3842;
+    background-color: rgba(251, 249, 241);
 }
 
 .wrapper.style3 {
@@ -2909,9 +2929,9 @@ button:disabled,
     background-color: rgba(255, 255, 255, 0.075);
 }
 
-.wrapper.style3 select {
+/* .wrapper.style3 select {
     /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /%3E%3C/svg%3E"); */
-}
+/* } */
 
 .wrapper.style3 select option {
     color: #ffffff;
@@ -3084,9 +3104,9 @@ button:disabled,
     background-color: rgba(0, 0, 0, 0.0375);
 }
 
-.wrapper.style5 select {
-    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23dfdfdf' /%3E%3C/svg%3E"); */
-}
+/* .wrapper.style5 select {
+/* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23dfdfdf' /%3E%3C/svg%3E"); */
+/* } */
 
 .wrapper.style5 select option {
     color: #2E3842;
@@ -3727,20 +3747,21 @@ body.is-preload #banner:after {
 }
 
 #main>header p {
-    color: inherit;
+    /* color: inherit; */
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
     font-size: 1.3em;
+    padding: 10pt 0 0 0;
+    margin: 0 auto;
 }
-
 #main>header p a {
     color: inherit;
 }
 
 @media screen and (max-width: 1680px) {
     #main>header {
-        padding: 5em 1em 5em 0;
+        padding: 10em 0 8em 0;
     }
 }
 
@@ -3804,5 +3825,28 @@ body.is-mobile.landing .wrapper.style4 {
 
 body.is-mobile.landing #footer {
     background-color: #1d242a;
+}
+
+.ulbox {
+    border: 2px solid black;
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #557571
+}
+.ulbox ul {
+    list-style-type: none;
+    float: left;
+    text-align: center;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 1.25em;
+}
+.ulbox li {
+    color: #ffffff;
+    float: left;
+    text-align: center;
 }
 </style>

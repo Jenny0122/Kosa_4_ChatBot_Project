@@ -2,7 +2,7 @@
   <div id="page-wrapper">
     <article id="main">
       <header>
-        <h2>{{msg}} Page</h2>
+        <h2 class="title">{{msg}} Page</h2>
         <p>{{subject}}</p>
       </header>
       <section class="wrapper alt style2">
@@ -2226,7 +2226,7 @@ table td {
 }
 
 table th {
-    color: #fff;
+    color: black;
     font-size: 0.9em;
     font-weight: 600;
     padding: 0 0.75em 0.75em 0.75em;
@@ -2857,7 +2857,7 @@ button:disabled,
 }
 
 .wrapper.style2 {
-    background-color: #2e3842;
+    background-color: rgba(251, 249, 241);
 }
 
 .wrapper.style3 {
@@ -3718,7 +3718,7 @@ body.is-preload #banner:after {
 /* Main */
 
 #main>header {
-    padding: 12em 0 10em 0;
+    padding: 5em 0 5em 0;
     background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
     background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");

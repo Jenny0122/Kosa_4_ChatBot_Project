@@ -2,8 +2,8 @@
 <div id="page-wrapper">
     <article id="main">
     <header>
-        <h2>{{msg}} Page</h2>
-        <p>{{subject}}</p>
+        <h2 class="title">{{msg}} Page</h2>
+        <p class="subtitle">{{subject}}</p>
     </header>
         <section class="wrapper alt style2">
         <div class="inner">
@@ -24,12 +24,12 @@
                 <button  @click="handle_disease('back')">뒤로가기</button>
             </div>
             <div v-show="show_two">
-                <h2>
-                    질병명을(를) 선택해주세요
-                </h2>
+                <div class="sub">
+                    질병명을 선택해주세요.
+                </div>
                 <div class="ulbox">
                     <br/>
-                    <h3>{{choiceName}}</h3>
+                    <div class="category">{{choiceName}}</div>
                     <ul v-for="(val, idx) in pnames[choiceId]" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val.sick_name_kor}`" class="more" @click="handle_disease(val)">{{val.sick_name_kor}}</a></li>
                     </ul>
@@ -38,83 +38,83 @@
                 <button  @click="handle_toggle()">뒤로가기</button>
             </div>
             <div v-show="show_one">
-                <h2>
-                    작물을(를) 선택해주세요
-                </h2>
+                <div class="sub">
+                    작물을 선택해주세요.
+                </div>
                 <div class="ulbox">
-                    <h3>ㄱ</h3>
+                    <div class="category">ㄱ</div>
                     <ul v-for="(val, idx) in pnames['pname01']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㄴ</h3>
+                    <div class="category">ㄴ</div>
                     <ul v-for="(val, idx) in pnames['pname02']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㄷ</h3>
+                    <div class="category">ㄷ</div>
                     <ul v-for="(val, idx) in pnames['pname03']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅁ</h3>
+                    <div class="category">ㅁ</div>
                     <ul v-for="(val, idx) in pnames['pname04']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅂ</h3>
+                    <div class="category">ㅂ</div>
                     <ul v-for="(val, idx) in pnames['pname05']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅅ</h3>
+                    <div class="category">ㅅ</div>
                     <ul v-for="(val, idx) in pnames['pname06']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅇ</h3>
+                    <div class="category">ㅇ</div>
                     <ul v-for="(val, idx) in pnames['pname07']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅈ</h3>
+                    <div class="category">ㅈ</div>
                     <ul v-for="(val, idx) in pnames['pname08']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅊ</h3>
+                    <div class="category">ㅊ</div>
                     <ul v-for="(val, idx) in pnames['pname09']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅋ</h3>
+                    <div class="category">ㅋ</div>
                     <ul v-for="(val, idx) in pnames['pname10']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅌ</h3>
+                    <div class="category">ㅌ</div>
                     <ul v-for="(val, idx) in pnames['pname11']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅍ</h3>
+                    <div class="category">ㅍ</div>
                     <ul v-for="(val, idx) in pnames['pname12']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
                 </div>
                 <div class="ulbox">
-                    <h3>ㅎ</h3>
+                    <div class="category">ㅎ</div>
                     <ul v-for="(val, idx) in pnames['pname13']" :key="idx">
                         <li><a :href="`/info/plantdisease/#${val['name']}`" class="more" @click="handle_toggle(`${val['name']}`, `${val['id']}`)">{{val['name']}}</a></li>
                     </ul>
@@ -135,7 +135,7 @@ data() {
         show_two: false,
         show_three: false,
         msg: '식물 질병',
-        subject: '식물의 질병에 관한 정보를 제공합니다',
+        subject: '식물의 질병에 관한 정보를 제공합니다.:)',
         choiceName: '',
         choiceId: '',
         choiceDis: [],
@@ -915,7 +915,7 @@ body,
 input,
 select,
 textarea {
-    color: #fff;
+    color: black;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15pt;
     font-weight: 400;
@@ -978,7 +978,7 @@ i {
 
 p {
     margin: 0 0 2em 0;
-    color: #ffffff !important;
+    color: black;
 }
 
 h1,
@@ -987,12 +987,21 @@ h3,
 h4,
 h5,
 h6 {
-    color: #fff;
+    color: black;
     font-weight: 800;
     letter-spacing: 0.225em;
     line-height: 1em;
     margin: 0 0 1em 0;
     text-transform: uppercase;
+}
+.sub {
+    font-weight: 800;
+    letter-spacing: 0.225em;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.5em;
 }
 
 h1 a,
@@ -1006,8 +1015,8 @@ h6 a {
 }
 
 h2 {
-    font-size: 1.35em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
 }
 
 @media screen and (max-width: 736px) {
@@ -1018,8 +1027,18 @@ h2 {
 }
 
 h3 {
-    font-size: 1.15em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
+    color: black;
+}
+.category {
+    font-size: 1.5em;
+    line-height: 3em;
+    color: white;
+    margin: 0 0 1em 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
 }
 
 @media screen and (max-width: 736px) {
@@ -2292,7 +2311,7 @@ article.special {
 }
 
 header p {
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
     position: relative;
     top: -0.25em;
 }
@@ -2373,7 +2392,7 @@ textarea {
     -webkit-appearance: none;
     -ms-appearance: none;
     appearance: none;
-    background-color: rgba(144, 144, 144, 0.25);
+    background-color: rgba(214, 144, 144, 0.25);
     border-radius: 3px;
     border: none;
     color: inherit;
@@ -2952,8 +2971,8 @@ button,
     background-color: transparent;
     border-radius: 3px;
     border: 0;
-    box-shadow: inset 0 0 0 2px #fff;
-    color: #fff;
+    box-shadow: inset 0 0 0 2px black;
+    color: black;
     cursor: pointer;
     display: inline-block;
     font-size: 0.8em;
@@ -3310,10 +3329,10 @@ button:disabled,
 
 /* Wrapper */
 
-#inner img {
-  max-height: 50vh;
-  max-width: 50vw;
-  opacity: 0.8;
+img {
+    height: 40vh;
+    max-width: 18vw;
+    min-width: 300px;
 }
 
 .wrapper {
@@ -3346,10 +3365,10 @@ button:disabled,
 }
 
 .wrapper a {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 .wrapper a:hover {
-  color: #fff;
+  color: #557571;
 }
 
 .wrapper.alt {
@@ -3523,7 +3542,7 @@ button:disabled,
 }
 
 .wrapper.style2 {
-    background-color: #2e3842;
+    background-color: rgba(251, 249, 241);
 }
 
 .wrapper.style3 {
@@ -4402,20 +4421,21 @@ body.is-preload #banner:after {
 }
 
 #main>header p {
-    color: inherit;
+    /* color: inherit; */
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
     font-size: 1.3em;
+    padding: 10pt 0 0 0;
+    margin: 0 auto;
 }
-
 #main>header p a {
     color: inherit;
 }
 
 @media screen and (max-width: 1680px) {
     #main>header {
-        padding: 5em 1em 5em 0;
+        padding: 10em 0 8em 0;
     }
 }
 
@@ -4482,12 +4502,13 @@ body.is-mobile.landing #footer {
 }
 
 .ulbox {
-    border: 2px solid #ffffff;
-    background-color: #21b2a6;
+    border: 2px solid white;
     float: left;
     text-align: center;
     width: 100%;
     margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #557571
 }
 .ulbox ul {
     list-style-type: none;
@@ -4495,20 +4516,11 @@ body.is-mobile.landing #footer {
     text-align: center;
     margin-right: 15px;
     margin-left: 15px;
+    font-size: 1.25em;
 }
 .ulbox li {
     color: #ffffff;
     float: left;
     text-align: center;
-}
-.hiddenword {
-    color: #2e3842 !important;
-}
-
-img {
-    max-width: 20vw !important;
-    max-height: 30vh !important;
-    width: 30vw !important;
-    height: 30vw !important;
 }
 </style>

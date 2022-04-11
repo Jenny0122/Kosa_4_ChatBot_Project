@@ -10,9 +10,9 @@
       <div class="inner">
         <div class="faq-text" v-for="(faq, index) in faqs" :key="index">
           <div class="accordion" role="tablist">
-            <b-card no-body class="mb-1" text-variant="white">
+            <b-card no-body class="mb-1" text-variant="black">
               <b-card-header header-tag="header"  class="p-1" role="tab">
-                <b-button block v-b-toggle="'accordion-' + faq.no" text-variant="white">{{faq.no}}&nbsp;&nbsp;&nbsp;&nbsp;{{faq.question}}</b-button>
+                <b-button block v-b-toggle="'accordion-' + faq.no" text-variant="black">{{faq.no}}&nbsp;&nbsp;&nbsp;&nbsp;{{faq.question}}</b-button>
               </b-card-header>
               <b-collapse :id="'accordion-' + faq.no" accordion="my-accordion" role="tabpanel">
                 <b-card-body>
@@ -59,7 +59,7 @@ export default {
 </script>
 <style scoped>
 .faq-text {
-  padding: 0.5% 20% !important;
+  /* padding: 0.5% 20% !important; */
   font-size: 15pt !important;
 }
 .btn-info {
@@ -69,9 +69,9 @@ export default {
   border-bottom: 0 !important;
 }
 .btn-secondary {
-  background-color: #21b2a6 !important;
+  background: transparent !important;
   border: 0 !important;
-  font-size: 15pt !important;
+  font-size: 20pt !important;
   font-weight: 500 !important;
   width: 100% !important;
   text-align: left !important;
@@ -275,7 +275,7 @@ body,
 input,
 select,
 textarea {
-    color: #fff;
+    color: black;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15pt;
     font-weight: 400;
@@ -310,6 +310,7 @@ textarea {
         letter-spacing: 0.0375em;
     }
 }
+
 a {
     -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
     -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
@@ -337,7 +338,8 @@ i {
 
 p {
     margin: 0 0 2em 0;
-    color: #ffffff !important;
+    color: black;
+    font-size: 1.2em;
 }
 
 h1,
@@ -346,12 +348,21 @@ h3,
 h4,
 h5,
 h6 {
-    color: #fff;
+    color: black;
     font-weight: 800;
     letter-spacing: 0.225em;
     line-height: 1em;
     margin: 0 0 1em 0;
     text-transform: uppercase;
+}
+.sub {
+    font-weight: 800;
+    letter-spacing: 0.225em;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.5em;
 }
 
 h1 a,
@@ -365,8 +376,8 @@ h6 a {
 }
 
 h2 {
-    font-size: 1.35em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
 }
 
 @media screen and (max-width: 736px) {
@@ -377,8 +388,18 @@ h2 {
 }
 
 h3 {
-    font-size: 1.15em;
-    line-height: 1.75em;
+    font-size: 1.5em;
+    line-height: 3em;
+    color: black;
+}
+.category {
+    font-size: 1.5em;
+    line-height: 3em;
+    color: white;
+    margin: 0 0 1em 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
 }
 
 @media screen and (max-width: 736px) {
@@ -417,7 +438,7 @@ sup {
 
 hr {
     border: 0;
-    border-bottom: solid 2px #fff;
+    border-bottom: solid 2px black;
     margin: 3em 0;
 }
 
@@ -1651,7 +1672,7 @@ article.special {
 }
 
 header p {
-    color: rgba(255, 255, 255, 0.5);
+    color: white;
     position: relative;
     top: -0.25em;
 }
@@ -1732,7 +1753,7 @@ textarea {
     -webkit-appearance: none;
     -ms-appearance: none;
     appearance: none;
-    background-color: rgba(144, 144, 144, 0.25);
+    background-color: rgba(214, 144, 144, 0.25);
     border-radius: 3px;
     border: none;
     color: inherit;
@@ -2179,6 +2200,9 @@ ul.actions.fit.stacked {
     ul.actions:not(.fixed) li input[type="reset"],
     ul.actions:not(.fixed) li input[type="button"],
     ul.actions:not(.fixed) li button,
+    ul.actions:not(.fixed) li .button {
+        width: 100%;
+    }
     ul.actions:not(.fixed) li input[type="submit"].icon:before,
     ul.actions:not(.fixed) li input[type="reset"].icon:before,
     ul.actions:not(.fixed) li input[type="button"].icon:before,
@@ -2295,7 +2319,40 @@ table.alt tfoot {
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
-
+button,
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 0;
+    box-shadow: inset 0 0 0 2px transparent;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    line-height: 3.125em;
+    max-width: 30em;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-header {
+    background: transparent !important;
+}
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
@@ -2382,6 +2439,17 @@ button:disabled,
 .button:disabled {
     pointer-events: none;
     opacity: 0.25;
+}
+
+@media screen and (max-width: 736px) {
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        height: 3.75em;
+        line-height: 3.75em;
+    }
 }
 
 
@@ -2643,7 +2711,7 @@ img {
 }
 
 .wrapper>.inner {
-    /* width: 60em; */
+    width: 60em;
     margin: 0 auto;
 }
 
@@ -2660,10 +2728,10 @@ img {
 }
 
 .wrapper a {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 .wrapper a:hover {
-  color: #fff;
+  color: #557571;
 }
 
 .wrapper.alt {
@@ -2728,9 +2796,9 @@ img {
     background-color: rgba(255, 255, 255, 0.075);
 }
 
-.wrapper.style1 select {
+/* .wrapper.style1 select {
     /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /%3E%3C/svg%3E"); */
-}
+/* } */
 
 .wrapper.style1 select option {
     color: #ffffff;
@@ -2809,6 +2877,10 @@ img {
 .wrapper.style1 input[type="reset"],
 .wrapper.style1 input[type="button"],
 .wrapper.style1 button,
+.wrapper.style1 .button {
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.125);
+    color: #ffffff;
+}
 
 .wrapper.style1 input[type="submit"]:hover,
 .wrapper.style1 input[type="reset"]:hover,
@@ -2833,7 +2905,7 @@ img {
 }
 
 .wrapper.style2 {
-    background-color: #2e3842;
+    background-color: rgba(251, 249, 241);
 }
 
 .wrapper.style3 {
@@ -2894,9 +2966,9 @@ img {
     background-color: rgba(255, 255, 255, 0.075);
 }
 
-.wrapper.style3 select {
+/* .wrapper.style3 select {
     /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(0, 0, 0, 0.125)' /%3E%3C/svg%3E"); */
-}
+/* } */
 
 .wrapper.style3 select option {
     color: #ffffff;
@@ -2969,6 +3041,15 @@ img {
 
 .wrapper.style3 table.alt tbody tr td {
     border-color: rgba(0, 0, 0, 0.125);
+}
+
+.wrapper.style3 input[type="submit"],
+.wrapper.style3 input[type="reset"],
+.wrapper.style3 input[type="button"],
+.wrapper.style3 button,
+.wrapper.style3 .button {
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.125);
+    color: #ffffff;
 }
 
 .wrapper.style3 input[type="submit"]:hover,
@@ -3060,9 +3141,9 @@ img {
     background-color: rgba(0, 0, 0, 0.0375);
 }
 
-.wrapper.style5 select {
-    /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23dfdfdf' /%3E%3C/svg%3E"); */
-}
+/* .wrapper.style5 select {
+/* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23dfdfdf' /%3E%3C/svg%3E"); */
+/* } */
 
 .wrapper.style5 select option {
     color: #2E3842;
@@ -3137,6 +3218,14 @@ img {
     border-color: #dfdfdf;
 }
 
+.wrapper.style5 input[type="submit"],
+.wrapper.style5 input[type="reset"],
+.wrapper.style5 input[type="button"],
+.wrapper.style5 button,
+.wrapper.style5 .button {
+    box-shadow: inset 0 0 0 2px #dfdfdf;
+    color: #2E3842;
+}
 
 .wrapper.style5 input[type="submit"]:hover,
 .wrapper.style5 input[type="reset"]:hover,
@@ -3675,6 +3764,7 @@ body.is-preload #banner:after {
 
 
 /* Main */
+
 #main>header {
     padding: 5em 0 5em 0;
     background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
@@ -3694,11 +3784,13 @@ body.is-preload #banner:after {
 }
 
 #main>header p {
-    color: inherit;
+    /* color: inherit; */
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
     font-size: 1.3em;
+    padding: 10pt 0 0 0;
+    margin: 0 auto;
 }
 #main>header p a {
     color: inherit;
@@ -3706,10 +3798,10 @@ body.is-preload #banner:after {
 
 @media screen and (max-width: 1680px) {
     #main>header {
-        padding: 5em 1em 5em 0;
+        padding: 10em 0 8em 0;
     }
 }
-/*
+
 @media screen and (max-width: 1280px) {
     #main>header {
         padding: 8em 3em 6em 3em;
@@ -3730,7 +3822,7 @@ body.is-preload #banner:after {
         font-size: 1.25em;
         margin: 0 0 1em 0;
     }
-} */
+}
 
 body.is-mobile #main>header {
     background-attachment: scroll;
@@ -3773,11 +3865,13 @@ body.is-mobile.landing #footer {
 }
 
 .ulbox {
-    border: 2px solid #ffffff;
+    border: 2px solid black;
     float: left;
     text-align: center;
     width: 100%;
     margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #557571
 }
 .ulbox ul {
     list-style-type: none;
@@ -3785,6 +3879,7 @@ body.is-mobile.landing #footer {
     text-align: center;
     margin-right: 15px;
     margin-left: 15px;
+    font-size: 1.25em;
 }
 .ulbox li {
     color: #ffffff;

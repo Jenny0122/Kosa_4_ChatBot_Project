@@ -1,8 +1,8 @@
 <template>
   <div id="menubar">
-    <b-navbar toggleable="lg" type="dark" variant="dark">
+    <b-navbar toggleable="sm"  variant="light" text-variatnt="black">
       <!-- Home글씨 대신 로고 교체 예정 -->
-      <b-navbar-brand><router-link class="router-link" to="/" >Home</router-link></b-navbar-brand>
+      <div class="home"><router-link class="router-link" to="/" ><img src="@/assets/homelogo.png"></router-link></div>
       <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item-dropdown class="menu" text="가드닝 가이드">
@@ -37,7 +37,7 @@
         </b-nav-item-dropdown>
       </b-navbar-nav>
 
-      <b-navbar-nav class="ml-auto">
+      <b-navbar-nav class="ms-auto">
         <b-navbar-brand><router-link class="router-link" to="/page1">회원가입</router-link></b-navbar-brand>
         <b-navbar-brand><router-link router-link class="router-link" to="/page1">로그인</router-link></b-navbar-brand>
       </b-navbar-nav>
@@ -107,12 +107,25 @@ export default {
 }
 .router-link {
   text-decoration: none;
-  color: black;
-  margin: 10pt 0;
+  color: rgb(0, 0, 0, 0.55);
 }
 .menu:hover,
 .router-link:hover {
   color:#00994C;
   cursor: pointer;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(0, 0, 0, 0) !important;
+}
+img {
+  width: 30%;
+  margin: 0 20pt;
+}
+.home {
+  width : 300pt;
+  padding: 10pt;
+}
+b-navbar-brand {
+  margin: 0 0 0 20pt;
 }
 </style>
