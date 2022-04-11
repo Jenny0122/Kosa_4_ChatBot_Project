@@ -21,6 +21,12 @@
 	<div class="click-button">
 	<b-button @click="writeContent">글쓰기</b-button>
 	</div>
+	<div id="customPagination">
+			<b-pagination v-model="currentPage" :total-rows="rows" :per-page="perPage" align="center" class="customPagination"></b-pagination>
+	</div>
+		<div class="click-button">
+			<b-button @click="writeContent">글쓰기</b-button>
+		</div>
   </div>
 </template>
 
@@ -85,6 +91,25 @@ export default {
 		rows() {
 			return this.items.length
 		}
+	},
+	created: function() {
+		// DB에서 정보 불러와서 items에 저장
+		this.$axios.get('/board')
+			.then((res) => {
+				this.items = []
+				for (var i in res.data) {
+					this.items.push({
+						'content_id': res.data[i].no,
+						'title': res.data[i].title,
+						'context': res.data[i].contents,
+						'created_at': res.data[i].day.toString().substring(0, 10),
+						'counts': res.data[i].counts,
+						'updated_at': null,
+						'user_id': res.data[i].user_no
+					})
+				}
+			})
+			.catch()
 	}
 }
 </script>

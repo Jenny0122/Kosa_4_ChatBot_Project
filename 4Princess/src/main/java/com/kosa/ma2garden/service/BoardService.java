@@ -32,8 +32,8 @@ public class BoardService {
 			list.add(boardDTO);
 		}
 
-		Collections.reverse(list); // 변경
-		
+		Collections.reverse(list);
+
 		return list;
 	}
 
@@ -50,5 +50,28 @@ public class BoardService {
 		boardRepository.save(newBoard);
 		return true;
 	}
-	
+
+	public BoardDTO getBoardByNo(long no) {
+
+		Board board = boardRepository.findById(no)
+				.get();
+		boardRepository.updateCounts(no);
+
+		if (board != null) {
+			BoardDTO boardDTO = BoardDTO.builder()
+					.no(board.getNo())
+					.counts(board.getContents())
+					.title(board.getTitle())
+					.contents(board.getContents())
+					.day(board.getDay())
+					.user_no(board.getUser_no())
+					.comment(board.getComments())
+					.build();
+
+			return boardDTO;
+		} else {
+			return null;
+
+		}
+	}
 }

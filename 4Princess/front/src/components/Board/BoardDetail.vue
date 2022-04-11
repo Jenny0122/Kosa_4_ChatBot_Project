@@ -19,53 +19,62 @@
         <b-button variant="success" @click="deleteData">삭제</b-button>
       </div>
       <div class="content-detail-comment">
-        <CommentList :contentId="contentId"></CommentList>
+        <CommentList :comments="comments"></CommentList>
       </div>
     </b-card>
   </div>
 </template>
 
 <script>
-import data from '@/data/index.js'
+// import data from '@/data/index.js'
 import CommentList from './CommentList'
 export default {
 	name: 'BoardDetail',
 	data() {
-		const contentId = Number(this.$route.params.contentId)
-		const contentData = data.Content.filter(
-			contentItem => contentItem.content_id === contentId
-		)[0]
 		return {
-			contentId: contentId,
-			title: contentData.title,
-			context: contentData.context,
-			user: data.User.filter(item => item.user_id === contentData.user_id)[0]
-				.name,
-			created: contentData.created_at
+			contentId: '',
+			title: '',
+			context: '',
+			user: '',
+			created: '',
+			comments: []
 		}
 	},
 	methods: {
 		deleteData() {
-			// eslint-disable-next-line camelcase
-			const content_index = data.Content.findIndex(
-				contentItem => contentItem.content_id === this.contentId
-			)
-			data.Content.splice(content_index, 1) // 데이터 삭제
-			this.$router.push({
-				path: '/'
-			})
+		// 	// eslint-disable-next-line camelcase
+		// 	const content_index = data.Content.findIndex(
+		// 		contentItem => contentItem.content_id === this.contentId
+		// 	)
+		// 	data.Content.splice(content_index, 1) // 데이터 삭제
+		// 	this.$router.push({
+		// 		path: '/'
+		// 	})
 		},
 		updateData() {
-			this.$router.push({
-				path: `/board/create/${this.contentId}`
-			})
+		// 	this.$router.push({
+		// 		path: `/board/create/${this.contentId}`
+		// 	})
 		}
+	},
+	beforeCreate: function() {
+		var no = this.$route.params.no
+		this.$axios.get('/board/' + no).then((res) => {
+			var board = res.data
+			this.contentId = board.no
+			this.title = board.title
+			this.context = board.contents
+			this.user = board.user_no
+			this.created = board.day
+			this.comments = board.comment
+		}).catch()
 	},
 	components: {
 		CommentList
 	}
 }
 </script>
+
 <style scoped>
 .BoardDetail {
 	text-align: left;

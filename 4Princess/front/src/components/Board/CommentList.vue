@@ -1,27 +1,27 @@
 <template>
   <div>
-    <div :key="item.comment_id" v-for="item in comments">
-      <CommentListItem :commentObj="item"></CommentListItem>
+    <div :key="comment.co_no" v-for="comment in comments">
+      <CommentListItem :commentObj="comment"></CommentListItem>
     </div>
-
-    <CommentCreate :contentId="contentId" :reloadComment="reloadComment"/>
+    <CommentCreate :contentId="comments.board_no" :reloadComment="reloadComment"/>
   </div>
 </template>
 
 <script>
-import data from '@/data'
 import CommentListItem from './CommentListItem'
 import CommentCreate from './CommentCreate'
 export default {
 	name: 'CommentList',
 	props: {
-		contentId: Number
+		'comments': Array
 	},
 	data() {
 		return {
-			comments: data.Comment.filter(commentItem => {
-				return commentItem.content_id === this.contentId
-			})
+			commentList: this.comments
+			// commentId: this.comments[0].board_no
+			// comments: data.Comment.filter(commentItem => {
+			// 	return commentItem.content_id === this.contentId
+			// })
 		}
 	},
 	components: {
@@ -29,11 +29,11 @@ export default {
 		CommentCreate
 	},
 	methods: {
-		reloadComment() {
-			this.comments = data.Comment.filter(commentItem => {
-				return commentItem.content_id === this.contentId
-			})
-		}
+		// reloadComment() {
+		// 	this.comments = data.Comment.filter(commentItem => {
+		// 		return commentItem.content_id === this.contentId
+		// 	})
+		// }
 	}
 }
 </script>
