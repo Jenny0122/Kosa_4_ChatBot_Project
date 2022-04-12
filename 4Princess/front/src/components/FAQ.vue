@@ -12,11 +12,11 @@
           <div class="accordion" role="tablist">
             <b-card no-body class="mb-1" text-variant="black">
               <b-card-header header-tag="header"  class="p-1" role="tab">
-                <b-button block v-b-toggle="'accordion-' + faq.no" text-variant="black">{{faq.no}}&nbsp;&nbsp;&nbsp;&nbsp;{{faq.question}}</b-button>
+                <b-button block v-b-toggle="'accordion-' + faq.no" text-variant="black">*&nbsp;&nbsp;{{faq.question}}</b-button>
               </b-card-header>
               <b-collapse :id="'accordion-' + faq.no" accordion="my-accordion" role="tabpanel">
                 <b-card-body>
-                  <b-card-text>{{faq.answer}}</b-card-text>
+                    <b-card-text>{{faq.answer}}</b-card-text>
                 </b-card-body>
               </b-collapse>
             </b-card>
@@ -327,7 +327,7 @@ a:hover {
 
 strong,
 b {
-    color: #fff;
+    color: black;
     font-weight: 600;
 }
 
@@ -447,7 +447,7 @@ hr.major {
 }
 
 blockquote {
-    border-left: solid 4px #fff;
+    border-left: solid 4px black;
     font-style: italic;
     margin: 0 0 2em 0;
     padding: 0.5em 0 0.5em 2em;
@@ -1696,7 +1696,7 @@ header.major h3,
 header.major h4,
 header.major h5,
 header.major h6 {
-    border-bottom: solid 2px #fff;
+    border-bottom: solid 2px black;
     display: inline-block;
     padding-bottom: 1em;
     position: relative;
@@ -1713,7 +1713,7 @@ header.major h6:after {
 }
 
 header.major p {
-    color: #fff;
+    color: black;
     top: 0;
 }
 
@@ -1737,13 +1737,12 @@ form {
 }
 
 label {
-    color: #fff;
+    color: black;
     display: block;
     font-size: 0.9em;
     font-weight: 600;
     margin: 0 0 1em 0;
 }
-
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -1825,7 +1824,7 @@ input[type="radio"] {
 input[type="checkbox"]+label,
 input[type="radio"]+label {
     text-decoration: none;
-    color: #fff;
+    color: black;
     cursor: pointer;
     display: inline-block;
     font-size: 1em;
@@ -1868,7 +1867,7 @@ input[type="radio"]+label:before {
 input[type="checkbox"]:checked+label:before,
 input[type="radio"]:checked+label:before {
     background: #2e3842;
-    color: #fff;
+    color: black;
     content: '\f00c';
 }
 
@@ -1910,7 +1909,7 @@ input[type="radio"]+label:before {
 
 .box {
     border-radius: 3px;
-    border: solid 2px #fff;
+    border: solid 2px black;
     margin-bottom: 2em;
     padding: 1.5em;
 }
@@ -1971,7 +1970,7 @@ input[type="radio"]+label:before {
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
     border-radius: 3px;
-    border: solid 2px #fff;
+    border: solid 2px black;
     display: inline-block;
     font-size: 1.35em;
     height: calc(3em + 2px);
@@ -2083,7 +2082,7 @@ ul.alt {
 }
 
 ul.alt li {
-    border-top: solid 1px #fff;
+    border-top: solid 1px black;
     padding: 0.5em 0;
 }
 
@@ -2258,7 +2257,7 @@ table {
 }
 
 table tbody tr {
-    border: solid 1px #fff;
+    border: solid 1px black;
     border-left: 0;
     border-right: 0;
 }
@@ -2272,7 +2271,7 @@ table td {
 }
 
 table th {
-    color: #fff;
+    color: black;
     font-size: 0.9em;
     font-weight: 600;
     padding: 0 0.75em 0.75em 0.75em;
@@ -2280,11 +2279,11 @@ table th {
 }
 
 table thead {
-    border-bottom: solid 2px #fff;
+    border-bottom: solid 2px black;
 }
 
 table tfoot {
-    border-top: solid 2px #fff;
+    border-top: solid 2px black;
 }
 
 table.alt {
@@ -2292,7 +2291,7 @@ table.alt {
 }
 
 table.alt tbody tr td {
-    border: solid 1px #fff;
+    border: solid 1px black;
     border-left-width: 0;
     border-top-width: 0;
 }
@@ -2347,7 +2346,7 @@ button,
     text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
     text-overflow: ellipsis;
 }
 .card-header {
@@ -2408,7 +2407,7 @@ button.primary,
 .button.primary {
     background-color: #ed4933;
     box-shadow: none !important;
-    color: #ffffff !important;
+    color: black !important;
 }
 
 input[type="submit"].primary:hover,
@@ -2563,7 +2562,7 @@ button:disabled,
     .features li {
         padding: 3em 0 1em 0;
         background-color: transparent !important;
-        border-top: solid 2px #fff;
+        border-top: solid 2px black;
         width: 100%;
     }
     .features li:first-child {
@@ -2711,7 +2710,7 @@ img {
 }
 
 .wrapper>.inner {
-    width: 60em;
+    width: 100em;
     margin: 0 auto;
 }
 
@@ -2745,7 +2744,7 @@ img {
 
 .wrapper.style1 strong,
 .wrapper.style1 b {
-    color: #ffffff;
+    color: blackfff;
 }
 
 .wrapper.style1 h2,
@@ -2753,7 +2752,7 @@ img {
 .wrapper.style1 h4,
 .wrapper.style1 h5,
 .wrapper.style1 h6 {
-    color: #ffffff;
+    color: blackfff;
 }
 
 .wrapper.style1 hr {
@@ -2785,7 +2784,7 @@ img {
 }
 
 .wrapper.style1 label {
-    color: #ffffff;
+    color: blackfff;
 }
 
 .wrapper.style1 input[type="text"],
@@ -2801,7 +2800,7 @@ img {
 /* } */
 
 .wrapper.style1 select option {
-    color: #ffffff;
+    color: black;
     background: #21b2a6;
 }
 
@@ -2817,7 +2816,7 @@ img {
 
 .wrapper.style1 input[type="checkbox"]:checked+label:before,
 .wrapper.style1 input[type="radio"]:checked+label:before {
-    background: #ffffff;
+    background: blackfff;
     color: #21b2a6;
 }
 
@@ -2858,7 +2857,7 @@ img {
 }
 
 .wrapper.style1 table th {
-    color: #ffffff;
+    color: blackfff;
 }
 
 .wrapper.style1 table thead {
@@ -2879,7 +2878,7 @@ img {
 .wrapper.style1 button,
 .wrapper.style1 .button {
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.125);
-    color: #ffffff;
+    color: black;
 }
 
 .wrapper.style1 input[type="submit"]:hover,
@@ -2915,7 +2914,7 @@ img {
 
 .wrapper.style3 strong,
 .wrapper.style3 b {
-    color: #ffffff;
+    color: blackfff;
 }
 
 .wrapper.style3 h2,
@@ -2923,7 +2922,7 @@ img {
 .wrapper.style3 h4,
 .wrapper.style3 h5,
 .wrapper.style3 h6 {
-    color: #ffffff;
+    color: blackfff;
 }
 
 .wrapper.style3 hr {
@@ -2955,7 +2954,7 @@ img {
 }
 
 .wrapper.style3 label {
-    color: #ffffff;
+    color: blackfff;
 }
 
 .wrapper.style3 input[type="text"],
@@ -2971,7 +2970,7 @@ img {
 /* } */
 
 .wrapper.style3 select option {
-    color: #ffffff;
+    color: blackfff;
     background: #505393;
 }
 
@@ -2987,7 +2986,7 @@ img {
 
 .wrapper.style3 input[type="checkbox"]:checked+label:before,
 .wrapper.style3 input[type="radio"]:checked+label:before {
-    background: #ffffff;
+    background: blackfff;
     color: #505393;
 }
 
@@ -3028,7 +3027,7 @@ img {
 }
 
 .wrapper.style3 table th {
-    color: #ffffff;
+    color: blackfff;
 }
 
 .wrapper.style3 table thead {
@@ -3049,7 +3048,7 @@ img {
 .wrapper.style3 button,
 .wrapper.style3 .button {
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.125);
-    color: #ffffff;
+    color: black;
 }
 
 .wrapper.style3 input[type="submit"]:hover,
@@ -3079,7 +3078,7 @@ img {
 }
 
 .wrapper.style5 {
-    background-color: #ffffff;
+    background-color: blackfff;
     color: #4E4852;
 }
 
@@ -3147,7 +3146,7 @@ img {
 
 .wrapper.style5 select option {
     color: #2E3842;
-    background: #ffffff;
+    background: blackfff;
 }
 
 .wrapper.style5 input[type="checkbox"]+label,
@@ -3163,7 +3162,7 @@ img {
 .wrapper.style5 input[type="checkbox"]:checked+label:before,
 .wrapper.style5 input[type="radio"]:checked+label:before {
     background: #2E3842;
-    color: #ffffff;
+    color: blackfff;
 }
 
 .wrapper.style5 ::-webkit-input-placeholder {
@@ -3297,7 +3296,7 @@ img {
     transition: transform 0.5s ease;
     -webkit-overflow-scrolling: touch;
     background: #21b2a6;
-    color: #ffffff;
+    color: blackfff;
     height: 100%;
     max-width: 80%;
     overflow-y: auto;
@@ -3444,7 +3443,7 @@ body.is-menu-visible #menu {
 
 #header nav>ul>li>a {
     border: 0;
-    color: #fff;
+    color: black;
     display: block;
     font-size: 0.8em;
     letter-spacing: 0.225em;
@@ -3547,7 +3546,7 @@ body.is-menu-visible #menu {
     -webkit-transition-delay: 0.25s;
     -ms-transition-delay: 0.25s;
     transition-delay: 0.25s;
-    background: #fff;
+    background: black;
     content: '';
     display: block;
     height: 2px;
@@ -3882,7 +3881,7 @@ body.is-mobile.landing #footer {
     font-size: 1.25em;
 }
 .ulbox li {
-    color: #ffffff;
+    color: black;
     float: left;
     text-align: center;
 }

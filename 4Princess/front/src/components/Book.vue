@@ -60,7 +60,7 @@ export default {
 
 <style scoped>
 img {
-    width: 10% !important;
+    width: 20% !important;
     /* height: 100pt; */
     object-fit: cover !important;
 }
@@ -2710,7 +2710,11 @@ button:disabled,
 
 
 /* Wrapper */
+<<<<<<< HEAD
 /* 
+=======
+/*
+>>>>>>> refs/remotes/origin/sunjung
 img {
     height: 40vh;
     max-width: 18vw;

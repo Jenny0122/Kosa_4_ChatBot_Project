@@ -1,9 +1,15 @@
 <template>
 <div id="BoardList">
 	<div id="page-wrapper">
+<<<<<<< HEAD
 		<article id="main">
 			<header>
 				<h2 class="title">BoardList</h2>
+=======
+    <article id="main">
+      <header>
+				<h2 class="title">게시판</h2>
+>>>>>>> refs/remotes/origin/sunjung
 				<p class="subtitle">회원전용 게시판 공간입니다.:)</p>
 			</header>
 
@@ -36,7 +42,10 @@
 </template>
 
 <script>
+<<<<<<< HEAD
 // import data from '@/data'
+=======
+>>>>>>> refs/remotes/origin/sunjung
 export default {
 	name: 'BoardList',
 	data() {
@@ -127,7 +136,7 @@ export default {
 
 <style scoped>
 .BoardList {
-	color: black;
+	color: black !important;
 	text-align: left !important;
 	width:80% !important;
 	margin: 50pt auto !important;

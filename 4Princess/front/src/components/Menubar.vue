@@ -12,7 +12,11 @@
           <div class="side-link"><b-dropdown-item><router-link class="router-link" to="/info/tip">팁</router-link></b-dropdown-item></div>
         </b-nav-item-dropdown>
 
+<<<<<<< HEAD
         <b-nav-item-dropdown no-caret class="menu" text="식물 정보">
+=======
+        <b-nav-item-dropdown class="menu" text="식물 정보">
+>>>>>>> refs/remotes/origin/sunjung
           <div class="side-link"><b-dropdown-item><router-link class="router-link" to="/plant/indoorplant">실내 정원 식물</router-link></b-dropdown-item></div>
           <div class="side-link"><b-dropdown-item><router-link class="router-link" to="/plant/dryplant">건조에 강한 식물</router-link></b-dropdown-item></div>
           <div class="side-link"><b-dropdown-item><router-link class="router-link" to="/plant/airplant">공기 정화 식물</router-link></b-dropdown-item></div>
