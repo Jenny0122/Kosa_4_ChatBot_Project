@@ -43,9 +43,12 @@
 
 <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import data from '@/data'
 =======
 >>>>>>> refs/remotes/origin/sunjung
+=======
+>>>>>>> refs/remotes/origin/yunhee
 export default {
 	name: 'BoardList',
 	data() {
