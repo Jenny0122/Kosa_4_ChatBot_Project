@@ -1,54 +1,41 @@
 <template>
 <div id="BoardList">
 	<div id="page-wrapper">
-<<<<<<< HEAD
-		<article id="main">
-			<header>
-				<h2 class="title">BoardList</h2>
-=======
     <article id="main">
-      <header>
-				<h2 class="title">게시판</h2>
->>>>>>> refs/remotes/origin/sunjung
-				<p class="subtitle">회원전용 게시판 공간입니다.:)</p>
-			</header>
+        <header>
+            <h2 class="title">게시판</h2>
+            <p class="subtitle">회원전용 게시판 공간입니다.:)</p>
+        </header>
 
-			<section class="wrapper alt style2">
-				<div class="inner">
-					<b-table
-					hover
-					:items="items"
-					:per-page="perPage"
-					:current-page="currentPage"
-					:fields="fields"
-					tbody-class="text-black"
-					@row-clicked="rowClick"
-					></b-table>
+        <section class="wrapper alt style2">
+            <div class="inner">
+                <b-table
+                hover
+                :items="items"
+                :per-page="perPage"
+                :current-page="currentPage"
+                :fields="fields"
+                tbody-class="text-black"
+                @row-clicked="rowClick"
+                ></b-table>
 
-					<b-pagination
-						v-model="currentPage"
-						:total-rows="rows"
-						:per-page="perPage"
-						align="center"
-					></b-pagination>
-					<div class="click-button">
-						<b-button @click="writeContent">글쓰기</b-button>
-					</div>
-				</div>
-			</section>
+                <b-pagination
+                    v-model="currentPage"
+                    :total-rows="rows"
+                    :per-page="perPage"
+                    align="center"
+                ></b-pagination>
+                <div class="click-button">
+                    <b-button @click="writeContent">글쓰기</b-button>
+                </div>
+            </div>
+        </section>
 		</article>
 	</div>
 </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-// import data from '@/data'
-=======
->>>>>>> refs/remotes/origin/sunjung
-=======
->>>>>>> refs/remotes/origin/yunhee
 export default {
 	name: 'BoardList',
 	data() {

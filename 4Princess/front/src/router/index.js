@@ -15,7 +15,6 @@ import Cook from '@/components/Cook'
 import FAQ from '@/components/FAQ'
 import BoardCreate from '@/components/Board/BoardCreate'
 import BoardDetail from '@/components/Board/BoardDetail'
-import AirPlant from '@/components/AirPlant'
 import Signup from '@/components/Signup'
 import Signin from '@/components/Signin'
 
@@ -27,11 +26,6 @@ export default new Router({
             path: '/',
             name: 'Home',
             component: Home
-        },
-        {
-            path: '/plant/airplant',
-            name: 'AirPlant',
-            component: AirPlant
         },
         {
             path: '/info/tip',
