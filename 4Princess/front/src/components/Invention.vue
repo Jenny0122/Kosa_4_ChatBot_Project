@@ -57,10 +57,10 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 img {
-	width: 50% !important;
+	width: 70% !important;
 }
 .invention-area {
-	width: 80% !important;
+	width: 100% !important;
 	margin: 40pt auto !important;
 	/* float: left; */
 	text-align: center !important;
@@ -77,7 +77,7 @@ img {
 }
 .invention-idea {
 	margin: 20pt 0 !important;
-	font-size: 20pt !important;
+	font-size: 15pt !important;
 	font-family: 'Noto Sans KR', sans-serif !important;
 	color: black !important;
 }
@@ -2691,11 +2691,11 @@ button:disabled,
 
 /* Wrapper */
 
-img {
+/* img {
     height: 40vh;
     max-width: 18vw;
     min-width: 300px;
-}
+} */
 
 .wrapper {
     padding: 6em 0 4em 0;
@@ -2716,7 +2716,7 @@ img {
 
 @media screen and (max-width: 1280px) {
     .wrapper>.inner {
-        width: 90%;
+        width: 100%;
     }
 }
 

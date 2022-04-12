@@ -2783,7 +2783,7 @@ img {
   color: white;
 }
 .wrapper a:hover {
-  color: #557571;
+  color: black;
 }
 
 .wrapper.alt {

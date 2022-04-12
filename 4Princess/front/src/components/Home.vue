@@ -1,5 +1,5 @@
 <template>
-<!-- <div id="page-wrapper"> -->
+<div id="page-wrapper">
 <article id="main">
     <section class="wrapper style">
     <div id="inner">
@@ -94,7 +94,7 @@
     <br/><br/><br/><br/><br/><br/>
     </section>
 </article>
-<!-- </div> -->
+</div>
 </template>
 
 <script>
@@ -488,7 +488,7 @@ pre code {
 }
 
 .align-center {
-    text-align: center;
+
 }
 
 .align-right {
@@ -1674,7 +1674,7 @@ pre code {
 
 section.special,
 article.special {
-    text-align: center;
+
 }
 
 header p {
@@ -1866,7 +1866,7 @@ input[type="radio"]+label:before {
     left: 0;
     line-height: 2.0625em;
     position: absolute;
-    text-align: center;
+
     top: 0;
     width: 2.0625em;
 }
@@ -1982,7 +1982,7 @@ input[type="radio"]+label:before {
     font-size: 1.35em;
     height: calc(3em + 2px);
     line-height: 3em;
-    text-align: center;
+
     width: calc(3em + 2px);
 }
 
@@ -2193,7 +2193,7 @@ ul.actions.fit.stacked {
         -ms-flex-shrink: 1;
         flex-shrink: 1;
         padding: 1em 0 0 0;
-        text-align: center;
+
         width: 100%;
     }
     ul.actions:not(.fixed) li>* {
@@ -2349,7 +2349,7 @@ button,
     line-height: 3.125em;
     max-width: 30em;
     padding: 0 2.75em;
-    text-align: center;
+
     text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
@@ -2553,7 +2553,7 @@ button:disabled,
 @media screen and (max-width: 980px) {
     .features li {
         padding: 3em 2em 1em 2em;
-        text-align: center;
+
     }
     .features li:before {
         left: 0;
@@ -2682,7 +2682,7 @@ button:disabled,
     .spotlight .content {
         padding: 4em 3em 2em 3em;
         max-width: none;
-        text-align: center;
+
         width: 100%;
     }
 }
@@ -3275,6 +3275,7 @@ button:disabled,
     transition: opacity 0.5s ease;
     opacity: 1;
     padding-top: 3em;
+    text-align: center !important;
 }
 
 #page-wrapper:before {
@@ -3521,7 +3522,7 @@ body.is-menu-visible #menu {
     min-height: 35em;
     overflow: hidden;
     position: relative;
-    text-align: center;
+
 }
 
 #banner h2 {
@@ -3603,7 +3604,7 @@ body.is-menu-visible #menu {
     outline: 0;
     padding-left: 0.225em;
     position: absolute;
-    text-align: center;
+
     text-transform: uppercase;
     width: 16em;
     z-index: 1;
@@ -3746,7 +3747,7 @@ body.is-preload #banner:after {
 @media screen and (max-width: 980px) {
     #cta .inner {
         display: block;
-        text-align: center;
+
     }
     #cta .inner header {
         padding-right: 0;
@@ -3779,7 +3780,7 @@ body.is-preload #banner:after {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    text-align: center;
+
 }
 
 #main>header h2 {
@@ -3866,6 +3867,6 @@ body.is-mobile.landing #footer {
     background-color: #1d242a;
 }
 #inner {
-    text-align: center;
+
 }
 </style>

@@ -12,7 +12,7 @@
           <div class="accordion" role="tablist">
             <b-card no-body class="mb-1" text-variant="black">
               <b-card-header header-tag="header"  class="p-1" role="tab">
-                <b-button block v-b-toggle="'accordion-' + faq.no" text-variant="black">*&nbsp;&nbsp;{{faq.question}}</b-button>
+                <b-button class="p2" block v-b-toggle="'accordion-' + faq.no" text-variant="black">*&nbsp;&nbsp;{{faq.question}}</b-button>
               </b-card-header>
               <b-collapse :id="'accordion-' + faq.no" accordion="my-accordion" role="tabpanel">
                 <b-card-body>
@@ -71,7 +71,7 @@ export default {
 .btn-secondary {
   background: transparent !important;
   border: 0 !important;
-  font-size: 20pt !important;
+  font-size: 15pt !important;
   font-weight: 500 !important;
   width: 100% !important;
   text-align: left !important;
@@ -166,7 +166,7 @@ mark,
 audio,
 video {
     margin: 0;
-    padding: 0;
+    padding-top: 5pt;
     border: 0;
     font-size: 100%;
     font: inherit;
@@ -339,7 +339,7 @@ i {
 p {
     margin: 0 0 2em 0;
     color: black;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 h1,
@@ -439,7 +439,7 @@ sup {
 hr {
     border: 0;
     border-bottom: solid 2px black;
-    margin: 3em 0;
+    margin: 1em 0;
 }
 
 hr.major {
@@ -2338,7 +2338,7 @@ button,
     font-size: 0.8em;
     font-weight: 600;
     height: 3.125em;
-    letter-spacing: 0.225em;
+    /* letter-spacing: 0.225em; */
     line-height: 3.125em;
     max-width: 30em;
     padding: 0;
@@ -2710,7 +2710,7 @@ img {
 }
 
 .wrapper>.inner {
-    width: 100em;
+    width: 60em;
     margin: 0 auto;
 }
 
@@ -2727,10 +2727,10 @@ img {
 }
 
 .wrapper a {
-  color: white;
+  color: black;
 }
 .wrapper a:hover {
-  color: #557571;
+  color: black;
 }
 
 .wrapper.alt {
@@ -3884,5 +3884,15 @@ body.is-mobile.landing #footer {
     color: black;
     float: left;
     text-align: center;
+}
+.p2 {
+    color: black;
+}
+.p2:hover {
+    color: #557571 !important
+}
+.btn-check:focus + .btn, .btn:focus {
+    -webkit-box-shadow: 0 0 0 0.25rem transparent !important;
+    box-shadow: 0 transparent !important
 }
 </style>
