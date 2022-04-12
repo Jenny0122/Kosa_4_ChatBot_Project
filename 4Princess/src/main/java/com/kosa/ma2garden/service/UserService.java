@@ -17,20 +17,6 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	/*
-	 * public List<UserDTO> getAllUsers() {
-	 * 
-	 * List<UserDTO> list = new ArrayList<UserDTO>(); for (User user :
-	 * userRepository.findAll()) { UserDTO userDTO =
-	 * UserDTO.builder().no(user.getNo()).id(user.getId()).password(user.getPassword
-	 * ()) .email(user.getEmail()).created_at(user.getCreated_at()).updated_at(user.
-	 * getUpdated_at()).build();
-	 * 
-	 * list.add(userDTO); }
-	 * 
-	 * return list; }
-	 */
-
 	public boolean idVaild(String id) {
 		User check = userRepository.findAllById(id);
 
@@ -42,13 +28,10 @@ public class UserService {
 	}
 
 	public boolean createUser(UserDTO userDTO) {
-		String encodedPassword = passwordEncoder.encode(userDTO.getPassword());
-
-		userDTO.setPassword(encodedPassword);
 
 		User user = User.builder()
 				.id(userDTO.getId())
-				.password(userDTO.getPassword())
+				.password(passwordEncoder.encode(userDTO.getPassword()))
 				.email(userDTO.getEmail())
 				.build();
 
@@ -59,18 +42,14 @@ public class UserService {
 
 	public User loginUser(UserDTO userDTO) {
 
-		User user = User.builder()
-				.id(userDTO.getId())
-				.password(userDTO.getPassword())
-				.build();
+		// ID기 기준으로 우선 조회 => ID는 Unique이기 때문에 가능
+		User user = userRepository.findAllById(userDTO.getId());
 
-		user = userRepository.findAllByIdAndPassword(user.getId(), user.getPassword());
-
-		if (user != null) {
+		// PasswordEncoder가 사용자입력 password와 암호화저장된 password의 일치여부를 확인
+		if (passwordEncoder.matches(userDTO.getPassword(), user.getPassword()))
 			return user;
-		}
-
-		return null;
+		else
+			return null;
 	}
 
 }
