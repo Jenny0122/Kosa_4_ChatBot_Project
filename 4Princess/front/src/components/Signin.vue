@@ -3877,7 +3877,6 @@ input {
 .wrapper > .inner {
   width: 30vw;
   min-width: 280px;
-  height: 50vh;
   margin: 0 auto;
   margin-top: 10px;
   background-color: rgba(255, 255, 255, 0.95);
@@ -3889,18 +3888,11 @@ input {
 .inner2 {
   width: 26vw;
   min-width: 230px;
-  height: 60vh;
+  height: 55vh;
   margin: 0 auto;
   color: black;
-  position: absolute;
-  top: 39%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .inner2form {
   border-radius: 40px !important;
-  /* background-color: rgba(255, 255, 255, 0.95); */
-  /* border-radius: 3px; */
-  /* margin-bottom: 100px; */
 }
 </style>
