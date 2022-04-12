@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
 <div id="IndoorplantList">
     <div id="page-wrapper">
     <article id="main">
@@ -18,28 +17,9 @@
                 :per-page="10">
                     <template #cell(세부설명)="row">
                         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                            {{ row.detailsShowing ? "숨기기" : "자세히 보기"}}
+                            <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
                         </b-button>
                     </template>
-=======
-<div>
-    <div class="IndoorplantList">
-        <div class="title">INDOORPLANT</div>
-        <div class="subtitle">실내식물을 소개합니다:)</div>
-    </div>
-    <b-table 
-    :items="items" 
-    :fields="fields" 
-    striped 
-    responsive="sm" 
-    :current-page="currentPage" 
-    :per-page="10">
-        <template #cell(세부설명)="row">
-            <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
-            </b-button>
-        </template>
->>>>>>> refs/remotes/origin/yujin
 
                     <template #row-details="row">
                         <b-card>
@@ -211,8 +191,6 @@ video {
     font: inherit;
     vertical-align: baseline;
 }
-
-<<<<<<< HEAD
 article,
 aside,
 details,
@@ -3925,7 +3903,6 @@ body.is-mobile.landing #footer {
     float: left;
     text-align: center;
 }
-=======
 .mr-2{
     background-color: #557571;
     border: 0;
@@ -3937,5 +3914,4 @@ body.is-mobile.landing #footer {
     padding: 5px 5px;
 }
 
->>>>>>> refs/remotes/origin/yujin
 </style>

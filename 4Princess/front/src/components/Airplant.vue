@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
 <div id="AirplantList">
 <div id="page-wrapper">
     <article id="main">
@@ -17,54 +16,36 @@
                 :current-page="currentPage"
                 :per-page="10">
                     <template #cell(세부설명)="row">
+                        <!-- <i class="fa fa-leaf"></i> -->
+                        <!-- variant="primary -->
                         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                            {{ row.detailsShowing ? '숨기기' : '자세히 보기'}}
+                            <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
                         </b-button>
-=======
-<div>
-    <div class="AirplantList">
-        <div class='title'>AIRPLANT</div>
-        <div class='subtitle'>공기정화식물을 소개합니다:)</div>
-    </div>
-    <b-table 
-    :items="items" 
-    :fields="fields" 
-    striped 
-    responsive="sm" 
-    :current-page="currentPage" 
-    :per-page="10">
-        <template #cell(세부설명)="row">
-            <!-- <i class="fa fa-leaf"></i> -->
-            <!-- variant="primary -->
-            <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
-            </b-button>
->>>>>>> refs/remotes/origin/yujin
-                    </template>
+                                </template>
 
-                        <template #row-details="row">
-                            <b-card>
-                                <b-row class="mb-2">
-                                    <b-col sm="3" class="text-sm-right"><b>[설명]</b></b-col>
-                                    <b-col>{{ row.item.description }}</b-col>
-                                </b-row>
-                                <b-row class="mb-2">
-                                <b-col sm="3" class="text-sm-right"><b>[관리방법]</b></b-col>
-                                    <b-col>{{ row.item.management }}</b-col>
-                                </b-row>
-                                <b-row class="mb-2">
-                                <b-col sm="3" class="text-sm-right"><b>[추천배치장소]</b></b-col>
-                                    <b-col>{{ row.item.batchrecomm }}</b-col>
-                                </b-row>
-                            </b-card>
-                        </template>
-                    </b-table>
-                    <b-pagination class="page"
-                            v-model="currentPage"
-                            :total-rows="rows"
-                            :per-page="10"
-                            aria-controls="table"/>
-            </div>
+                                <template #row-details="row">
+                                    <b-card>
+                                        <b-row class="mb-2">
+                                            <b-col sm="3" class="text-sm-right"><b>[설명]</b></b-col>
+                                            <b-col>{{ row.item.description }}</b-col>
+                                        </b-row>
+                                        <b-row class="mb-2">
+                                        <b-col sm="3" class="text-sm-right"><b>[관리방법]</b></b-col>
+                                            <b-col>{{ row.item.management }}</b-col>
+                                        </b-row>
+                                        <b-row class="mb-2">
+                                        <b-col sm="3" class="text-sm-right"><b>[추천배치장소]</b></b-col>
+                                            <b-col>{{ row.item.batchrecomm }}</b-col>
+                                        </b-row>
+                                    </b-card>
+                                </template>
+                            </b-table>
+                            <b-pagination class="page"
+                                    v-model="currentPage"
+                                    :total-rows="rows"
+                                    :per-page="10"
+                                    aria-controls="table"/>
+                    </div>
         </section>
     </article>
 </div>
@@ -3941,5 +3922,15 @@ body.is-mobile.landing #footer {
     color: #ffffff;
     float: left;
     text-align: center;
+}
+.mr-2{
+    background-color: #557571;
+    border: 0;
+    cursor: pointer;
+    box-shadow: -3px -3px 3px rgb(172, 172, 172), 3px 3px 3px rgb(237, 237, 237);
+    transition: 0.3s;
+    font-size: 15px;
+    width: 100px;
+    padding: 5px 5px;
 }
 </style>

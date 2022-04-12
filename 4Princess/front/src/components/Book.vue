@@ -21,7 +21,6 @@
                 <div class ="book-desc">
                   저자 : {{book.author.replaceAll('\'', '').replace(/\[/g, '').replace(/\]/g, '')}} <br>
                   출판사 : {{book.publisher}}
-                  <hr/>
                 </div>
               </div>
             </div>
@@ -72,7 +71,8 @@ img {
   margin: 20pt auto;
   width: 80% !important;
   text-align: center !important;
-  margin-top: 0 !important;
+  padding-top: 20pt !important;
+  background-color: beige;
 }
 .book-img {
   display: inline !important;
@@ -81,7 +81,7 @@ img {
 .book-text {
   display: inline-block !important;
   width: 60% !important;
-  vertical-align: middle !important;
+  /* vertical-align: middle !important; */
   color: black;
   margin-bottom: 15pt !important;
 }
@@ -187,11 +187,11 @@ mark,
 audio,
 video {
     margin: 0;
-    padding: 0;
+    padding-bottom: 10pt;
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline;
+    vertical-align: middle;
 }
 
 article,
@@ -460,7 +460,7 @@ sup {
 hr {
     border: 0;
     border-bottom: solid 2px black;
-    margin: 3em 0;
+    margin: 1em 0;
 }
 
 hr.major {
