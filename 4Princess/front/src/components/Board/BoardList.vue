@@ -41,7 +41,7 @@ export default {
 			// bootstrap 'b-table' 필드 설정
 			fields: [
 				{
-					key: 'content_id',
+					key: 'index',
 					label: '번호',
 					thClass: 'text-center',
 					tdClass: 'text-center'
@@ -96,6 +96,7 @@ export default {
 				this.items = []
 				for (var i in res.data) {
 					this.items.push({
+                        'index': res.data.length - i,
 						'content_id': res.data[i].no,
 						'title': res.data[i].title,
 						'context': res.data[i].contents,

@@ -34,8 +34,11 @@ export default {
 	},
 	methods: {
     initHandler: function() { // 챗봇 활성화했을때 실행되는 함수
-      // 환영인사
+
       // 웹소켓 연결
+      // 만약 처음 켜는 경우는 인사말 push
+      // 두번째 켜는 경우는 생략
+      //thid.data.length로 확인
       this.data.push({
         agent: 'bot',
         type: 'button',
