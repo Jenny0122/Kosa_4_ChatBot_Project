@@ -104,27 +104,30 @@ export default {
   margin: 20pt 0;
   margin-top: 0 !important;
   /* text-align: center; */
+  padding-top: 20pt;
 }
 .crop-button-area {
   display: inline-block !important;
-  height: 75pt !important;
+  height: 80% !important;
   vertical-align: middle !important;
   text-align: center !important;
-  width: 16% !important;
-  margin: 20pt 2% !important;
+  width: 18% !important;
+  margin: 10pt 1% !important;
 }
 .crop-button {
     padding: 0 auto;
   width: 100% !important;
-  height: 100% !important;
-  font-size: 100% !important;
+  height: 80% !important;
+  font-size: 15pt !important;
   color: white !important;
   background-color: #557571 !important;
   border: 1px solid white !important;
 }
 img {
   width: 100% !important;
-  height: 100% !important;
+  height: 20vh !important;
+  /* width: 20vw !important;
+  height: 20vh !important; */
   object-fit: cover;
   position: relative;
 }
@@ -138,11 +141,11 @@ img {
 }
 .menu-select-area {
   display: inline-block !important;
-  margin: 30pt 5% !important;
+  margin: 30pt 3% !important;
   width: 23% !important;
 }
 .menu-text {
-    font-size: 20pt !important;
+    font-size: 18pt !important;
     margin: 20pt 0 !important;
     color: black !important;
     }
@@ -2732,11 +2735,11 @@ button:disabled,
 
 /* Wrapper */
 
-img {
+/* img {
     height: 40vh;
     max-width: 18vw;
     min-width: 300px;
-}
+} */
 
 .wrapper {
     padding: 6em 0 4em 0;

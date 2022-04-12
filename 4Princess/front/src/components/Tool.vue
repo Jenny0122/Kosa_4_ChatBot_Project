@@ -67,19 +67,21 @@ img {
 .tool-area {
   border-radius: 10pt;
   /* border: 1pt solid black; */
-  margin: 40pt auto;
-  width: 80%;
+  margin: 20pt auto;
+  width: 100%;
   text-align: center;
 }
 .tool-img {
   display: inline;
   padding:10pt 10pt;
+    vertical-align: middle;
 }
 .tool-text {
   display: inline-block;
   width: 60%;
   vertical-align: middle;
   margin:0 20pt;
+  padding-top: 10%;
 
 }
 .tool-name {
@@ -87,6 +89,7 @@ img {
   font-weight: 700;
   text-align: left;
   color: black;
+  margin-bottom: 5pt;
 }
 .tool-desc {
   font-size: 15pt;
@@ -448,7 +451,7 @@ sup {
 hr {
     border: 0;
     border-bottom: solid 2px black;
-    margin: 3em 0;
+    margin: 1em 0;
 }
 
 hr.major {
@@ -2699,11 +2702,11 @@ button:disabled,
 
 /* Wrapper */
 
-img {
+/* img {
     /* height: 40vh; */
     max-width: 18vw;
     min-width: 300px;
-}
+/* } */ */
 
 .wrapper {
     padding: 6em 0 4em 0;

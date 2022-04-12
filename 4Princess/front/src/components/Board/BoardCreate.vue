@@ -18,11 +18,10 @@
 									rows="20"
 							></b-form-textarea>
 						</div>
-						<div class="button">
-							<br>
-							<b-button @click="updateMode ? updateContent() : uploadContent()">저장</b-button>&nbsp;
-							<b-button @click="cancle">취소</b-button>
-						</div>
+						<!-- <div class="button"> -->
+							<b-button class="btn float-right" @click="updateMode ? updateContent() : uploadContent()">저장</b-button>&nbsp;
+							<b-button class="btn float-right" @click="cancle">취소</b-button>
+						<!-- </div> -->
   				</div>
 				</section>
 		</article>
@@ -88,9 +87,9 @@ export default {
   padding: 0 10%;
 }
 .button{
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0 155px;
-  /* float: right; */
+  float: right;
 }
 html,
 body,

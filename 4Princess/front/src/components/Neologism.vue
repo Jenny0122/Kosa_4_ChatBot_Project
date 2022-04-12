@@ -61,6 +61,7 @@ export default {
     /* margin-bottom: 50pt !important;
     margin-left: 50pt !important;
     margin-right: 50pt !important; */
+    padding-top: 10pt;
 }
 .neologism-name {
 	font-size: 30pt !important;
@@ -431,7 +432,7 @@ sup {
 hr {
     border: 0;
     border-bottom: solid 2px black;
-    margin: 3em 0;
+    margin: 1.5em 0;
 }
 
 hr.major {

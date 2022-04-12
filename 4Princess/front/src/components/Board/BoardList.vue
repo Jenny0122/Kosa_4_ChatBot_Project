@@ -18,16 +18,12 @@
                 tbody-class="text-black"
                 @row-clicked="rowClick"
                 ></b-table>
-
-                <b-pagination
-                    v-model="currentPage"
-                    :total-rows="rows"
-                    :per-page="perPage"
-                    align="center"
-                ></b-pagination>
-                <div class="click-button">
-                    <b-button @click="writeContent">글쓰기</b-button>
-                </div>
+                <div id="customPagination">
+			        <b-pagination v-model="currentPage" :total-rows="rows" :per-page="perPage" align="center" class="customPagination"></b-pagination>
+	            </div>
+		        <div class="click-button">
+			        <b-button @click="writeContent">글쓰기</b-button>
+		        </div>
             </div>
         </section>
 		</article>
@@ -63,6 +59,12 @@ export default {
 				{
 					key: 'created_at',
 					label: '작성일',
+					thClass: 'text-center',
+					tdClass: 'text-center'
+				},
+				{
+					key: 'counts',
+					label: '조회수',
 					thClass: 'text-center',
 					tdClass: 'text-center'
 				}
@@ -118,6 +120,28 @@ export default {
 }
 .click-button{
 	float:right !important;
+}
+.page-item.active .page-link {
+    color: #f8f9fa;
+    background-color: #21b2a6 !important;
+    border-color: #21b2a6 !important;
+}
+.page-item .page-link, .page-item .disabled {
+    border-color: #212926 !important;
+    background-color: #212926 !important;
+    color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    margin: 0 2px 5px;
+    min-width: 20px;
+    padding: 0 10px;
+    height: 40px;
+    text-decoration: none;
+    position: relative;
+    border-radius: 5px;
+    font-family: Helvetica, Arial, sans-serif;
 }
 html,
 body,

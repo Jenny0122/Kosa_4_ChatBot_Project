@@ -348,6 +348,7 @@ strong,
 b {
     color: black;
     font-weight: 600;
+    padding-left: 50pt;
 }
 
 em,

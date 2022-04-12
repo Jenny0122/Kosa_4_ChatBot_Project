@@ -3343,7 +3343,7 @@ img {
     user-select:none
 }
 
-.wrapper img {
+.wrapper img {ho
   -webkit-user-drag: none;
 }
 
@@ -3368,7 +3368,7 @@ img {
   color: white;
 }
 .wrapper a:hover {
-  color: #557571;
+  color: black;
 }
 
 .wrapper.alt {
@@ -3379,7 +3379,6 @@ img {
     background-color: #21b2a6;
     color: #c8ece9;
 }
-
 .wrapper.style1 strong,
 .wrapper.style1 b {
     color: #ffffff;
@@ -3518,7 +3517,6 @@ img {
     box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.125);
     color: #ffffff;
 }
-
 .wrapper.style1 input[type="submit"]:hover,
 .wrapper.style1 input[type="reset"]:hover,
 .wrapper.style1 input[type="button"]:hover,
@@ -3526,7 +3524,6 @@ img {
 .wrapper.style1 .button:hover {
     background-color: rgba(255, 255, 255, 0.075);
 }
-
 .wrapper.style1 input[type="submit"]:active,
 .wrapper.style1 input[type="reset"]:active,
 .wrapper.style1 input[type="button"]:active,
@@ -3534,13 +3531,11 @@ img {
 .wrapper.style1 .button:active {
     background-color: rgba(255, 255, 255, 0.2);
 }
-
 @media screen and (max-width: 736px) {
     .wrapper.style1 .features li {
         border-top-color: rgba(0, 0, 0, 0.125);
     }
 }
-
 .wrapper.style2 {
     background-color: rgba(251, 249, 241);
 }
