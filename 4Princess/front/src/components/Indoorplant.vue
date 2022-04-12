@@ -13,7 +13,7 @@
     :per-page="10">
         <template #cell(세부설명)="row">
             <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                {{ row.detailsShowing ? "숨기기" : "자세히 보기"}} 
+                <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
             </b-button>
         </template>
 
@@ -57,10 +57,10 @@ export default {
                         this.items.push({
                             'no': index+1,
                             '이름': item.name,
-                            'lef_stle_info': item.lef_stle_info,
-                            'prpgt_era_info': item.prpgt_era_info,
-                            'frtlzr_info': item.frtlzr_info,
-                            'soil_info': item.soil_info,
+                            // 'lef_stle_info': item.lef_stle_info,
+                            // 'prpgt_era_info': item.prpgt_era_info,
+                            // 'frtlzr_info': item.frtlzr_info,
+                            // 'soil_info': item.soil_info,
                             'fnclty_info': item.fnclty_info,
                             isActive:false,
                         })
@@ -94,6 +94,17 @@ export default {
 }
 .page {
     justify-content: center;
+}
+
+.mr-2{
+    background-color: #557571;
+    border: 0;
+    cursor: pointer;
+    box-shadow: -3px -3px 3px rgb(172, 172, 172), 3px 3px 3px rgb(237, 237, 237);
+    transition: 0.3s;
+    font-size: 15px;
+    width: 100px;
+    padding: 5px 5px;
 }
 
 </style>
