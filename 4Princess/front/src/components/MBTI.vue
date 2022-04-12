@@ -46,7 +46,7 @@ export default {
   methods: {
     showMBTIContents: function(index) {
       var targetY = this.$refs['img' + index][0].getBoundingClientRect().top
-      window.scroll(0, targetY - 150)
+      window.scroll(0, targetY - 200)
     }
   },
   beforeCreate: function() {
@@ -109,7 +109,7 @@ export default {
   color: black;
 }
 .mbti-name {
-  font-size: 30pt;
+  font-size: 25pt;
   font-weight: bold;
   line-height: 100pt;
   text-align: left;
@@ -489,7 +489,7 @@ sup {
 hr {
     border: 0;
     border-bottom: solid 2px black;
-    margin: 3em 0;
+    margin: 1em 0;
 }
 
 hr.major {

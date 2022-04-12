@@ -404,7 +404,7 @@ sup {
 hr {
     border: 0;
     border-bottom: solid 2px black;
-    margin: 3em 0;
+    margin: 1em 0;
 }
 
 hr.major {
