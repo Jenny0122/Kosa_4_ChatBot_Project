@@ -22,10 +22,8 @@ public class ChatBotController {
 	
 	@PostMapping("chatbot")
 	public Map<String, String> getAnswer(@RequestBody String chatBot) throws InterruptedException, IOException{
-		String answer = "{\"answer\":\"";
-		answer += chatBotService.getAnswer(chatBot);
-		answer += "\"}";
 		ObjectMapper mapper = new ObjectMapper();
+		String answer = chatBotService.getAnswer(chatBot);
 		
 		try {
 			Map<String, String> map = mapper.readValue(answer, Map.class);
