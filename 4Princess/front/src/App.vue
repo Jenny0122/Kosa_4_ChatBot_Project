@@ -8,6 +8,11 @@
       <topbutton />
       <!-- <chat-form /> -->
       <bottom />
+      <VueBotUI  
+        :messages="data"
+        :options="botOptions"
+        @msg-send="messageSendHandler"
+      />
     </div>
   </div>
 </template>
@@ -17,10 +22,26 @@ import Bottom from '@/components/Bottom'
 import TopButton from '@/components/TopButton.vue'
 import Menubar from '@/components/Menubar.vue'
 import ChatForm from '@/components/ChatBot/ChatForm'
+import { VueBotUI } from 'vue-bot-ui'
 export default {
   name: 'App',
   data() {
     return {
+      data: [],
+      botOptions: {
+        'botTitle': 'Ma2Garden ChatBot',
+        'colorScheme': '#557571',
+        'inputPlaceholder': '챗봇에게 물어보세요',
+        textColor:	'#fff',//	Color of bubble button icon & board header title
+        bubbleBtnSize:	56,//	Size of bubble button (px)
+        animation:	true,//	Set to false to disable animation of bubble button icon & board showing
+        boardContentBg:	'#fff',//	Background color of board messages box
+        msgBubbleBgBot: '', // Background color of Bot message
+        msgBubbleColorBot:'#000',	// Text color of Bot message
+        msgBubbleBgUser: '#4356e0',	// Background color of user message
+        msgBubbleColorUser: '#fff',	// Text color of user message
+        botAvatarImg: ''
+      },
       showSidebar: false
     }
   },
@@ -33,7 +54,8 @@ export default {
     'bottom': Bottom,
     'topbutton': TopButton,
     'menubar': Menubar,
-    'chat-form': ChatForm
+    'chat-form': ChatForm,
+    'VueBotUI' : VueBotUI,
   }
 }
 </script>

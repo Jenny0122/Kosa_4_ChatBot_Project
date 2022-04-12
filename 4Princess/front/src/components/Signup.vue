@@ -157,6 +157,8 @@ export default {
                 if (res.status === 500) {
                     this.checkSignupFlag = true
                 }
+            }).catch((error) => {
+              alert(error)
             })
         }
     }
@@ -3958,7 +3960,6 @@ input {
 .wrapper > .inner {
   width: 30vw;
   min-width: 280px;
-  height: 77vh;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
@@ -3969,18 +3970,11 @@ input {
 .inner2 {
   width: 26vw;
   min-width: 230px;
-  height: 60vh;
+  height: 75vh;
   margin: 0 auto;
   color: black;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .inner2form {
   border-radius: 40px !important;
-  /* background-color: rgba(255, 255, 255, 0.95); */
-  /* border-radius: 3px; */
-  /* margin-bottom: 100px; */
 }
 </style>
