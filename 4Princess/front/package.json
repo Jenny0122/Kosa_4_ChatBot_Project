@@ -22,6 +22,7 @@
         "bootstrap-vue": "^2.21.2",
         "path": "^0.12.7",
         "vue": "^2.5.2",
+        "vue-bot-ui": "^0.2.8",
         "vue-router": "^3.0.1"
     },
     "devDependencies": {

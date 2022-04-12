@@ -35,21 +35,6 @@
 export default {
 	name: 'BoardList',
 	data() {
-		// // 정렬 : https://blog.naver.com/haskim0716n/221681695401
-		// let contentItems = data.Content.sort((a, b) => {
-		// 	return b.content_id - a.content_id
-		// }) // 내림차순
-
-		// // User 와 Content 의 user_id 의 같은 번호를 찾아 Content 에 기존자료 + 'user_name' 으로 추가한다.
-		// let items = contentItems.map((contentItem) => {
-		// 	return {
-		// 		...contentItem,
-		// 		user_name: data.User.filter((userItem) => {
-		// 			return contentItem.user_id === userItem.user_id
-		// 		})[0].name
-		// 	}
-		// })
-
 		return {
 			currentPage: 1, // 현재 페이지
 			perPage: 10, // 페이지당 보여줄 갯수

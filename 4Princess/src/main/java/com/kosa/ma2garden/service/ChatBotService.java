@@ -19,16 +19,17 @@ public class ChatBotService {
 		BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "utf-8"));
 
 		String line;
-		String result = null;
+		String answer = "{\"answer\":\"";
 
 		while ((line = br.readLine()) != null) {
-			result += line;
+			answer += line;
 		}
 
 		if (exitVal != 0) {
 			return null;
 		} else {
-			return result;
+			answer += "\"}";
+			return answer;
 		}
 	}
 }
