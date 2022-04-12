@@ -4,14 +4,9 @@ import Home from '@/components/Home'
 import Tip from '@/components/Tip'
 import PlantDisease from '@/components/PlantDisease'
 import GrowMethod from '@/components/GrowMethod'
-<<<<<<< HEAD
-import Indoorplant from '@/components/IndoorPlant'
-import DryPlant from '@/components/DryPlant'
-=======
 import Indoorplant from '@/components/Indoorplant'
 import DryPlant from '@/components/Dryplant'
 import Airplant from '@/components/Airplant'
->>>>>>> refs/remotes/origin/sunjung
 import Book from '@/components/Book'
 import ColorFlower from '@/components/ColorFlower'
 import MBTI from '@/components/MBTI'
@@ -52,16 +47,10 @@ export default new Router({
             component: GrowMethod
         }, {
             path: '/plant/indoorplant',
-<<<<<<< HEAD
-            name: 'Indoorplant',
-            component: Indoorplant
-        }, {
-=======
             name: 'IndoorPlant',
             component: Indoorplant
         },
         {
->>>>>>> refs/remotes/origin/sunjung
             path: '/plant/dryplant',
             name: 'DryPlant',
             component: DryPlant
