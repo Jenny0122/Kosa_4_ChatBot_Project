@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 <div id="AirplantList">
 <div id="page-wrapper">
     <article id="main">
@@ -19,6 +20,26 @@
                         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
                             {{ row.detailsShowing ? '숨기기' : '자세히 보기'}}
                         </b-button>
+=======
+<div>
+    <div class="AirplantList">
+        <div class='title'>AIRPLANT</div>
+        <div class='subtitle'>공기정화식물을 소개합니다:)</div>
+    </div>
+    <b-table 
+    :items="items" 
+    :fields="fields" 
+    striped 
+    responsive="sm" 
+    :current-page="currentPage" 
+    :per-page="10">
+        <template #cell(세부설명)="row">
+            <!-- <i class="fa fa-leaf"></i> -->
+            <!-- variant="primary -->
+            <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+                <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
+            </b-button>
+>>>>>>> refs/remotes/origin/yujin
                     </template>
 
                         <template #row-details="row">
@@ -260,6 +281,17 @@ textarea {
     -webkit-appearance: none;
     -ms-appearance: none;
     appearance: none;
+}
+
+.mr-2{
+    background-color: #557571;
+    border: 0;
+    cursor: pointer;
+    box-shadow: -3px -3px 3px rgb(172, 172, 172), 3px 3px 3px rgb(237, 237, 237);
+    transition: 0.3s;
+    font-size: 15px;
+    width: 100px;
+    padding: 5px 5px;
 }
 
 
