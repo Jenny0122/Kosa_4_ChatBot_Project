@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 <div id="DryplantList">
 <div id="page-wrapper">
     <article id="main">
@@ -20,7 +21,27 @@
                             {{ row.detailsShowing ? '숨기기' : '자세히 보기'}}
                         </b-button>
                     </template>
+=======
+<div>
+    <div class="DryplantList">
+        <div class='title'>DRYPLANT</div>
+        <div class='subtitle'>건조식물을 소개합니다:)</div>
+    </div>
+    <b-table 
+    :items="items" 
+    :fields="fields"
+    striped 
+    responsive="sm" 
+    :current-page="currentPage" 
+    :per-page="10">
+        <template #cell(세부설명)="row">
+            <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+                <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
+            </b-button>
+        </template>
+>>>>>>> refs/remotes/origin/yujin
 
+<<<<<<< HEAD
                     <template #row-details="row">
                         <b-card>
                             <b-row class="mb-2">
@@ -59,6 +80,42 @@
         </section>
     </article>
 </div>
+=======
+        <template #row-details="row">
+            <b-card>
+                <b-row class="mb-2">
+                    <b-col sm="3" class="text-sm-right"><b>[설명]</b></b-col>
+                    <b-col>{{ row.item.chartr_info }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                <b-col sm="3" class="text-sm-right"><b>[꽃의 특징]</b></b-col>
+                    <b-col>{{ row.item.flwr_info }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                <b-col sm="3" class="text-sm-right"><b>[빛]</b></b-col>
+                    <b-col>{{ row.item.light_info }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                <b-col sm="3" class="text-sm-right"><b>[생장형]</b></b-col>
+                    <b-col>{{ row.item.grwt_info }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                <b-col sm="3" class="text-sm-right"><b>[급수주기]</b></b-col>
+                    <b-col>{{ row.item.water_cycle_info }}</b-col>
+                </b-row>
+                <b-row class="mb-2">
+                <b-col sm="3" class="text-sm-right"><b>[추천배치장소]</b></b-col>
+                    <b-col>{{ row.item.batch_place_info}}</b-col>
+                </b-row>
+            </b-card>
+        </template>
+    </b-table>
+    <b-pagination class="page"
+            v-model="currentPage"
+            :total-rows="rows"
+            :per-page="10" 
+            aria-controls="table"/>
+>>>>>>> refs/remotes/origin/yujin
 </div>
 </template>
 
@@ -77,6 +134,8 @@ export default {
         }
     },
 
+    // fixed: false,
+
     created: function() {
         const getItems = () => {
             this.$axios.get('/dry_plants')
@@ -89,7 +148,7 @@ export default {
                             'flwr_info': item.flwr_info,
                             'light_info': item.light_info,
                             'grwt_info': item.grwt_info,
-                            'water_cylce_info': item.water_cylce_info,
+                            'water_cycle_info': item.water_cycle_info,
                             'batch_place_info': item.batch_place_info,
                             isActive:false,
                         })
@@ -203,6 +262,7 @@ video {
     vertical-align: baseline;
 }
 
+<<<<<<< HEAD
 article,
 aside,
 details,
@@ -3915,4 +3975,19 @@ body.is-mobile.landing #footer {
     float: left;
     text-align: center;
 }
+=======
+.mr-2{
+    background-color: #557571;
+    border: 0;
+    cursor: pointer;
+    box-shadow: -3px -3px 3px rgb(172, 172, 172), 3px 3px 3px rgb(237, 237, 237);
+    transition: 0.3s;
+    font-size: 15px;
+    width: 100px;
+    padding: 5px 5px;
+}
+
+
+
+>>>>>>> refs/remotes/origin/yujin
 </style>
