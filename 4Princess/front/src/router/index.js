@@ -131,12 +131,6 @@ export default new Router({
                 import ( /* webpackChunkName: 'Memberlounge' */ '../components/Board/CommentListItem.vue'),
         },
         {
-            path: '/chatbot',
-            name: 'ChatBot',
-            component: () =>
-                import ( /* webpackChunkName: 'Memberlounge' */ '../components/ChatBot/ChatForm.vue'),
-        },
-        {
             path: '/signin',
             name: 'Signin',
             component: Signin,
