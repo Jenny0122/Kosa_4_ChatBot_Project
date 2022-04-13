@@ -3431,7 +3431,6 @@ img {
 .wrapper.style1 textarea {
     background-color: rgba(255, 255, 255, 0.075);
 }
-
 .wrapper.style1 select option {
     color: #ffffff;
     background: #21b2a6;
@@ -3972,6 +3971,10 @@ img {
     position: absolute;
     right: 0;
     top: 0;
+<<<<<<< HEAD
+=======
+    /* vertical-align: middle; */
+>>>>>>> refs/remotes/origin/sunjung
     width: 7em;
 }
 
@@ -4488,7 +4491,7 @@ body.is-mobile.landing #footer {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
-    background-color: #557571
+    background-color: #557571;
 }
 .ulbox ul {
     list-style-type: none;

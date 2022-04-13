@@ -142,7 +142,7 @@
 }
 
 
-/* 
+/*
 .fa-rotate-90 {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
     transform: rotate(90deg)
@@ -168,8 +168,7 @@
 }
 
 
-/* 
-.fa-flip-both,
+/* .fa-flip-both,
 .fa-flip-horizontal.fa-flip-vertical,
 .fa-flip-vertical {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)"

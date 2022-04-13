@@ -8,18 +8,20 @@
         </header>
         <section class="wrapper alt style2">
             <div class="inner">
-                <b-table 
-                :items="items" 
-                :fields="fields" 
-                striped 
-                responsive="sm" 
-                :current-page="currentPage" 
+                <b-table
+                :items="items"
+                :fields="fields"
+                striped
+                responsive="sm"
+                :current-page="currentPage"
                 :per-page="10">
                 <template #cell(세부설명)="row">
                     <!-- <i class="fa fa-leaf"></i> -->
                     <!-- variant="primary -->
                     <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                        <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
+                        <font-awesome-icon icon="fa-solid fa-leaf" size="2x" />
+<!--
+                        <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i> -->
                     </b-button>
                 </template>
 
@@ -97,7 +99,7 @@ export default {
 	width: 350px;
     height: 150px;
     margin: auto;
-    }
+}
 /*
 .title{
     width: fit-content;
@@ -108,8 +110,9 @@ export default {
 	width: fit-content;
     margin: auto
 } */
-.page{
+.page {
 justify-content: center;
+padding-top: 20pt;
 }
 html,
 body,
@@ -199,7 +202,6 @@ video {
     font: inherit;
     vertical-align: baseline;
 }
-
 article,
 aside,
 details,
@@ -2772,7 +2774,7 @@ img {
 }
 
 .wrapper.alt {
-    padding: 0;
+    padding-top: 20pt;
 }
 
 .wrapper.style1 {
@@ -3885,7 +3887,6 @@ body.landing #footer {
 body.is-mobile.landing #page-wrapper {
     background: none;
 }
-
 body.is-mobile.landing #banner,
 body.is-mobile.landing .wrapper.style4 {
     background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/bgimg.jpg");
@@ -3896,7 +3897,6 @@ body.is-mobile.landing .wrapper.style4 {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 body.is-mobile.landing #footer {
     background-color: #1d242a;
 }
@@ -3923,14 +3923,14 @@ body.is-mobile.landing #footer {
     float: left;
     text-align: center;
 }
-.mr-2{
+.mr-2 {
     background-color: #557571;
     border: 0;
     cursor: pointer;
     box-shadow: -3px -3px 3px rgb(172, 172, 172), 3px 3px 3px rgb(237, 237, 237);
     transition: 0.3s;
     font-size: 15px;
-    width: 100px;
+    width: 50px;
     padding: 5px 5px;
 }
 </style>

@@ -3123,7 +3123,6 @@ button:disabled,
 .wrapper.style5 textarea {
     background-color: rgba(0, 0, 0, 0.0375);
 }
-
 .wrapper.style5 select option {
     color: #2E3842;
     background: #ffffff;
@@ -3841,5 +3840,4 @@ body.is-mobile.landing .wrapper.style4 {
 body.is-mobile.landing #footer {
     background-color: #1d242a;
 }
-
 </style>

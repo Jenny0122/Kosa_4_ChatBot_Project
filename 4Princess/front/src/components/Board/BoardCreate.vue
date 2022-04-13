@@ -18,7 +18,7 @@
 									rows="20"
 							></b-form-textarea>
 						</div>
-						<div class="button">
+						<div class="content-detail-button">
 							<b-button @click="updateMode ? updateContent() : uploadContent()">저장</b-button>&nbsp;
 							<b-button @click="cancle">취소</b-button>
 						</div>
@@ -97,10 +97,11 @@ export default {
 .textarea-context{
   padding: 0 10%;
 }
-.button{
+.content-detail-button {
   /* display: inline-block; */
   margin: 10px 100px;
   float: right;
+    background-color: transparent;
 }
 .btn-secondary {
     background-color: #557571 !important
@@ -108,9 +109,7 @@ export default {
 .btn-secondary:hover {
     background-color: #557571 !important;
 }
-.button:hover {
-    background: unset;
-}
+
 html,
 body,
 div,
@@ -1913,7 +1912,7 @@ input[type="radio"]+label:before {
 }
 
  ::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.5) !important;
+    color: gray !important;
     opacity: 1.0;
 }
 
@@ -2352,10 +2351,10 @@ button,
     -webkit-appearance: none;
     -ms-appearance: none;
     appearance: none;
-    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    /* -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; */
     background-color: transparent;
     border-radius: 3px;
     border: 0;
@@ -2383,7 +2382,7 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover,
 .button:hover {
-    background-color: rgba(144, 144, 144, 0.25);
+    background-color: transparent;
 }
 
 input[type="submit"]:active,

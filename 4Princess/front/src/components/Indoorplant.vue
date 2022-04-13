@@ -8,16 +8,17 @@
         </header>
         <section class="wrapper alt style2">
             <div class="inner">
-                <b-table 
-                :items="items" 
-                :fields="fields" 
-                striped 
-                responsive="sm" 
-                :current-page="currentPage" 
+                <b-table
+                :items="items"
+                :fields="fields"
+                striped
+                responsive="sm"
+                :current-page="currentPage"
                 :per-page="10">
                     <template #cell(세부설명)="row">
                         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                            <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
+                            <font-awesome-icon icon="fa-solid fa-leaf" size="2x" />
+                            <!-- <i v-bind:class="row.detailsShowing ?"fa-solid fa-leaf""></i> -->
                         </b-button>
                     </template>
 
@@ -102,6 +103,7 @@ export default {
 } */
 .page {
     justify-content: center;
+    padding-top: 20pt;
 }
 html,
 body,
@@ -2747,7 +2749,7 @@ img {
 }
 
 .wrapper.alt {
-    padding: 0;
+    padding-top: 20pt;
 }
 
 .wrapper.style1 {
@@ -3879,7 +3881,7 @@ body.is-mobile.landing #footer {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
-    background-color: #557571
+    background-color: #557571;
 }
 .ulbox ul {
     list-style-type: none;
@@ -3901,8 +3903,13 @@ body.is-mobile.landing #footer {
     box-shadow: -3px -3px 3px rgb(172, 172, 172), 3px 3px 3px rgb(237, 237, 237);
     transition: 0.3s;
     font-size: 15px;
-    width: 100px;
+    width: 50px;
     padding: 5px 5px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 800;
 }
-
+.mr-2:hover {
+    background: #557571;
+    font-family: 'Font Awesome 5 Free';
+}
 </style>

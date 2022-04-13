@@ -39,6 +39,7 @@ export default {
 <style scope>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -94,5 +95,4 @@ body.landing #page-wrapper {
     background-size: cover;
     padding-top: 0;
 }
-
 </style>

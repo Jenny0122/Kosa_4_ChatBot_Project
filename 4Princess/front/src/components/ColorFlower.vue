@@ -4,7 +4,7 @@
         <article id="main">
             <header>
                 <h2 class="title">{{subject}}</h2>
-                <p class="subtitle new">{{msg}}</p>
+                <p class="new">{{msg}}</p>
             </header>
 
             <section class="wrapper alt style2">
@@ -19,9 +19,8 @@
                 <div class="body" slot="body" @click="showModal=false">
                     <img v-bind:src="selectedColor.img_url">
                     <div class="effect">
-                    {{selectedColor.effect_info}}
+                        {{selectedColor.effect_info}}
                     </div>
-                    <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
                 </div>
             </modal>
         </article>
