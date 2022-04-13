@@ -4,7 +4,7 @@
     <article id="main">
         <header>
             <h2 class='title'>공기정화식물</h2>
-            <p class='subtitle'>공기정화식물을 소개합니다:)</p>
+            <p class='subtitle'>공기정화식물을 소개합니다</p>
         </header>
         <section class="wrapper alt style2">
             <div class="inner">
@@ -15,37 +15,37 @@
                 responsive="sm" 
                 :current-page="currentPage" 
                 :per-page="10">
-                    <template #cell(세부설명)="row">
-                        <!-- <i class="fa fa-leaf"></i> -->
-                        <!-- variant="primary -->
-                        <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                            <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
-                        </b-button>
-                                </template>
+                <template #cell(세부설명)="row">
+                    <!-- <i class="fa fa-leaf"></i> -->
+                    <!-- variant="primary -->
+                    <b-button size="sm" @click="row.toggleDetails" class="mr-2">
+                        <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
+                    </b-button>
+                </template>
 
-                                    <template #row-details="row">
-                                        <b-card>
-                                            <b-row class="mb-2">
-                                                <b-col sm="3" class="text-sm-right"><b>[설명]</b></b-col>
-                                                <b-col>{{ row.item.description }}</b-col>
-                                            </b-row>
-                                            <b-row class="mb-2">
-                                            <b-col sm="3" class="text-sm-right"><b>[관리방법]</b></b-col>
-                                                <b-col>{{ row.item.management }}</b-col>
-                                            </b-row>
-                                            <b-row class="mb-2">
-                                            <b-col sm="3" class="text-sm-right"><b>[추천배치장소]</b></b-col>
-                                                <b-col>{{ row.item.batchrecomm }}</b-col>
-                                            </b-row>
-                                        </b-card>
-                                    </template>
-                                </b-table>
-                                <b-pagination class="page"
-                                        v-model="currentPage"
-                                        :total-rows="rows"
-                                        :per-page="10"
-                                        aria-controls="table"/>
-                        </div>
+                <template #row-details="row">
+                    <b-card>
+                        <b-row class="mb-2">
+                            <b-col sm="3" class="text-sm-right"><b>[설명]</b></b-col>
+                            <b-col>{{ row.item.description }}</b-col>
+                        </b-row>
+                        <b-row class="mb-2">
+                        <b-col sm="3" class="text-sm-right"><b>[관리방법]</b></b-col>
+                            <b-col>{{ row.item.management }}</b-col>
+                        </b-row>
+                        <b-row class="mb-2">
+                        <b-col sm="3" class="text-sm-right"><b>[추천배치장소]</b></b-col>
+                            <b-col>{{ row.item.batchrecomm }}</b-col>
+                        </b-row>
+                    </b-card>
+                </template>
+                </b-table>
+                <b-pagination class="page"
+                    v-model="currentPage"
+                    :total-rows="rows"
+                    :per-page="10"
+                    aria-controls="table"/>
+            </div>
         </section>
     </article>
 </div>

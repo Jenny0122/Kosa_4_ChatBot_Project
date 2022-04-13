@@ -14,13 +14,14 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faAnglesUp } from '@fortawesome/free-solid-svg-icons'
+import { faLeaf } from '@fortawesome/free-solid-svg-icons'
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faGithub, faAnglesDown)
+library.add(faGithub, faAnglesDown, faLeaf)
 
 library.add(faAnglesUp)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

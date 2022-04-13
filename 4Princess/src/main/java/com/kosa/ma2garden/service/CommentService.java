@@ -36,7 +36,6 @@ public class CommentService {
 
 	public boolean createBoardData(CommentDTO commentDTO) {
 
-		System.out.println(commentDTO);
 		Comment newComment = Comment.builder()
 				.co_no(commentDTO.getCo_no())
 				.comment(commentDTO.getComment())
@@ -46,6 +45,10 @@ public class CommentService {
 
 		commentRepository.save(newComment);
 		return true;
+	}
+
+	public void deleteCommentdByNo(long no) {
+		commentRepository.deleteById(no);
 	}
 
 }

@@ -17,4 +17,9 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
 	@Modifying
 	@Query("update Board b set b.counts = b.counts + 1 where b.no = :no")
 	int updateCounts(@Param("no") long no);
+
+	@Transactional
+	@Modifying
+	@Query("update Board b set b.title=:title, b.contents=:contents where b.no = :no")
+	int updateTitleAndContents(@Param("title") String title, @Param("contents") String contents, @Param("no") long no);
 }

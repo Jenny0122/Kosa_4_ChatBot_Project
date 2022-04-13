@@ -59,7 +59,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 img {
-    width: 10% !important;
+    width: 15% !important;
     /* height: 100pt; */
     object-fit: cover  !important;
     border: 1px solid black !important;
@@ -81,7 +81,7 @@ img {
   width: 60%;
   vertical-align: middle;
   margin:0 20pt;
-  padding-top: 10%;
+  padding-top: 5%;
 
 }
 .tool-name {
@@ -2701,13 +2701,6 @@ button:disabled,
 
 
 /* Wrapper */
-
-/* img {
-    /* height: 40vh; */
-    max-width: 18vw;
-    min-width: 300px;
-/* } */ */
-
 .wrapper {
     padding: 6em 0 4em 0;
     -webkit-user-select:none;

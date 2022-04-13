@@ -29,7 +29,6 @@ public class ToolService {
 					.img_url(tool.getImg_url())
 					.build();
 			list.add(toolDTO);
-			System.out.println(toolDTO);
 		}
 
 		return list;

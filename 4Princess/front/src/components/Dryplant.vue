@@ -4,7 +4,7 @@
     <article id="main">
         <header>
             <h2 class='title'>건조에 강한 식물</h2>
-            <p class='subtitle'>건조식물을 소개합니다.:)</p>
+            <p class='subtitle'>건조식물을 소개합니다.</p>
         </header>
         <section class="wrapper alt style2">
             <div class="inner">
@@ -20,7 +20,6 @@
                             <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
                         </b-button>
                     </template>
-
                     <template #row-details="row">
                         <b-card>
                             <b-row class="mb-2">
@@ -3926,7 +3925,4 @@ body.is-mobile.landing #footer {
     width: 100px;
     padding: 5px 5px;
 }
-
-
-
 </style>

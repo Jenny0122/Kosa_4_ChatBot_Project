@@ -4,7 +4,7 @@
     <article id="main">
         <header>
             <h2 class="title">실내 정원 식물</h2>
-            <p class="subtitle">실내 정원 식물을 소개합니다.:)</p>
+            <p class="subtitle">실내 정원 식물을 소개합니다</p>
         </header>
         <section class="wrapper alt style2">
             <div class="inner">
@@ -191,7 +191,6 @@ video {
     font: inherit;
     vertical-align: baseline;
 }
-
 article,
 aside,
 details,

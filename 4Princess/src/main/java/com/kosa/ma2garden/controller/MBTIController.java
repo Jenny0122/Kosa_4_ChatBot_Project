@@ -22,14 +22,14 @@ public class MBTIController {
 
 	@Autowired
 	MBTIService mbtiService;
-	
+
 	@ApiOperation(value = "MBTI 전체 정보 가져오기", notes = "노트 기록 예정")
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@GetMapping("/mbti")
 	public ResponseEntity<List<MBTIDTO>> getMBTI() {
-		
+
 		List<MBTIDTO> list = mbtiService.getAllMBTI();
-		list.forEach(System.out::println);
+
 		return new ResponseEntity<List<MBTIDTO>>(list, HttpStatus.OK);
 	}
 }

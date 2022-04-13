@@ -18,7 +18,7 @@ public class FAQService {
 	public List<FAQDTO> getAllFAQ() {
 
 		List<FAQDTO> list = new ArrayList<FAQDTO>();
-		
+
 		for (FAQ faq : faqrepository.findAll()) {
 			FAQDTO faqDTO = FAQDTO.builder()
 					.no(faq.getNo())

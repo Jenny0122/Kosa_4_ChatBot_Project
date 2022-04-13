@@ -71,7 +71,7 @@ public class BoardService {
 					.user_no(board.getUser_no())
 					.comment(board.getComments())
 					.build();
-			
+
 			return boardDTO;
 		} else {
 			return null;
@@ -80,7 +80,24 @@ public class BoardService {
 	}
 
 	public void deleteBoardByNo(long no) {
-		log.info("delete");
 		boardRepository.deleteById(no);
+	}
+
+	public BoardDTO updateTitleAndContents(BoardDTO boardDTO) {
+
+		int result = boardRepository.updateTitleAndContents(boardDTO.getTitle(), boardDTO.getContents(),
+				boardDTO.getNo());
+		Board board = boardRepository.findById(boardDTO.getNo())
+				.get();
+
+		return BoardDTO.builder()
+				.no(board.getNo())
+				.counts(board.getCounts())
+				.title(board.getTitle())
+				.created_at(board.getCreatedAt())
+				.updated_at(board.getUpdatedAt())
+				.contents(board.getContents())
+				.user_no(board.getUser_no())
+				.build();
 	}
 }

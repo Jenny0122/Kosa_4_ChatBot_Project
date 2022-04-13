@@ -13,10 +13,10 @@
           <div class="content-detail-content-info-right-created">등록일: {{created}}</div>
         </div>
       </div>
-      <div class="content-detail-content">{{context}}</div>
+      <textarea v-model="context" rows="30" :readonly="isEdit"></textarea>
       <div class="content-detail-button">
-        <b-button variant="primary" @click="updateData">수정</b-button>&nbsp;
-        <b-button variant="success" @click="deleteData">삭제</b-button>
+        <b-button variant="primary" @click="button1 == '수정' ? updateData() : saveData()">{{button1}}</b-button>&nbsp;
+        <b-button variant="success" @click="button1 == '삭제' ? deleteData() : cancel()">{{button2}}</b-button>
       </div>
       <div class="content-detail-comment">
         <CommentList :comments="comments"></CommentList>
@@ -36,11 +36,23 @@ export default {
 			context: '',
 			user: '',
 			created: '',
+      button1: '수정',
+      button2: '삭제',
+      beforeEditTitle: '',
+      beforeEditContext: '',
+      isEdit: true,
 			comments: []
 		}
 	},
 	methods: {
-		async deleteData() {
+    updateData: function(value) {
+      this.button1 = '저장'
+      this.button2 = '취소'
+      this.isEdit = !this.isEdit
+      this.beforeEditContext = this.context
+      this.beforeEditTitle = this.title
+		},
+		deleteData: async function() {
       this.$axios.delete('/board/' + this.contentId).then((res) => {
           alert('게시물이 삭제되었습니다.')
         })
@@ -52,10 +64,46 @@ export default {
 			this.$router.push({
 				path: '/member/board'
 		  })
-		},
-		updateData() {
-      // 수정기능 어떻게 할지 디자인/액션 부분 피드백 주세요
-		}
+		},		
+    saveData: function() {
+      if((this.beforeEditTitle == this.title) && (this.beforeEditContext == this.context)) {
+        alert('변경된 내용이 없습니다')
+        return
+      }
+      
+
+      if(confirm('저장하시겠습니까?')){
+        var data = {
+          'title': this.title,
+          'contents': this.context,
+          'no': this.contentId
+        }
+
+        this.$axios.put('/board/' + this.contentId, data).then((res) => {
+          alert('정보를 수정했습니다.')
+          var newBoard = res.data
+          this.title = newBoard.title          
+          this.context = newBoard.contents
+
+          this.beforeEditTitle = ''
+          this.beforeEditContext = ''
+          this.isEdit = !this.isEdit
+          this.button2 = '삭제'
+          this.button1 = '수정'
+        })
+        .catch((err) => {
+        })
+      } else {
+      }
+    },
+    cancel: function() {
+      this.title = this.beforeEditTitle
+      this.context = this.beforeEditContext
+      this.beforeEditContext = ''
+      this.isEdit = !this.isEdit
+      this.button2 = '삭제'
+      this.button1 = '수정'
+    }
 	},
 	beforeCreate: function() {
 		var no = this.$route.params.no
@@ -78,6 +126,9 @@ export default {
 </script>
 
 <style scoped>
+textarea{
+  width: 100%;
+}
 .BoardDetail {
 	text-align: left;
 	width:80%;

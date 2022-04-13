@@ -4,7 +4,7 @@
     <article id="main">
         <header>
             <h2 class="title">게시판</h2>
-            <p class="subtitle">회원전용 게시판 공간입니다.:)</p>
+            <p class="subtitle">회원전용 게시판 공간입니다.</p>
         </header>
 
         <section class="wrapper alt style2">
@@ -113,6 +113,9 @@ export default {
 </script>
 
 <style scoped>
+li::marker {
+    color: red;
+}
 .BoardList {
 	color: black !important;
 	text-align: left !important;
@@ -2130,7 +2133,7 @@ ol li {
 }
 
 ul {
-    list-style: disc;
+    list-style: none;
     margin: 0 0 2em 0;
     padding-left: 1em;
 }

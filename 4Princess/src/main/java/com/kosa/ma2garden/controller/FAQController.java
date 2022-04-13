@@ -16,13 +16,14 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 public class FAQController {
+
 	@Autowired
 	FAQService faqService;
-	
+
 	@GetMapping("/faq")
 	public ResponseEntity<List<FAQDTO>> getFAQ() {
 		List<FAQDTO> list = faqService.getAllFAQ();
-		list.forEach(System.out::println);
+
 		return new ResponseEntity<List<FAQDTO>>(list, HttpStatus.OK);
 	}
 }
