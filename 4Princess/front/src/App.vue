@@ -40,8 +40,9 @@ export default {
 </script>
 
 <style scope>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -73,7 +74,7 @@ border: 0;
 z-index: 1; /* 겹치지 않게 해주는 기능 */
 font-size: 1.3em;
 }
-.MenuPosition:hover{
+.MenuPosition:hover {
   background-color:transparent; /* 배경 투명 */
   border: 0;
 }
@@ -98,5 +99,4 @@ body.landing #page-wrapper {
     background-size: cover;
     padding-top: 0;
 }
-
 </style>

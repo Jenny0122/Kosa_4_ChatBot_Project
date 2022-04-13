@@ -3317,7 +3317,7 @@ img {
     position: absolute;
     right: 0;
     top: 0;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     width: 7em;
 }
 
@@ -3834,7 +3834,7 @@ body.is-mobile.landing #footer {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
-    background-color: #557571
+    background-color: #557571;
 }
 .ulbox ul {
     list-style-type: none;

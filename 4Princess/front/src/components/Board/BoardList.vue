@@ -121,30 +121,30 @@ export default {
 }
 .click-button{
 	float:right !important;
-    background-color: #557571
+    background-color: #557571 !important
 
 }
 .page-item.active .page-link {
-    color: black;
+    color: #f8f9fa !important;
     background-color: #21b2a6 !important;
     border-color: #21b2a6 !important;
 }
 .page-item .page-link, .page-item .disabled {
     border-color: #212926 !important;
     background-color: #212926 !important;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 17px;
-    margin: 0 2px 5px;
-    min-width: 20px;
-    padding: 0 10px;
-    height: 40px;
-    text-decoration: none;
-    position: relative;
-    border-radius: 5px;
-    font-family: Helvetica, Arial, sans-serif;
+    color: white !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: 17px !important;
+    margin: 0 2px 5px !important;
+    min-width: 20px !important;
+    padding: 0 10px !important;
+    height: 40px !important;
+    text-decoration: none !important;
+    position: relative !important;
+    border-radius: 5px !important;
+    font-family: Helvetica, Arial, sans-serif !important;
 }
 html,
 body,

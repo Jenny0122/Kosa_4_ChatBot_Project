@@ -3296,7 +3296,7 @@ img {
     transition: transform 0.5s ease;
     -webkit-overflow-scrolling: touch;
     background: #21b2a6;
-    color: blackfff;
+    color: black;
     height: 100%;
     max-width: 80%;
     overflow-y: auto;
@@ -3353,7 +3353,7 @@ img {
     position: absolute;
     right: 0;
     top: 0;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     width: 7em;
 }
 
@@ -3870,7 +3870,7 @@ body.is-mobile.landing #footer {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
-    background-color: #557571
+    background-color: #557571;
 }
 .ulbox ul {
     list-style-type: none;
@@ -3889,10 +3889,10 @@ body.is-mobile.landing #footer {
     color: black;
 }
 .p2:hover {
-    color: #557571 !important
+    color: #557571 !important;
 }
 .btn-check:focus + .btn, .btn:focus {
     -webkit-box-shadow: 0 0 0 0.25rem transparent !important;
-    box-shadow: 0 transparent !important
+    box-shadow: 0 transparent !important;
 }
 </style>

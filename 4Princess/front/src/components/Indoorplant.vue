@@ -3885,7 +3885,7 @@ body.is-mobile.landing #footer {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
-    background-color: #557571
+    background-color: #557571;
 }
 .ulbox ul {
     list-style-type: none;
