@@ -8,16 +8,17 @@
         </header>
         <section class="wrapper alt style2">
             <div class="inner">
-                <b-table 
-                :items="items" 
+                <b-table
+                :items="items"
                 :fields="fields"
-                striped 
-                responsive="sm" 
-                :current-page="currentPage" 
+                striped
+                responsive="sm"
+                :current-page="currentPage"
                 :per-page="10">
                     <template #cell(세부설명)="row">
                         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                            <i v-bind:class="row.detailsShowing ? 'fa fa-leaf':'fa fa-leaf'"></i>
+                                <font-awesome-icon icon="fa-solid fa-leaf" size="2x" />
+                            <!-- <i v-bind:class="row.detailsShowing ? 'fa solid fa-leaf':'fa solid fa-leaf'"></i> -->
                         </b-button>
                     </template>
                     <template #row-details="row">
@@ -52,7 +53,7 @@
                 <b-pagination class="page"
                         v-model="currentPage"
                         :total-rows="rows"
-                        :per-page="10" 
+                        :per-page="10"
                         aria-controls="table"/>
             </div>
         </section>
@@ -112,8 +113,9 @@ export default {
     height: 150px;
     margin: auto;
     }
-.page{
-justify-content: center;
+.page {
+    justify-content: center;
+    padding-top: 20pt;
 }
 html,
 body,
@@ -2764,7 +2766,7 @@ img {
 }
 
 .wrapper.alt {
-    padding: 0;
+    padding-top: 20pt;
 }
 
 .wrapper.style1 {
@@ -3922,7 +3924,7 @@ body.is-mobile.landing #footer {
     box-shadow: -3px -3px 3px rgb(172, 172, 172), 3px 3px 3px rgb(237, 237, 237);
     transition: 0.3s;
     font-size: 15px;
-    width: 100px;
+    width: 50px;
     padding: 5px 5px;
 }
 </style>

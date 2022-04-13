@@ -21,9 +21,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faAnglesDown } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faGithub, faAnglesDown, faLeaf)
+library.add(faGithub, faAnglesDown)
 
 library.add(faAnglesUp)
+library.add(faLeaf)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
