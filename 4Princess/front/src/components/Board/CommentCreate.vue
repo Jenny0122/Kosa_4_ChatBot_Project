@@ -30,6 +30,8 @@ export default {
 	},
 	methods: {
 		createComment: function () {
+			if(this.comment.length == 0)
+				return
 			var data = {
 				'comment': this.comment,				
 				'board_no': this.contentId,

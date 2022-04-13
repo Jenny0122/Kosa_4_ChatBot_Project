@@ -10,29 +10,9 @@
 
       <div class="comment-list-item-button">
         <b-button variant="info">수정</b-button>
-        <b-button variant="info">삭제</b-button>
+        <b-button variant="info" @click="deleteComment">삭제</b-button>
       </div>
     </div>
-
-    <template v-if="subCommentList.length > 0">
-      <div
-        class="comment-list-item-subcomment-list"
-        :key="item.subcomment_id"
-        v-for="item in subCommentList"
-      >
-        <div class="comment-list-item-name">
-          <div>{{item.user_no}}</div>
-          <div>{{item.created_at}}</div>
-        </div>
-
-        <div class="comment-list-item-context">{{item.context}}</div>
-
-        <div class="comment-list-item-button">
-          <b-button variant="info">수정</b-button>
-          <b-button variant="info">삭제</b-button>
-        </div>
-      </div>
-    </template>
   </div>
 </template>
 
@@ -54,7 +34,16 @@ export default {
 		}
 	},
 	methods: {
-		subCommentToggle() {
+		deleteComment: function() {
+      if(confirm('정말로 삭제하시겠습니까?')){
+        this.$axios.delete('/comment/' + this.commentObj.co_no)
+        .then((res) => {
+          alert('댓글이 삭제되었습니다.')
+          this.$router.go();
+        })
+        .catch((err) => {})
+      } else {
+      }
 		},
 		reloadSubComments() {
 		}

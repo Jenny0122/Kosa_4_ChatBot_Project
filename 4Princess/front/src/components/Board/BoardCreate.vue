@@ -47,6 +47,16 @@ export default {
 	},
 	methods: {
 		uploadContent() { // 저장
+            if(this.subject == ''){
+                alert('제목을 입력하세요')
+                return
+            }
+
+            if(this.context == ''){
+                alert('내용을 입력하세요')
+                return
+            }
+
 			var data = {
 				'title': this.subject,
 				'contents': this.context,
@@ -55,7 +65,7 @@ export default {
 
 			this.$axios.post('/board', data)
 				.then((res) => {
-					console.log('Board Created...')
+					alert('게시물이 생성되었습니다.')
 				})
 				.catch()
 
