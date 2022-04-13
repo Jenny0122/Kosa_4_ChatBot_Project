@@ -21,10 +21,6 @@
                     <div class="effect">
                         {{selectedColor.effect_info}}
                     </div>
-<<<<<<< HEAD
-                    <!-- <i class="closeModalBtn fas fa-times" aria-hidden="true"></i> -->
-=======
->>>>>>> branch 'sunjung' of https://github.com/Jenny0122/Kosa_4_ChatBot_Project.git
                 </div>
             </modal>
         </article>

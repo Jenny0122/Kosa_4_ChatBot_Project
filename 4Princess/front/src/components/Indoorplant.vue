@@ -3910,6 +3910,5 @@ body.is-mobile.landing #footer {
 }
 .mr-2:hover {
     background: #557571;
-    font-family: 'Font Awesome 5 Free';
 }
 </style>

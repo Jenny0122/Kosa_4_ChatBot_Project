@@ -3933,4 +3933,7 @@ body.is-mobile.landing #footer {
     width: 50px;
     padding: 5px 5px;
 }
+.mr-2:hover {
+    background: #557571;
+}
 </style>

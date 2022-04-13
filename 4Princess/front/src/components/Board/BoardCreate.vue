@@ -1788,6 +1788,8 @@ textarea {
     padding: 0 1em;
     text-decoration: none;
     width: 100%;
+    resize: none;
+    height: 300pt;
 }
 
 input[type="text"]:invalid,
@@ -1914,6 +1916,7 @@ input[type="radio"]+label:before {
  ::-webkit-input-placeholder {
     color: gray !important;
     opacity: 1.0;
+    font-size: 12pt !important;
 }
 
  :-moz-placeholder {
