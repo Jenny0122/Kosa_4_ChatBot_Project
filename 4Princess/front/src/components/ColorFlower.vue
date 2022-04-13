@@ -21,7 +21,7 @@
                     <div class="effect">
                     {{selectedColor.effect_info}}
                     </div>
-                    <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
+                    <!-- <i class="closeModalBtn fas fa-times" aria-hidden="true"></i> -->
                 </div>
             </modal>
         </article>

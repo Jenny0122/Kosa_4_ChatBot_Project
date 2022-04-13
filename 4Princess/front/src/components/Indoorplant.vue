@@ -25,7 +25,7 @@
                                 <template #row-details="row">
                                     <b-card>
                                         <b-row class="mb-2">
-                                        <b-col sm="3" class="text-sm-right"><b>[설명]</b></b-col>
+                                        <b-col sm="3" class="text-sm-right"><b>[기능성]</b></b-col>
                                             <b-col>{{ row.item.fnclty_info }}</b-col>
                                         </b-row>
                                     </b-card>

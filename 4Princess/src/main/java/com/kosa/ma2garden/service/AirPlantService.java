@@ -14,14 +14,11 @@ import com.kosa.ma2garden.repository.AirPlantRepository;
 
 @Service
 public class AirPlantService {
-
 	
 	@Autowired
 	AirPlantRepository airplantrepository;
 	
 	public List<AirPlantDTO> getAllAirplants(){  
-		
-		
 		List<AirPlantDTO> list = new ArrayList<AirPlantDTO>();
 		
 		for (AirPlant airplant : airplantrepository.findAll()) {
