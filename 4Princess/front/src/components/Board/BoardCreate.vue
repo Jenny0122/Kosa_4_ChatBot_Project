@@ -3379,7 +3379,7 @@ img {
     position: absolute;
     right: 0;
     top: 0;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     width: 7em;
 }
 
