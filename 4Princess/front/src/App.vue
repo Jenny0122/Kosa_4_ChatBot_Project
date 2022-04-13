@@ -5,9 +5,6 @@
       <router-view/>
       <topbutton />
       <bottom />
-        <!-- :bot-typing="botTyping"
-        :input-disable="inputDisable"
-        :is-open="false" -->
       <chatBot />
     </div>
   </div>
@@ -40,7 +37,7 @@ export default {
 </script>
 
 <style scope>
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
 
 #app {
@@ -62,7 +59,7 @@ export default {
   font-size: 20pt;
   text-align: center;
   margin: 10pt;
-  color: white important;
+  color: white !important;
 }
 .MenuPosition {
 position: fixed; /* 고정 기능 */
@@ -82,7 +79,6 @@ font-size: 1.3em;
   width: 60px;
   height: 40px;
 }
-
 #app {
   font-family: 'Noto Sans KR', sans-serif;
   -webkit-font-smoothing: antialiased;

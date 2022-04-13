@@ -12,7 +12,7 @@
               <b-card>
                 <div class="content-detail-content-info">
                   <div class="content-detail-content-info-left">
-                    <div class="content-detail-content-info-left-number">{{contentId}}</div>
+                    <!--<div class="content-detail-content-info-left-number">{{contentId}}</div> -->
                     <div class="content-detail-content-info-left-subject">{{title}}</div>
                   </div>
                   <div class="content-detail-content-info-right">
@@ -146,6 +146,7 @@ export default {
 }
 .content-detail-content-info {
   border: 1px solid black !important;
+  margin-bottom: 15pt;
   display: flex !important;
   justify-content: space-between !important;
 }

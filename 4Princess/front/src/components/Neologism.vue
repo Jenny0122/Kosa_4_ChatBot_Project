@@ -2951,6 +2951,10 @@ img {
 .wrapper.style3 textarea {
     background-color: rgba(255, 255, 255, 0.075);
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/origin/sunjung
 .wrapper.style3 select option {
     color: #ffffff;
     background: #505393;
@@ -3121,6 +3125,10 @@ img {
 .wrapper.style5 textarea {
     background-color: rgba(0, 0, 0, 0.0375);
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/origin/sunjung
 .wrapper.style5 select option {
     color: #2E3842;
     background: #ffffff;

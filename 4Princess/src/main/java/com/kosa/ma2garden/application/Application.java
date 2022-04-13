@@ -1,8 +1,9 @@
 package com.kosa.ma2garden.application;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.ApplicationPidFileWriter;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -17,8 +18,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication application = new SpringApplication(Application.class);
 		
-		application.run(args);
+		SpringApplicationBuilder springApplicationBuilder = new SpringApplicationBuilder(Application.class);
+		springApplicationBuilder.build().addListeners(new ApplicationPidFileWriter("/home/ec2-user/ma2garden/conf/server.pid"));
+		springApplicationBuilder.run(args);
 	}
 }

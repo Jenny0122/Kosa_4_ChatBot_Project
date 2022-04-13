@@ -3971,7 +3971,10 @@ img {
     position: absolute;
     right: 0;
     top: 0;
+<<<<<<< HEAD
+=======
     /* vertical-align: middle; */
+>>>>>>> refs/remotes/origin/sunjung
     width: 7em;
 }
 
