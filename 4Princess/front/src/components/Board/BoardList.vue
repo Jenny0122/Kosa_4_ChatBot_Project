@@ -112,24 +112,26 @@ export default {
 </script>
 
 <style scoped>
-.BoardList {
+#BoardList {
 	color: black !important;
 	text-align: left !important;
-	width:80% !important;
-	margin: 50pt auto !important;
+	width:100% !important;
+	margin: auto !important;
 }
 .click-button{
 	float:right !important;
+    background-color: #557571
+
 }
 .page-item.active .page-link {
-    color: #f8f9fa;
+    color: black;
     background-color: #21b2a6 !important;
     border-color: #21b2a6 !important;
 }
 .page-item .page-link, .page-item .disabled {
     border-color: #212926 !important;
     background-color: #212926 !important;
-    color: #f8f9fa;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2129,7 +2131,7 @@ ol li {
 }
 
 ul {
-    list-style: disc;
+    list-style: none;
     margin: 0 0 2em 0;
     padding-left: 1em;
 }
@@ -2390,11 +2392,11 @@ button,
     -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    background-color: transparent;
+    background-color: #557571;
     border-radius: 3px;
     border: 0;
-    box-shadow: inset 0 0 0 2px black;
-    color: black;
+    box-shadow: inset 0 0 0 2px transparent;
+    color: white;
     cursor: pointer;
     display: inline-block;
     font-size: 0.8em;
@@ -2794,7 +2796,7 @@ img {
 }
 
 .wrapper.alt {
-    padding: 0;
+    padding-top: 20pt;
 }
 
 .wrapper.style1 {
@@ -3945,6 +3947,4 @@ body.is-mobile.landing #footer {
     float: left;
     text-align: center;
 }
-
-
 </style>

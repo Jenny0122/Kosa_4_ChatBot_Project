@@ -9,8 +9,8 @@
       <div class="comment-list-item-context">{{commentObj.comment}}</div>
 
       <div class="comment-list-item-button">
-        <b-button variant="info">수정</b-button>
-        <b-button variant="info">삭제</b-button>
+        <b-button >!</b-button>
+        <b-button >x</b-button>
       </div>
     </div>
 
@@ -82,23 +82,30 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50em;
+  width: 45em;
   border: 0.5px solid black;
+  max-height: 5em;
 }
 
 .comment-list-item-button {
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 0.5px solid black;
-  padding: 1em;
+  /* padding: 1em; */
+  max-height: 5em;
+  width: 8em;
+  text-align: center;
 }
-
 .btn {
   margin-bottom: 1em;
 }
-
+.btn-secondary {
+  color: #fff;
+  background-color: #557571;
+  border-color: #557571;
+}
 .comment-list-item-subcomment-list {
   display: flex;
   justify-content: space-between;

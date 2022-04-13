@@ -226,26 +226,21 @@ q:after {
     content: '';
     content: none;
 }
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
 body {
     -webkit-text-size-adjust: none;
 }
-
 mark {
     background-color: transparent;
     color: inherit;
 }
-
 input::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
-
 input,
 select,
 textarea {
@@ -2087,7 +2082,7 @@ ol li {
 }
 
 ul {
-    list-style: disc;
+    list-style: none;
     margin: 0 0 2em 0;
     padding-left: 1em;
 }
@@ -3371,7 +3366,7 @@ img {
     position: absolute;
     right: 0;
     top: 0;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     width: 7em;
 }
 

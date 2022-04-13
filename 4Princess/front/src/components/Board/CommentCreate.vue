@@ -9,7 +9,7 @@
         max-rows="6"
       ></b-form-textarea>
       <b-input-group-append>
-        <b-button variant="info" @click="createComment">작성하기</b-button>
+        <b-button class="write" @click="createComment">작성하기</b-button>
       </b-input-group-append>
     </b-input-group>
   </div>
@@ -31,7 +31,7 @@ export default {
 	methods: {
 		createComment: function () {
 			var data = {
-				'comment': this.comment,				
+				'comment': this.comment,
 				'board_no': this.contentId,
 				'user_no': '1'
 			}
@@ -53,5 +53,8 @@ export default {
 .comment-create {
   display: flex;
   margin-bottom: 1em;
+}
+.write:hover {
+	background: #557571;
 }
 </style>

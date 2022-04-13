@@ -18,10 +18,10 @@
 									rows="20"
 							></b-form-textarea>
 						</div>
-						<!-- <div class="button"> -->
-							<b-button class="btn float-right" @click="updateMode ? updateContent() : uploadContent()">저장</b-button>&nbsp;
-							<b-button class="btn float-right" @click="cancle">취소</b-button>
-						<!-- </div> -->
+						<div class="button">
+							<b-button @click="updateMode ? updateContent() : uploadContent()">저장</b-button>&nbsp;
+							<b-button @click="cancle">취소</b-button>
+						</div>
   				</div>
 				</section>
 		</article>
@@ -73,23 +73,33 @@ export default {
 </script>
 
 <style scoped>
-.BoardCreate {
+#BoardCreate {
 	color: white;
 	text-align: left;
-	width:80%;
-	margin: 50pt auto;
+	width:100%;
+	margin: auto;
 }
 .textarea-title {
   padding: 0 10%;
   margin: 5pt auto;
+  color: black;
 }
 .textarea-context{
   padding: 0 10%;
 }
 .button{
   /* display: inline-block; */
-  margin: 0 155px;
+  margin: 10px 100px;
   float: right;
+}
+.btn-secondary {
+    background-color: #557571 !important
+}
+.btn-secondary:hover {
+    background-color: #557571 !important;
+}
+.button:hover {
+    background: unset;
 }
 html,
 body,
@@ -2339,17 +2349,17 @@ button,
     background-color: transparent;
     border-radius: 3px;
     border: 0;
-    box-shadow: inset 0 0 0 2px black;
-    color: black;
+    box-shadow: inset 0 0 0 2px transparent;
+    color: white;
     cursor: pointer;
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 600;
     height: 3.125em;
     letter-spacing: 0.225em;
     line-height: 3.125em;
     max-width: 30em;
-    padding: 0 2.75em;
+    padding: 0 1em;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -2733,14 +2743,14 @@ img {
 }
 
 .wrapper a {
-  color: white;
+  color: black;
 }
 .wrapper a:hover {
   color: #557571;
 }
 
 .wrapper.alt {
-    padding: 0;
+    padding-top: 20pt;
 }
 
 .wrapper.style1 {
