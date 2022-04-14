@@ -37,3 +37,6 @@ spring:
     pathmatch:
       matching-strategy: ant-path-matcher
       
+python:
+  commander: abc
+  api: abc

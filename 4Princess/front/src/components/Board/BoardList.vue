@@ -233,7 +233,6 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    cursor: pointer !important;
 }
 article,
 aside,
@@ -3948,5 +3947,8 @@ body.is-mobile.landing #footer {
     color: #ffffff;
     float: left;
     text-align: center;
+}
+table {
+    cursor: pointer !important;
 }
 </style>
