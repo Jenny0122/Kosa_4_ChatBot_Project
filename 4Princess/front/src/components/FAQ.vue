@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       title: 'FAQ',
-      subtitle: '자주 하는 질문들을 모아봤어요. :)',
+      subtitle: '자주 하는 질문들을 모아봤어요',
       faqs: []
     }
   },

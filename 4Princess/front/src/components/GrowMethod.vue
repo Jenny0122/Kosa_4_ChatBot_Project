@@ -10,7 +10,7 @@
                 <div class="inner">
                     <br/><br/>
                     <div class="sub">
-                        작물을 선택해주세요.
+                        작물을 선택해주세요
                     </div>
                     <div class="ulbox">
                         <div class="category">* 허브 *</div>
@@ -89,7 +89,7 @@ export default{
   data() {
     return {
       msg: '작물 키우는 방법',
-      subject: '여러가지 작물의 키우는 방법을 소개합니다. :)',
+      subject: '여러가지 작물의 키우는 방법을 소개합니다',
       growMethod: [],
       herb: [],
       rootVege: [],
@@ -3825,7 +3825,7 @@ body.is-preload #banner:after {
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
-    font-size: 1.3em;
+    font-size: 1.5em;
     padding: 10pt 0 0 0;
     margin: 0 auto;
 }

@@ -5,7 +5,7 @@
       <article id="main">
           <header>
             <h2 class="title">게시판</h2>
-            <p class="subtitle">회원전용 공간입니다.:)</p>
+            <p class="subtitle">회원전용 공간입니다</p>
           </header>
           <section class="wrapper alt style2">
             <div class="inner">
@@ -22,8 +22,8 @@
                 </div>
                 <textarea v-model="context" rows="8" :readonly="isEdit"></textarea>
                 <div class="content-detail-button">
-                    <b-button class="buttons" @click="button1 == '수정' ? updateData() : saveData()">{{button1}}</b-button>&nbsp;
-                    <b-button class="buttons" @click="button2 == '삭제' ? deleteData() : cancel()">{{button2}}</b-button>
+                    <b-button class="button1" @click="button1 == '수정' ? updateData() : saveData()">{{button1}}</b-button>&nbsp;
+                    <b-button class="button2" @click="button2 == '삭제' ? deleteData() : cancel()">{{button2}}</b-button>
                 </div>
                 <div class="content-detail-comment">
                   <CommentList :comments="comments"></CommentList>
@@ -78,35 +78,36 @@ export default {
                 })
             },		
         saveData: function() {
-        if((this.beforeEditTitle == this.title) && (this.beforeEditContext == this.context)) {
-            alert('변경된 내용이 없습니다')
-            return
-        }
-        
-
-        if(confirm('저장하시겠습니까?')){
-            var data = {
-            'title': this.title,
-            'contents': this.context,
-            'no': this.contentId
+            if((this.beforeEditTitle == this.title) && (this.beforeEditContext == this.context)) {
+                alert('변경된 내용이 없습니다')
+                return
+                
             }
 
-            this.$axios.put('/board/' + this.contentId, data).then((res) => {
-            alert('정보를 수정했습니다.')
-            var newBoard = res.data
-            this.title = newBoard.title          
-            this.context = newBoard.contents
+            if(confirm('저장하시겠습니까?')){
+                var data = {
+                'title': this.title,
+                'contents': this.context,
+                'no': this.contentId
+                }
+            
 
-            this.beforeEditTitle = ''
-            this.beforeEditContext = ''
-            this.isEdit = !this.isEdit
-            this.button2 = '삭제'
-            this.button1 = '수정'
-            })
-            .catch((err) => {
-            })
-        } else {
-        }
+                this.$axios.put('/board/' + this.contentId, data).then((res) => {
+                alert('정보를 수정했습니다.')
+                var newBoard = res.data
+                this.title = newBoard.title          
+                this.context = newBoard.contents
+
+                this.beforeEditTitle = ''
+                this.beforeEditContext = ''
+                this.isEdit = !this.isEdit
+                this.button2 = '삭제'
+                this.button1 = '수정'
+                })
+                .catch((err) => {
+                })
+            } else {
+            }
         },
         cancel: function() {
         this.title = this.beforeEditTitle
@@ -192,7 +193,12 @@ export default {
 .content-detail-content-info-right-user {
   float: left !important;
 }
-.buttons:hover {
+.button1, .button2 {
+    height: 50px !important;
+}
+.button1:hover {
+  background-color: #557571
+}.button2:hover {
   background-color: #557571
 }
 html,

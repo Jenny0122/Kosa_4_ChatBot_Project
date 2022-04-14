@@ -49,7 +49,7 @@ export default {
 .title {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 900;
-  font-size: 2.5em !important;
+  font-size: 3em !important;
   color: white !important;
   text-align: center;
 }

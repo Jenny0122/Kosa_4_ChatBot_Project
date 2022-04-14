@@ -9,7 +9,6 @@
       <div class="comment-list-item-context">{{commentObj.comment}}</div>
 
       <div class="comment-list-item-button">
-        <b-button >!</b-button>
         <b-button @click="deleteComment">x</b-button>
       </div>
     </div>
@@ -65,26 +64,27 @@ export default {
   align-items: center;
   border: 0.5px solid black;
   padding: 1em;
+  width: 8em;
 }
 
 .comment-list-item-context {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 45em;
+  width: 52em;
   border: 0.5px solid black;
   max-height: 5em;
 }
 
 .comment-list-item-button {
-  display: inline-block;
+  /* display: inline-block; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 0.5px solid black;
+  /* border: 0.5px solid black; */
   /* padding: 1em; */
   max-height: 5em;
-  width: 8em;
+  /* width: 8em; */
   text-align: center;
 }
 .btn {
@@ -92,8 +92,9 @@ export default {
 }
 .btn-secondary {
   color: #fff;
-  background-color: #557571;
+  /* background-color: #557571; */
   border-color: #557571;
+  align-items: center !important;
 }
 .comment-list-item-subcomment-list {
   display: flex;

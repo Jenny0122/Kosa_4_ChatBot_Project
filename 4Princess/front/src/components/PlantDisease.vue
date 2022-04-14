@@ -25,7 +25,7 @@
             </div>
             <div v-show="show_two">
                 <div class="sub">
-                    질병명을 선택해주세요.
+                    질병명을 선택해주세요
                 </div>
                 <div class="ulbox">
                     <br/>
@@ -39,7 +39,7 @@
             </div>
             <div v-show="show_one">
                 <div class="sub">
-                    작물을 선택해주세요.
+                    작물을 선택해주세요
                 </div>
                 <div class="ulbox">
                     <div class="category">ㄱ</div>
@@ -135,7 +135,7 @@ data() {
         show_two: false,
         show_three: false,
         msg: '식물 질병',
-        subject: '식물의 질병에 관한 정보를 제공합니다.:)',
+        subject: '식물의 질병에 관한 정보를 제공합니다',
         choiceName: '',
         choiceId: '',
         choiceDis: [],

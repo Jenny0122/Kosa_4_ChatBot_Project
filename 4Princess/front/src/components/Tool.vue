@@ -4,7 +4,7 @@
     <article id="main">
       <header>
         <h2 class="title">홈 가드닝 시 자주 쓰는 도구들</h2>
-        <p class="subtitle">자주 사용하는 도구에 대해 알아볼까요? :)</p>
+        <p class="subtitle">자주 사용하는 도구에 대해 알아볼까요?</p>
       </header>
       <section class="wrapper alt style2">
         <div class="inner">

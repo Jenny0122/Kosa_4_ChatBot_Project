@@ -4,7 +4,7 @@
   	<article id="main">
     	<header>
             <h2 class="title">신조어</h2>
-            <p class="subtitle">신조어를 통해 식물 가꾸기 트렌드를 알아볼까요?:)</p>
+            <p class="subtitle">신조어를 통해 식물 가꾸기 트렌드를 알아볼까요?</p>
         </header>
 		<section class="wrapper alt style2">
             <div class="inner">

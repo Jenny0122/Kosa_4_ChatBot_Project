@@ -233,8 +233,8 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    cursor: pointer !important;
 }
-
 article,
 aside,
 details,
@@ -2359,6 +2359,7 @@ table.alt tbody tr td {
     border: solid 1px black;
     border-left-width: 0;
     border-top-width: 0;
+
 }
 
 table.alt tbody tr td:first-child {

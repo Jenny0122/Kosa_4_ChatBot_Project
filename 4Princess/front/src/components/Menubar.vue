@@ -90,6 +90,7 @@ export default {
 .dropdown-toggle::after {
   display: none;
   content: none;
+  background: white;
 }
 .py-2 {
   margin: 20pt;
