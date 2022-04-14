@@ -1,7 +1,6 @@
 package com.kosa.ma2garden.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.User;
 import com.kosa.ma2garden.entity.UserDTO;
 import com.kosa.ma2garden.service.UserService;
 
@@ -43,14 +41,12 @@ public class UserController {
 
 	}
 
-	@ApiOperation(value = "유저 정보 가져오기", notes = "노트 기록 예정")
+	@ApiOperation(value = "로그인 실행", notes = "노트 기록 예정")
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@PostMapping("/login")
 	public ResponseEntity<String> getLogin(@RequestBody UserDTO userDTO) {
 
-		User user = userService.loginUser(userDTO);
-
-		return new ResponseEntity<String>("Success", HttpStatus.OK);
+		return ResponseEntity.ok(userService.loginUser(userDTO));
 
 	}
 

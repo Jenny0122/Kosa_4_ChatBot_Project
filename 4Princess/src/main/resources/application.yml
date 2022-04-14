@@ -13,6 +13,9 @@ server:
 #    trust-store: truststore_ma2garden.pkcs12
 #    trust-store-password: 12345678
 
+
+
+
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
