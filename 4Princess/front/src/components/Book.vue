@@ -4,7 +4,7 @@
     <article id="main">
       <header>
         <h2 class="title">관련 서적</h2>
-        <p class="subtitle">홈가드닝과 관련된 책에 대하여 알고 싶으신가요? :)</p>
+        <p class="subtitle">홈가드닝과 관련된 책에 대하여 알고 싶으신가요?</p>
       </header>
 
       <section class="wrapper alt style2">

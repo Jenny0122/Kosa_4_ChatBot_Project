@@ -4,7 +4,7 @@
     <article id="main">
         <header>
 					<h2 class="title">글 작성하기</h2>
-					<p class="subtitle">게시판을 작성하는 공간입니다.:)</p>
+					<p class="subtitle">게시판을 작성하는 공간입니다</p>
 				</header>
 				<section class="wrapper alt style2">
       		<div class="inner">

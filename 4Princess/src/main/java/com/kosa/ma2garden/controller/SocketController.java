@@ -1,13 +1,23 @@
 package com.kosa.ma2garden.controller;
 
+import java.io.IOException;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
 import com.kosa.ma2garden.entity.SocketVO;
+import com.kosa.ma2garden.service.ChatBotService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class SocketController {
+
+	@Autowired
+	ChatBotService chatBotService;
 
 	// /receive를 메시지를 받을 endpoint로 설정합니다.
 	@MessageMapping("/receive")
@@ -21,11 +31,18 @@ public class SocketController {
 		String userName = socketVO.getUserName();
 		// vo에서 setter로 content를 가져옵니다.
 		String content = socketVO.getContent();
-		
-		
-		System.out.println("메시지 : " + content);
+
+		log.info("질문 : " + content);
+
+		String answer = "";
+		try {
+			answer = chatBotService.getAnswer(content);
+		} catch (InterruptedException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		// 반환
-		return "Hello!";
+		return answer;
 	}
 }

@@ -4,7 +4,7 @@
     <article id="main">
       <header>
 				<h2 class="title">Invention</h2>
-				<p class="subtitle">식물 가꾸기 관련 발명품들을 소개합니다.:)</p>
+				<p class="subtitle">식물 가꾸기 관련 발명품들을 소개합니다</p>
 			</header>
 
 			<section class="wrapper alt style2">

@@ -4,7 +4,7 @@
     <article id="main">
         <header>
             <h2 class='title'>건조에 강한 식물</h2>
-            <p class='subtitle'>건조식물을 소개합니다.</p>
+            <p class='subtitle'>건조에 강한 식물을 소개합니다</p>
         </header>
         <section class="wrapper alt style2">
             <div class="inner">
@@ -17,7 +17,7 @@
                 :per-page="10">
                     <template #cell(세부설명)="row">
                         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                                <font-awesome-icon icon="fa-solid fa-leaf" size="2x" />
+                                <font-awesome-icon icon="fa-solid fa-leaf" size="2x" color= "saddlebrown" />
                             <!-- <i v-bind:class="row.detailsShowing ? 'fa solid fa-leaf':'fa solid fa-leaf'"></i> -->
                         </b-button>
                     </template>
@@ -3819,7 +3819,7 @@ body.is-preload #banner:after {
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
-    font-size: 1.3em;
+    font-size: 1.5em;
     padding: 10pt 0 0 0;
     margin: 0 auto;
 }
@@ -3918,7 +3918,7 @@ body.is-mobile.landing #footer {
     text-align: center;
 }
 .mr-2{
-    background-color: #557571;
+    background-color: white;
     border: 0;
     cursor: pointer;
     box-shadow: -3px -3px 3px rgb(172, 172, 172), 3px 3px 3px rgb(237, 237, 237);
@@ -3928,6 +3928,6 @@ body.is-mobile.landing #footer {
     padding: 5px 5px;
 }
 .mr-2:hover {
-    background: #557571;
+    background: lightgray;
 }
 </style>

@@ -14,15 +14,12 @@
     <!-- One -->
     <section id="one" class="wrapper style1 special">
     <div class="inner">
-        <header class="major">
+        <!-- <header class="major"> -->
         <h2>
             당신의 특별한 정원을<br />
-            아름답게 만들어 드리겠습니다.
+            아름답게 만들어 드리겠습니다
         </h2>
-        <p>
-            본문내용
-        </p>
-        </header>
+        <!-- </header> -->
     </div>
     </section>
 
@@ -31,20 +28,19 @@
     <section class="spotlight">
         <div class="image"><img src="../assets/home01.jpeg" alt="" /></div><div class="content">
         <h2>Home Gardening</h2>
-        <p>본문내용</p>
+        <p>식물을 길러 집을 예쁘게 꾸미는 활동을 말합니다.<br/> 오늘 하루, 예쁜 작물을 기르면 집안에 생기가 가득할 거예요.</p>
         </div>
     </section>
     <section class="spotlight">
         <div class="image"><img src="../assets/home02.png" alt="" /></div><div class="content">
         <h2>Home Farming</h2>
-        <p>본문내용</p>
+        <p>집에서 먹을 수 있는 식물을 직접 재배하는 것으로, <br/>작물을 직접 길러 신선한 작물을 수확해 먹을 수 있는 장점이 있답니다.<br/> 신선하고 안전한 작물, 집에서 길러 먹어보는 건 어떨까요?</p>
         </div>
     </section>
     <section class="spotlight">
         <div class="image"><img src="../assets/home03.png" alt="" /></div><div class="content">
-        <h2>Augue eleifend aliquet<br />
-        sed condimentum</h2>
-        <p>본문내용</p>
+        <h2>Companion Plant</h2>
+        <p>식물에 동반자의 개념이 가미된 것을 의미합니다. <br/> 바로 지금! 집에 새로운 식구를 맞이해보세요.</p>
         </div>
     </section>
     </section>

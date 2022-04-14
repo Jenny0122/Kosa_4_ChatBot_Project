@@ -1,5 +1,5 @@
 <template>
-  <VueBotUI  
+  <VueBotUI
     :messages="data"
     :options="botOptions"
     @init="initHandler"
@@ -28,8 +28,8 @@ export default {
         animation:	true,//	Set to false to disable animation of bubble button icon & board showing
         boardContentBg:	'#fff',//	Background color of board messages box
         msgBubbleBgBot: '#557571', // Background color of Bot message
-        msgBubbleColorBot:'#000',	// Text color of Bot message
-        msgBubbleBgUser: '#4356e0',	// Background color of user message
+        msgBubbleColorBot:'#fff',	// Text color of Bot message
+        msgBubbleBgUser: '#3399ff',	// Background color of user message
         msgBubbleColorUser: '#fff',	// Text color of user message
         botAvatarSize: 64,
         botAvatarImg: 'https://img.freepik.com/vector-gratis/icono-robot-signo-chat-bot-concepto-servicio-soporte-estilo-plano-personaje-chatbot_41737-796.jpg'
@@ -55,7 +55,7 @@ export default {
             action: 'url'
           },
           {
-            text: 'Submit Support\n Ticket',
+            text: 'Submit Support Ticket',
             value: 'submit_ticket',
             action: 'postback'
           }
@@ -91,10 +91,10 @@ export default {
           console.log('소켓 연결 실패', error)
           this.connected = false
         }
-      ) 
+      )
     },
     messageSendHandler: function(value) { // send버튼 눌렀을때 실행되는 함수
-      // 메세지 전송      
+      // 메세지 전송
       this.data.push({
         agent: 'user',
         type: 'text',
@@ -106,9 +106,9 @@ export default {
       if(this.userName !== '' && value.text !== ''){
         console.log("Send message:" + value.text)
         if (this.stompClient && this.stompClient.connected) {
-          const msg = { 
+          const msg = {
             userName: this.userName,
-            content: value.text 
+            content: value.text
           }
           this.stompClient.send("/receive", JSON.stringify(msg), {})
         }
@@ -126,8 +126,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scopped>
 .qkb-board {
-  width: 700px !important;
+  width: 650px !important;
+}
+.qkb-board-content__bubbles {
+  padding-top: 1.1rem;
 }
 </style>

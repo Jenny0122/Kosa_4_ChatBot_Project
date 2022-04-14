@@ -17,7 +17,7 @@
                 :per-page="10">
                     <template #cell(세부설명)="row">
                         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-                            <font-awesome-icon icon="fa-solid fa-leaf" size="2x" />
+                            <font-awesome-icon icon="fa-solid fa-leaf" size="2x" color="saddlebrown" />
                             <!-- <i v-bind:class="row.detailsShowing ?"fa-solid fa-leaf""></i> -->
                         </b-button>
                     </template>
@@ -3798,7 +3798,7 @@ body.is-preload #banner:after {
     letter-spacing: 0.225em;
     text-transform: uppercase;
     top: 0;
-    font-size: 1.3em;
+    font-size: 1.5em;
     padding: 10pt 0 0 0;
     margin: 0 auto;
 }
@@ -3897,7 +3897,7 @@ body.is-mobile.landing #footer {
     text-align: center;
 }
 .mr-2{
-    background-color: #557571;
+    background-color: white;
     border: 0;
     cursor: pointer;
     box-shadow: -3px -3px 3px rgb(172, 172, 172), 3px 3px 3px rgb(237, 237, 237);
@@ -3909,6 +3909,6 @@ body.is-mobile.landing #footer {
     font-weight: 800;
 }
 .mr-2:hover {
-    background: #557571;
+    background: lightgray;
 }
 </style>

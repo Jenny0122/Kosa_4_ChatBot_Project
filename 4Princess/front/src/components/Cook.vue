@@ -3,7 +3,7 @@
         <article id="main">
             <header>
                 <h2 class="title">RECIPE</h2>
-                <p class="subtitle">키우는 작물을 선택해 주세요! 작물별 추천음식 레시피를 알려드려요 :)</p>
+                <p class="subtitle">키우는 작물을 선택해 주세요. 작물별 추천음식 레시피를 알려드려요</p>
             </header>
 
             <section class="wrapper alt style2">
