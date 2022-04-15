@@ -33,5 +33,4 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer, WebSoc
 				.withSockJS();
 
 	}
-
 }
