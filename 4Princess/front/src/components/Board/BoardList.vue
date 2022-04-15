@@ -233,6 +233,7 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    /* cursor: pointer !important; */
 }
 article,
 aside,

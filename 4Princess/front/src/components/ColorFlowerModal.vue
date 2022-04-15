@@ -1,8 +1,8 @@
 <template lang="html">
   <transition name="modal">
-    <div class="modal-mask" >
+    <div class="modal-mask">
       <div class="modal-wrapper" @click="$emit('close')">
-        <div class="modal-container"@click.stop="">
+        <div class="modal-container" @click.stop="">
           <div class="modal-header">
             <slot name="header">
             </slot>
@@ -26,7 +26,8 @@
 
 <style lang="css">
 .closeModalBtn {
-  color: #62acde;
+    color: white;
+    background: #557571;
 }
 .modal-mask {
   position: fixed;
@@ -56,7 +57,7 @@
 }
 .modal-header {
   margin: 0;
-  color: #62acde;
+  color: cadetblue;
   font-size: 20pt;
   display: block;
 }

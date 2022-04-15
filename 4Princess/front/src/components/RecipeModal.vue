@@ -1,8 +1,8 @@
 <template lang="html">
   <transition name="modal">
-    <div class="modal-mask" @keyup.esc="$emit('close')">
-      <div class="modal-wrapper">
-        <div class="modal-container">
+    <div class="modal-mask">
+      <div class="modal-wrapper" @click="$emit('close')">
+        <div class="modal-container" @click.stop="">
           <div class="modal-header">
             <slot name="header">
             </slot>
@@ -26,7 +26,8 @@
 
 <style lang="css">
 .closeModalBtn {
-  color: #62acde;
+    color: white;
+    background: #557571;
 }
 .modal-mask {
   position: fixed;
@@ -46,7 +47,7 @@
 .modal-container {
   width: 800pt;
   height: auto;
-  max-height: 400pt;
+  max-height: 500pt;
   overflow: auto;
   margin: 0px auto;
   padding: 20px 30px;
@@ -58,7 +59,7 @@
 }
 .modal-header {
   margin-top: 10pt;
-  color: #62acde;
+  color: cadetblue;
   font-size: 20pt;
 }
 .modal-body {
