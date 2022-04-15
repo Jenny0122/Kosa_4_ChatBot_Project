@@ -32,6 +32,12 @@ export default {
     'topbutton': TopButton,
     'menubar': Menubar,
     'chatBot' : ChatBot
+  },
+  created: function() {
+    console.log('로그인상태 : ' + this.$store.state.dataStore.isLogin)
+  },
+  beforeDestroy: function() {
+    localStorage.removeItem('jwt')
   }
 }
 </script>
