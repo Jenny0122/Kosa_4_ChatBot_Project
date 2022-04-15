@@ -9,14 +9,15 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-public class WebSocketHandler extends TextWebSocketHandler{@Override
+public class WebSocketHandler extends TextWebSocketHandler {
+
+	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		String payload = message.getPayload();
 		log.info("payload : {}", payload);
-		
+
 		TextMessage initialGreeting = new TextMessage("Welcome to Ma2Garden Chat Server!");
 		session.sendMessage(initialGreeting);
 	}
 
-	
 }

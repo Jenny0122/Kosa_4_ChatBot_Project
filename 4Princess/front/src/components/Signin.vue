@@ -64,17 +64,27 @@ export default{
     },
     loginUser() {
         this.checkFlag = true
+        alert(this.$store.state.dataStore.isLogin)
         if (!this.isEmpty(this.user.id) && !this.isEmpty(this.user.password)) {
             this.$axios.post('/login', this.user).then((res) => {
                 // 200이면
-                if (res.status === 200) {
-                  if (res.data['length'] !== 0) {
-                    alert("환영합니다 '" + res.data['0']['id'] + "'님")
-                    console.log(res.data['0']['id'] + ' ' + res.data['0']['email'])
-                    this.$router.push({ name: 'Home' })
-                  } else {
-                    this.checkLoginFlag = true
-                  }
+
+                alert("안녕하세요 '" + res.data['id'] + "'님")
+
+                console.log(this.$store)
+                this.$store.state.dataStore.isLogin = true
+                localStorage.setItem('jwt', res.data.jwtToken)
+                alert(localStorage.getItem('jwt'))
+                this.$router.back(-1)
+            })
+            .catch((err) => {
+                var errCode = err.response.status
+                
+                if(errCode == '403')
+                    alert('아이디를 찾을 수 없습니다')
+                else{
+                  alert('비밀번호가 일치하지 않습니다')
+                    this.password = ''
                 }
             })
         }

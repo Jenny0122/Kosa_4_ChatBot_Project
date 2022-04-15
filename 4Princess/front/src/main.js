@@ -4,6 +4,7 @@ import Vue from 'vue'
 import './plugins/axios'
 import App from './App'
 import router from './router'
+import { store } from "./store";
 
 // BootstrapVue
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -36,6 +37,7 @@ Vue.use(IconsPlugin)
 new Vue({
     el: '#app',
     router,
+    store: store,
     components: { App },
     template: '<App/>'
 })

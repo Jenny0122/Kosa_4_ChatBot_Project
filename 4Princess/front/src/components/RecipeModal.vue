@@ -45,7 +45,7 @@
   vertical-align: middle;
 }
 .modal-container {
-  width: 800pt;
+  width: 800pt !important;
   height: auto;
   max-height: 500pt;
   overflow: auto;
@@ -60,6 +60,7 @@
 .modal-header {
   margin-top: 10pt;
   color: cadetblue;
+  text-align: center;
   font-size: 20pt;
 }
 .modal-body {
