@@ -32,8 +32,19 @@ export default {
         msgBubbleBgUser: '#3399ff',	// Background color of user message
         msgBubbleColorUser: '#fff',	// Text color of user message
         botAvatarSize: 64,
-        botAvatarImg: 'https://img.freepik.com/vector-gratis/icono-robot-signo-chat-bot-concepto-servicio-soporte-estilo-plano-personaje-chatbot_41737-796.jpg'
-      }
+        botAvatarImg: 'https://img.freepik.com/vector-gratis/icono-robot-signo-chat-bot-concepto-servicio-soporte-estilo-plano-personaje-chatbot_41737-796.jpg',
+      },
+      guideList: ['1. \'꽃이름\'에 대해 궁금해/알려줘 (ex. 소나무)', 
+                  '2. \'몇월 몇일\' 꽃말 (ex. 4월 19일)',
+                  '3. \'작물이름\' 레시피 종류 (ex. 깻잎)',
+                  '4. \'작물이름\' 병해충 (ex. 감귤)',
+                  '5. \'작물이름\' 재배과정 (ex. 토마토)',
+                  '6. 공기정화식물 추천',
+                  '7. 건조에 강한 식물 추천',
+                  '8. 초급자가 키우기 쉬운 식물',
+                  '9. 중급자가 키우기 쉬운 식물',
+                  '10. 상급자가 키우기 쉬운 식물',
+                  '11. \'MBTI명\' (ex. ESFJ)']
 		}
 	},
 	methods: {
@@ -47,15 +58,15 @@ export default {
       this.data.push({
         agent: 'bot',
         type: 'button',
-        text: 'Ma2Garden 챗봇입니다. 무엇이든 물어보세요 :)',
+        text: 'Ma2Garden 챗봇입니다. 무엇이든 물어보세요.',
         options: [
+          // {
+          //   text: '특정 URL로 이동',
+          //   value: 'https://google.com',
+          //   action: 'url'
+          // },
           {
-            text: '특정 URL로 이동',
-            value: 'https://google.com',
-            action: 'url'
-          },
-          {
-            text: 'Submit Support Ticket',
+            text: '질문 가이드',
             value: 'submit_ticket',
             action: 'postback'
           }
@@ -64,7 +75,7 @@ export default {
       }
 
       // 웹소켓 연결
-      const serverURL = "http://localhost:8888"
+      const serverURL = "http://localhost:8888/chat"
       this.socket = new SockJS(serverURL)
       this.stompClient = Stomp.over(this.socket)
 
@@ -94,12 +105,18 @@ export default {
       )
     },
     messageSendHandler: function(value) { // send버튼 눌렀을때 실행되는 함수
+
       // 메세지 전송
       this.data.push({
         agent: 'user',
         type: 'text',
         text: value.text
       })
+
+      if(value.text == '질문 가이드') {
+        this.showGuide()
+        return
+      }
 
       // 소켓서버로 text전달
       // response받은 text를 data로 push
@@ -119,6 +136,19 @@ export default {
       // 웹소켓 종료
       this.socket.close()
       this.connected = false
+    },
+    showGuide: function() {
+      var guide = ''
+
+      for(var i in this.guideList) {
+        guide += this.guideList[i] + '\n'
+      }
+      this.data.push({
+        agent: 'bot',
+        type: 'text',
+        text: guide
+      })
+      
     }
 	},
   components: { 'VueBotUI': VueBotUI }
@@ -132,5 +162,8 @@ export default {
 }
 .qkb-board-content__bubbles {
   padding-top: 1.1rem;
+}
+.qkb-msg-bubble-component__text {
+  white-space: pre-line;
 }
 </style>

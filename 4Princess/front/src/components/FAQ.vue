@@ -3886,7 +3886,7 @@ body.is-mobile.landing #footer {
     text-align: center;
 }
 .p2 {
-    color: black;
+    color: black !important;
 }
 .p2:hover {
     color: #557571 !important;

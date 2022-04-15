@@ -7,7 +7,6 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
-import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
 @Configuration
 @EnableWebSocketMessageBroker
@@ -20,21 +19,18 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer, WebSoc
 
 	@Override // connection을 맺을때 CORS 허용합니다.
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/")
+		registry.addEndpoint("/chat")
 				.setAllowedOriginPatterns("*")
 				.withSockJS();
 	}
 
-	
-
-
 	private final WebSocketHandler webSocketHandler = new WebSocketHandler();
+
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-		registry.addHandler(webSocketHandler, "/echo")
+		registry.addHandler(webSocketHandler, "/chat")
 				.setAllowedOrigins("*")
-				.withSockJS()
-				.setInterceptors(new HttpSessionHandshakeInterceptor());
+				.withSockJS();
 
 	}
 
