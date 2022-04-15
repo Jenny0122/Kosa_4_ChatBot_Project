@@ -16,7 +16,7 @@
 
             <modal v-if="showModal" @close="showModal = false">
                 <div class="header" slot="header">{{selectedColor.color_info}}의 꽃이 주는 효과</div>
-                <div class="body" slot="body" @click="showModal=false">
+                <div class="body" slot="body">
                     <img v-bind:src="selectedColor.img_url">
                     <div class="effect">
                         {{selectedColor.effect_info}}

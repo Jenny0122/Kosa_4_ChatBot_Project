@@ -21,8 +21,8 @@
                     </div>
                 </div>
                 <modal v-if="showModal" @close="showModal = false">
-                    <div class="header" slot="header">{{selected_menu.menu}}</div>
-                    <div slot="body" @click="showModal=false">
+                    <div class="header" slot="header"><img class="photo" v-bind:src="selected_menu.photo"> <br/> {{selected_menu.menu}}</div>
+                    <div slot="body">
                         [재료] <br> {{selected_menu.ingredient}} <br><br>
                         [레시피] <br> <div v-html="selected_menu.cooking_order.split('\n').join('<br>')"></div>
                     <i class="closeModalBtn fas fa-times" aria-hidden="true"></i>
@@ -130,6 +130,11 @@ img {
   height: 20vh !important; */
   object-fit: cover;
   position: relative;
+}
+.photo {
+  width: 20vh !important;
+  height: 20vh !important;
+  text-align: center;
 }
 .photo-wrapper {
   width: 100% !important;
