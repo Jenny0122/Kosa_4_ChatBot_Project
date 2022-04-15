@@ -48,87 +48,88 @@ export default {
 			context: '',
 			user: '',
 			created: '',
-      button1: '수정',
-      button2: '삭제',
-      beforeEditTitle: '',
-      beforeEditContext: '',
-      isEdit: true,
+            button1: '수정',
+            button2: '삭제',
+            beforeEditTitle: '',
+            beforeEditContext: '',
+            isEdit: true,
 			comments: []
 		}
 	},
 	methods: {
-    updateData: function(value) {
-      this.button1 = '저장'
-      this.button2 = '취소'
-      this.isEdit = !this.isEdit
-      this.beforeEditContext = this.context
-      this.beforeEditTitle = this.title
-		},
-		deleteData: async function() {
-      this.$axios.delete('/board/' + this.contentId).then((res) => {
-          alert('게시물이 삭제되었습니다.')
-        })
-        .catch((err) => {
-          console.log(err)
-          return
-        })
+        updateData: function(value) {
+            this.button1 = '저장'
+            this.button2 = '취소'
+            this.isEdit = !this.isEdit
+            this.beforeEditContext = this.context
+            this.beforeEditTitle = this.title
+                },
+                deleteData: async function() {
+            this.$axios.delete('/board/' + this.contentId).then((res) => {
+                alert('게시물이 삭제되었습니다.')
+                })
+                .catch((err) => {
+                console.log(err)
+                return
+                })
 
-			this.$router.push({
-				path: '/member/board'
-		  })
-		},
-    saveData: function() {
-      if((this.beforeEditTitle == this.title) && (this.beforeEditContext == this.context)) {
-        alert('변경된 내용이 없습니다')
-        return
-      }
+                    this.$router.push({
+                        path: '/member/board'
+                })
+            },		
+        saveData: function() {
+            if((this.beforeEditTitle == this.title) && (this.beforeEditContext == this.context)) {
+                alert('변경된 내용이 없습니다')
+                return
+                
+            }
 
+            if(confirm('저장하시겠습니까?')){
+                var data = {
+                'title': this.title,
+                'contents': this.context,
+                'no': this.contentId
+                }
+            
 
-      if(confirm('저장하시겠습니까?')){
-        var data = {
-          'title': this.title,
-          'contents': this.context,
-          'no': this.contentId
+                this.$axios.put('/board/' + this.contentId, data).then((res) => {
+                alert('정보를 수정했습니다.')
+                var newBoard = res.data
+                this.title = newBoard.title          
+                this.context = newBoard.contents
+
+                this.beforeEditTitle = ''
+                this.beforeEditContext = ''
+                this.isEdit = !this.isEdit
+                this.button2 = '삭제'
+                this.button1 = '수정'
+                })
+                .catch((err) => {
+                })
+            } else {
+            }
+        },
+        cancel: function() {
+        this.title = this.beforeEditTitle
+        this.context = this.beforeEditContext
+        this.beforeEditContext = ''
+        this.isEdit = !this.isEdit
+        this.button2 = '삭제'
+        this.button1 = '수정'
         }
+        },
+        beforeCreate: function() {
+            var no = this.$route.params.no
+            this.$axios.get('/board/' + no).then((res) => {
+                var board = res.data
 
-        this.$axios.put('/board/' + this.contentId, data).then((res) => {
-          alert('정보를 수정했습니다.')
-          var newBoard = res.data
-          this.title = newBoard.title
-          this.context = newBoard.contents
-
-          this.beforeEditTitle = ''
-          this.beforeEditContext = ''
-          this.isEdit = !this.isEdit
-          this.button2 = '삭제'
-          this.button1 = '수정'
-        })
-        .catch((err) => {
-        })
-      } else {
-      }
-    },
-    cancel: function() {
-      this.title = this.beforeEditTitle
-      this.context = this.beforeEditContext
-      this.beforeEditContext = ''
-      this.isEdit = !this.isEdit
-      this.button2 = '삭제'
-      this.button1 = '수정'
-    }
-	},
-	beforeCreate: function() {
-		var no = this.$route.params.no
-		this.$axios.get('/board/' + no).then((res) => {
-			var board = res.data
-
-			this.contentId = board.no
-			this.title = board.title
-			this.context = board.contents
-			this.user = board.user_no.id
-			this.created = board.created_at.replace('T', ' ')
-			this.comments = board.comment
-		}).catch()
+                this.contentId = board.no
+                this.title = board.title
+                this.context = board.contents
+                this.user = board.user_no.id
+                this.created = board.created_at.replace('T', ' ')
+                this.comments = board.comment
+            }).catch()
 
 	},
 	components: {
