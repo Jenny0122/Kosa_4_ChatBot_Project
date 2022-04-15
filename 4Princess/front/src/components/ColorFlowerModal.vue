@@ -1,8 +1,8 @@
 <template lang="html">
   <transition name="modal">
-    <div class="modal-mask" @keyup.esc="$emit('close')">
-      <div class="modal-wrapper">
-        <div class="modal-container">
+    <div class="modal-mask" >
+      <div class="modal-wrapper" @click="$emit('close')">
+        <div class="modal-container"@click.stop="">
           <div class="modal-header">
             <slot name="header">
             </slot>

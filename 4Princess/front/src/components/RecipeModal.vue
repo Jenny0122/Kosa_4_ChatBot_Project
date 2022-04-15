@@ -60,7 +60,6 @@
   margin-top: 10pt;
   color: #62acde;
   font-size: 20pt;
-  text-align: center;
 }
 .modal-body {
   margin: 20px 0;
