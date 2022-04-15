@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class RedirectController {
 
-	@GetMapping("/admin2")
+	@GetMapping("/admin")
 	public String goGrafana2() {
 
 		return "redirect:http://ma2garden.xyz:3000";
