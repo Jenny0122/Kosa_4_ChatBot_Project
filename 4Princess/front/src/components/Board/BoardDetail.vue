@@ -16,8 +16,8 @@
                     <div class="content-detail-content-info-left-subject">{{title}}</div>
                   </div>
                   <div class="content-detail-content-info-right">
-                    <div class="content-detail-content-info-right-user">글쓴이: {{user}}</div>
-                    <div class="content-detail-content-info-right-created">등록일: {{created}}</div>
+                    <div class="content-detail-content-info-right-user">글쓴이 : {{user}}</div>
+                    <div class="content-detail-content-info-right-created">등록일 : {{created}}</div>
                   </div>
                 </div>
                 <textarea v-model="context" rows="8" :readonly="isEdit"></textarea>
@@ -65,17 +65,19 @@ export default {
             this.beforeEditTitle = this.title
                 },
                 deleteData: async function() {
-            this.$axios.delete('/board/' + this.contentId).then((res) => {
-                alert('게시물이 삭제되었습니다.')
-                })
-                .catch((err) => {
-                console.log(err)
-                return
-                })
-
-                    this.$router.push({
-                        path: '/member/board'
-                })
+                    if(confirm('정말 삭제하시겠습니까?')){
+                        this.$axios.delete('/board/' + this.contentId)
+                        .then((res) => {
+                            alert('게시물이 삭제되었습니다.')
+                            this.$router.push({
+                                path: '/member/board'
+                            })
+                        })
+                        .catch((err) => {
+                            console.log(err)
+                            return
+                        })
+                    }
             },		
         saveData: function() {
             if((this.beforeEditTitle == this.title) && (this.beforeEditContext == this.context)) {
@@ -123,12 +125,15 @@ export default {
             this.$axios.get('/board/' + no).then((res) => {
                 var board = res.data
 
+                console.log(board)
+
                 this.contentId = board.no
                 this.title = board.title
                 this.context = board.contents
-                this.user = board.user_no.id
+                this.user = board.user_id
                 this.created = board.created_at.replace('T', ' ')
                 this.comments = board.comment
+                console.log(board.comment)
             }).catch()
 
 	},
@@ -166,7 +171,6 @@ export default {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
-  align-items: center !important;
   padding: 1rem !important;
 }
 

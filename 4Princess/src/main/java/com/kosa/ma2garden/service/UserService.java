@@ -26,9 +26,10 @@ public class UserService implements UserDetailsService {
 
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-	JwtTokenProvider jwtTokenProvider;
+	
+	JwtTokenProvider jwtTokenProvider = new JwtTokenProvider(this);
 
-	public boolean idVaild(String id) {
+	public boolean idVaild(long id) {
 		User check = userRepository.findById(id)
 				.orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
 
@@ -60,15 +61,13 @@ public class UserService implements UserDetailsService {
 		user = userRepository.findById(userDTO.getId())
 				.orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
 
-		System.out.println(user.getPassword());
-
 		// PasswordEncoder가 사용자입력 password와 암호화저장된 password의 일치여부를 확인
 		if (!passwordEncoder.matches(userDTO.getPassword(), user.getPassword())) {
 			throw new IllegalArgumentException("잘못된 비밀번호입니다.");
 		}
 
 		log.info("login 성공");
-		jwtTokenProvider = new JwtTokenProvider(this);
+		// jwtTokenProvider = new JwtTokenProvider(this);
 		UserLoginResponseDTO userLoginResponseDTO = UserLoginResponseDTO.builder()
 				.no(user.getNo())
 				.id(user.getId())

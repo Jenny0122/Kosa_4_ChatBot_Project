@@ -60,18 +60,22 @@ export default {
 			var data = {
 				'title': this.subject,
 				'contents': this.context,
-				'user_no': '1'
+				'user_id': this.$store.state.dataStore.loginAccount.id
 			}
 
 			this.$axios.post('/board', data)
-				.then((res) => {
+				.then(async (res) => {
 					alert('게시물이 생성되었습니다.')
+                    var no = res.data
+                    this.$router.push({
+                        path: '/member/board/' + no
+                    })
 				})
-				.catch()
+				.catch((err) => {
+                    console.log(err.status)
+                })
 
-			this.$router.push({
-				path: '/member/board'
-			})
+			
 		},
 		cancle() {
 			this.$router.push({
@@ -1781,8 +1785,7 @@ textarea {
     appearance: none;
     background-color: white;
     border-radius: 3px;
-		border: 1px solid black;
-    color: inherit;
+	border: 1px solid black;
     display: block;
     outline: 0;
     padding: 0 1em;

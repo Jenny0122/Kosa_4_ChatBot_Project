@@ -39,4 +39,5 @@ spring:
       
 python:
   commander: abc
-  api: abc
+  api1: abca
+  api2: abca

@@ -16,28 +16,38 @@ public class ChatBotService {
 	@Value("${python.commander}")
 	String command;
 
-	@Value("${python.api}")
-	String api;
+	@Value("${python.api1}")
+	String api1;
+
+	@Value("${python.api2}")
+	String api2;
 
 	public String getAnswer(String query) throws InterruptedException, IOException {
 
-		log.info("command : {}", command);
-		log.info("api : {}", api);
+		int exitVal = 0;
+		String answer = "";
+		String api = "";
+		String flag = "(btn)";
+		ProcessBuilder builder = null;
 
-		query = "\"" + query + "\"";
-		ProcessBuilder builder = new ProcessBuilder(command, api, query);
+		if (!query.contains(flag)) {
+			api = api1;
+			query = "\"" + query.trim() + "\"";
+		} else {
+			api = api2;
+			query = query.trim();
+		}
+		builder = new ProcessBuilder(command, api, query);
+
 		Process process = builder.start();
-		int exitVal = process.waitFor();
+		exitVal = process.waitFor();
 		BufferedReader br = new BufferedReader(new InputStreamReader(process.getInputStream(), "utf-8"));
 
 		String line;
-		String answer = "";
 
-		while ((line = br.readLine()) != null) {
+		while ((line = br.readLine()) != null)
 			answer += line;
-		}
-		log.info("exitVal : {}", exitVal);
-		System.out.println("답변 : " + answer);
+
 		if (exitVal != 0) {
 			return null;
 		} else { // exitVal == 0

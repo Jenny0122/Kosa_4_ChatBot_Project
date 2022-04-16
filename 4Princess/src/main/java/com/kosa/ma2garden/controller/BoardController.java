@@ -19,8 +19,9 @@ import com.kosa.ma2garden.service.BoardService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import lombok.extern.slf4j.Slf4j;
 
-//@Slf4j
+@Slf4j
 @RestController
 public class BoardController {
 
@@ -39,11 +40,10 @@ public class BoardController {
 	@ApiOperation(value = "Create Board", notes = "Board에 새 정보 생성")
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@PostMapping("/board")
-	public ResponseEntity<String> createBoardContent(@RequestBody BoardDTO boardDTO) {
+	public ResponseEntity<Long> createBoardContent(@RequestBody BoardDTO boardDTO) {
+		long no = boardService.createBoardData(boardDTO);
 
-		boardService.createBoardData(boardDTO);
-
-		return new ResponseEntity<String>("데이터가 저장되었습니다.", HttpStatus.OK);
+		return new ResponseEntity<Long>(no, HttpStatus.OK);
 
 	}
 
@@ -58,6 +58,7 @@ public class BoardController {
 	@DeleteMapping("/board/{no}")
 	public ResponseEntity<String> deleteBoardByNo(@PathVariable long no) {
 
+		log.info("게시글 번호 : {}", no);
 		boardService.deleteBoardByNo(no);
 		return ResponseEntity.ok("삭제 성공");
 	}
