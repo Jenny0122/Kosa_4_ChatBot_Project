@@ -34,7 +34,6 @@ export default {
     'chatBot' : ChatBot
   },
   created: function() {
-    console.log('로그인상태 : ' + this.$store.state.dataStore.isLogin)
   },
   beforeDestroy: function() {
     localStorage.removeItem('jwt')

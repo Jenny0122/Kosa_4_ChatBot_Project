@@ -103,12 +103,18 @@ export default {
 						'created_at': res.data[i].created_at.substring(0, 10),
 						'counts': res.data[i].counts,
 						'updated_at': null,
-						'user_name': res.data[i].user_no.id
+						'user_name': res.data[i].user_id
 					})
 				}
 			})
 			.catch()
-	}
+	},
+    beforeCreate: function() {
+        if(this.$store.state.loginAccount.loginAccount == null){
+            alert('회원 라운지는 회원 전용 공간입니다.')
+            this.$router.go(-1)
+        }
+    }
 }
 </script>
 

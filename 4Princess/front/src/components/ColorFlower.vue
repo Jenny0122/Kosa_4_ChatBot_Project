@@ -76,7 +76,7 @@ export default {
           var x = 'calc(48% + ' + (125 * Math.sin(T * i) + 'pt') + ')'
         else
           var x = 'calc(48% - ' + (Math.abs(125 * Math.sin(T * i)) + 'pt') +')'
-        console.log(x)
+
         this.button_layout[i] = {
           'background-color': res.data[i].color_eng_name,
           'top': y,
