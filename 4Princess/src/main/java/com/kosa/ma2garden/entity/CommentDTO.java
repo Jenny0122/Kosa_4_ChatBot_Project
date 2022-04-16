@@ -14,12 +14,12 @@ public class CommentDTO {
 	private long co_no;
 	private String comment;
 	private long board_no;
-	private long user_no;
+	private UserDTO user_no;
 	private LocalDateTime created_at;
 	private LocalDateTime updated_at;
 
 	@Builder
-	public CommentDTO(long co_no, String comment, long board_no, long user_no, LocalDateTime created_at,
+	public CommentDTO(long co_no, String comment, long board_no, UserDTO user_no, LocalDateTime created_at,
 			LocalDateTime updated_at) {
 		super();
 		this.co_no = co_no;

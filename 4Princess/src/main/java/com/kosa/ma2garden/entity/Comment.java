@@ -2,7 +2,10 @@ package com.kosa.ma2garden.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
@@ -23,14 +26,17 @@ public class Comment extends BaseTimeEntity {
 	@Column(name = "comment")
 	private String comment;
 
-	@Column(name = "board_no")
-	private long board_no;
+	@ManyToOne(fetch = FetchType.EAGER)
+	//@JsonManagedReference
+	@JoinColumn(name = "board_no")
+	private Board board_no;
 
-	@Column(name = "user_no")
-	private long user_no;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_no")
+	private User user_no;
 
 	@Builder
-	public Comment(long co_no, String comment, long board_no, long user_no) {
+	public Comment(long co_no, String comment, Board board_no, User user_no) {
 		super();
 		this.co_no = co_no;
 		this.comment = comment;

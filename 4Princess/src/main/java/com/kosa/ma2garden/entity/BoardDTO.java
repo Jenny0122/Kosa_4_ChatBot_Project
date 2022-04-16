@@ -13,17 +13,17 @@ import lombok.ToString;
 @ToString
 public class BoardDTO {
 	private long no;
-	private String counts;
+	private Integer counts;
 	private String title;
 	private String contents;
 	private LocalDateTime created_at;
 	private LocalDateTime updated_at;
-	private User user_no;
-	private List<Comment> comment;
+	private String user_id;
+	private List<CommentDTO> comment;
 
 	@Builder
-	public BoardDTO(long no, String counts, String title, String contents, LocalDateTime created_at,
-			LocalDateTime updated_at, User user_no, List<Comment> comment) {
+	public BoardDTO(long no, Integer counts, String title, String contents, LocalDateTime created_at,
+			LocalDateTime updated_at, String user_id, List<CommentDTO> comment) {
 		super();
 		this.no = no;
 		this.counts = counts;
@@ -31,7 +31,7 @@ public class BoardDTO {
 		this.contents = contents;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
-		this.user_no = user_no;
+		this.user_id = user_id;
 		this.comment = comment;
 	}
 }

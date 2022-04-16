@@ -35,7 +35,7 @@ export default {
 			var data = {
 				'comment': this.comment,
 				'board_no': this.contentId,
-				'user_no': '1'
+				'user_no': {id: this.$store.state.dataStore.loginAccount.id}
 			}
 			this.$axios.post('/comment', data)
 				.then((res) => {

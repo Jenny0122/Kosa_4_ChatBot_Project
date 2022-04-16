@@ -143,4 +143,8 @@ const router = new Router({
     ]
 })
 
+// router.beforeEach((from, to, next) => {
+
+// })
+
 export default router

@@ -38,9 +38,9 @@
       </b-navbar-nav>
 
       <b-navbar-nav class="ms-auto">
-        <b-navbar-brand class="brand" v-if="!this.$store.state.dataStore.isLogin"><router-link class="router-link" to="/signup">회원가입</router-link></b-navbar-brand>
-        <b-navbar-brand class="brand" v-if="!this.$store.state.dataStore.isLogin"><router-link router-link class="router-link" to="/signin">로그인</router-link></b-navbar-brand>
-        <b-navbar-brand class="brand" v-if="this.$store.state.dataStore.isLogin"><div class="router-link" @click="logout">로그아웃</div></b-navbar-brand>
+        <b-navbar-brand class="brand" v-if="this.$store.state.dataStore.loginAccount == null"><router-link class="router-link" to="/signup">회원가입</router-link></b-navbar-brand>
+        <b-navbar-brand class="brand" v-if="this.$store.state.dataStore.loginAccount == null"><router-link router-link class="router-link" to="/signin">로그인</router-link></b-navbar-brand>
+        <b-navbar-brand class="brand" v-if="this.$store.state.dataStore.loginAccount != null"><div class="router-link" @click="logout">로그아웃</div></b-navbar-brand>
       </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -78,10 +78,13 @@ export default {
     },
     logout: function() {
       alert('로그아웃 되었습니다')
-      this.$store.state.dataStore.isLogin = false
+      this.$store.state.dataStore.loginAccount = null
       localStorage.removeItem('jwt')
       
     }
+  },
+  created: function() {
+    console.log(this.$store.state.dataStore.loginAccount)
   }
 }
 </script>

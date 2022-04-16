@@ -4,20 +4,31 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kosa.ma2garden.entity.Board;
 import com.kosa.ma2garden.entity.BoardDTO;
+import com.kosa.ma2garden.entity.Comment;
+import com.kosa.ma2garden.entity.CommentDTO;
+import com.kosa.ma2garden.entity.User;
+import com.kosa.ma2garden.entity.UserDTO;
 import com.kosa.ma2garden.repository.BoardRepository;
+import com.kosa.ma2garden.repository.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
 public class BoardService {
+
 	@Autowired
 	BoardRepository boardRepository;
+
+	@Autowired
+	UserRepository userRepository;
 
 	public List<BoardDTO> getAllBoard() {
 
@@ -31,7 +42,8 @@ public class BoardService {
 					.created_at(board.getCreatedAt())
 					.updated_at(board.getUpdatedAt())
 					.contents(board.getContents())
-					.user_no(board.getUser_no())
+					.user_id(board.getUser_no()
+							.getId())
 					.build();
 			list.add(boardDTO);
 		}
@@ -41,17 +53,24 @@ public class BoardService {
 		return list;
 	}
 
-	public boolean createBoardData(BoardDTO boardDTO) {
+	@Transactional
+	public long createBoardData(BoardDTO boardDTO) {
+		User user = userRepository.findById(boardDTO.getUser_id())
+				.get();
+		System.out.println(user.getId());
 
 		Board newBoard = Board.builder()
 				.counts(boardDTO.getCounts())
 				.title(boardDTO.getTitle())
 				.contents(boardDTO.getContents())
-				.user_no(boardDTO.getUser_no())
+				.user_no(user)
 				.build();
 
-		boardRepository.save(newBoard);
-		return true;
+		// Board b = boardRepository.save(newBoard);
+		long newBoardNo = boardRepository.save(newBoard)
+				.getNo();
+
+		return newBoardNo;
 	}
 
 	public BoardDTO getBoardByNo(long no) {
@@ -61,6 +80,19 @@ public class BoardService {
 		boardRepository.updateCounts(no);
 
 		if (board != null) {
+			List<Comment> comments = board.getComments();
+			List<CommentDTO> dtoList = new ArrayList<CommentDTO>();
+
+			for (Comment comment : comments)
+				dtoList.add(CommentDTO.builder()
+						.co_no(comment.getCo_no())
+						.user_no(UserDTO.builder()
+								.id(comment.getUser_no().getId())
+								.email(comment.getUser_no().getEmail())
+								.build())
+						.comment(comment.getComment())
+						.build());
+			
 			BoardDTO boardDTO = BoardDTO.builder()
 					.no(board.getNo())
 					.counts(board.getCounts())
@@ -68,18 +100,19 @@ public class BoardService {
 					.created_at(board.getCreatedAt())
 					.updated_at(board.getUpdatedAt())
 					.contents(board.getContents())
-					.user_no(board.getUser_no())
-					.comment(board.getComments())
+					.user_id(board.getUser_no()
+							.getId())
+					.comment(dtoList)
 					.build();
 
 			return boardDTO;
 		} else {
 			return null;
-
 		}
 	}
 
 	public void deleteBoardByNo(long no) {
+
 		boardRepository.deleteById(no);
 	}
 
@@ -97,7 +130,8 @@ public class BoardService {
 				.created_at(board.getCreatedAt())
 				.updated_at(board.getUpdatedAt())
 				.contents(board.getContents())
-				.user_no(board.getUser_no())
+				.user_id(board.getUser_no()
+						.getId())
 				.build();
 	}
 }

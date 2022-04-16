@@ -1,5 +1,9 @@
 package com.kosa.ma2garden.config;
 
+import java.util.TimeZone;
+
+import javax.annotation.PostConstruct;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -18,6 +22,11 @@ public class WebConfiguration implements WebMvcConfigurer {
 				.maxAge(3000);
 
 		WebMvcConfigurer.super.addCorsMappings(registry);
+	}
+	
+	@PostConstruct
+	public void initTimeZone() {
+		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
 	}
 
 }

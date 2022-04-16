@@ -2,8 +2,7 @@
   <div>
     <div class="comment-list-item">
       <div class="comment-list-item-name">
-        <div>{{name}}</div>
-        <div>{{commentObj.day}}</div>
+        <div>{{name.id}}</div>
       </div>
 
       <div class="comment-list-item-context">{{commentObj.comment}}</div>
@@ -62,18 +61,19 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 0.5px solid black;
   padding: 1em;
   width: 8em;
+  max-height: 3em;
 }
 
 .comment-list-item-context {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 52em;
+  width: 45em;
   border: 0.5px solid black;
-  max-height: 5em;
+  max-height: 3em;
+  text-align: left !important;
+  padding-left: 10pt;
 }
 
 .comment-list-item-button {

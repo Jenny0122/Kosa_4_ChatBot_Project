@@ -64,17 +64,20 @@ export default{
     },
     loginUser() {
         this.checkFlag = true
-        alert(this.$store.state.dataStore.isLogin)
+
         if (!this.isEmpty(this.user.id) && !this.isEmpty(this.user.password)) {
             this.$axios.post('/login', this.user).then((res) => {
                 // 200이면
 
                 alert("안녕하세요 '" + res.data['id'] + "'님")
 
-                console.log(this.$store)
-                this.$store.state.dataStore.isLogin = true
+                this.$store.state.dataStore.loginAccount = {
+                  no: res.data['no'],
+                  id: res.data['id']
+                }
+                
                 localStorage.setItem('jwt', res.data.jwtToken)
-                alert(localStorage.getItem('jwt'))
+                //this.$axios.defaults.headers.common['X-AUTH-TOKEN'] = res.data.jwtToken
                 this.$router.back(-1)
             })
             .catch((err) => {

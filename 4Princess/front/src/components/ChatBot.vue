@@ -18,6 +18,7 @@ export default {
 	data() {
 		return {
       userName: 'kskcjswo',
+      beforeMessage: '',
 			data: [],
       botOptions: {
         'botTitle': 'Ma2Garden ChatBot',
@@ -55,27 +56,22 @@ export default {
       //thid.data.length로 확인
       if(this.data.length == 0){
 
-      this.data.push({
-        agent: 'bot',
-        type: 'button',
-        text: 'Ma2Garden 챗봇입니다. 무엇이든 물어보세요.',
-        options: [
-          // {
-          //   text: '특정 URL로 이동',
-          //   value: 'https://google.com',
-          //   action: 'url'
-          // },
-          {
-            text: '질문 가이드',
-            value: 'submit_ticket',
-            action: 'postback'
-          }
-        ]
+        this.data.push({
+          agent: 'bot',
+          type: 'button',
+          text: 'Ma2Garden 챗봇입니다. 무엇이든 물어보세요.',
+          options: [
+            {
+              text: '질문 가이드',
+              value: 'submit_ticket',
+              action: 'postback'
+            }
+          ]
         })
       }
 
       // 웹소켓 연결
-      const serverURL = "http://localhost:8888/chat"
+      const serverURL = "http://ma2garden.xyz:8888/chat"
       this.socket = new SockJS(serverURL)
       this.stompClient = Stomp.over(this.socket)
 
@@ -85,16 +81,23 @@ export default {
           // 소켓 연결 성공
           this.connected = true
           console.log('소켓 연결 성공', frame)
+          // this.stompClient.debug = null
           // 서버의 메시지 전송 endpoint를 구독합니다.
           // 이런형태를 pub sub 구조라고 합니다.
           this.stompClient.subscribe("/send", res => {
 
             // 받은 데이터를 json으로 파싱하고 리스트에 넣어줍니다.
-            this.data.push({
-              agent: 'bot',
-              type: 'text',
-              text: res.body
-            })
+            var answer = res.body.replace(/~!~/gi, '\n')
+
+            if(answer.includes('|')){
+              this.showAnswerButtons(answer)
+            } else {
+              this.data.push({
+                agent: 'bot',
+                type: 'text',
+                text: answer
+              })
+            }
           })
         },
         error => {
@@ -103,8 +106,12 @@ export default {
           this.connected = false
         }
       )
+
+      
     },
     messageSendHandler: function(value) { // send버튼 눌렀을때 실행되는 함수
+
+      
 
       // 메세지 전송
       this.data.push({
@@ -122,12 +129,23 @@ export default {
       // response받은 text를 data로 push
       if(this.userName !== '' && value.text !== ''){
         console.log("Send message:" + value.text)
+
         if (this.stompClient && this.stompClient.connected) {
           const msg = {
             userName: this.userName,
-            content: value.text
+            content: this.beforeMessage + value.text,
           }
+          console.log(msg)
           this.stompClient.send("/receive", JSON.stringify(msg), {})
+
+          if(this.beforeMessage != '')
+            this.beforeMessage = ''
+
+          if(value.text.includes('레시피') || value.text.includes('병해충')){
+            var spacebar = value.text.indexOf(' ')
+            
+            this.beforeMessage = value.text.substring(0, spacebar) + '(btn)'
+          }
         }
         value.text = ''
       }
@@ -147,6 +165,25 @@ export default {
         agent: 'bot',
         type: 'text',
         text: guide
+      })
+      
+    },
+    showAnswerButtons: function(answer) {
+      var list = answer.split('|')
+      var options = []
+      for(var i in list){
+        options.push({
+          text: list[i],
+          value: 'submit_ticket',
+          action: 'postback'
+        })
+      }
+
+      this.data.push({
+        agent: 'bot',
+        type: 'button',
+        text: '다음 중 하나를 선택하세요',
+        options: options
       })
       
     }

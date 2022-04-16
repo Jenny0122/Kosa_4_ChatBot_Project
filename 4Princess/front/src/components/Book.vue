@@ -43,8 +43,6 @@ export default {
   methods: {
   },
   beforeCreate: function() {
-    console.log('Book.vue is created')
-
     this.$axios.get('/books')
     .then((res) => {
       let list = res.data
