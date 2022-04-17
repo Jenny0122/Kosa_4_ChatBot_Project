@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.BoardDTO;
+import com.kosa.ma2garden.dto.BoardDTO;
 import com.kosa.ma2garden.service.BoardService;
 
 import io.swagger.annotations.ApiOperation;

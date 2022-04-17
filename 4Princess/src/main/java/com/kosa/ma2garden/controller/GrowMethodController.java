@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.GrowMethodDTO;
+import com.kosa.ma2garden.dto.GrowMethodDTO;
 import com.kosa.ma2garden.service.GrowMethodService;
 
 import lombok.extern.slf4j.Slf4j;

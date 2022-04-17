@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.dto.TipDTO;
 import com.kosa.ma2garden.entity.Tip;
-import com.kosa.ma2garden.entity.TipDTO;
 import com.kosa.ma2garden.repository.TipRepository;
 
 @Service

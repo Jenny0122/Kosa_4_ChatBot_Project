@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.dto.FAQDTO;
 import com.kosa.ma2garden.entity.FAQ;
-import com.kosa.ma2garden.entity.FAQDTO;
 import com.kosa.ma2garden.repository.FAQRepository;
 
 @Service

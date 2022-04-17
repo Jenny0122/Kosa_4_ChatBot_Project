@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.UserDTO;
-import com.kosa.ma2garden.entity.UserLoginResponseDTO;
+import com.kosa.ma2garden.dto.UserDTO;
+import com.kosa.ma2garden.dto.UserLoginResponseDTO;
 import com.kosa.ma2garden.service.UserService;
 
 import io.swagger.annotations.ApiOperation;
@@ -35,7 +35,7 @@ public class UserController {
 	@ApiOperation(value = "유저 정보 가져오기", notes = "노트 기록 예정")
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@PostMapping("/user")
-	public ResponseEntity<String> getUsers(@RequestBody UserDTO userDTO) {
+	public ResponseEntity<String> createUsers(@RequestBody UserDTO userDTO) {
 
 		userService.createUser(userDTO);
 		return ResponseEntity.ok("성공");

@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.BookDTO;
+import com.kosa.ma2garden.dto.BookDTO;
 import com.kosa.ma2garden.service.BookService;
 
 import io.swagger.annotations.ApiOperation;

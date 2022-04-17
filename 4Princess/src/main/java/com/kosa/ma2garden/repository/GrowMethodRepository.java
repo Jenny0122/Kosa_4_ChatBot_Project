@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.kosa.ma2garden.entity.GrowMethod;
 
 @Repository
-public interface GrowMethodRepository extends JpaRepository<GrowMethod, Long>{
+public interface GrowMethodRepository extends JpaRepository<GrowMethod, Long> {
 
 	List<GrowMethod> findByNoLessThan(long no);
-
 }

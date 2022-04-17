@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.CommentDTO;
+import com.kosa.ma2garden.dto.CommentDTO;
 import com.kosa.ma2garden.service.CommentService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -20,13 +20,6 @@ public class CommentController {
 
 	@Autowired
 	CommentService commentService;
-
-//	@GetMapping("/comment")
-//	public ResponseEntity<List<CommentDTO>> getComment() {
-//		List<CommentDTO> list = commentService.getAllComment();
-
-//		return new ResponseEntity<List<CommentDTO>>(list, HttpStatus.OK);
-//	}
 
 	@PostMapping("/comment")
 	public ResponseEntity<String> createBoardContent(@RequestBody CommentDTO commentDTO) {

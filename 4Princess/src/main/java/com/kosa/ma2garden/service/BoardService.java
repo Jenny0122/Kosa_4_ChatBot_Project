@@ -9,12 +9,12 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.dto.BoardDTO;
+import com.kosa.ma2garden.dto.CommentDTO;
+import com.kosa.ma2garden.dto.UserDTO;
 import com.kosa.ma2garden.entity.Board;
-import com.kosa.ma2garden.entity.BoardDTO;
 import com.kosa.ma2garden.entity.Comment;
-import com.kosa.ma2garden.entity.CommentDTO;
 import com.kosa.ma2garden.entity.User;
-import com.kosa.ma2garden.entity.UserDTO;
 import com.kosa.ma2garden.repository.BoardRepository;
 import com.kosa.ma2garden.repository.UserRepository;
 
@@ -57,7 +57,6 @@ public class BoardService {
 	public long createBoardData(BoardDTO boardDTO) {
 		User user = userRepository.findById(boardDTO.getUser_id())
 				.get();
-		System.out.println(user.getId());
 
 		Board newBoard = Board.builder()
 				.counts(boardDTO.getCounts())
@@ -66,7 +65,6 @@ public class BoardService {
 				.user_no(user)
 				.build();
 
-		// Board b = boardRepository.save(newBoard);
 		long newBoardNo = boardRepository.save(newBoard)
 				.getNo();
 
@@ -87,12 +85,14 @@ public class BoardService {
 				dtoList.add(CommentDTO.builder()
 						.co_no(comment.getCo_no())
 						.user_no(UserDTO.builder()
-								.id(comment.getUser_no().getId())
-								.email(comment.getUser_no().getEmail())
+								.id(comment.getUser_no()
+										.getId())
+								.email(comment.getUser_no()
+										.getEmail())
 								.build())
 						.comment(comment.getComment())
 						.build());
-			
+
 			BoardDTO boardDTO = BoardDTO.builder()
 					.no(board.getNo())
 					.counts(board.getCounts())

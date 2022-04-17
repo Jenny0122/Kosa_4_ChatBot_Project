@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.dto.GrowMethodDTO;
 import com.kosa.ma2garden.entity.GrowMethod;
-import com.kosa.ma2garden.entity.GrowMethodDTO;
 import com.kosa.ma2garden.repository.GrowMethodRepository;
 
 @Service

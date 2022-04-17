@@ -1,37 +1,48 @@
 package com.kosa.ma2garden.controller;
 
 import java.io.IOException;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kosa.ma2garden.dto.SocketVO;
 import com.kosa.ma2garden.service.ChatBotService;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RestController
+@Controller
 public class ChatBotController {
-	
+
 	@Autowired
 	ChatBotService chatBotService;
-	
-	@PostMapping("chatbot")
-	public Map<String, String> getAnswer(@RequestBody String chatBot) throws InterruptedException, IOException{
-		ObjectMapper mapper = new ObjectMapper();
-		String answer = chatBotService.getAnswer(chatBot);
-		
+
+	// /receive를 메시지를 받을 endpoint로 설정합니다.
+	@MessageMapping("/receive")
+
+	// /send로 메시지를 반환합니다.
+	@SendTo("/send")
+	// SocketHandler는 1) /receive에서 메시지를 받고, /send로 메시지를 보내줍니다.
+	// 정의한 SocketVO를 1) 인자값, 2) 반환값으로 사용합니다.
+	public String SocketHandler(SocketVO socketVO) {
+		// vo에서 getter로 userName을 가져옵니다.
+		String userName = socketVO.getUserName();
+		// vo에서 setter로 content를 가져옵니다.
+		String content = socketVO.getContent();
+
+		log.info("질문 : " + content);
+
+		String answer = "";
 		try {
-			Map<String, String> map = mapper.readValue(answer, Map.class);
-			return map;
-		} catch (IOException e) {
+			answer = chatBotService.getAnswer(content);
+		} catch (InterruptedException | IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+
+		// 반환
+		return answer;
 	}
-	
 }

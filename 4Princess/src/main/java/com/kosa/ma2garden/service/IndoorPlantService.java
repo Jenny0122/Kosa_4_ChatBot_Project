@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.dto.IndoorPlantDTO;
 import com.kosa.ma2garden.entity.IndoorPlant;
-import com.kosa.ma2garden.entity.IndoorPlantDTO;
 import com.kosa.ma2garden.repository.IndoorPlantRepository;
 
 

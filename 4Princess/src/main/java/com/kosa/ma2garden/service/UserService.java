@@ -3,23 +3,22 @@ package com.kosa.ma2garden.service;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.kosa.ma2garden.config.JwtTokenProvider;
+import com.kosa.ma2garden.dto.UserDTO;
+import com.kosa.ma2garden.dto.UserLoginResponseDTO;
 import com.kosa.ma2garden.entity.User;
-import com.kosa.ma2garden.entity.UserDTO;
-import com.kosa.ma2garden.entity.UserLoginResponseDTO;
 import com.kosa.ma2garden.repository.UserRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class UserService implements UserDetailsService {
+public class UserService{
 
 	@Autowired
 	UserRepository userRepository;
@@ -27,7 +26,7 @@ public class UserService implements UserDetailsService {
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	
-	JwtTokenProvider jwtTokenProvider = new JwtTokenProvider(this);
+	JwtTokenProvider jwtTokenProvider;
 
 	public boolean idVaild(long id) {
 		User check = userRepository.findById(id)
@@ -75,12 +74,6 @@ public class UserService implements UserDetailsService {
 				.build();
 		return userLoginResponseDTO;
 
-	}
-
-	@Override
-	public User loadUserByUsername(String id) throws UsernameNotFoundException {
-		return userRepository.findById(id)
-				.orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
 	}
 
 }

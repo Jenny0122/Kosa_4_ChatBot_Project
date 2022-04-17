@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.FAQDTO;
+import com.kosa.ma2garden.dto.FAQDTO;
 import com.kosa.ma2garden.service.FAQService;
 
 import lombok.extern.slf4j.Slf4j;

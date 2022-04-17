@@ -25,7 +25,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig implements WebMvcConfigurer {
 
 	private static final String API_NAME = "Ma2Garden API";
-	private static final String API_VERSION = "0.9.0";
+	private static final String API_VERSION = "1.0.0";
 	private static final String API_DESCRIPTION = "Ma2Garden API 명세서";
 
 	@Bean

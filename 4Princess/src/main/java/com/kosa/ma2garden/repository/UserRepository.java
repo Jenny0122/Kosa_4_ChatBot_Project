@@ -10,7 +10,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 	public User findAllByIdAndPassword(String id, String password);
 
-	Optional<User> findById(String user_id);
+	public Optional<User> findById(String user_id);
 
 	public Optional<User> findByNo(long i);
 }

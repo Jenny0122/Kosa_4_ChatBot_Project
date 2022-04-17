@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.dto.MBTIDTO;
 import com.kosa.ma2garden.entity.MBTI;
-import com.kosa.ma2garden.entity.MBTIDTO;
 import com.kosa.ma2garden.repository.MBTIRepository;
 
 

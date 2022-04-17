@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.CookDTO;
+import com.kosa.ma2garden.dto.CookDTO;
 import com.kosa.ma2garden.service.CookService;
 
 import io.swagger.annotations.ApiOperation;

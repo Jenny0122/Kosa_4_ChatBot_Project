@@ -18,9 +18,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class Application {
 
 	public static void main(String[] args) {
-		
+
 		SpringApplicationBuilder springApplicationBuilder = new SpringApplicationBuilder(Application.class);
-		springApplicationBuilder.build().addListeners(new ApplicationPidFileWriter("/home/ec2-user/ma2garden/conf/server.pid"));
+		springApplicationBuilder.build()
+				.addListeners(new ApplicationPidFileWriter("/home/ec2-user/ma2garden/conf/server.pid"));
 		springApplicationBuilder.run(args);
 	}
 }

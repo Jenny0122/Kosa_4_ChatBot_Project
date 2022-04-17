@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kosa.ma2garden.entity.TipDTO;
+import com.kosa.ma2garden.dto.TipDTO;
 import com.kosa.ma2garden.service.TipService;
 
 import io.swagger.annotations.ApiOperation;
