@@ -15,7 +15,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ComponentScan(basePackages = "com.*")
 @EnableJpaRepositories(basePackages = "com.*")
 @SpringBootApplication
-public class Application {
+public class Application {	
+	
 
 	public static void main(String[] args) {
 
