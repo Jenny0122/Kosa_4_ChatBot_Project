@@ -49,28 +49,30 @@
     <section id="three" class="wrapper style3 special">
     <div class="inner">
         <header class="major">
-        <h2>Guide</h2>
+        <h2>관련 해시태그</h2>
         <p>
-            본문내용
+            관련된 해시태그를 알려드려요.
         </p>
         </header>
         <ul class="features">
         <li>
-            <h3>Info</h3>
-            <p>본문내용</p>
+            <h3># 홈가드닝</h3>
+            <p>#다육식물 #식물스타그램 #나만의정원 #플랜테리어 #식물인테리어 #베란다정원 #가드닝 #식물키우기 #초보가드너</p>
         </li>
         <li>
-            <h3>Plant</h3>
-            <p>본문내용</p>
+            <h3># 반려식물</h3>
+            <p>#홈인테리어 #정원식물 #공기정화식물 #건조에강함 #화분 #다육이 #식물 #벵갈고무나무 #라벤더 #금전수 #알로에</p>
         </li>
-        <li>
-            <h3>Life Style</h3>
+        <!-- <li>
+            <h3>Companion Plant</h3>
             <p>본문내용</p>
         </li>
         <li>
             <h3>Community</h3>
             <p>본문내용</p>
-        </li>
+        </li> -->
+        <br/>
+        <h3><br/><br/>자, 그럼 이제 시작해볼까요?</h3>
         </ul>
     </div>
     </section>
