@@ -4,8 +4,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import com.kosa.ma2garden.config.MetricCounter;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,6 +24,9 @@ public class ChatBotService {
 
 	@Value("${python.api2}")
 	String api2;
+	
+	@Autowired
+	MetricCounter metricCounter;
 
 	public String getAnswer(String query) throws InterruptedException, IOException {
 

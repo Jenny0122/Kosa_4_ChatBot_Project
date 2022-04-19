@@ -27,7 +27,7 @@ public class UserController {
 	@ApiOperation(value = "유저 정보 가져오기", notes = "노트 기록 예정")
 	@ApiResponses({ @ApiResponse(code = 200, message = "API 정상 작동"), @ApiResponse(code = 500, message = "서버 에러") })
 	@GetMapping("/idvaild/{id}")
-	public ResponseEntity<Boolean> getCheck(@PathVariable long id) {
+	public ResponseEntity<String> getCheck(@PathVariable String id) {
 
 		return ResponseEntity.ok(userService.idVaild(id));
 	}

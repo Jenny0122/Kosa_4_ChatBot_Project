@@ -5,7 +5,7 @@
       <div class="home"><router-link class="router-link" to="/" ><img src="@/assets/homelogo.png"></router-link></div>
       <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item-dropdown no-caret class="menu" text="가드닝 가이드">
+        <b-nav-item-dropdown no-caret class="menu" text="가이드">
           <!-- <div class="side-link"><b-dropdown-item><router-link class="router-link" to="/page1">소개영상</router-link></b-dropdown-item></div> -->
           <div class="side-link"><b-dropdown-item><router-link class="router-link" to="/info/growmethod/">키우는 방법</router-link></b-dropdown-item></div>
           <div class="side-link"><b-dropdown-item><router-link class="router-link" to="/info/plantdisease/">식물질병</router-link></b-dropdown-item></div>
@@ -84,7 +84,6 @@ export default {
     }
   },
   created: function() {
-    console.log(this.$store.state.dataStore.loginAccount)
   }
 }
 </script>

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.GrowMethodDTO;
 import com.kosa.ma2garden.entity.GrowMethod;
 import com.kosa.ma2garden.repository.GrowMethodRepository;
@@ -15,6 +16,9 @@ public class GrowMethodService {
 	
 	@Autowired
 	GrowMethodRepository growmethodrepository;
+	
+	@Autowired
+	MetricCounter metricCounter;
 
 	public List<GrowMethodDTO> getAllGrowMethod() {
 		

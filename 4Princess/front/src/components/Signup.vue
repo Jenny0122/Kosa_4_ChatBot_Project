@@ -102,12 +102,14 @@ export default {
         }
     },
     idVaild() {
-      console.log(this.user.id)
+        if(this.user.id == '')
+          return
         this.$axios.get('/idvaild/' + this.user.id).then((res) => {
-            if (res.data !== false) {
-              this.checkSignupFlag = true
-            } else {
-              this.checkSignupFlag = false
+            alert(res.data)
+            if (res.data.includes('가능')) {
+                this.checkSignupFlag = false
+              } else {
+                this.checkSignupFlag = true
             }
         })
     },
@@ -145,7 +147,7 @@ export default {
             !this.isEmpty(this.user.password_conf)
         ) {
             if (!this.idValid || !this.passwordValidFlag || !this.passwordCheckFlag) {
-                console.log('유효성 확인')
+                return
             }
             this.$axios.post('/user', this.user).then((res) => {
               // 200 이면
@@ -162,6 +164,10 @@ export default {
             })
         }
     }
+  },
+  created: function() {
+    if(this.$store.state.dataStore.loginAccount != null)
+      this.$router.push({name: 'Home'})
   }
 }
 </script>

@@ -110,7 +110,7 @@ export default {
 			.catch()
 	},
     beforeCreate: function() {
-        if(this.$store.state.loginAccount.loginAccount == null){
+        if(this.$store.state.dataStore.loginAccount == null){
             alert('회원 라운지는 회원 전용 공간입니다.')
             this.$router.go(-1)
         }

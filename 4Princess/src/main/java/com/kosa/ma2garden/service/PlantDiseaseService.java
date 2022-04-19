@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.PlantDiseaseDTO;
 import com.kosa.ma2garden.entity.PlantDisease;
 import com.kosa.ma2garden.repository.PlantDiseaseRepository;
@@ -15,6 +16,9 @@ public class PlantDiseaseService {
 	
 	@Autowired
 	PlantDiseaseRepository plantdiseaserepository;
+	
+	@Autowired
+	MetricCounter metricCounter;
 	
 	public List<PlantDiseaseDTO> getAllPlantDisease() {
 		

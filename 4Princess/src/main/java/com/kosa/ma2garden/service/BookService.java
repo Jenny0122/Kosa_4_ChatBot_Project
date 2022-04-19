@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.BookDTO;
 import com.kosa.ma2garden.entity.Book;
 import com.kosa.ma2garden.repository.BookRepository;
@@ -15,6 +16,9 @@ public class BookService {
 
 	@Autowired
 	BookRepository bookRepository;
+	
+	@Autowired
+	MetricCounter metricCounter;
 
 	public List<BookDTO> getAllBooks() {
 

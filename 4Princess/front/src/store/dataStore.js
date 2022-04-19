@@ -1,6 +1,7 @@
 const dataStore = {
     state: {
-        loginAccount: null
+        loginAccount: null,
+        randId: 0
     }
 }
 

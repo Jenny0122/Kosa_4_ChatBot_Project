@@ -3,6 +3,7 @@ package com.kosa.ma2garden.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.CommentDTO;
 import com.kosa.ma2garden.entity.Board;
 import com.kosa.ma2garden.entity.Comment;
@@ -22,6 +23,9 @@ public class CommentService {
 
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	MetricCounter metricCounter;
 
 	public boolean createCommentData(CommentDTO commentDTO) {
 

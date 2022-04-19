@@ -34,6 +34,8 @@ export default {
     'chatBot' : ChatBot
   },
   created: function() {
+    this.$store.state.dataStore.randId = Math.floor(Math.random() * 100000 + 1)
+    console.log(this.$store.state.dataStore.randId)
   },
   beforeDestroy: function() {
     localStorage.removeItem('jwt')

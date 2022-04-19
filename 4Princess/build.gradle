@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.example'
-version = '0.0.9'
+version = '1.0.0'
 sourceCompatibility = '1.8'
 
 configurations {
@@ -48,6 +48,10 @@ dependencies {
 	implementation 'org.springframework.session:spring-session-core'
 	// Security
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	
+	// Influx
+	implementation 'io.micrometer:micrometer-registry-influx:1.8.5'
+	
 	
 	// Lombok
 	compileOnly 'org.projectlombok:lombok'

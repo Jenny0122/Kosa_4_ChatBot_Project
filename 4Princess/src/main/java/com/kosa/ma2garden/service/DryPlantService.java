@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.DryPlantDTO;
 import com.kosa.ma2garden.entity.DryPlant;
 import com.kosa.ma2garden.repository.DryPlantRepository;
@@ -15,6 +16,9 @@ public class DryPlantService {
 
 	@Autowired
 	DryPlantRepository dryplantrepository;
+	
+	@Autowired
+	MetricCounter metricCounter;
 
 	public List<DryPlantDTO> getAllDryplants() {
 

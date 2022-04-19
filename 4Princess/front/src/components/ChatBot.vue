@@ -71,6 +71,7 @@ export default {
       }
 
       // 웹소켓 연결
+      //const serverURL = "http://localhost:8888/chat"
       const serverURL = "http://ma2garden.xyz:8888/chat"
       this.socket = new SockJS(serverURL)
       this.stompClient = Stomp.over(this.socket)
@@ -84,7 +85,7 @@ export default {
           // this.stompClient.debug = null
           // 서버의 메시지 전송 endpoint를 구독합니다.
           // 이런형태를 pub sub 구조라고 합니다.
-          this.stompClient.subscribe("/send", res => {
+          this.stompClient.subscribe('/send/' + this.$store.state.dataStore.randId, res => {
 
             // 받은 데이터를 json으로 파싱하고 리스트에 넣어줍니다.
             var answer = res.body.replace(/~!~/gi, '\n')
@@ -111,7 +112,10 @@ export default {
     },
     messageSendHandler: function(value) { // send버튼 눌렀을때 실행되는 함수
 
-      
+      for(var i in this.data){
+        if(this.data[i].hasOwnProperty('options'))
+          delete this.data[i]['options'];
+      }
 
       // 메세지 전송
       this.data.push({
@@ -135,8 +139,8 @@ export default {
             userName: this.userName,
             content: this.beforeMessage + value.text,
           }
-          console.log(msg)
-          this.stompClient.send("/receive", JSON.stringify(msg), {})
+
+          this.stompClient.send('/receive/' + this.$store.state.dataStore.randId, JSON.stringify(msg), {})
 
           if(this.beforeMessage != '')
             this.beforeMessage = ''

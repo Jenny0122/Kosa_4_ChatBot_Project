@@ -41,3 +41,17 @@ python:
   commander: abc
   api1: abca
   api2: abca
+  
+management:
+  metrics:
+    export:
+      influx:
+        user-name: ma2garden
+        password: ma2garden
+        token: LkyNGkMsTn4eSOnJgkssuojEoF64-icvrQdHH6Uk22AB2t-Po72TgNdTLtdpWRv7MQ2HQkSayQ9MptvGbYUhPQ==
+        uri: http://ma2garden.xyz:8086
+        db: ma2garden
+        enabled: true
+        bucket: ma2garden        
+
+  endpoints:    web:      exposure:        include:        - "*" 

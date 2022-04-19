@@ -1,14 +1,14 @@
 package com.kosa.ma2garden.service;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.kosa.ma2garden.config.JwtTokenProvider;
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.UserDTO;
 import com.kosa.ma2garden.dto.UserLoginResponseDTO;
 import com.kosa.ma2garden.entity.User;
@@ -18,25 +18,29 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class UserService{
+public class UserService implements UserDetailsService {
 
 	@Autowired
 	UserRepository userRepository;
 
+	@Autowired
+	MetricCounter metricCounter;
+
 	private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-	
-	JwtTokenProvider jwtTokenProvider;
+	JwtTokenProvider jwtTokenProvider = new JwtTokenProvider(this);
 
-	public boolean idVaild(long id) {
-		User check = userRepository.findById(id)
-				.orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
-
-		if (check != null) {
-			return true;
-		} else {
-			return false;
+	public String idVaild(String id) {
+		String message = id + "는 이미 사용 중입니다";
+		User check = null;
+		try {
+			check = userRepository.findById(id)
+					.orElseThrow(() -> new UsernameNotFoundException(id + "는 사용 가능합니다"));
+			return message;
+		} catch (UsernameNotFoundException e) {
+			return e.getMessage();
 		}
+
 	}
 
 	public boolean createUser(UserDTO userDTO) {
@@ -70,10 +74,16 @@ public class UserService{
 		UserLoginResponseDTO userLoginResponseDTO = UserLoginResponseDTO.builder()
 				.no(user.getNo())
 				.id(user.getId())
-				.jwtToken(jwtTokenProvider.createToken(user.getId(), new ArrayList<String>(user.getRoles())))
+				// .jwtToken(jwtTokenProvider.createToken(user.getId(), new
+				// ArrayList<String>(user.getRoles())))
 				.build();
 		return userLoginResponseDTO;
 
 	}
 
+	@Override
+	public User loadUserByUsername(String id) throws UsernameNotFoundException {
+		return userRepository.findById(id)
+				.orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
+	}
 }

@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.BoardDTO;
 import com.kosa.ma2garden.dto.CommentDTO;
 import com.kosa.ma2garden.dto.UserDTO;
@@ -29,6 +30,9 @@ public class BoardService {
 
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	MetricCounter metricCounter;
 
 	public List<BoardDTO> getAllBoard() {
 

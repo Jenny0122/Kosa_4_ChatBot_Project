@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.ColorFlowerDTO;
 import com.kosa.ma2garden.entity.ColorFlower;
 import com.kosa.ma2garden.repository.ColorFlowerRepository;
@@ -15,6 +16,9 @@ public class ColorFlowerService {
 	
 	@Autowired
 	ColorFlowerRepository colorflowerRepository;
+	
+	@Autowired
+	MetricCounter metricCounter;
 
 	public List<ColorFlowerDTO> getAllColorFlower() {
 

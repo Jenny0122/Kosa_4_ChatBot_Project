@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.CookDTO;
 import com.kosa.ma2garden.entity.Cook;
 import com.kosa.ma2garden.repository.CookRepository;
@@ -15,6 +16,9 @@ public class CookService {
 
 	@Autowired
 	CookRepository cookRepository;
+	
+	@Autowired
+	MetricCounter metricCounter;
 
 	public List<CookDTO> getAllCook() {
 

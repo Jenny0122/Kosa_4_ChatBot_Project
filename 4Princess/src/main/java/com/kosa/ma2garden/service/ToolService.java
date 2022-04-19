@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kosa.ma2garden.config.MetricCounter;
 import com.kosa.ma2garden.dto.ToolDTO;
 import com.kosa.ma2garden.entity.Tool;
 import com.kosa.ma2garden.repository.ToolRepository;
@@ -16,6 +17,9 @@ public class ToolService {
 	
 	@Autowired
 	ToolRepository toolkRepository;
+	
+	@Autowired
+	MetricCounter metricCounter;
 
 	public List<ToolDTO> getAllTool() {
 

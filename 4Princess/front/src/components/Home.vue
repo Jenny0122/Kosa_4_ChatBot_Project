@@ -49,9 +49,9 @@
     <section id="three" class="wrapper style3 special">
     <div class="inner">
         <header class="major">
-        <h2>관련 해시태그</h2>
+        <h2>해시태그</h2>
         <p>
-            관련된 해시태그를 알려드려요.
+            홈가드닝 / 반려식물 해시태그를 알려드려요.
         </p>
         </header>
         <ul class="features">
